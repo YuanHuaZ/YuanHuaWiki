@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>七海千秋 | 超高校级的游戏玩家 | 弹丸论破角色介绍</title>
+  <meta name="description" content="七海千秋（Nanami Chiaki）——超级弹丸论破2中的超高校级游戏玩家。查看完整角色资料、性格设定、图片画廊与社区评论。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============ CSS Reset & Base ============ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ============ Scrollbar ============ */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #9333ea; }
+
+    /* ============ Utility Classes ============ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-effect {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ============ Animations ============ */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.5); }
+      50% { box-shadow: 0 0 25px rgba(168, 85, 247, 0.8); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes heartBeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.3); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes pixelFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      25% { transform: translateY(-20px) rotate(5deg); opacity: 1; }
+      75% { transform: translateY(-5px) rotate(-3deg); opacity: 0.8; }
+    }
+
+    .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+    .animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+    .animate-slide-down { animation: slideDown 0.4s ease-out forwards; }
+    .animate-bounce-in { animation: bounceIn 0.4s ease-out forwards; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    .delay-600 { animation-delay: 0.6s; opacity: 0; }
+
+    /* ============ Header ============ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 16px 0;
+    }
+    .header.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      padding: 10px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (max-width: 768px) {
+      .header-inner { padding: 0 16px; }
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    .header.scrolled .header-logo { color: #1e293b; }
+    .header-logo .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    @media (max-width: 768px) {
+      .header-nav {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 280px;
+        height: 100vh;
+        flex-direction: column;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        padding: 80px 32px 32px;
+        gap: 0;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      }
+      .header-nav.open { right: 0; }
+    }
+    .header-nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s;
+      position: relative;
+      padding: 4px 0;
+    }
+    .header.scrolled .header-nav a { color: #64748b; }
+    .header-nav a:hover { color: #a855f7; }
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+    .header-nav a:hover::after { width: 100%; }
+    @media (max-width: 768px) {
+      .header-nav a {
+        color: #64748b;
+        padding: 14px 0;
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 16px;
+      }
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #a855f7, #7e22ce);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(168,85,247,0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(168,85,247,0.5);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #a855f7;
+      border: 2px solid #a855f7;
+    }
+    .btn-outline:hover {
+      background: #a855f7;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #64748b;
+      padding: 8px 12px;
+    }
+    .btn-ghost:hover {
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+    .btn-sm { padding: 6px 14px; font-size: 13px; border-radius: 8px; }
+    .btn-lg { padding: 14px 28px; font-size: 16px; border-radius: 12px; }
+    .btn-icon {
+      width: 40px; height: 40px;
+      padding: 0;
+      border-radius: 50%;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .header.scrolled .menu-toggle span { background: #1e293b; }
+    .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .header-actions .btn { display: none; }
+    }
+
+    /* ============ Hero ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 25%, #1a1030 50%, #0d1a2e 75%, #0a0a1a 100%);
+    }
+    .hero-bg-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero-bg-particles .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(168,85,247,0.3);
+      animation: pixelFloat var(--dur) ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(168,85,247,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168,85,247,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 100px 24px 60px;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding-top: 120px;
+      }
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(168,85,247,0.15);
+      border: 1px solid rgba(168,85,247,0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      color: #c084fc;
+      width: fit-content;
+      font-weight: 500;
+    }
+    @media (max-width: 1024px) {
+      .hero-badge { margin: 0 auto; }
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px;
+      background: #a855f7;
+      border-radius: 50%;
+      animation: pulseGlow 2s ease-in-out infinite;
+    }
+    .hero-name-jp {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 40%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 4px;
+    }
+    @media (max-width: 768px) {
+      .hero-name-jp { font-size: 42px; letter-spacing: 2px; }
+    }
+    .hero-name-sub {
+      font-size: 22px;
+      color: #94a3b8;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .hero-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(236,72,153,0.1);
+      border: 1px solid rgba(236,72,153,0.25);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #f9a8d4;
+      font-weight: 600;
+      width: fit-content;
+    }
+    @media (max-width: 1024px) {
+      .hero-title { margin: 0 auto; }
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 1024px) {
+      .hero-stats { justify-content: center; }
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    @media (max-width: 1024px) {
+      .hero-stat { align-items: center; }
+    }
+    .hero-stat-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e9d5ff;
+    }
+    .hero-stat-label {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 1024px) {
+      .hero-actions { justify-content: center; }
+    }
+    .btn-like, .btn-fav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-like {
+      background: rgba(236,72,153,0.15);
+      color: #f9a8d4;
+      border: 1px solid rgba(236,72,153,0.3);
+    }
+    .btn-like:hover { background: rgba(236,72,153,0.25); transform: translateY(-2px); }
+    .btn-like.liked {
+      background: #ec4899;
+      color: #fff;
+      border-color: #ec4899;
+      animation: heartBeat 0.6s ease;
+    }
+    .btn-fav {
+      background: rgba(168,85,247,0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168,85,247,0.3);
+    }
+    .btn-fav:hover { background: rgba(168,85,247,0.25); transform: translateY(-2px); }
+    .btn-fav.favorited {
+      background: #a855f7;
+      color: #fff;
+      border-color: #a855f7;
+      animation: bounceIn 0.4s ease;
+    }
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-share:hover { background: rgba(255,255,255,0.1); color: #fff; transform: translateY(-2px); }
+
+    /* Hero visual (character card) */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-avatar-wrapper {
+      position: relative;
+      width: 320px;
+      height: 320px;
+    }
+    @media (max-width: 768px) {
+      .hero-avatar-wrapper { width: 240px; height: 240px; }
+    }
+    .hero-avatar-ring {
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4, #a855f7) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: spinSlow 8s linear infinite;
+    }
+    .hero-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #2d1b4e 0%, #1a1030 50%, #0f0a1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 60px rgba(168,85,247,0.3);
+    }
+    .hero-avatar-inner {
+      text-align: center;
+      z-index: 1;
+    }
+    .hero-avatar-emoji {
+      font-size: 120px;
+      line-height: 1;
+      filter: drop-shadow(0 0 30px rgba(168,85,247,0.5));
+      animation: float 3s ease-in-out infinite;
+    }
+    @media (max-width: 768px) {
+      .hero-avatar-emoji { font-size: 80px; }
+    }
+    .hero-avatar-badge {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 12px;
+      background: rgba(168,85,247,0.3);
+      border-radius: 50px;
+      font-size: 12px;
+      color: #c084fc;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* ============ Section Styles ============ */
+    .section {
+      padding: 80px 0;
+    }
+    @media (max-width: 768px) {
+      .section { padding: 48px 0; }
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #a855f7;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+      .section-title { font-size: 26px; }
+    }
+    .section-subtitle {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ============ Info Grid ============ */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 1024px) {
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+    .info-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .info-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .info-card-icon.purple { background: #f3e8ff; }
+    .info-card-icon.pink { background: #fce7f3; }
+    .info-card-icon.cyan { background: #ecfeff; }
+    .info-card-text h4 {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .info-card-text p {
+      font-size: 15px;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    /* ============ Tabs Content Section ============ */
+    .tabs-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .tabs-nav {
+      display: flex;
+      border-bottom: 1px solid #f1f5f9;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 18px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: all 0.2s;
+      position: relative;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: #64748b; }
+    .tab-btn.active {
+      color: #a855f7;
+    }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 20%; right: 20%;
+      height: 3px;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      border-radius: 2px;
+    }
+    .tab-panel {
+      display: none;
+      padding: 32px;
+    }
+    .tab-panel.active { display: block; animation: fadeIn 0.4s ease; }
+    @media (max-width: 768px) {
+      .tab-panel { padding: 20px; }
+      .tab-btn { padding: 14px 18px; font-size: 14px; }
+    }
+    .tab-panel p {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #475569;
+      white-space: pre-line;
+    }
+
+    /* ============ Tags ============ */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tag-purple { background: #f3e8ff; color: #7c3aed; }
+    .tag-pink { background: #fce7f3; color: #db2777; }
+    .tag-cyan { background: #ecfeff; color: #0891b2; }
+    .tag-green { background: #dcfce7; color: #16a34a; }
+    .tag-orange { background: #ffedd5; color: #ea580c; }
+
+    /* ============ Gallery ============ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #2d1b4e, #1a1030);
+      transition: all 0.3s ease;
+    }
+    .gallery-item:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+    .gallery-item-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .gallery-item:hover .gallery-item-inner { transform: scale(1.05); }
+    .gallery-item-icon {
+      font-size: 56px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 15px rgba(168,85,247,0.4));
+    }
+    .gallery-item-label {
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+    .gallery-item-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(0,0,0,0.5);
+      color: #e2e8f0;
+      backdrop-filter: blur(4px);
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-overlay-text {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ============ Abilities ============ */
+    .abilities-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .abilities-list { grid-template-columns: 1fr; }
+    }
+    .ability-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+    .ability-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .ability-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+    }
+    .ability-info h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .ability-info p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* ============ Relationships ============ */
+    .relationships {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1024px) {
+      .relationships { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .relationships { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+    .rel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .rel-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+    }
+    .rel-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .rel-type {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .rel-type.friend { background: #dcfce7; color: #16a34a; }
+    .rel-type.cp { background: #fce7f3; color: #db2777; }
+    .rel-type.rival { background: #ffedd5; color: #ea580c; }
+    .rel-type.classmate { background: #ecfeff; color: #0891b2; }
+    .rel-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* ============ Audio/Video ============ */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .media-grid { grid-template-columns: 1fr; }
+    }
+    .media-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .media-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .media-play-btn {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #a855f7, #7e22ce);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    .media-card:hover .media-play-btn { transform: scale(1.1); box-shadow: 0 4px 16px rgba(168,85,247,0.5); }
+    .media-info h4 { font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 2px; }
+    .media-info span { font-size: 13px; color: #94a3b8; }
+    .media-duration {
+      margin-left: auto;
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* ============ Comments ============ */
+    .comments-section {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      padding: 32px;
+    }
+    @media (max-width: 768px) {
+      .comments-section { padding: 20px; }
+    }
+    .comment-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    @media (max-width: 640px) {
+      .comment-form { flex-direction: column; }
+    }
+    .comment-form-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .comment-input-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .comment-input-wrapper textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 14px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      resize: vertical;
+      transition: border-color 0.2s;
+      line-height: 1.6;
+    }
+    .comment-input-wrapper textarea:focus {
+      outline: none;
+      border-color: #a855f7;
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.1);
+    }
+    .comment-submit-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .comment-item {
+      display: flex;
+      gap: 14px;
+      animation: slideUp 0.4s ease-out;
+    }
+    .comment-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: #fff;
+    }
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .comment-author {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+    .comment-text {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .comment-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .comment-like-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      font-size: 13px;
+      color: #94a3b8;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .comment-like-btn:hover { color: #ec4899; }
+
+    /* ============ Footer ============ */
+    .footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-brand h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      text-decoration: none;
+      color: #64748b;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #a855f7; }
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    /* ============ Back to Top ============ */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7, #7e22ce);
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(168,85,247,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(168,85,247,0.6);
+    }
+
+    /* ============ Modal / Lightbox ============ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(0,0,0,0.8); }
+
+    /* ============ Share Popover ============ */
+    .share-popover {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .share-popover.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .share-btn-item {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .share-btn-item:hover { transform: scale(1.15); }
+    .share-btn-item.wechat { background: #dcfce7; }
+    .share-btn-item.weibo { background: #ffedd5; }
+    .share-btn-item.qq { background: #ecfeff; }
+    .share-btn-item.link { background: #f3e8ff; }
+
+    /* ============ Toast ============ */
+    .toast-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toast {
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      animation: slideDown 0.3s ease-out;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast.success { background: #16a34a; }
+    .toast.info { background: #a855f7; }
+    .toast.error { background: #ef4444; }
+
+    /* ============ Loading Skeleton ============ */
+    @keyframes skeleton-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ============ Breadcrumb ============ */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #a855f7; }
+    .breadcrumb .sep { color: #cbd5e1; }
+    .breadcrumb .current { color: #a855f7; font-weight: 600; }
+
+    /* ============ Popular Characters Mini ============ */
+    .popular-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1024px) { .popular-mini-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .popular-mini-grid { grid-template-columns: repeat(2, 1fr); } }
+    .popular-mini-card {
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .popular-mini-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(168,85,247,0.15);
+    }
+    .popular-mini-avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    }
+    .popular-mini-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .popular-mini-anime {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* ============ Related Anime Section ============ */
+    .anime-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    .anime-hero-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+    }
+    .anime-hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(168,85,247,0.18);
+    }
+    @media (max-width: 768px) {
+      .anime-hero-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+    }
+    .anime-cover {
+      position: relative;
+      min-height: 280px;
+      background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 40%, #1a1030 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      overflow: hidden;
+    }
+    .anime-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(168,85,247,0.3) 0%, transparent 70%);
+    }
+    .anime-cover-icon {
+      font-size: 72px;
+      position: relative;
+      z-index: 1;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(168,85,247,0.5));
+    }
+    .anime-cover-badge {
+      position: relative;
+      z-index: 1;
+      margin-top: 12px;
+      padding: 6px 16px;
+      background: rgba(236,72,153,0.2);
+      border: 1px solid rgba(236,72,153,0.3);
+      border-radius: 50px;
+      font-size: 12px;
+      color: #f9a8d4;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .anime-cover-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(168,85,247,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168,85,247,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .anime-info {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .anime-info { padding: 24px; }
+    }
+    .anime-info-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #a855f7;
+    }
+    .anime-info-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: #a855f7;
+      border-radius: 1px;
+    }
+    .anime-info-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.3;
+    }
+    .anime-info-title-jp {
+      font-size: 16px;
+      color: #94a3b8;
+      font-weight: 400;
+    }
+    .anime-info-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .anime-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .anime-meta-item .meta-icon {
+      font-size: 16px;
+    }
+    .anime-meta-item .meta-label {
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    .anime-info-desc {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .anime-info-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .btn-bilibili {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #fb7299, #fc8bab);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(251,114,153,0.4);
+    }
+    .btn-bilibili:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(251,114,153,0.55);
+    }
+    .btn-bilibili .bili-icon {
+      font-size: 22px;
+    }
+    .btn-bilibili .bili-arrow {
+      margin-left: 4px;
+      transition: transform 0.3s;
+    }
+    .btn-bilibili:hover .bili-arrow {
+      transform: translateX(4px);
+    }
+    .btn-outline-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: #64748b;
+      border: 2px solid #e2e8f0;
+    }
+    .btn-outline-sm:hover {
+      border-color: #a855f7;
+      color: #a855f7;
+      transform: translateY(-2px);
+    }
+    .anime-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .anime-tag {
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .anime-tag.dark { background: #f1f5f9; color: #475569; }
+    .anime-tag.live { background: #dcfce7; color: #16a34a; }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <span class="logo-icon">🎮</span>
+        <span>CharaWiki</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="header-nav" id="headerNav">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#profile">角色资料</a></li>
+          <li><a href="#gallery">图片画廊</a></li>
+          <li><a href="#abilities">能力设定</a></li>
+          <li><a href="#relations">人物关系</a></li>
+          <li><a href="#comments">评论区</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost btn-sm" onclick="showToast('登录功能即将开放', 'info')">登录</button>
+        <button class="btn btn-primary btn-sm" onclick="showToast('注册功能即将开放', 'info')">注册</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-particles">
+      <div class="particle" style="width:4px;height:4px;top:15%;left:10%;--dur:4s;--delay:0s;"></div>
+      <div class="particle" style="width:6px;height:6px;top:25%;left:80%;--dur:5s;--delay:1s;"></div>
+      <div class="particle" style="width:3px;height:3px;top:60%;left:15%;--dur:3.5s;--delay:0.5s;"></div>
+      <div class="particle" style="width:5px;height:5px;top:70%;left:75%;--dur:4.5s;--delay:2s;"></div>
+      <div class="particle" style="width:4px;height:4px;top:40%;left:50%;--dur:6s;--delay:1.5s;"></div>
+      <div class="particle" style="width:3px;height:3px;top:10%;left:40%;--dur:3s;--delay:0.8s;"></div>
+      <div class="particle" style="width:5px;height:5px;top:80%;left:35%;--dur:5.5s;--delay:2.5s;"></div>
+      <div class="particle" style="width:4px;height:4px;top:50%;left:90%;--dur:4.2s;--delay:1.2s;"></div>
+      <div class="particle" style="width:6px;height:6px;top:30%;left:25%;--dur:3.8s;--delay:0.3s;"></div>
+      <div class="particle" style="width:3px;height:3px;top:85%;left:60%;--dur:4.8s;--delay:1.8s;"></div>
+    </div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-text animate-fade-in">
+        <div class="hero-badge">
+          <span class="dot"></span> 超级弹丸论破2
+        </div>
+        <h1 class="hero-name-jp">七海 千秋</h1>
+        <p class="hero-name-sub">Nanami Chiaki</p>
+        <div class="hero-title">🎮 超高校级的游戏玩家</div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value" id="likesCount">12,847</span>
+            <span class="hero-stat-label">❤️ 点赞</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" id="favsCount">9,532</span>
+            <span class="hero-stat-label">⭐ 收藏</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value" id="votesCount">6,184</span>
+            <span class="hero-stat-label">🗳️ 投票</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-like" id="btnLike" onclick="toggleLike()">
+            <span>❤️</span> <span id="btnLikeText">点赞</span>
+          </button>
+          <button class="btn-fav" id="btnFav" onclick="toggleFav()">
+            <span>⭐</span> <span id="btnFavText">收藏</span>
+          </button>
+          <div style="position:relative;">
+            <button class="btn-share" id="btnShare" onclick="toggleShare()">
+              <span>🔗</span> 分享
+            </button>
+            <div class="share-popover" id="sharePopover">
+              <button class="share-btn-item wechat" onclick="shareAction('微信')" title="微信">💬</button>
+              <button class="share-btn-item weibo" onclick="shareAction('微博')" title="微博">📢</button>
+              <button class="share-btn-item qq" onclick="shareAction('QQ')" title="QQ">🐧</button>
+              <button class="share-btn-item link" onclick="shareAction('复制链接')" title="复制链接">📋</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tags" style="margin-top:12px;">
+          <span class="tag tag-purple">天然呆</span>
+          <span class="tag tag-pink">温柔</span>
+          <span class="tag tag-cyan">游戏宅</span>
+          <span class="tag tag-green">三无</span>
+          <span class="tag tag-orange">主角</span>
+        </div>
+      </div>
+
+      <div class="hero-visual animate-slide-up delay-200">
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-ring"></div>
+          <div class="hero-avatar">
+            <div class="hero-avatar-inner">
+              <div class="hero-avatar-emoji">🎮</div>
+              <div class="hero-avatar-badge">ULTIMATE GAMER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <div class="container" style="padding-top:24px;">
+    <nav class="breadcrumb animate-fade-in delay-100">
+      <a href="#">首页</a> <span class="sep">›</span>
+      <a href="#">角色列表</a> <span class="sep">›</span>
+      <a href="#">弹丸论破系列</a> <span class="sep">›</span>
+      <span class="current">七海千秋</span>
+    </nav>
+  </div>
+
+  <!-- ==================== CHARACTER PROFILE ==================== -->
+  <section class="section" id="profile" style="padding-top:20px;">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">CHARACTER PROFILE</span>
+        <h2 class="section-title">角色档案</h2>
+        <p class="section-subtitle">超高校级的游戏玩家 —— 从游戏世界中走出的温柔少女</p>
+      </div>
+
+      <!-- Info Grid -->
+      <div class="info-grid">
+        <div class="info-card animate-slide-up delay-100">
+          <div class="info-card-icon purple">🎂</div>
+          <div class="info-card-text">
+            <h4>生日</h4>
+            <p>3月14日</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-200">
+          <div class="info-card-icon pink">🩸</div>
+          <div class="info-card-text">
+            <h4>血型</h4>
+            <p>O型</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-300">
+          <div class="info-card-icon cyan">♓</div>
+          <div class="info-card-text">
+            <h4>星座</h4>
+            <p>双鱼座</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-100">
+          <div class="info-card-icon purple">📏</div>
+          <div class="info-card-text">
+            <h4>身高</h4>
+            <p>160cm</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-200">
+          <div class="info-card-icon pink">⚖️</div>
+          <div class="info-card-text">
+            <h4>体重</h4>
+            <p>46kg</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-300">
+          <div class="info-card-icon cyan">🏫</div>
+          <div class="info-card-text">
+            <h4>学校</h4>
+            <p>希望之峰学园</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-100">
+          <div class="info-card-icon purple">🎤</div>
+          <div class="info-card-text">
+            <h4>声优</h4>
+            <p>花泽香菜</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-200">
+          <div class="info-card-icon pink">📺</div>
+          <div class="info-card-text">
+            <h4>所属作品</h4>
+            <p>超级弹丸论破2：再见绝望学园</p>
+          </div>
+        </div>
+        <div class="info-card animate-slide-up delay-300">
+          <div class="info-card-icon cyan">🎯</div>
+          <div class="info-card-text">
+            <h4>角色定位</h4>
+            <p>女主角 / 核心角色</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs: Personality / Appearance / Background -->
+      <div class="tabs-card animate-slide-up delay-400" style="margin-top:32px;">
+        <div class="tabs-nav">
+          <button class="tab-btn active" onclick="switchTab('personality')" data-tab="personality">💭 性格特点</button>
+          <button class="tab-btn" onclick="switchTab('appearance')" data-tab="appearance">👁️ 外貌特征</button>
+          <button class="tab-btn" onclick="switchTab('background')" data-tab="background">📖 身份背景</button>
+          <button class="tab-btn" onclick="switchTab('story')" data-tab="story">📜 剧情简介</button>
+        </div>
+        <div class="tab-panel active" id="panel-personality">
+          <p>七海千秋是一个性格温和、安静内向的少女。她大部分时间都沉浸在游戏世界中，对现实世界的社交活动不太擅长，常常在对话中引用游戏术语和概念。
+
+她拥有超乎常人的游戏天赋，几乎任何类型的游戏都能迅速上手并精通。但与此相对的是，她经常因为通宵玩游戏而在白天昏昏欲睡，随时随地都可能睡着——无论是在课堂上、走廊里，甚至是在与其他人的对话中。
+
+尽管表面看起来冷漠且不善言辞，七海内心却极其善良温柔。她总是默默关心着同伴们，在关键时刻会展现出惊人的勇气和决断力。她不会说华丽的言语，但会用实际行动来保护重要的人。
+
+她对"希望"有着强烈的信念，相信只要不放弃，就一定能找到通向光明的道路。这种坚定源于她内心深处对同伴的信任与爱。</p>
+        </div>
+        <div class="tab-panel" id="panel-appearance">
+          <p>七海千秋拥有淡粉色的短发，发梢带着些许自然卷曲，前额刘海微微遮住左眼，给人一种慵懒而可爱的印象。她的眼眸是清澈的薄荷绿色，如同初春的新芽，总是带着几分困倦和温柔。
+
+她日常穿着一件宽松的淡粉色连帽衫，帽子部分设计成猫耳形状，背后有一个大大的「GAME」字样，是她作为游戏玩家的标志性装扮。连帽衫下搭配着深色的百褶裙和黑色过膝袜。
+
+她的右手几乎总是握着一台掌上游戏机，那是她最珍贵的伙伴。即使是在走路或与人交谈时，她的手指也常常在按键上游走。当她专注玩游戏时，那双平时半睁的眼睛会罕见地完全睁开，闪烁着炽热的光芒。
+
+整个人的气质让人联想到一只慵懒的猫——安静、自我，但又在不经意间流露出令人心动的可爱。</p>
+        </div>
+        <div class="tab-panel" id="panel-background">
+          <p>七海千秋是希望之峰学园第77届学生，被评选为"超高校级的游戏玩家"。她对所有类型的游戏都有着无与伦比的天赋，从经典RPG到格斗游戏，从解谜游戏到射击游戏，无一不精。
+
+在新世界程序的虚拟空间中，她是第一个主动与日向创搭话的人，并成为了他最亲密的伙伴。作为班级中最早认识到同学们之间羁绊重要性的人之一，七海在推动大家相互了解、共同面对挑战方面发挥了不可替代的作用。
+
+她的真实身份蕴含着《弹丸论破2》最深刻的秘密——七海千秋不仅是同学们的精神支柱，更是整个故事的灵魂人物。她的存在象征着在最黑暗的时刻依然不灭的希望之光。即使在绝望的深渊中，她对伙伴们的信任和对游戏的热爱也从未动摇。</p>
+        </div>
+        <div class="tab-panel" id="panel-story">
+          <p>《超级弹丸论破2：再见绝望学园》的故事发生在一个名为"贾巴沃克岛"的南国岛屿上。七海千秋与日向创以及其他同学们被带到这座岛上，被迫参与黑白熊主持的"修学旅行"——实际上是一场残酷的杀戮游戏。
+
+在游戏过程中，七海以她独特的方式支持着日向创。她总是用游戏的比喻来解释眼前的困境，虽然听起来有些不着边际，但往往一针见血。当同学们陷入相互猜忌时，她坚持相信大家，努力维护着班级的团结。
+
+在经历了一系列令人心碎的审判和牺牲之后，真相终于浮出水面——整个岛屿世界实际上是一个名为"新世界程序"的虚拟现实。七海千秋，在现实世界中已经……但她留下的意志，成为了唤醒同伴、战胜绝望的关键。
+
+她说过最令人难忘的话是："即使是在游戏中，只要不放弃，就一定能找到通关的方法。现实也一样。"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RELATED ANIME ==================== -->
+  <section class="section anime-section">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">RELATED ANIME</span>
+        <h2 class="section-title">相关番剧</h2>
+        <p class="section-subtitle">七海千秋登场作品 —— 点击前往Bilibili观看正版番剧</p>
+      </div>
+
+      <!-- Main Anime Card: Danganronpa 2 -->
+      <div class="anime-hero-card animate-slide-up delay-200" style="margin-bottom:24px;">
+        <div class="anime-cover">
+          <div class="anime-cover-grid"></div>
+          <div class="anime-cover-icon">🎮</div>
+          <div class="anime-cover-badge">SUPER DANGANRONPA 2</div>
+        </div>
+        <div class="anime-info">
+          <span class="anime-info-label">主要登场作品</span>
+          <h3 class="anime-info-title">弹丸论破3 -The End of 希望之峰学园- 绝望篇</h3>
+          <p class="anime-info-title-jp">ダンガンロンパ3 -The End of 希望ヶ峰学園- 絶望編</p>
+          <div class="anime-info-meta">
+            <div class="anime-meta-item">
+              <span class="meta-icon">🏢</span>
+              <span class="meta-label">制作：</span>Lerche
+            </div>
+            <div class="anime-meta-item">
+              <span class="meta-icon">📅</span>
+              <span class="meta-label">播出：</span>2016年7月
+            </div>
+            <div class="anime-meta-item">
+              <span class="meta-icon">📺</span>
+              <span class="meta-label">集数：</span>全11话
+            </div>
+            <div class="anime-meta-item">
+              <span class="meta-icon">🎤</span>
+              <span class="meta-label">CV：</span>花泽香菜
+            </div>
+          </div>
+          <p class="anime-info-desc">希望之峰学园第77届学生们的过往故事。七海千秋作为"超高校级的游戏玩家"，在班级中与日向创、狛枝凪斗等人共同经历了从希望到绝望的转变。她的存在是整个弹丸论破系列最温暖的光芒之一。</p>
+          <div class="anime-tag-row">
+            <span class="anime-tag dark">悬疑</span>
+            <span class="anime-tag dark">推理</span>
+            <span class="anime-tag dark">校园</span>
+            <span class="anime-tag dark">致郁</span>
+            <span class="anime-tag live">正版引进</span>
+          </div>
+          <div class="anime-info-actions">
+            <a href="https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="btn-bilibili">
+              <span class="bili-icon">📺</span> 在Bilibili观看
+              <span class="bili-arrow">→</span>
+            </a>
+            <a href="https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="btn-outline-sm">
+              🔗 查看番剧详情
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Series List -->
+      <div class="media-grid">
+        <div class="media-card animate-slide-up delay-300">
+          <div class="media-play-btn" style="background:linear-gradient(135deg,#a855f7,#7e22ce);">🎬</div>
+          <div class="media-info">
+            <h4>超级弹丸论破2：再见绝望学园</h4>
+            <span>游戏原作 · 七海千秋首次登场 · Spike Chunsoft</span>
+          </div>
+          <a href="https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="flex-shrink:0;">前往观看</a>
+        </div>
+        <div class="media-card animate-slide-up delay-400">
+          <div class="media-play-btn" style="background:linear-gradient(135deg,#ec4899,#db2777);">🎬</div>
+          <div class="media-info">
+            <h4>弹丸论破3 -希望篇-</h4>
+            <span>动画系列完结篇 · 希望之峰学园的终章</span>
+          </div>
+          <a href="https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="flex-shrink:0;">前往观看</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== IMAGE GALLERY ==================== -->
+  <section class="section" id="gallery" style="background:#f1f5f9;">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">GALLERY</span>
+        <h2 class="section-title">图片画廊</h2>
+        <p class="section-subtitle">收录官方立绘、游戏CG与精美壁纸</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item animate-slide-up delay-100" onclick="openLightbox('official')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #fce7f3, #f3e8ff);">
+            <span class="gallery-item-icon">🖼️</span>
+            <span class="gallery-item-label" style="color:#475569;">官方立绘</span>
+          </div>
+          <div class="gallery-item-badge">立绘</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">七海千秋 · 官方角色立绘</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-200" onclick="openLightbox('cg1')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #e9d5ff, #d8b4fe);">
+            <span class="gallery-item-icon">🎬</span>
+            <span class="gallery-item-label" style="color:#475569;">游戏CG 01</span>
+          </div>
+          <div class="gallery-item-badge">CG</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">与日向创的初次相遇</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-300" onclick="openLightbox('cg2')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #dcfce7, #d9f99d);">
+            <span class="gallery-item-icon">🎬</span>
+            <span class="gallery-item-label" style="color:#475569;">游戏CG 02</span>
+          </div>
+          <div class="gallery-item-badge">CG</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">海滩上的微笑</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-400" onclick="openLightbox('cg3')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #ecfeff, #cffafe);">
+            <span class="gallery-item-icon">🎬</span>
+            <span class="gallery-item-label" style="color:#475569;">游戏CG 03</span>
+          </div>
+          <div class="gallery-item-badge">CG</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">审判中的关键一刻</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-100" onclick="openLightbox('wp1')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #ffedd5, #fed7aa);">
+            <span class="gallery-item-icon">🖥️</span>
+            <span class="gallery-item-label" style="color:#475569;">壁纸 01</span>
+          </div>
+          <div class="gallery-item-badge">壁纸</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">1920×1080 · 桌面壁纸</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-200" onclick="openLightbox('wp2')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #f3e8ff, #e9d5ff);">
+            <span class="gallery-item-icon">📱</span>
+            <span class="gallery-item-label" style="color:#475569;">壁纸 02</span>
+          </div>
+          <div class="gallery-item-badge">壁纸</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">1080×1920 · 手机壁纸</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-300" onclick="openLightbox('fan1')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #fce7f3, #fbcfe8);">
+            <span class="gallery-item-icon">🎨</span>
+            <span class="gallery-item-label" style="color:#475569;">官方插画</span>
+          </div>
+          <div class="gallery-item-badge">插画</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">10周年纪念插画</span>
+          </div>
+        </div>
+        <div class="gallery-item animate-slide-up delay-400" onclick="openLightbox('fan2')">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg, #dbeafe, #bfdbfe);">
+            <span class="gallery-item-icon">🎨</span>
+            <span class="gallery-item-label" style="color:#475569;">公式设定集</span>
+          </div>
+          <div class="gallery-item-badge">设定</div>
+          <div class="gallery-item-overlay">
+            <span class="gallery-overlay-text">角色设定资料集</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABILITIES & SKILLS ==================== -->
+  <section class="section" id="abilities">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">ABILITIES</span>
+        <h2 class="section-title">能力与技能</h2>
+        <p class="section-subtitle">超高校级游戏玩家的非凡才能</p>
+      </div>
+
+      <div class="abilities-list">
+        <div class="ability-card animate-slide-up delay-100">
+          <div class="ability-icon">🎮</div>
+          <div class="ability-info">
+            <h4>游戏精通</h4>
+            <p>对所有类型的电子游戏都有超乎常人的天赋和理解力。无论是RPG、FPS、解谜还是音游，都能在极短时间内掌握核心机制并达到顶尖水平。据说没有任何游戏能难倒她超过一天。</p>
+          </div>
+        </div>
+        <div class="ability-card animate-slide-up delay-200">
+          <div class="ability-icon">🧩</div>
+          <div class="ability-info">
+            <h4>逻辑推理</h4>
+            <p>常年沉浸于各类解谜游戏和RPG，培养出了极其敏锐的逻辑分析能力。在学级裁判中，她能迅速抓住案件的关键线索，将复杂的线索串联成清晰的推理链条。</p>
+          </div>
+        </div>
+        <div class="ability-card animate-slide-up delay-300">
+          <div class="ability-icon">💡</div>
+          <div class="ability-info">
+            <h4>希望之力</h4>
+            <p>在绝望的深渊中依然能够保持对未来的信念。她的存在本身就是同学们的精神支柱，在最黑暗的时刻能够用最朴实的话语给予他人前进的勇气和力量。</p>
+          </div>
+        </div>
+        <div class="ability-card animate-slide-up delay-400">
+          <div class="ability-icon">🛡️</div>
+          <div class="ability-info">
+            <h4>团结之力</h4>
+            <p>擅长用游戏的团队合作理念来凝聚伙伴。在班级分裂、相互猜忌的危机时刻，她总是第一个站出来呼吁大家团结一致、互相信任的人。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AUDIO / VIDEO ==================== -->
+  <section class="section" style="background:#f1f5f9;">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">MEDIA</span>
+        <h2 class="section-title">音视频内容</h2>
+        <p class="section-subtitle">角色主题曲、经典台词语音与出场片段</p>
+      </div>
+
+      <div class="media-grid">
+        <div class="media-card animate-slide-up delay-100" onclick="showToast('音频播放功能即将上线', 'info')">
+          <div class="media-play-btn">▶️</div>
+          <div class="media-info">
+            <h4>角色主题曲 - 「七海千秋のテーマ」</h4>
+            <span>主题曲 · 游戏中BGM</span>
+          </div>
+          <span class="media-duration">2:34</span>
+        </div>
+        <div class="media-card animate-slide-up delay-200" onclick="showToast('音频播放功能即将上线', 'info')">
+          <div class="media-play-btn">▶️</div>
+          <div class="media-info">
+            <h4>经典台词01 - 「如果是游戏的话…」</h4>
+            <span>台词 · 花泽香菜 配音</span>
+          </div>
+          <span class="media-duration">0:12</span>
+        </div>
+        <div class="media-card animate-slide-up delay-300" onclick="showToast('视频播放功能即将上线', 'info')">
+          <div class="media-play-btn" style="background:linear-gradient(135deg,#ec4899,#db2777);">▶️</div>
+          <div class="media-info">
+            <h4>出场片段集锦</h4>
+            <span>视频 · 游戏内关键场景合集</span>
+          </div>
+          <span class="media-duration">8:22</span>
+        </div>
+        <div class="media-card animate-slide-up delay-400" onclick="showToast('视频播放功能即将上线', 'info')">
+          <div class="media-play-btn" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">▶️</div>
+          <div class="media-info">
+            <h4>声优花泽香菜访谈</h4>
+            <span>访谈 · 角色配音幕后故事</span>
+          </div>
+          <span class="media-duration">15:40</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RELATIONSHIPS ==================== -->
+  <section class="section" id="relations">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">RELATIONSHIPS</span>
+        <h2 class="section-title">人物关系</h2>
+        <p class="section-subtitle">在77届同学中的重要羁绊</p>
+      </div>
+
+      <div class="relationships">
+        <div class="rel-card animate-slide-up delay-100">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🧑‍💼</div>
+          <h4 class="rel-name">日向 创</h4>
+          <span class="rel-type cp">CP / 挚友</span>
+          <p class="rel-desc">在岛上第一个主动搭话的对象，也是最重要的伙伴。两人在学级裁判和日常中互相支持，七海始终相信日向的能力和可能性。</p>
+        </div>
+        <div class="rel-card animate-slide-up delay-200">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👑</div>
+          <h4 class="rel-name">狛枝 凪斗</h4>
+          <span class="rel-type rival">对手 / 同学</span>
+          <p class="rel-desc">同为77届同学，但理念截然相反。狛枝沉迷于"希望与绝望"的极端二元论，而七海坚持平和的希望理念，两人形成鲜明对比。</p>
+        </div>
+        <div class="rel-card animate-slide-up delay-300">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#dcfce7,#d9f99d);">👧</div>
+          <h4 class="rel-name">左右田 和一</h4>
+          <span class="rel-type friend">好友 / 同学</span>
+          <p class="rel-desc">77届同班同学。左右田对七海抱有特殊的感情，虽然七海常常因为沉迷游戏而对他的示好毫无察觉。</p>
+        </div>
+        <div class="rel-card animate-slide-up delay-100">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#ecfeff,#cffafe);">🎮</div>
+          <h4 class="rel-name">澪田 唯吹</h4>
+          <span class="rel-type friend">好友 / 同学</span>
+          <p class="rel-desc">77届同班同学，超高校级的轻音部。活泼开朗的唯吹是少数能带动七海一起活动的人，两人性格互补。</p>
+        </div>
+        <div class="rel-card animate-slide-up delay-200">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">👩‍🏫</div>
+          <h4 class="rel-name">雾切 响子</h4>
+          <span class="rel-type classmate">学姐 / 同伴</span>
+          <p class="rel-desc">78届的超高校级侦探。虽然在不同的班级，但在更大的故事中两人有着重要的交集和相互信任。</p>
+        </div>
+        <div class="rel-card animate-slide-up delay-300">
+          <div class="rel-avatar" style="background:linear-gradient(135deg,#f3e8ff,#e9d5ff);">🐰</div>
+          <h4 class="rel-name">兔美</h4>
+          <span class="rel-type friend">守护者 / 向导</span>
+          <p class="rel-desc">岛上的向导教师（自称）。一直试图帮助和保护学生们，七海是能理解兔美善意的最重要学生之一。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMMENTS ==================== -->
+  <section class="section" id="comments" style="background:#f1f5f9;">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">COMMUNITY</span>
+        <h2 class="section-title">评论区</h2>
+        <p class="section-subtitle">与其他粉丝一起分享你对七海千秋的喜爱</p>
+      </div>
+
+      <div class="comments-section animate-slide-up delay-200">
+        <!-- Comment Form -->
+        <div class="comment-form">
+          <div class="comment-form-avatar">👤</div>
+          <div class="comment-input-wrapper">
+            <textarea placeholder="写下你对七海千秋的评论……（评论需遵守社区规范）" id="commentInput" rows="3"></textarea>
+            <div class="comment-submit-row">
+              <button class="btn btn-primary" onclick="postComment()">💬 发表评论</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment List -->
+        <div class="comment-list" id="commentList">
+          <div class="comment-item">
+            <div class="comment-avatar" style="background:linear-gradient(135deg,#a855f7,#7e22ce);">动</div>
+            <div class="comment-body">
+              <div class="comment-author">动漫爱好者</div>
+              <div class="comment-text">七海千秋是弹丸论破系列中最让我感动的角色！她对游戏的执着、对伙伴的信任，还有那句"只要不放弃就一定能通关"，真的给了我很多勇气。花泽香菜的配音也完美地演绎了她慵懒又温柔的感觉。💜</div>
+              <div class="comment-meta">
+                <span>2小时前</span>
+                <button class="comment-like-btn" onclick="this.classList.toggle('liked')">❤️ <span>256</span></button>
+                <span>回复</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment-item">
+            <div class="comment-avatar" style="background:linear-gradient(135deg,#ec4899,#db2777);">游</div>
+            <div class="comment-body">
+              <div class="comment-author">游戏人生</div>
+              <div class="comment-text">同为重度游戏玩家，七海的角色塑造简直太真实了！通宵打游戏白天睡觉的样子就是我本人😂。但她比我厉害多了，什么游戏都能玩到顶尖。超高校级的游戏玩家这个称号名副其实！</div>
+              <div class="comment-meta">
+                <span>5小时前</span>
+                <button class="comment-like-btn" onclick="this.classList.toggle('liked')">❤️ <span>189</span></button>
+                <span>回复</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment-item">
+            <div class="comment-avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">弹</div>
+            <div class="comment-body">
+              <div class="comment-author">弹丸论破铁粉</div>
+              <div class="comment-text">七海和日向创的关系是整个系列最戳我的一对。她默默地在背后支持着他，即使在最困难的时候也没有放弃。游戏最后那段场景每次看都会泪目……"我相信着你"这句话太犯规了😭</div>
+              <div class="comment-meta">
+                <span>昨天 21:30</span>
+                <button class="comment-like-btn" onclick="this.classList.toggle('liked')">❤️ <span>412</span></button>
+                <span>回复</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment-item">
+            <div class="comment-avatar" style="background:linear-gradient(135deg,#16a34a,#15803d);">猫</div>
+            <div class="comment-body">
+              <div class="comment-author">猫耳控狂魔</div>
+              <div class="comment-text">七海千秋的猫耳连帽衫设计太绝了！粉色头发+猫耳+游戏机+慵懒的眼神，这个角色设计的每一个元素都戳在我的萌点上。而且花泽香菜的声音配这种角色简直是绝杀！</div>
+              <div class="comment-meta">
+                <span>昨天 18:15</span>
+                <button class="comment-like-btn" onclick="this.classList.toggle('liked')">❤️ <span>127</span></button>
+                <span>回复</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:24px;">
+          <button class="btn btn-outline" onclick="showToast('更多评论加载中...', 'info')">加载更多评论</button>
+        </div>
+      </div>
+    </div>
+  <!-- ==================== POPULAR CHARACTERS ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <span class="section-label">MORE CHARACTERS</span>
+        <h2 class="section-title">热门角色推荐</h2>
+        <p class="section-subtitle">弹丸论破系列中其他人气角色</p>
+      </div>
+
+      <div class="popular-mini-grid">
+        <a href="#" class="popular-mini-card animate-slide-up delay-100" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">🧑‍💼</div>
+          <div class="popular-mini-name">日向 创</div>
+          <div class="popular-mini-anime">超级弹丸论破2</div>
+        </a>
+        <a href="#" class="popular-mini-card animate-slide-up delay-200" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">👑</div>
+          <div class="popular-mini-name">狛枝 凪斗</div>
+          <div class="popular-mini-anime">超级弹丸论破2</div>
+        </a>
+        <a href="#" class="popular-mini-card animate-slide-up delay-300" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#dcfce7,#d9f99d);">🔍</div>
+          <div class="popular-mini-name">雾切 响子</div>
+          <div class="popular-mini-anime">弹丸论破</div>
+        </a>
+        <a href="#" class="popular-mini-card animate-slide-up delay-400" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#ecfeff,#cffafe);">👩‍🎤</div>
+          <div class="popular-mini-name">澪田 唯吹</div>
+          <div class="popular-mini-anime">超级弹丸论破2</div>
+        </a>
+        <a href="#" class="popular-mini-card animate-slide-up delay-500" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">🎲</div>
+          <div class="popular-mini-name">苗木 诚</div>
+          <div class="popular-mini-anime">弹丸论破</div>
+        </a>
+        <a href="#" class="popular-mini-card animate-slide-up delay-600" onclick="showToast('角色页面即将开放', 'info')">
+          <div class="popular-mini-avatar" style="background:linear-gradient(135deg,#f3e8ff,#e9d5ff);">🤖</div>
+          <div class="popular-mini-name">左右田 和一</div>
+          <div class="popular-mini-anime">超级弹丸论破2</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🎮 CharaWiki</h3>
+          <p>专业的动漫角色介绍网站。<br>为动漫爱好者打造沉浸式的角色百科体验。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速链接</h4>
+          <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#profile">角色列表</a></li>
+            <li><a href="#comments">排行榜</a></li>
+            <li><a href="#">关于我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>帮助中心</h4>
+          <ul>
+            <li><a href="#">使用条款</a></li>
+            <li><a href="#">隐私政策</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <ul>
+            <li><a href="#">弹丸论破官网</a></li>
+            <li><a href="#">希望之峰学园</a></li>
+            <li><a href="#">ACG社区</a></li>
+            <li><a href="#">同人创作站</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 CharaWiki. 本网站为粉丝制作的动漫角色介绍网站，与 Spike Chunsoft 无关联。角色版权归原作所有。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BACK TO TOP ==================== -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">⬆️</button>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div class="modal-overlay" id="lightbox" onclick="closeLightbox()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeLightbox()">✕</button>
+      <div style="width:600px;height:400px;max-width:80vw;max-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:16px;" id="lightboxInner">
+        <span style="font-size:80px;" id="lightboxEmoji">🖼️</span>
+        <p style="color:#e2e8f0;margin-top:16px;font-size:16px;" id="lightboxLabel">图片预览区域</p>
+        <p style="color:#94a3b8;margin-top:8px;font-size:14px;">图片将以画廊模式展示（功能演示）</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST CONTAINER ==================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    /* ============ HEADER SCROLL ============ */
+    const header = document.getElementById('header');
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScrollY = scrollY;
+
+      // Back to top button
+      const btn = document.getElementById('backToTop');
+      if (scrollY > 500) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+
+    /* ============ MOBILE MENU ============ */
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.getElementById('headerNav');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      headerNav.classList.toggle('open');
+    });
+
+    // Close menu on nav link click
+    headerNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('open');
+        headerNav.classList.remove('open');
+      });
+    });
+
+    /* ============ TAB SWITCHING ============ */
+    function switchTab(tabName) {
+      // Update buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabName) btn.classList.add('active');
+      });
+      // Update panels
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      const panel = document.getElementById('panel-' + tabName);
+      if (panel) panel.classList.add('active');
+    }
+
+    /* ============ LIKE / FAV TOGGLE ============ */
+    let isLiked = false;
+    let isFav = false;
+    let likeCount = 12847;
+    let favCount = 9532;
+
+    function toggleLike() {
+      const btn = document.getElementById('btnLike');
+      const btnText = document.getElementById('btnLikeText');
+      isLiked = !isLiked;
+      if (isLiked) {
+        btn.classList.add('liked');
+        btnText.textContent = '已点赞';
+        likeCount++;
+        showToast('已点赞！感谢你的支持 ❤️', 'success');
+      } else {
+        btn.classList.remove('liked');
+        btnText.textContent = '点赞';
+        likeCount--;
+        showToast('已取消点赞', 'info');
+      }
+      document.getElementById('likesCount').textContent = likeCount.toLocaleString();
+    }
+
+    function toggleFav() {
+      const btn = document.getElementById('btnFav');
+      const btnText = document.getElementById('btnFavText');
+      isFav = !isFav;
+      if (isFav) {
+        btn.classList.add('favorited');
+        btnText.textContent = '已收藏';
+        favCount++;
+        showToast('已收藏！可在收藏夹中查看 ⭐', 'success');
+      } else {
+        btn.classList.remove('favorited');
+        btnText.textContent = '收藏';
+        favCount--;
+        showToast('已取消收藏', 'info');
+      }
+      document.getElementById('favsCount').textContent = favCount.toLocaleString();
+    }
+
+    /* ============ SHARE ============ */
+    function toggleShare() {
+      document.getElementById('sharePopover').classList.toggle('open');
+    }
+
+    function shareAction(platform) {
+      document.getElementById('sharePopover').classList.remove('open');
+      showToast(`已通过${platform}分享七海千秋的角色页面！`, 'success');
+
+      // Actual share logic would go here with ShareSDK or Web Share API
+      if (navigator.share) {
+        navigator.share({
+          title: '七海千秋 | 超高校级的游戏玩家',
+          text: '来看看弹丸论破中七海千秋的角色介绍！',
+          url: window.location.href,
+        }).catch(() => {});
+      }
+    }
+
+    // Close share popover on outside click
+    document.addEventListener('click', (e) => {
+      const popover = document.getElementById('sharePopover');
+      const btn = document.getElementById('btnShare');
+      if (popover.classList.contains('open') && !popover.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+        popover.classList.remove('open');
+      }
+    });
+
+    /* ============ LIGHTBOX ============ */
+    function openLightbox(type) {
+      const lb = document.getElementById('lightbox');
+      const emoji = document.getElementById('lightboxEmoji');
+      const label = document.getElementById('lightboxLabel');
+
+      const lightboxData = {
+        'official': { emoji: '🖼️', label: '七海千秋 · 官方角色立绘', bg: '#fce7f3' },
+        'cg1': { emoji: '🎬', label: '游戏CG：与日向创的初次相遇', bg: '#e9d5ff' },
+        'cg2': { emoji: '🎬', label: '游戏CG：海滩上的微笑', bg: '#dcfce7' },
+        'cg3': { emoji: '🎬', label: '游戏CG：审判中的关键一刻', bg: '#ecfeff' },
+        'wp1': { emoji: '🖥️', label: '桌面壁纸 · 1920×1080', bg: '#ffedd5' },
+        'wp2': { emoji: '📱', label: '手机壁纸 · 1080×1920', bg: '#f3e8ff' },
+        'fan1': { emoji: '🎨', label: '10周年纪念官方插画', bg: '#fce7f3' },
+        'fan2': { emoji: '🎨', label: '角色设定资料集', bg: '#dbeafe' },
+      };
+
+      const data = lightboxData[type] || lightboxData['official'];
+      emoji.textContent = data.emoji;
+      label.textContent = data.label;
+      document.getElementById('lightboxInner').style.background = `linear-gradient(135deg, ${data.bg}, #1e293b)`;
+
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ESC to close lightbox
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ============ COMMENTS ============ */
+    function postComment() {
+      const input = document.getElementById('commentInput');
+      const content = input.value.trim();
+
+      if (!content) {
+        showToast('请输入评论内容', 'error');
+        input.focus();
+        return;
+      }
+      if (content.length < 2) {
+        showToast('评论内容至少需要2个字符', 'error');
+        return;
+      }
+      if (content.length > 500) {
+        showToast('评论内容不能超过500字', 'error');
+        return;
+      }
+
+      // Add new comment
+      const commentList = document.getElementById('commentList');
+      const now = new Date();
+      const timeStr = '刚刚';
+
+      const commentEl = document.createElement('div');
+      commentEl.className = 'comment-item';
+      commentEl.style.opacity = '0';
+      commentEl.innerHTML = `
+        <div class="comment-avatar" style="background:linear-gradient(135deg,#${Math.floor(Math.random()*16777215).toString(16)},#${Math.floor(Math.random()*16777215).toString(16)});">你</div>
+        <div class="comment-body">
+          <div class="comment-author">访客用户</div>
+          <div class="comment-text">${escapeHtml(content)}</div>
+          <div class="comment-meta">
+            <span>${timeStr}</span>
+            <button class="comment-like-btn" onclick="this.classList.toggle('liked')">❤️ <span>0</span></button>
+            <span>回复</span>
+          </div>
+        </div>
+      `;
+
+      commentList.insertBefore(commentEl, commentList.firstChild);
+
+      // Animate in
+      requestAnimationFrame(() => {
+        commentEl.style.transition = 'all 0.4s ease-out';
+        commentEl.style.opacity = '1';
+      });
+
+      input.value = '';
+      showToast('评论发表成功！', 'success');
+    }
+
+    // Submit comment on Ctrl+Enter
+    document.getElementById('commentInput').addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        postComment();
+      }
+    });
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    /* ============ TOAST ============ */
+    function showToast(message, type) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      const icons = { success: '✅', info: 'ℹ️', error: '❌' };
+      toast.innerHTML = `<span>${icons[type] || 'ℹ️'}</span> ${message}`;
+      container.appendChild(toast);
+
+      // Auto remove
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    /* ============ SCROLL ANIMATIONS ============ */
+    // Re-trigger animations on elements when they come into view
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Ensure animation plays
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[class*="animate-"]').forEach(el => {
+      observer.observe(el);
+    });
+
+    /* ============ INIT ============ */
+    console.log('🎮 七海千秋 | 超高校级的游戏玩家');
+    console.log('💜 CharaWiki — 动漫角色介绍网站');
+    console.log('📋 页面已就绪，欢迎浏览！');
+  </script>
+</body>
+</html>

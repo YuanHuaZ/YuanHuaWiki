@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory found\")",
+      "Read(//c/Users/zrf/**)",
+      "Bash(ssh-keygen -t ed25519 -C \"2473218133@qq.com\" -f ~/.ssh/id_ed25519 -N \"\")",
+      "Bash(git init *)",
+      "Bash(git remote *)"
+    ]
+  }
+}
