@@ -82,9 +82,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">💙</div>
-              <div class="anime-cover-badge">RE:ZERO</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -99,8 +97,7 @@
               <p class="anime-info-desc">普通高中生菜月昴被召唤到异世界，在罗兹瓦尔宅邸遇到了<span class="highlight">双胞胎女仆雷姆和拉姆</span>。雷姆作为<span class="highlight-pink">鬼族幸存者与战斗女仆</span>，在故事中扮演着至关重要的角色。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">异世界</span><span class="anime-tag dark">奇幻</span><span class="anime-tag dark">冒险</span><span class="anime-tag live">正版引进</span></div>
               <div class="anime-info-actions">
-                <a href="#" class="btn-bilibili" @click.prevent="showToastMsg('Bilibili观看功能即将开放')"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
-                <a href="#" class="btn-outline-sm" @click.prevent="showToastMsg('详情功能即将开放')">🔗 查看番剧详情</a>
+                <a href="https://www.bilibili.com/bangumi/play/ep307056?spm_id_from=333.337.0.0" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -115,7 +112,7 @@
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -137,7 +134,7 @@
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
-                <h4>{{ ab.name }} <span class="ability-grade">{{ ab.grade }}级</span></h4>
+                <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
               </div>
             </div>
@@ -158,7 +155,15 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
-import remImg from '../images/rem1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -179,14 +184,14 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: true, bg: remImg, badge: '立绘', overlay: '雷姆 · 官方角色立绘' },
-      { bg: 'linear-gradient(135deg, #e9d5ff, #d8b4fe)', icon: '🎬', label: '动画截图 01', badge: '截图', overlay: '与昴的初次相遇' },
-      { bg: 'linear-gradient(135deg, #dcfce7, #d9f99d)', icon: '🎬', label: '动画截图 02', badge: '截图', overlay: '白鲸讨伐战' },
-      { bg: 'linear-gradient(135deg, #ecfeff, #cffafe)', icon: '🎬', label: '动画截图 03', badge: '截图', overlay: '魔女教来袭' },
-      { bg: 'linear-gradient(135deg, #ffedd5, #fed7aa)', icon: '🖥️', label: '壁纸 01', badge: '壁纸', overlay: '1920×1080' },
-      { bg: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)', icon: '📱', label: '壁纸 02', badge: '壁纸', overlay: '1080×1920' },
-      { bg: 'linear-gradient(135deg, #fce7f3, #fbcfe8)', icon: '🎨', label: '官方插画', badge: '插画', overlay: '10周年纪念插画' },
-      { bg: 'linear-gradient(135deg, #dbeafe, #bfdbfe)', icon: '🎨', label: '公式设定集', badge: '设定', overlay: '角色设定资料集' }
+      { isImage: true, bg: img1, badge: '立绘', overlay: '雷姆 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '雷姆 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '雷姆 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '雷姆 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '雷姆 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '雷姆 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '雷姆 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '雷姆 · 美图 07' }
     ]
 
     function particleStyle() {
@@ -200,7 +205,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -278,8 +283,7 @@ export default {
 .rem-page .anime-hero-card { display: grid; grid-template-columns: 280px 1fr; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
 .rem-page .anime-cover { position: relative; min-height: 280px; background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 40%, #0d1a2e 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; overflow: hidden; }
 .rem-page .anime-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(59,130,246,0.3) 0%, transparent 70%); }
-.rem-page .anime-cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px); background-size: 40px 40px; }
-.rem-page .anime-cover-icon { font-size: 72px; position: relative; z-index: 1; }
+.rem-page .anime-cover-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .rem-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(6,182,212,0.2); border: 1px solid rgba(6,182,212,0.3); border-radius: 50px; font-size: 12px; color: #67e8f9; font-weight: 600; }
 .rem-page .anime-info { padding: 36px; display: flex; flex-direction: column; gap: 16px; }
 .rem-page .anime-info-label { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #3b82f6; }
@@ -317,6 +321,5 @@ export default {
 .rem-page .ability-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
 .rem-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, #eff6ff, #dbeafe); }
 .rem-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-.rem-page .ability-grade { font-weight: 400; font-size: 12px; color: #3b82f6; margin-left: 4px; }
 .rem-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 </style>

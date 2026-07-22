@@ -79,9 +79,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">🎮</div>
-              <div class="anime-cover-badge">SUPER DANGANRONPA 2</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -96,8 +94,7 @@
               <p class="anime-info-desc">希望之峰学园第77届学生们的过往故事。七海千秋作为<span class="highlight">「超高校级的游戏玩家」</span>，在班级中经历了<span class="highlight-pink">从希望到绝望的转变</span>。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">悬疑</span><span class="anime-tag dark">推理</span><span class="anime-tag dark">校园</span><span class="anime-tag live">正版引进</span></div>
               <div class="anime-info-actions">
-                <a href="#" class="btn-bilibili" @click.prevent="showToastMsg('Bilibili观看功能即将开放')"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
-                <a href="#" class="btn-outline-sm" @click.prevent="showToastMsg('详情功能即将开放')">🔗 查看番剧详情</a>
+                <a href="https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -105,14 +102,43 @@
       </section>
     </div>
 
-    <!-- Tab 3: Gallery -->
+    <!-- Tab 3: Game -->
+    <div v-show="activeMainTab === 'game'" class="tab-panel-main">
+      <section class="section anime-section">
+        <div class="container">
+          <div class="anime-hero-card">
+            <div class="anime-cover">
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})` }"></div>
+            </div>
+            <div class="anime-info">
+              <span class="anime-info-label">主要登场游戏</span>
+              <h3 class="anime-info-title">超级弹丸论破2：再见绝望学园</h3>
+              <p class="anime-info-title-jp">スーパーダンガンロンパ2 さよなら絶望学園</p>
+              <div class="anime-info-meta">
+                <div class="anime-meta-item"><span class="meta-icon">🏢</span><span class="meta-label">开发商：</span>Spike Chunsoft</div>
+                <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">发售：</span>2012年7月26日</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎮</span><span class="meta-label">平台：</span>PSP / PS Vita / PC</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>花泽香菜</div>
+              </div>
+              <p class="anime-info-desc">被带到贾巴沃克岛的<span class="highlight">77届学生们</span>被迫参与黑白熊的<span class="highlight-pink">「修学旅行」</span>。七海千秋是日向创最早结识的同学之一，用<span class="highlight">游戏的比喻</span>鼓励着陷入困境的同伴。</p>
+              <div class="anime-tag-row"><span class="anime-tag dark">推理</span><span class="anime-tag dark">冒险</span><span class="anime-tag dark">视觉小说</span></div>
+              <div class="anime-info-actions">
+                <a href="https://store.steampowered.com/app/413420/Danganronpa_2_Goodbye_Despair/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买 <span class="bili-arrow">→</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tab 4: Gallery -->
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -125,7 +151,7 @@
       </section>
     </div>
 
-    <!-- Tab 4: Abilities -->
+    <!-- Tab 5: Abilities -->
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
@@ -134,7 +160,7 @@
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
-                <h4>{{ ab.name }} <span class="ability-grade">{{ ab.grade }}级</span></h4>
+                <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
               </div>
             </div>
@@ -155,7 +181,16 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
-import nanamiImg from '../images/nanami.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import gameCover from '../images/b.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -171,19 +206,20 @@ export default {
     const mainTabs = [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
       { key: 'abilities', icon: '⭐', label: '能力关系' }
     ]
 
     const galleryItems = [
-      { isImage: true, bg: nanamiImg, badge: '立绘', overlay: '七海千秋 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #e9d5ff, #d8b4fe)', icon: '🎬', label: '游戏CG 01', badge: 'CG', overlay: '与日向创的初次相遇' },
-      { isImage: false, bg: 'linear-gradient(135deg, #dcfce7, #d9f99d)', icon: '🎬', label: '游戏CG 02', badge: 'CG', overlay: '海滩上的微笑' },
-      { isImage: false, bg: 'linear-gradient(135deg, #ecfeff, #cffafe)', icon: '🎬', label: '游戏CG 03', badge: 'CG', overlay: '审判中的关键一刻' },
-      { isImage: false, bg: 'linear-gradient(135deg, #ffedd5, #fed7aa)', icon: '🖥️', label: '壁纸 01', badge: '壁纸', overlay: '1920×1080' },
-      { isImage: false, bg: 'linear-gradient(135deg, #f3e8ff, #e9d5ff)', icon: '📱', label: '壁纸 02', badge: '壁纸', overlay: '1080×1920' },
-      { isImage: false, bg: 'linear-gradient(135deg, #fce7f3, #fbcfe8)', icon: '🎨', label: '官方插画', badge: '插画', overlay: '10周年纪念插画' },
-      { isImage: false, bg: 'linear-gradient(135deg, #dbeafe, #bfdbfe)', icon: '🎨', label: '公式设定集', badge: '设定', overlay: '角色设定资料集' }
+      { isImage: true, bg: img1, badge: '立绘', overlay: '七海千秋 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '七海千秋 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '七海千秋 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '七海千秋 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '七海千秋 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '七海千秋 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '七海千秋 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '七海千秋 · 美图 07' }
     ]
 
     function particleStyle() {
@@ -197,7 +233,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, gameCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -315,8 +351,7 @@ export default {
 @media (max-width: 768px) { .anime-hero-card { grid-template-columns: 1fr; } }
 .nanami-page .anime-cover { position: relative; min-height: 280px; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 40%, #1a1030 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; overflow: hidden; }
 .nanami-page .anime-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(168,85,247,0.3) 0%, transparent 70%); }
-.nanami-page .anime-cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(168,85,247,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.05) 1px, transparent 1px); background-size: 40px 40px; }
-.nanami-page .anime-cover-icon { font-size: 72px; position: relative; z-index: 1; }
+.nanami-page .anime-cover-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .nanami-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(236,72,153,0.2); border: 1px solid rgba(236,72,153,0.3); border-radius: 50px; font-size: 12px; color: #f9a8d4; font-weight: 600; }
 .nanami-page .anime-info { padding: 36px; display: flex; flex-direction: column; gap: 16px; }
 @media (max-width: 768px) { .anime-info { padding: 24px; } }
@@ -332,7 +367,9 @@ export default {
 .nanami-page .anime-tag.live { background: #dcfce7; color: #16a34a; }
 .nanami-page .anime-info-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 .nanami-page .btn-bilibili { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; font-size: 15px; font-weight: 700; font-family: inherit; background: linear-gradient(135deg, #fb7299, #fc8bab); color: #fff; box-shadow: 0 4px 16px rgba(251,114,153,0.4); cursor: pointer; transition: all 0.3s ease; }
+.nanami-page .btn-steam { background: linear-gradient(135deg, #1b2838, #2a475e); box-shadow: 0 4px 16px rgba(27,40,56,0.4); }
 .nanami-page .btn-bilibili:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(251,114,153,0.55); }
+.nanami-page .btn-steam:hover { box-shadow: 0 8px 24px rgba(27,40,56,0.6); }
 .nanami-page .btn-outline-sm { display: inline-flex; align-items: center; gap: 6px; padding: 12px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; background: transparent; color: #64748b; border: 2px solid #e2e8f0; cursor: pointer; transition: all 0.3s ease; }
 .nanami-page .btn-outline-sm:hover { border-color: #a855f7; color: #a855f7; transform: translateY(-2px); }
 
@@ -358,6 +395,5 @@ export default {
 .nanami-page .ability-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
 .nanami-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, #f3e8ff, #fce7f3); }
 .nanami-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-.nanami-page .ability-grade { font-weight: 400; font-size: 12px; color: #a855f7; margin-left: 4px; }
 .nanami-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 </style>

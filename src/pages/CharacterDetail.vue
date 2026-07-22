@@ -9,8 +9,9 @@
         <div class="hero-visual animate-slide-up">
           <div class="hero-avatar-wrapper hero-avatar-simple">
             <div class="hero-avatar-ring"></div>
-            <div class="hero-avatar avatar-placeholder">
-              <span class="avatar-emoji">👤</span>
+            <div class="hero-avatar avatar-placeholder" :class="{ 'kana-bg': character.id === 'kana' }">
+              <img v-if="character.image" :src="character.image" class="avatar-img" />
+              <span v-else class="avatar-emoji">👤</span>
             </div>
           </div>
         </div>

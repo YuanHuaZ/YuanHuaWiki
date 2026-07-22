@@ -1,3 +1,5 @@
+import kanaImg from '../images/1.jpg'
+
 export default {
   id: 'kana',
   name: '有马加奈',
@@ -5,7 +7,7 @@ export default {
   nameJp: '有马加奈',
   title: '天才童星',
   series: '我推的孩子',
-  image: null,
+  image: kanaImg,
   tags: [
     { text: '傲娇', cls: 'tag-pink' },
     { text: '天才', cls: 'tag-orange' },
@@ -21,7 +23,7 @@ export default {
     { icon: '🎤', label: '声优', value: '潘惠美', iconClass: 'pink' },
     { icon: '📺', label: '所属作品', value: '我推的孩子', iconClass: 'cyan' },
     { icon: '🎬', label: '职业', value: '演员 / 偶像', iconClass: 'purple' },
-    { icon: '💖', label: '代表色', value: '红色', iconClass: 'pink' },
+    { icon: '💖', label: '代表色', value: '白色', iconClass: 'pink' },
     { icon: '🎯', label: '角色定位', value: '女主角 / 前天才童星', iconClass: 'cyan' }
   ],
   tabs: [
@@ -50,16 +52,16 @@ export default {
       tags: ['🎬 前天才童星', '🎤 B小町成员', '🏫 阳东高中学生', '💔 过气艺人'],
       content: [
         '有马加奈幼年时被誉为<span class="highlight">天才童星</span>，凭借精湛的演技在演艺圈红极一时，尤其以<span class="highlight-pink">十秒落泪</span>的绝技闻名业界。但随着年龄增长，童星的光环逐渐消退。',
-        '她与星野阿库亚在童年时期有过<span class="highlight">共同出演的经历</span>。成年后两人在阳东高中重逢，阿库亚一眼就认出了她，而她对此<span class="highlight-pink">既惊讶又暗自欣喜</span>。',
+        '她与星野阿库亚在童年时期有过<span class="highlight">共同出演的经历</span>。成年后两人在阳东高中重逢，加奈一眼就认出了阿库亚，而阿库亚起初却没能认出她<span class="highlight-pink">，这让她颇为不爽</span>。',
         '在阿库亚的邀请下，她加入了<span class="highlight">新生B小町偶像团体</span>，与星野露比、MEM啾一起活动。起初她对偶像工作充满抵触，认为偶像<span class="highlight-pink">"不需要演技"</span>，但逐渐在其中找到了自己的价值。',
         '加奈的母亲曾是她演艺事业的<span class="highlight">最大推手</span>，但随着加奈逐渐过气，母女关系也变得微妙。这段经历让加奈对演艺圈<span class="highlight-pink">既爱又恨</span>，成为了她性格纠结的根源。'
       ]
     },
     {
       key: 'story', label: '剧情简介', icon: '📜',
-      tags: ['🎭 童年共演', '🏫 高中重逢', '🎤 B小町出道', '💘 恋爱的修罗场'],
+      tags: ['🎭 幼年共演', '🏫 高中重逢', '🎤 B小町出道', '💘 恋爱的修罗场'],
       content: [
-        '在《我推的孩子》中，有马加奈首次登场于<span class="highlight">高中入学篇</span>。她在阳东高中遇到了星野阿库亚，两人<span class="highlight-pink">曾在童年时期共同出演过电影</span>。阿库亚一眼认出了她，但她起初并没有认出戴着眼镜的阿库亚。',
+        '在《我推的孩子》中，有马加奈<span class="highlight">首次登场于幼年时期</span>，曾与星野阿库亚<span class="highlight-pink">共同出演过电影</span>。之后她在阳东高中与阿库亚重逢，加奈立刻认出了阿库亚，但阿库亚却没能认出与童年时期相比变化很大的加奈。',
         '阿库亚出于<span class="highlight">"为了目的可以利用任何人"</span>的心态接近加奈，邀请她加入B小町。加奈虽然嘴上拒绝，但<span class="highlight-pink">内心其实很高兴</span>有人记得她，最终答应了邀请。',
         '在B小町的活动中，加奈展现出了<span class="highlight">偶像的天赋</span>。她的舞台表现力极强，<span class="highlight-pink">粉丝数量稳步增长</span>。同时她也在各种演艺工作中努力证明自己，试图摆脱过气童星的标签。',
         '加奈对阿库亚的感情是<span class="highlight">全剧最复杂的感情线之一</span>——她一边嫌弃阿库亚的"人渣行为"，一边又<span class="highlight-pink">无法控制地被他吸引</span>，陷入了"嘴上说不要身体却很诚实"的经典傲娇困境。'

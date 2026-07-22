@@ -1,4 +1,4 @@
-import nanamiImg from '../images/nanami.jpg'
+import nanamiImg from '../images/1.jpg'
 
 export default {
   id: 'nanami',

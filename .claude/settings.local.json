@@ -23,7 +23,8 @@
       "Bash(sed -i 's/\\\\.rem-page @media/@media/g' packages/rem/views/Detail.vue)",
       "Bash(sed -i '/<style scoped>/,/<\\\\/style>/{ *)",
       "Bash(sed -i 's/background: linear-gradient\\(135deg, #1a0a0a 0%, #2e1a1a 25%, #1a1020 50%, #1a0a1a 75%, #0a0a1a 100%\\);/background: linear-gradient\\(135deg, #0f0f11 0%, #1a1a1e 25%, #12121a 50%, #111118 75%, #0a0a0f 100%\\);/' packages/kana/views/Detail.vue)",
-      "Bash(sed -i 's/background: linear-gradient\\(135deg, #1a0a1a 0%, #2e1a2e 40%, #1a1020 100%\\);/background: linear-gradient\\(135deg, #111118 0%, #1e1e24 40%, #12121a 100%\\);/' packages/kana/views/Detail.vue)"
+      "Bash(sed -i 's/background: linear-gradient\\(135deg, #1a0a1a 0%, #2e1a2e 40%, #1a1020 100%\\);/background: linear-gradient\\(135deg, #111118 0%, #1e1e24 40%, #12121a 100%\\);/' packages/kana/views/Detail.vue)",
+      "Bash(npm run *)"
     ]
   }
 }

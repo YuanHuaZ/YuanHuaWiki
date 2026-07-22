@@ -1,4 +1,4 @@
-import remImg from '../images/rem1.jpg'
+import remImg from '../images/1.jpg'
 
 export default {
   id: 'rem',

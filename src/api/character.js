@@ -2,8 +2,9 @@
  * 角色 API — 当前使用静态数据，后续可接入后端
  */
 
-import nanamiImg from '@packages/nanami/images/nanami.jpg'
-import remImg from '@packages/rem/images/rem1.jpg'
+import nanamiImg from '@packages/nanami/images/1.jpg'
+import remImg from '@packages/rem/images/1.jpg'
+import kanaImg from '@packages/kana/images/1.jpg'
 
 const tagClasses = ['tag-purple', 'tag-pink', 'tag-cyan', 'tag-green', 'tag-orange', 'tag-blue', 'tag-amber']
 
@@ -12,7 +13,7 @@ const characters = [
     id: 'nanami',
     name: '七海千秋',
     nameSub: 'Nanami Chiaki',
-    series: '弹丸论破2',
+    series: '超级弹丸论破2',
     image: nanamiImg,
     hasDetail: true,
     tags: [
@@ -41,7 +42,7 @@ const characters = [
     name: '有马加奈',
     nameSub: 'Arima Kana',
     series: '我推的孩子',
-    image: null,
+    image: kanaImg,
     hasDetail: true,
     tags: [
       { text: '傲娇', cls: 'tag-pink' },

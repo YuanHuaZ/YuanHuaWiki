@@ -16,7 +16,7 @@
       <div class="hero-badge animate-fade-in">
         <span class="dot"></span> 我的角色收藏
       </div>
-      <h1 class="hero-title animate-slide-up delay-100">我最喜欢的<br>角色们</h1>
+      <h1 class="hero-title animate-slide-up delay-100">我喜欢的角色</h1>
       <p class="hero-subtitle animate-slide-up delay-200">
         记录那些让我心动的角色
       </p>
