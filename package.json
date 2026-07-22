@@ -1,0 +1,19 @@
+{
+  "name": "yuanhua-wiki",
+  "version": "2.0.0",
+  "private": true,
+  "description": "YuanHuaWiki — 我喜欢的角色",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.0",
+    "@vue/compiler-sfc": "^3.4.0"
+  }
+}

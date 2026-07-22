@@ -1,0 +1,77 @@
+export default {
+  id: 'kana',
+  name: '有马加奈',
+  nameSub: 'Arima Kana',
+  nameJp: '有马加奈',
+  title: '天才童星',
+  series: '我推的孩子',
+  image: null,
+  tags: [
+    { text: '傲娇', cls: 'tag-pink' },
+    { text: '天才', cls: 'tag-orange' },
+    { text: '童星', cls: 'tag-amber' },
+    { text: '努力家', cls: 'tag-purple' },
+    { text: '女主角', cls: 'tag-cyan' }
+  ],
+  info: [
+    { icon: '🎂', label: '生日', value: '7月4日', iconClass: 'purple' },
+    { icon: '📏', label: '身高', value: '150cm', iconClass: 'pink' },
+    { icon: '⭐', label: '称号', value: '天才童星', iconClass: 'cyan' },
+    { icon: '🏫', label: '学校', value: '阳东高中', iconClass: 'purple' },
+    { icon: '🎤', label: '声优', value: '潘惠美', iconClass: 'pink' },
+    { icon: '📺', label: '所属作品', value: '我推的孩子', iconClass: 'cyan' },
+    { icon: '🎬', label: '职业', value: '演员 / 偶像', iconClass: 'purple' },
+    { icon: '💖', label: '代表色', value: '红色', iconClass: 'pink' },
+    { icon: '🎯', label: '角色定位', value: '女主角 / 前天才童星', iconClass: 'cyan' }
+  ],
+  tabs: [
+    {
+      key: 'personality', label: '性格特点', icon: '💭',
+      tags: ['🎭 演技天才', '💔 落魄童星', '😤 口是心非', '💪 不服输'],
+      content: [
+        '有马加奈是一个<span class="highlight">傲娇又倔强</span>的少女。从小被誉为天才童星，能<span class="highlight-pink">在十秒内流下眼泪</span>，是业界公认的演技派。但随着年龄增长，她的童星光环逐渐褪去。',
+        '她表面上一副<span class="highlight">嘴硬不服输</span>的样子，对阿库亚总是摆出冷淡的态度，但实际上<span class="highlight-pink">十分在意身边的人</span>。常常口是心非，明明很关心却偏要装作不在乎。',
+        '加奈深知演艺圈的残酷，对自己<span class="highlight">"过气童星"的身份耿耿于怀</span>。但她从未放弃成为顶级演员的梦想，始终坚持<span class="highlight-pink">靠实力说话</span>，拒绝靠关系或炒作上位。',
+        '加入B小町后，她<span class="highlight">逐渐找回了自信</span>。虽然嘴上抱怨连连，但实际上<span class="highlight-pink">非常珍惜这个重新出发的机会</span>，在偶像活动和演艺事业上都全力以赴。'
+      ]
+    },
+    {
+      key: 'appearance', label: '外貌特征', icon: '👁️',
+      tags: ['💇 红色短发', '👁️ 蓝色眼眸', '🧢 帽子收藏家', '👗 时尚穿搭'],
+      content: [
+        '有马加奈拥有一头<span class="highlight">醒目的红色短发</span>，通常自然披散或随意扎起。她的眼眸是<span class="highlight">清澈的蓝色</span>，如同晴朗的初空，总是闪烁着不服输的光芒。',
+        '她最大的标志是<span class="highlight-pink">永远戴着不同的帽子</span>——贝雷帽、棒球帽、渔夫帽、毛线帽……几乎每次登场都会换一顶新帽子，<span class="highlight">帽子收藏家</span>的称号名副其实。',
+        '她的私服品味<span class="highlight-pink">相当时尚</span>，偏爱简约又带点女人味的穿搭风格。在偶像演出时则穿着B小町的<span class="highlight">红白色演出服</span>，符合她热情洋溢的舞台形象。',
+        '表情丰富多变——在阿库亚面前常常<span class="highlight">皱着眉头一脸嫌弃</span>，但在舞台上则<span class="highlight-pink">自信满满光芒四射</span>，这种反差是她最大的魅力。'
+      ]
+    },
+    {
+      key: 'background', label: '身份背景', icon: '📖',
+      tags: ['🎬 前天才童星', '🎤 B小町成员', '🏫 阳东高中学生', '💔 过气艺人'],
+      content: [
+        '有马加奈幼年时被誉为<span class="highlight">天才童星</span>，凭借精湛的演技在演艺圈红极一时，尤其以<span class="highlight-pink">十秒落泪</span>的绝技闻名业界。但随着年龄增长，童星的光环逐渐消退。',
+        '她与星野阿库亚在童年时期有过<span class="highlight">共同出演的经历</span>。成年后两人在阳东高中重逢，阿库亚一眼就认出了她，而她对此<span class="highlight-pink">既惊讶又暗自欣喜</span>。',
+        '在阿库亚的邀请下，她加入了<span class="highlight">新生B小町偶像团体</span>，与星野露比、MEM啾一起活动。起初她对偶像工作充满抵触，认为偶像<span class="highlight-pink">"不需要演技"</span>，但逐渐在其中找到了自己的价值。',
+        '加奈的母亲曾是她演艺事业的<span class="highlight">最大推手</span>，但随着加奈逐渐过气，母女关系也变得微妙。这段经历让加奈对演艺圈<span class="highlight-pink">既爱又恨</span>，成为了她性格纠结的根源。'
+      ]
+    },
+    {
+      key: 'story', label: '剧情简介', icon: '📜',
+      tags: ['🎭 童年共演', '🏫 高中重逢', '🎤 B小町出道', '💘 恋爱的修罗场'],
+      content: [
+        '在《我推的孩子》中，有马加奈首次登场于<span class="highlight">高中入学篇</span>。她在阳东高中遇到了星野阿库亚，两人<span class="highlight-pink">曾在童年时期共同出演过电影</span>。阿库亚一眼认出了她，但她起初并没有认出戴着眼镜的阿库亚。',
+        '阿库亚出于<span class="highlight">"为了目的可以利用任何人"</span>的心态接近加奈，邀请她加入B小町。加奈虽然嘴上拒绝，但<span class="highlight-pink">内心其实很高兴</span>有人记得她，最终答应了邀请。',
+        '在B小町的活动中，加奈展现出了<span class="highlight">偶像的天赋</span>。她的舞台表现力极强，<span class="highlight-pink">粉丝数量稳步增长</span>。同时她也在各种演艺工作中努力证明自己，试图摆脱过气童星的标签。',
+        '加奈对阿库亚的感情是<span class="highlight">全剧最复杂的感情线之一</span>——她一边嫌弃阿库亚的"人渣行为"，一边又<span class="highlight-pink">无法控制地被他吸引</span>，陷入了"嘴上说不要身体却很诚实"的经典傲娇困境。'
+      ],
+      quote: '我可不是为了被同情才站在这里的。',
+      quoteAuthor: '—— 有马加奈'
+    }
+  ],
+  abilities: [
+    { icon: '🎭', name: '十秒落泪', grade: 'S', desc: '能在十秒内<span class="highlight">随时流下眼泪</span>，是加奈作为童星时期最著名的绝技。不需要眼药水或情绪酝酿，<span class="highlight-pink">纯粹靠身体控制</span>，堪称演技的极致体现。' },
+    { icon: '🎤', name: '舞台表现力', grade: 'A', desc: '作为B小町的核心成员，加奈的<span class="highlight">舞台感染力极强</span>。即使初次登台也能<span class="highlight-pink">瞬间点燃全场</span>，这种能力源于她多年积累的表演经验。' },
+    { icon: '💪', name: '不服输精神', grade: 'EX', desc: '在演艺圈最残酷的环境中<span class="highlight">依然坚持梦想</span>。即使被贴上过气标签、被业界遗忘，她也从未放弃，<span class="highlight-pink">靠自己的努力一步一步往上爬</span>。' },
+    { icon: '🍳', name: '料理能力', grade: 'D', desc: '<span class="highlight">完全不会做饭</span>。曾经试图给阿库亚做便当，结果是<span class="highlight-pink">连自己都吃不下去的黑暗料理</span>。好在阿库亚并不嫌弃，反而觉得这样的加奈很可爱。' }
+  ]
+}
