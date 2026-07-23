@@ -125,7 +125,27 @@
       </section>
     </div>
 
-    <!-- Tab 4: Abilities -->
+    <!-- Tab 4: Videos -->
+    <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
+      <section class="section videos-section" style="background:#f8fafc;">
+        <div class="container">
+          <div class="video-grid">
+            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+                <div class="video-play-btn"><span>▶</span></div>
+                <div class="video-duration">{{ v.duration }}</div>
+              </div>
+              <div class="video-info">
+                <h4>{{ v.title }}</h4>
+                <p>{{ v.desc }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tab 5: Abilities -->
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
@@ -180,6 +200,7 @@ export default {
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关番剧' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
       { key: 'abilities', icon: '⭐', label: '能力关系' }
     ]
 
@@ -194,6 +215,13 @@ export default {
       { isImage: true, bg: img8, badge: '美图', overlay: '有马加奈 · 美图 07' }
     ]
 
+    const videoItems = [
+      { cover: animeCover, title: '有马加奈相关视频 01', desc: '视频描述占位', duration: '03:25' },
+      { cover: animeCover, title: '有马加奈相关视频 02', desc: '视频描述占位', duration: '05:12' },
+      { cover: animeCover, title: '有马加奈相关视频 03', desc: '视频描述占位', duration: '02:48' },
+      { cover: animeCover, title: '有马加奈相关视频 04', desc: '视频描述占位', duration: '04:33' }
+    ]
+
     function particleStyle() {
       return {
         width: (3+Math.random()*3)+'px', height: (3+Math.random()*3)+'px',
@@ -205,7 +233,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -322,4 +350,19 @@ export default {
 .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, #fce7f3, #ffedd5); }
 .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+
+.kana-page .videos-section { padding: 48px 0 64px; }
+.kana-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 1024px) { .kana-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .kana-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.kana-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
+.kana-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.kana-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #2d1a3a, #4a2060); display: flex; align-items: center; justify-content: center; }
+.kana-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(236,72,153,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(236,72,153,0.4); transition: all 0.3s ease; }
+.kana-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
+.kana-page .video-card:hover .video-play-btn { transform: scale(1.15); background: rgba(236,72,153,1); }
+.kana-page .video-duration { position: absolute; bottom: 8px; right: 8px; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.75); color: #fff; font-size: 11px; font-weight: 600; }
+.kana-page .video-info { padding: 14px 16px; }
+.kana-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.kana-page .video-info p { font-size: 12px; color: #94a3b8; }
 </style>

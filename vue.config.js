@@ -7,7 +7,7 @@ module.exports = defineConfig({
   assetsDir: 'assets',
   devServer: {
     port: 3000,
-    open: true,
+    open: false,
     proxy: {
       '/api': {
         target: 'http://localhost:8080',

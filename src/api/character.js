@@ -5,6 +5,10 @@
 import nanamiImg from '@packages/nanami/images/1.jpg'
 import remImg from '@packages/rem/images/1.jpg'
 import kanaImg from '@packages/kana/images/1.jpg'
+import phrolovaImg from '@packages/phrolova/images/1.jpg'
+import hutaoImg from '@packages/hutao/images/1.jpg'
+import elainaImg from '@packages/elaina/images/1.jpg'
+import tomoriImg from '@packages/tomori/images/1.jpg'
 
 const tagClasses = ['tag-purple', 'tag-pink', 'tag-cyan', 'tag-green', 'tag-orange', 'tag-blue', 'tag-amber']
 
@@ -35,6 +39,62 @@ const characters = [
       { text: '女仆', cls: 'tag-pink' },
       { text: '温柔', cls: 'tag-green' },
       { text: '女主角', cls: 'tag-cyan' }
+    ]
+  },
+  {
+    id: 'phrolova',
+    name: '弗洛洛',
+    nameSub: 'Phrolova',
+    series: '鸣潮 | Wuthering Waves',
+    image: phrolovaImg,
+    hasDetail: true,
+    tags: [
+      { text: '湮灭', cls: 'tag-red' },
+      { text: '音感仪', cls: 'tag-purple' },
+      { text: '指挥家', cls: 'tag-dark' },
+      { text: '残响军团', cls: 'tag-dark' }
+    ]
+  },
+  {
+    id: 'hutao',
+    name: '胡桃',
+    nameSub: 'Hu Tao',
+    series: '原神 | Genshin Impact',
+    image: hutaoImg,
+    hasDetail: true,
+    tags: [
+      { text: '火元素', cls: 'tag-red' },
+      { text: '长柄武器', cls: 'tag-purple' },
+      { text: '往生堂堂主', cls: 'tag-dark' },
+      { text: '璃月', cls: 'tag-orange' }
+    ]
+  },
+  {
+    id: 'elaina',
+    name: '伊蕾娜',
+    nameSub: 'Elaina',
+    series: '魔女之旅 | Wandering Witch',
+    image: elainaImg,
+    hasDetail: true,
+    tags: [
+      { text: '魔法使', cls: 'tag-purple' },
+      { text: '旅人', cls: 'tag-cyan' },
+      { text: '自恋', cls: 'tag-pink' },
+      { text: '女主角', cls: 'tag-green' }
+    ]
+  },
+  {
+    id: 'tomori',
+    name: '友利奈绪',
+    nameSub: 'Tomori Nao',
+    series: 'Charlotte',
+    image: tomoriImg,
+    hasDetail: true,
+    tags: [
+      { text: '超能力者', cls: 'tag-purple' },
+      { text: '学生会会长', cls: 'tag-blue' },
+      { text: '傲娇', cls: 'tag-pink' },
+      { text: '女主角', cls: 'tag-green' }
     ]
   },
   {

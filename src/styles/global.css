@@ -87,6 +87,10 @@ a { text-decoration: none; color: inherit; }
 .tag-orange { background: #ffedd5; color: #ea580c; }
 .tag-blue { background: #dbeafe; color: #2563eb; }
 .tag-amber { background: #fef3c7; color: #d97706; }
+.tag-yellow { background: #fef9c3; color: #ca8a04; }
+.tag-red { background: #fee2e2; color: #dc2626; }
+.tag-dark { background: #1e293b; color: #e2e8f0; }
+.tag-gold { background: linear-gradient(135deg, #fef9c3, #fde68a); color: #92400e; }
 
 /* ============ Text Highlight ============ */
 .highlight { font-weight: 700; background: linear-gradient(135deg, #7e22ce, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
