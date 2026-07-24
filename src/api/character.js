@@ -5,10 +5,6 @@
 import nanamiImg from '@packages/nanami/images/1.jpg'
 import remImg from '@packages/rem/images/1.jpg'
 import kanaImg from '@packages/kana/images/1.jpg'
-import phrolovaImg from '@packages/phrolova/images/1.jpg'
-import hutaoImg from '@packages/hutao/images/1.jpg'
-import elainaImg from '@packages/elaina/images/1.jpg'
-import tomoriImg from '@packages/tomori/images/1.jpg'
 
 const tagClasses = ['tag-purple', 'tag-pink', 'tag-cyan', 'tag-green', 'tag-orange', 'tag-blue', 'tag-amber']
 
@@ -46,7 +42,7 @@ const characters = [
     name: '弗洛洛',
     nameSub: 'Phrolova',
     series: '鸣潮 | Wuthering Waves',
-    image: phrolovaImg,
+    image: null,
     hasDetail: true,
     tags: [
       { text: '湮灭', cls: 'tag-red' },
@@ -60,7 +56,7 @@ const characters = [
     name: '胡桃',
     nameSub: 'Hu Tao',
     series: '原神 | Genshin Impact',
-    image: hutaoImg,
+    image: null,
     hasDetail: true,
     tags: [
       { text: '火元素', cls: 'tag-red' },
@@ -74,7 +70,7 @@ const characters = [
     name: '伊蕾娜',
     nameSub: 'Elaina',
     series: '魔女之旅 | Wandering Witch',
-    image: elainaImg,
+    image: null,
     hasDetail: true,
     tags: [
       { text: '魔法使', cls: 'tag-purple' },
@@ -88,13 +84,27 @@ const characters = [
     name: '友利奈绪',
     nameSub: 'Tomori Nao',
     series: 'Charlotte',
-    image: tomoriImg,
+    image: null,
     hasDetail: true,
     tags: [
       { text: '超能力者', cls: 'tag-purple' },
       { text: '学生会会长', cls: 'tag-blue' },
       { text: '傲娇', cls: 'tag-pink' },
       { text: '女主角', cls: 'tag-green' }
+    ]
+  },
+  {
+    id: 'komori',
+    name: '小鞠知花',
+    nameSub: 'Komori Chika',
+    series: '败犬女主太多了',
+    image: null,
+    hasDetail: true,
+    tags: [
+      { text: '社恐', cls: 'tag-purple' },
+      { text: '青梅竹马', cls: 'tag-blue' },
+      { text: '努力家', cls: 'tag-amber' },
+      { text: '败犬女主', cls: 'tag-cyan' }
     ]
   },
   {

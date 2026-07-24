@@ -82,7 +82,9 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
+              <div class="anime-cover-grid"></div>
+              <div class="anime-cover-icon">📺</div>
+              <div class="anime-cover-badge">暂无封面</div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -109,6 +111,12 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>🖼️ 图片画廊</h2>
+              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
+            </div>
+          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
@@ -129,9 +137,15 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>🎬 相关视频</h2>
+              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
+            </div>
+          </div>
           <div class="video-grid">
             <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
-              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+              <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0f0a1a, #2d1f4e)' }">
                 <div class="video-play-btn"><span>▶</span></div>
                 <div class="video-duration">{{ v.duration }}</div>
               </div>
@@ -175,15 +189,6 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
-import img1 from '../images/1.jpg'
-import img2 from '../images/2.jpg'
-import img3 from '../images/3.jpg'
-import img4 from '../images/4.jpg'
-import img5 from '../images/5.jpg'
-import img6 from '../images/6.jpg'
-import img7 from '../images/7.jpg'
-import img8 from '../images/8.jpg'
-import animeCover from '../images/a.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -205,21 +210,21 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '伊蕾娜 · 官方角色立绘' },
-      { isImage: true, bg: img2, badge: '美图', overlay: '伊蕾娜 · 美图 01' },
-      { isImage: true, bg: img3, badge: '美图', overlay: '伊蕾娜 · 美图 02' },
-      { isImage: true, bg: img4, badge: '美图', overlay: '伊蕾娜 · 美图 03' },
-      { isImage: true, bg: img5, badge: '美图', overlay: '伊蕾娜 · 美图 04' },
-      { isImage: true, bg: img6, badge: '美图', overlay: '伊蕾娜 · 美图 05' },
-      { isImage: true, bg: img7, badge: '美图', overlay: '伊蕾娜 · 美图 06' },
-      { isImage: true, bg: img8, badge: '美图', overlay: '伊蕾娜 · 美图 07' }
+      { isImage: false, bg: 'linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 50%, #0f0a2e 100%)', icon: '🔮', label: '魔法立绘', badge: '立绘', overlay: '伊蕾娜 · 官方角色立绘' },
+      { isImage: false, bg: 'linear-gradient(135deg, #3b1f5e 0%, #2d1b4e 50%, #1a0d2e 100%)', icon: '📖', label: '旅途记录', badge: '美图', overlay: '伊蕾娜 · 美图 01' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a1030 0%, #2d1f4e 50%, #3b1f5e 100%)', icon: '✨', label: '魔法施展', badge: '美图', overlay: '伊蕾娜 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #0f0a2e 0%, #1a0d2e 50%, #2d1b4e 100%)', icon: '🌙', label: '月下旅人', badge: '美图', overlay: '伊蕾娜 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #2d1b4e 0%, #0f0a2e 50%, #1a1030 100%)', icon: '🏰', label: '城堡之国', badge: '美图', overlay: '伊蕾娜 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a0d2e 0%, #3b1f5e 50%, #2d1b4e 100%)', icon: '🧹', label: '飞天扫帚', badge: '美图', overlay: '伊蕾娜 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #0f0a2e 0%, #1a1030 50%, #2d1f4e 100%)', icon: '📜', label: '魔女日记', badge: '美图', overlay: '伊蕾娜 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #2d1f4e 0%, #1a0d2e 50%, #0f0a2e 100%)', icon: '⭐', label: '灰之魔女', badge: '美图', overlay: '伊蕾娜 · 美图 07' }
     ]
 
     const videoItems = [
-      { cover: animeCover, title: '伊蕾娜相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: animeCover, title: '伊蕾娜相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: animeCover, title: '伊蕾娜相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: animeCover, title: '伊蕾娜相关视频 04', desc: '视频描述占位', duration: '04:33' }
+      { cover: null, title: '伊蕾娜相关视频 01', desc: '视频描述占位', duration: '03:25' },
+      { cover: null, title: '伊蕾娜相关视频 02', desc: '视频描述占位', duration: '05:12' },
+      { cover: null, title: '伊蕾娜相关视频 03', desc: '视频描述占位', duration: '02:48' },
+      { cover: null, title: '伊蕾娜相关视频 04', desc: '视频描述占位', duration: '04:33' }
     ]
 
     function particleStyle() {
@@ -233,7 +238,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -368,4 +373,24 @@ export default {
 .elaina-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
 .elaina-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #f3e8ff, #fdf2f8); border-left: 4px solid #a855f7; border-radius: 0 12px 12px 0; font-size: 15px; color: #6b21a8; font-weight: 500; line-height: 1.8; }
+
+/* Section Headers */
+.elaina-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+.elaina-page .section-title-group h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; color: #0f172a; letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; }
+.elaina-page .section-title-group h2::before { content: ''; display: inline-block; width: 4px; height: 24px; border-radius: 2px; background: linear-gradient(180deg, #a855f7, #c084fc); }
+.elaina-page .section-title-group p { font-size: 13px; color: #94a3b8; margin-top: 4px; padding-left: 14px; }
+
+/* Anime cover placeholder */
+.elaina-page .anime-cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(168,85,247,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+.elaina-page .anime-cover-icon { font-size: 72px; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(168,85,247,0.4)); }
+.elaina-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(168,85,247,0.2); border: 1px solid rgba(168,85,247,0.3); border-radius: 50px; font-size: 12px; color: #d8b4fe; font-weight: 600; }
+
+/* Gallery placeholder enhancement */
+.elaina-page .gallery-item { background: linear-gradient(135deg, #2d1b4e, #1a1030); }
+.elaina-page .gallery-item:hover .gallery-item-icon { transform: scale(1.15); transition: transform 0.3s ease; }
+.elaina-page .gallery-item-icon { transition: transform 0.3s ease; }
+
+/* Section spacing */
+.elaina-page .anime-section { padding-top: 48px; }
+.elaina-page .videos-section { padding: 48px 0 64px; }
 </style>

@@ -82,7 +82,9 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
+              <div class="anime-cover-grid"></div>
+              <div class="anime-cover-icon">🎮</div>
+              <div class="anime-cover-badge">暂无封面</div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -109,6 +111,12 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>🖼️ 图片画廊</h2>
+              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
+            </div>
+          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
@@ -129,9 +137,15 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>🎬 相关视频</h2>
+              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
+            </div>
+          </div>
           <div class="video-grid">
             <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
-              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+              <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e1f1f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
                 <div class="video-duration">{{ v.duration }}</div>
               </div>
@@ -175,15 +189,6 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
-import img1 from '../images/1.jpg'
-import img2 from '../images/2.jpg'
-import img3 from '../images/3.jpg'
-import img4 from '../images/4.jpg'
-import img5 from '../images/5.jpg'
-import img6 from '../images/6.jpg'
-import img7 from '../images/7.jpg'
-import img8 from '../images/8.jpg'
-import animeCover from '../images/a.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -205,21 +210,21 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
-      { isImage: true, bg: img2, badge: '美图', overlay: '弗洛洛 · 美图 01' },
-      { isImage: true, bg: img3, badge: '美图', overlay: '弗洛洛 · 美图 02' },
-      { isImage: true, bg: img4, badge: '美图', overlay: '弗洛洛 · 美图 03' },
-      { isImage: true, bg: img5, badge: '美图', overlay: '弗洛洛 · 美图 04' },
-      { isImage: true, bg: img6, badge: '美图', overlay: '弗洛洛 · 美图 05' },
-      { isImage: true, bg: img7, badge: '美图', overlay: '弗洛洛 · 美图 06' },
-      { isImage: true, bg: img8, badge: '美图', overlay: '弗洛洛 · 美图 07' }
+      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎵', label: '角色立绘', badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
+      { isImage: false, bg: 'linear-gradient(135deg, #6b1f1f 0%, #5e1f1f 50%, #2e0a0a 100%)', icon: '🌑', label: '湮灭之力', badge: '美图', overlay: '弗洛洛 · 美图 01' },
+      { isImage: false, bg: 'linear-gradient(135deg, #2e0d0d 0%, #5e1f1f 50%, #6b1f1f 100%)', icon: '🎼', label: '残响交响', badge: '美图', overlay: '弗洛洛 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0a0a 50%, #5e1f1f 100%)', icon: '⚡', label: '指挥家', badge: '美图', overlay: '弗洛洛 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #1a0a0a 50%, #2e0d0d 100%)', icon: '🖤', label: '暗红礼服', badge: '美图', overlay: '弗洛洛 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #2e0a0a 0%, #6b1f1f 50%, #5e1f1f 100%)', icon: '🎹', label: '音感仪', badge: '美图', overlay: '弗洛洛 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0d0d 50%, #5e1f1f 100%)', icon: '💀', label: '残响终曲', badge: '美图', overlay: '弗洛洛 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎻', label: '军团指挥', badge: '美图', overlay: '弗洛洛 · 美图 07' }
     ]
 
     const videoItems = [
-      { cover: animeCover, title: '弗洛洛相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: animeCover, title: '弗洛洛相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: animeCover, title: '弗洛洛相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: animeCover, title: '弗洛洛相关视频 04', desc: '视频描述占位', duration: '04:33' }
+      { cover: null, title: '弗洛洛相关视频 01', desc: '视频描述占位', duration: '03:25' },
+      { cover: null, title: '弗洛洛相关视频 02', desc: '视频描述占位', duration: '05:12' },
+      { cover: null, title: '弗洛洛相关视频 03', desc: '视频描述占位', duration: '02:48' },
+      { cover: null, title: '弗洛洛相关视频 04', desc: '视频描述占位', duration: '04:33' }
     ]
 
     function particleStyle() {
@@ -233,7 +238,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -355,18 +360,23 @@ export default {
 
 .phrolova-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fef2f2, #fff5f5); border-left: 4px solid #b91c1c; border-radius: 0 12px 12px 0; font-size: 15px; color: #7f1d1d; font-weight: 500; line-height: 1.8; }
 
+/* Section Headers */
+.phrolova-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+.phrolova-page .section-title-group h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; color: #0f172a; letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; }
+.phrolova-page .section-title-group h2::before { content: ''; display: inline-block; width: 4px; height: 24px; border-radius: 2px; background: linear-gradient(180deg, #b91c1c, #dc2626); }
+.phrolova-page .section-title-group p { font-size: 13px; color: #94a3b8; margin-top: 4px; padding-left: 14px; }
+
+/* Anime cover placeholder */
+.phrolova-page .anime-cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(185,28,28,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(185,28,28,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+.phrolova-page .anime-cover-icon { font-size: 72px; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(185,28,28,0.4)); }
+.phrolova-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(185,28,28,0.2); border: 1px solid rgba(185,28,28,0.3); border-radius: 50px; font-size: 12px; color: #fca5a5; font-weight: 600; }
+
+/* Gallery placeholder enhancement */
+.phrolova-page .gallery-item { background: linear-gradient(135deg, #5e1f1f, #1a0a0a); }
+.phrolova-page .gallery-item:hover .gallery-item-icon { transform: scale(1.15); transition: transform 0.3s ease; }
+.phrolova-page .gallery-item-icon { transition: transform 0.3s ease; }
+
+/* Section spacing */
+.phrolova-page .anime-section { padding-top: 48px; }
 .phrolova-page .videos-section { padding: 48px 0 64px; }
-.phrolova-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .phrolova-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .phrolova-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
-.phrolova-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
-.phrolova-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
-.phrolova-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a0a, #5e1f1f); display: flex; align-items: center; justify-content: center; }
-.phrolova-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(185,28,28,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(185,28,28,0.4); transition: all 0.3s ease; }
-.phrolova-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
-.phrolova-page .video-card:hover .video-play-btn { transform: scale(1.15); background: rgba(185,28,28,1); }
-.phrolova-page .video-duration { position: absolute; bottom: 8px; right: 8px; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.75); color: #fff; font-size: 11px; font-weight: 600; }
-.phrolova-page .video-info { padding: 14px 16px; }
-.phrolova-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-.phrolova-page .video-info p { font-size: 12px; color: #94a3b8; }
 </style>

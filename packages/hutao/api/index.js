@@ -1,5 +1,3 @@
-import hutaoImg from '../images/1.jpg'
-
 export default {
   id: 'hutao',
   name: '胡桃',
@@ -7,7 +5,7 @@ export default {
   nameJp: '胡桃',
   title: '往生堂第七十七代堂主',
   series: '原神 | Genshin Impact',
-  image: hutaoImg,
+  image: null,
   tags: [
     { text: '火元素', cls: 'tag-red' },
     { text: '长柄武器', cls: 'tag-purple' },

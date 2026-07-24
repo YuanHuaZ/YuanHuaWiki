@@ -1,5 +1,3 @@
-import tomoriImg from '../images/1.jpg'
-
 export default {
   id: 'tomori',
   name: '友利奈绪',
@@ -7,7 +5,7 @@ export default {
   nameJp: '友利奈绪',
   title: '星之海学园学生会会长',
   series: 'Charlotte | シャーロット',
-  image: tomoriImg,
+  image: null,
   tags: [
     { text: '超能力者', cls: 'tag-purple' },
     { text: '学生会会长', cls: 'tag-blue' },

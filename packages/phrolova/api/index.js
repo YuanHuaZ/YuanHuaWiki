@@ -1,5 +1,3 @@
-import phrolovaImg from '../images/1.jpg'
-
 export default {
   id: 'phrolova',
   name: '弗洛洛',
@@ -7,7 +5,7 @@ export default {
   nameJp: '弗洛洛',
   title: '残响军团指挥家',
   series: '鸣潮 | Wuthering Waves',
-  image: phrolovaImg,
+  image: null,
   tags: [
     { text: '湮灭', cls: 'tag-red' },
     { text: '音感仪', cls: 'tag-purple' },

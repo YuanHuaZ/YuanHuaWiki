@@ -1,5 +1,3 @@
-import elainaImg from '../images/1.jpg'
-
 export default {
   id: 'elaina',
   name: '伊蕾娜',
@@ -7,7 +5,7 @@ export default {
   nameJp: '伊蕾娜',
   title: '灰之魔女',
   series: '魔女之旅 | Wandering Witch',
-  image: elainaImg,
+  image: null,
   tags: [
     { text: '魔法使', cls: 'tag-purple' },
     { text: '旅人', cls: 'tag-cyan' },
