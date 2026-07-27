@@ -97,7 +97,7 @@
               <p class="anime-info-desc">有马加奈作为<span class="highlight">过气天才童星</span>登场，在星野阿库亚的邀请下加入新生B小町，<span class="highlight-pink">重新找到了属于自己的舞台</span>。她在演艺圈挣扎求存的故事感动了无数观众。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">演艺圈</span><span class="anime-tag dark">偶像</span><span class="anime-tag dark">恋爱</span></div>
               <div class="anime-info-actions">
-                <span class="anime-tag dark">暂无B站正版</span>
+                <span class="anime-tag-not-available">暂无B站正版</span>
               </div>
             </div>
           </div>
@@ -399,4 +399,7 @@ export default {
 .kana-page .rel-family { background: #dbeafe; color: #1d4ed8; }
 .kana-page .rel-friend { background: #d1fae5; color: #047857; }
 .kana-page .rel-other { background: #f1f5f9; color: #475569; }
+
+/* Not available tag */
+.kana-page .anime-tag-not-available { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; background: #fef2f2; color: #dc2626; border: 1px dashed #fca5a5; }
 </style>

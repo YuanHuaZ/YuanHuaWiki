@@ -64,9 +64,9 @@ export default {
         '伊蕾娜的旅途从<span class="highlight">离开故乡罗贝塔</span>开始。她向父母告别后，踏上了<span class="highlight-pink">追寻梦想的旅程</span>。虽然心中有些不舍，但她知道这才是自己真正想做的事。',
         '她到访了<span class="highlight">许多奇妙的国家</span>——有将花朵视为珍宝的花田之国，有以谎言为法则的国家，也有因魔法而陷入困境的国家。每一个国家都有着<span class="highlight-pink">自己独特的规则与故事</span>。',
         '旅途中，伊蕾娜也遇到了<span class="highlight">无法改变的悲剧</span>。她深知作为旅者的界限——有时候<span class="highlight-pink">旁观记录比强行介入更加重要</span>。这种取舍让她感到痛苦，但也让她变得更加成熟。',
-        '她将一路上的所见所闻<span class="highlight">记录在旅行日记</span>中。这些记录不仅是她个人的回忆，也是<span class="highlight-pink">留给读者的珍贵故事</span>。正如她所说："这个世界比想象中更加广阔，也更加有趣。"'
+        '她将一路上的所见所闻<span class="highlight">记录在旅行日记</span>中。这些记录不仅是她个人的回忆，也是<span class="highlight-pink">留给读者的珍贵故事</span>。她的旅途仍在继续，每一天都是新的篇章。'
       ],
-      quote: '没错，就是我。',
+      quote: '我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。',
       quoteAuthor: '—— 伊蕾娜'
     }
   ],

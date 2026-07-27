@@ -82,9 +82,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">📺</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -96,10 +94,10 @@
                 <div class="anime-meta-item"><span class="meta-icon">📺</span><span class="meta-label">集数：</span>全12话</div>
                 <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>寺澤百花</div>
               </div>
-              <p class="anime-info-desc">在青春校园中，总有那么一些女孩——她们<span class="highlight">明明付出了全部真心</span>，却总是<span class="highlight-pink">与爱情失之交臂</span>。小鞠知花作为朝日向的青梅竹马，在这场<span class="highlight">注定的败北</span>中，用汗水和泪水书写着属于自己的青春故事。</p>
-              <div class="anime-tag-row"><span class="anime-tag dark">校园</span><span class="anime-tag dark">恋爱</span><span class="anime-tag dark">喜剧</span><span class="anime-tag live">正版引进</span></div>
+              <p class="anime-info-desc">在青春校园中，总有那么一些女孩——她们<span class="highlight">明明付出了全部真心</span>，却总是<span class="highlight-pink">与爱情失之交臂</span>。小鞠知花作为默默暗恋前辈的文艺部少女，在这场<span class="highlight">注定的败北</span>中，用文字和泪水书写着属于自己的青春故事。</p>
+              <div class="anime-tag-row"><span class="anime-tag dark">校园</span><span class="anime-tag dark">恋爱</span><span class="anime-tag dark">喜剧</span></div>
               <div class="anime-info-actions">
-                <a href="https://www.bilibili.com/bangumi/play/ss47838/" class="btn-komori" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
+                <span class="anime-tag-not-available">暂无B站正版</span>
               </div>
             </div>
           </div>
@@ -132,16 +130,16 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e2f1f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -192,6 +190,11 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -223,12 +226,12 @@ export default {
       { isImage: false, bg: 'linear-gradient(135deg, #5e2f2f 0%, #2e1a1a 50%, #1a0a0a 100%)', icon: '✨', label: '闪耀时刻', badge: '美图', overlay: '小鞠知花 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: null, title: '小鞠知花相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: null, title: '小鞠知花相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: null, title: '小鞠知花相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: null, title: '小鞠知花相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yVHwetE9r', title: '【剧情向MAD】明明是主演，却演着配角戏…（败犬女主/小鞠知花）', desc: '小鞠知花 剧情向MAD' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV14qx8enEfx', title: '【温水×小鞠】陪伴你、一直到这故事说完。（剧情向MAD/败犬女主）', desc: '温水×小鞠 剧情向MAD' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1x726Y2ENx', title: '【败犬女主MAD/误解向】原来我们和爱情曾经靠得那么近 ⌈小鞠知花⌋', desc: '小鞠知花 误解向MAD' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1EUsge7EJ8', title: '【中日字幕/ED3完整版】败犬女主太多了！ED3「feel my soul」/小鞠知花(CV.寺澤百花)', desc: '小鞠知花 ED' }
+    ])
 
     function particleStyle() {
       return {
@@ -241,7 +244,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -382,9 +385,11 @@ export default {
 .komori-page .section-title-group p { font-size: 13px; color: #94a3b8; margin-top: 4px; padding-left: 14px; }
 
 /* Anime cover placeholder */
+.komori-page .anime-cover-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .komori-page .anime-cover-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(232,121,90,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(232,121,90,0.05) 1px, transparent 1px); background-size: 40px 40px; }
 .komori-page .anime-cover-icon { font-size: 72px; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(232,121,90,0.4)); }
 .komori-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(232,121,90,0.2); border: 1px solid rgba(232,121,90,0.3); border-radius: 50px; font-size: 12px; color: #fda4a4; font-weight: 600; }
+.komori-page .btn-disabled { opacity: 0.7; pointer-events: none; }
 
 .komori-page .anime-section { padding-top: 48px; }
 
@@ -404,4 +409,20 @@ export default {
 .komori-page .rel-family { background: #dbeafe; color: #1d4ed8; }
 .komori-page .rel-friend { background: #d1fae5; color: #047857; }
 .komori-page .rel-other { background: #f1f5f9; color: #475569; }
+
+/* Video grid */
+.komori-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .komori-page .video-grid { grid-template-columns: 1fr; } }
+.komori-page .video-card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
+.komori-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.komori-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a0a, #5e2f1f); display: flex; align-items: center; justify-content: center; }
+.komori-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(232,121,90,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(232,121,90,0.4); transition: all 0.3s ease; }
+.komori-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
+.komori-page .video-card:hover .video-play-btn { transform: scale(1.15); background: rgba(232,121,90,1); }
+.komori-page .video-info { padding: 14px 16px; }
+.komori-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.komori-page .video-info p { font-size: 12px; color: #94a3b8; }
+
+/* Not available tag */
+.komori-page .anime-tag-not-available { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; background: #fef2f2; color: #dc2626; border: 1px dashed #fca5a5; }
 </style>

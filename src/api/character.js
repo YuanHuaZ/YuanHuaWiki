@@ -107,7 +107,7 @@ const characters = [
     hasDetail: true,
     tags: [
       { text: '社恐', cls: 'tag-purple' },
-      { text: '青梅竹马', cls: 'tag-blue' },
+      { text: '文艺部', cls: 'tag-blue' },
       { text: '努力家', cls: 'tag-amber' },
       { text: '败犬女主', cls: 'tag-cyan' }
     ]
