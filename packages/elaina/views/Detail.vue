@@ -14,7 +14,7 @@
           <div class="hero-badge"><span class="dot"></span> {{ data.series }}</div>
           <h1 class="hero-name-jp">{{ data.name }}</h1>
           <p class="hero-name-sub">{{ data.nameSub }}</p>
-          <div class="hero-title-badge">🧙‍♀️ {{ data.title }}</div>
+          <div class="hero-title-badge">{{ data.title }}</div>
           <div class="tags"><span v-for="(t,i) in data.tags" :key="i" :class="['tag', t.cls]">{{ t.text }}</span></div>
         </div>
         <div class="hero-visual animate-slide-up delay-200">
@@ -132,16 +132,16 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0f0a1a, #2d1f4e)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -192,6 +192,10 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -223,12 +227,12 @@ export default {
       { isImage: false, bg: 'linear-gradient(135deg, #2d1f4e 0%, #1a0d2e 50%, #0f0a2e 100%)', icon: '⭐', label: '灰之魔女', badge: '美图', overlay: '伊蕾娜 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: null, title: '伊蕾娜相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: null, title: '伊蕾娜相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: null, title: '伊蕾娜相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: null, title: '伊蕾娜相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1o14y1B7jy', title: '【伊蕾娜の小曲/4k】真的不来看看可爱的伊蕾娜吗', desc: '伊蕾娜 可爱向剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1m54y1z79W', title: '♣𝘾𝙖𝙪𝙨𝙚 𝙄\'𝙢 𝙣𝙤𝙩 𝙟𝙪𝙨𝙩 𝙖 𝙥𝙧𝙚𝙩𝙩𝙮 𝙜𝙞𝙧𝙡♣', desc: '伊蕾娜 颜值向剪辑' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1qf4y1t7L7', title: 'Super爱豆的笑容都没你的甜>>热爱105℃的伊蕾娜', desc: '伊蕾娜 甜蜜向剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1nz4y127TS', title: '【可爱洗脑】AWSL！！！伊蕾娜真是太可爱了啦~~', desc: '伊蕾娜 可爱洗脑向' }
+    ])
 
     function particleStyle() {
       return {
@@ -268,7 +272,7 @@ export default {
 .elaina-page .hero-badge .dot { width: 7px; height: 7px; background: #a855f7; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .elaina-page .hero-name-jp { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 40%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; }
 .elaina-page .hero-name-sub { font-size: 16px; color: #94a3b8; font-weight: 400; letter-spacing: 0.06em; }
-.elaina-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25); padding: 6px 16px; border-radius: 8px; font-size: 14px; color: #c084fc; font-weight: 600; width: fit-content; margin-top: 4px; }
+.elaina-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25); padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #c084fc; font-weight: 600; width: fit-content; margin-top: 4px; }
 .elaina-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .elaina-page .tags .tag { padding: 3px 10px; font-size: 11px; }
 @media (max-width: 1024px) { .elaina-page .hero-title-badge { margin: 0 auto; } .elaina-page .tags { justify-content: center; } }

@@ -14,7 +14,7 @@
           <div class="hero-badge"><span class="dot"></span> {{ data.series }}</div>
           <h1 class="hero-name-jp">{{ data.nameJp }}</h1>
           <p class="hero-name-sub">{{ data.nameSub }}</p>
-          <div class="hero-title-badge">💙 {{ data.title }}</div>
+          <div class="hero-title-badge">{{ data.title }}</div>
           <div class="tags"><span v-for="(t,i) in data.tags" :key="i" :class="['tag', t.cls]">{{ t.text }}</span></div>
         </div>
         <div class="hero-visual animate-slide-up delay-200">
@@ -278,7 +278,7 @@ export default {
 .rem-page .hero-badge .dot { width: 7px; height: 7px; background: #3b82f6; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .rem-page .hero-name-jp { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #bfdbfe 0%, #60a5fa 40%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; }
 .rem-page .hero-name-sub { font-size: 16px; color: #94a3b8; font-weight: 400; letter-spacing: 0.06em; }
-.rem-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.25); padding: 6px 16px; border-radius: 8px; font-size: 14px; color: #67e8f9; font-weight: 600; width: fit-content; margin-top: 4px; }
+.rem-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.25); padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #67e8f9; font-weight: 600; width: fit-content; margin-top: 4px; }
 .rem-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .rem-page .tags .tag { padding: 3px 10px; font-size: 11px; }
 @media (max-width: 1024px) { .hero-title-badge { margin: 0 auto; } .tags { justify-content: center; } }

@@ -14,7 +14,7 @@
           <div class="hero-badge"><span class="dot"></span> {{ data.series }}</div>
           <h1 class="hero-name-jp">{{ data.nameJp }}</h1>
           <p class="hero-name-sub">{{ data.nameSub }}</p>
-          <div class="hero-title-badge">🎮 {{ data.title }}</div>
+          <div class="hero-title-badge">{{ data.title }}</div>
           <div class="tags"><span v-for="(t,i) in data.tags" :key="i" :class="['tag', t.cls]">{{ t.text }}</span></div>
         </div>
         <div class="hero-visual animate-slide-up delay-200">
@@ -329,7 +329,7 @@ export default {
 .nanami-page .hero-title-badge {
   display: inline-flex; align-items: center; gap: 6px;
   background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.25);
-  padding: 6px 16px; border-radius: 8px; font-size: 14px; color: #f9a8d4; font-weight: 600;
+  padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #f9a8d4; font-weight: 600;
   width: fit-content; margin-top: 4px;
 }
 .nanami-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }

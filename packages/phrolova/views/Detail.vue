@@ -14,7 +14,7 @@
           <div class="hero-badge"><span class="dot"></span> {{ data.series }}</div>
           <h1 class="hero-name-jp">{{ data.nameJp }}</h1>
           <p class="hero-name-sub">{{ data.nameSub }}</p>
-          <div class="hero-title-badge">🎵 {{ data.title }}</div>
+          <div class="hero-title-badge">{{ data.title }}</div>
           <div class="tags"><span v-for="(t,i) in data.tags" :key="i" :class="['tag', t.cls]">{{ t.text }}</span></div>
         </div>
         <div class="hero-visual animate-slide-up delay-200">
@@ -275,7 +275,7 @@ export default {
 .phrolova-page .hero-badge .dot { width: 7px; height: 7px; background: #b91c1c; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .phrolova-page .hero-name-jp { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #fecaca 0%, #b91c1c 40%, #991b1b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; }
 .phrolova-page .hero-name-sub { font-size: 16px; color: #94a3b8; font-weight: 400; letter-spacing: 0.06em; }
-.phrolova-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(185,28,28,0.1); border: 1px solid rgba(185,28,28,0.25); padding: 6px 16px; border-radius: 8px; font-size: 14px; color: #dc2626; font-weight: 600; width: fit-content; margin-top: 4px; }
+.phrolova-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(185,28,28,0.1); border: 1px solid rgba(185,28,28,0.25); padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #dc2626; font-weight: 600; width: fit-content; margin-top: 4px; }
 .phrolova-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .phrolova-page .tags .tag { padding: 3px 10px; font-size: 11px; }
 @media (max-width: 1024px) { .phrolova-page .hero-title-badge { margin: 0 auto; } .phrolova-page .tags { justify-content: center; } }
