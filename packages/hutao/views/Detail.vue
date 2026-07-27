@@ -192,6 +192,13 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -214,13 +221,13 @@ export default {
 
     const galleryItems = [
       { isImage: true, bg: img1, badge: '立绘', overlay: '胡桃 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #6b3a1f 0%, #5e2f1f 50%, #2e1a0a 100%)', icon: '🔥', label: '火元素力', badge: '美图', overlay: '胡桃 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e1a0d 0%, #5e2f1f 50%, #6b3a1f 100%)', icon: '💀', label: '往生堂', badge: '美图', overlay: '胡桃 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e1a0a 50%, #5e2f1f 100%)', icon: '🏮', label: '璃月港', badge: '美图', overlay: '胡桃 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #1a0a0a 50%, #2e1a0d 100%)', icon: '⚰️', label: '引蝶之章', badge: '美图', overlay: '胡桃 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e1a0a 0%, #6b3a1f 50%, #5e2f1f 100%)', icon: '🌸', label: '梅花之瞳', badge: '美图', overlay: '胡桃 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e1a0d 50%, #5e2f1f 100%)', icon: '👻', label: '古灵精怪', badge: '美图', overlay: '胡桃 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #2e1a0a 50%, #1a0a0a 100%)', icon: '🎭', label: '往生堂堂主', badge: '美图', overlay: '胡桃 · 美图 07' }
+      { isImage: true, bg: img2, badge: '美图', overlay: '胡桃 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '胡桃 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '胡桃 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '胡桃 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '胡桃 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '胡桃 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '胡桃 · 美图 07' }
     ]
 
     const videoItems = [

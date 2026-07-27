@@ -190,6 +190,21 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import img9 from '../images/9.jpg'
+import img10 from '../images/10.jpg'
+import img11 from '../images/11.jpg'
+import img12 from '../images/12.jpg'
+import img13 from '../images/13.jpg'
+import img14 from '../images/14.jpg'
+import img15 from '../images/15.jpg'
+import img16 from '../images/16.jpg'
 import gameCover from '../images/a.jpg'
 import sp1 from '../images/sp1.jpg'
 import sp2 from '../images/sp2.jpg'
@@ -219,13 +234,21 @@ export default {
 
     const galleryItems = [
       { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #6b1f1f 0%, #5e1f1f 50%, #2e0a0a 100%)', icon: '🌑', label: '湮灭之力', badge: '美图', overlay: '弗洛洛 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e0d0d 0%, #5e1f1f 50%, #6b1f1f 100%)', icon: '🎼', label: '彼岸交响', badge: '美图', overlay: '弗洛洛 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0a0a 50%, #5e1f1f 100%)', icon: '⚡', label: '残星会监', badge: '美图', overlay: '弗洛洛 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #1a0a0a 50%, #2e0d0d 100%)', icon: '🖤', label: '红色礼服', badge: '美图', overlay: '弗洛洛 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e0a0a 0%, #6b1f1f 50%, #5e1f1f 100%)', icon: '🎹', label: '彼岸花指挥棒', badge: '美图', overlay: '弗洛洛 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0d0d 50%, #5e1f1f 100%)', icon: '💀', label: '赫卡忒之影', badge: '美图', overlay: '弗洛洛 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎻', label: '失亡彼岸', badge: '美图', overlay: '弗洛洛 · 美图 07' }
+      { isImage: true, bg: img2, badge: '美图', overlay: '弗洛洛 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '弗洛洛 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '弗洛洛 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '弗洛洛 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '弗洛洛 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '弗洛洛 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '弗洛洛 · 美图 07' },
+      { isImage: true, bg: img9, badge: '美图', overlay: '弗洛洛 · 美图 08' },
+      { isImage: true, bg: img10, badge: '美图', overlay: '弗洛洛 · 美图 09' },
+      { isImage: true, bg: img11, badge: '美图', overlay: '弗洛洛 · 美图 10' },
+      { isImage: true, bg: img12, badge: '美图', overlay: '弗洛洛 · 美图 11' },
+      { isImage: true, bg: img13, badge: '美图', overlay: '弗洛洛 · 美图 12' },
+      { isImage: true, bg: img14, badge: '美图', overlay: '弗洛洛 · 美图 13' },
+      { isImage: true, bg: img15, badge: '美图', overlay: '弗洛洛 · 美图 14' },
+      { isImage: true, bg: img16, badge: '美图', overlay: '弗洛洛 · 美图 15' }
     ]
 
     const videoItems = ref([

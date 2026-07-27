@@ -192,6 +192,13 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -214,13 +221,13 @@ export default {
 
     const galleryItems = [
       { isImage: true, bg: img1, badge: '立绘', overlay: '友利奈绪 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #0d2847 0%, #1e3050 50%, #0a1628 100%)', icon: '👁️', label: '不可视', badge: '美图', overlay: '友利奈绪 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a1030 0%, #1e3050 50%, #0d2847 100%)', icon: '🏫', label: '星之海学园', badge: '美图', overlay: '友利奈绪 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #0a0a1a 0%, #0a1628 50%, #1e3050 100%)', icon: '💫', label: '特殊能力', badge: '美图', overlay: '友利奈绪 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #0d2847 0%, #1a0d2e 50%, #0a1628 100%)', icon: '📝', label: '学生会', badge: '美图', overlay: '友利奈绪 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3050 0%, #0a1628 50%, #0a0a1a 100%)', icon: '🎒', label: '制服少女', badge: '美图', overlay: '友利奈绪 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #0a1628 0%, #1a1030 50%, #1e3050 100%)', icon: '💕', label: '约定', badge: '美图', overlay: '友利奈绪 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0d2e 0%, #0d2847 50%, #0a1628 100%)', icon: '⭐', label: '学生会会长', badge: '美图', overlay: '友利奈绪 · 美图 07' }
+      { isImage: true, bg: img2, badge: '美图', overlay: '友利奈绪 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '友利奈绪 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '友利奈绪 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '友利奈绪 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '友利奈绪 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '友利奈绪 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '友利奈绪 · 美图 07' }
     ]
 
     const videoItems = [

@@ -11,8 +11,6 @@ import elainaImg from '@packages/elaina/images/1.jpg'
 import tomoriImg from '@packages/tomori/images/1.jpg'
 import komariImg from '@packages/komari/images/1.jpg'
 
-const tagClasses = ['tag-purple', 'tag-pink', 'tag-cyan', 'tag-green', 'tag-orange', 'tag-blue', 'tag-amber']
-
 const characters = [
   {
     id: 'nanami',
@@ -127,19 +125,6 @@ const characters = [
     ]
   }
 ]
-
-// 占位角色（作品1 角色1 ~ 作品46 角色46）
-for (let i = 1; i <= 46; i++) {
-  characters.push({
-    id: `char-${i}`,
-    name: `角色 ${i}`,
-    nameSub: `Character ${i}`,
-    series: `作品${i}`,
-    image: null,
-    hasDetail: false,
-    tags: [{ text: '待更新', cls: tagClasses[i % tagClasses.length] }]
-  })
-}
 
 export function getCharacterList() {
   return characters

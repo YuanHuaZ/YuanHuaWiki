@@ -29,7 +29,11 @@
       "Bash(cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/phrolova/images/\")",
       "Bash(cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/hutao/images/\")",
       "Bash(mkdir -p \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/elaina/images\" && cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/elaina/images/\")",
-      "Bash(mkdir -p \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images\" && cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images/\")"
+      "Bash(mkdir -p \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images\" && cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images/\")",
+      "Bash(find /c/Users/24732/Desktop/wiki -type f \\\\\\( -name \"*.vue\" -o -name \"*.html\" -o -name \"*.md\" -o -name \"*.jsx\" -o -name \"*.tsx\" \\\\\\) 2>/dev/null | head -50)",
+      "Read(//c/Users/24732/Desktop/wiki/**)",
+      "Bash(ls /c/Users/24732/Desktop/wiki/)",
+      "Read(//c/Users/24732/Desktop/wiki//**)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zrf\\Desktop\\新建文件夹\\YuanHuaWiki\\packages\\rem\\images"
