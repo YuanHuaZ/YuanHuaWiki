@@ -20,7 +20,7 @@
         <div class="hero-visual animate-slide-up delay-200">
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar-ring"></div>
-            <div v-if="data.image" class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat` }"></div>
+            <div v-if="data.image" class="hero-avatar" :style="{ background: `url(${data.image}) top center/150% no-repeat, #fff` }"></div>
             <div v-else class="hero-avatar avatar-placeholder">
               <span class="avatar-emoji">🎵</span>
             </div>
@@ -82,24 +82,22 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">🎮</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})`, backgroundPosition: '25% center' }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
               <h3 class="anime-info-title">鸣潮 | Wuthering Waves</h3>
-              <p class="anime-info-title-jp">Wuthering Waves</p>
+              <p class="anime-info-title-jp">鸣潮 2.5 版本</p>
               <div class="anime-info-meta">
                 <div class="anime-meta-item"><span class="meta-icon">🏢</span><span class="meta-label">开发：</span>Kuro Games</div>
                 <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">发行：</span>2024年5月</div>
                 <div class="anime-meta-item"><span class="meta-icon">🎮</span><span class="meta-label">类型：</span>开放世界ARPG</div>
-                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>秦紫翼（中）</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>张琦（中）/ 藤田咲（日）</div>
               </div>
-              <p class="anime-info-desc">在这片被<span class="highlight">悲鸣所摧毁的大地</span>上，漂泊者将面对残响军团的威胁。弗洛洛作为<span class="highlight-pink">残响军团的指挥家</span>，以强大的湮灭之力<span class="highlight">成为漂泊者前进道路上的重要阻碍</span>。</p>
+              <p class="anime-info-desc">在这片被<span class="highlight">悲鸣所摧毁的大地</span>上，漂泊者将面对残星会的威胁。弗洛洛作为<span class="highlight-pink">残星会会监</span>，以彼岸花之力操控残像，<span class="highlight">是漂泊者旅途中最神秘而危险的对手之一</span>。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">开放世界</span><span class="anime-tag dark">ARPG</span><span class="anime-tag dark">二次元</span><span class="anime-tag live">免费游玩</span></div>
               <div class="anime-info-actions">
-                <a href="https://wutheringwaves.kurogames.com/" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">🎮</span> 前往官网 <span class="bili-arrow">→</span></a>
+                <a href="https://mc.kurogames.com/" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">🎮</span> 前往官网 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -111,16 +109,10 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🖼️ 图片画廊</h2>
-              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat, #fff` }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -137,23 +129,17 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🎬 相关视频</h2>
-              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e1f1f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -163,13 +149,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -189,6 +189,14 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import img1 from '../images/1.jpg'
+import gameCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import sp5 from '../images/sp5.jpg'
+import sp6 from '../images/sp6.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -210,22 +218,24 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎵', label: '角色立绘', badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #6b1f1f 0%, #5e1f1f 50%, #2e0a0a 100%)', icon: '🌑', label: '湮灭之力', badge: '美图', overlay: '弗洛洛 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e0d0d 0%, #5e1f1f 50%, #6b1f1f 100%)', icon: '🎼', label: '残响交响', badge: '美图', overlay: '弗洛洛 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0a0a 50%, #5e1f1f 100%)', icon: '⚡', label: '指挥家', badge: '美图', overlay: '弗洛洛 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #1a0a0a 50%, #2e0d0d 100%)', icon: '🖤', label: '暗红礼服', badge: '美图', overlay: '弗洛洛 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2e0a0a 0%, #6b1f1f 50%, #5e1f1f 100%)', icon: '🎹', label: '音感仪', badge: '美图', overlay: '弗洛洛 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0d0d 50%, #5e1f1f 100%)', icon: '💀', label: '残响终曲', badge: '美图', overlay: '弗洛洛 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎻', label: '军团指挥', badge: '美图', overlay: '弗洛洛 · 美图 07' }
+      { isImage: false, bg: 'linear-gradient(135deg, #2e0d0d 0%, #5e1f1f 50%, #6b1f1f 100%)', icon: '🎼', label: '彼岸交响', badge: '美图', overlay: '弗洛洛 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0a0a 50%, #5e1f1f 100%)', icon: '⚡', label: '残星会监', badge: '美图', overlay: '弗洛洛 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #1a0a0a 50%, #2e0d0d 100%)', icon: '🖤', label: '红色礼服', badge: '美图', overlay: '弗洛洛 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #2e0a0a 0%, #6b1f1f 50%, #5e1f1f 100%)', icon: '🎹', label: '彼岸花指挥棒', badge: '美图', overlay: '弗洛洛 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e0d0d 50%, #5e1f1f 100%)', icon: '💀', label: '赫卡忒之影', badge: '美图', overlay: '弗洛洛 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #5e1f1f 0%, #2e0a0a 50%, #1a0a0a 100%)', icon: '🎻', label: '失亡彼岸', badge: '美图', overlay: '弗洛洛 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: null, title: '弗洛洛相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: null, title: '弗洛洛相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: null, title: '弗洛洛相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: null, title: '弗洛洛相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1pB87zLEPU', title: '原来乐曲完成的那一天，我的知音来赴约了……【弗洛洛盘点——不乐得】', desc: '弗洛洛 剧情解析' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1DWtEzoELQ', title: '【鸣潮小剧场】Wonderful U', desc: '弗洛洛 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1DR8sz2ECF', title: '"我或曾梦见，与你亲密无间"【弗洛洛原创PV】', desc: '弗洛洛 原创PV' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1MfhJzYE1k', title: '【鸣潮PV】漂泊的浪子，可愿伴我短暂沉溺于此？', desc: '弗洛洛 原创PV' },
+      { cover: sp5, url: 'https://www.bilibili.com/video/BV1c9MJ67Eg6', title: '【心月弗传】师兄，什么叫你下山三天带了一只狐狸回来？', desc: '心月弗传 同人作品' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1qtKn6KEHg', title: '《酣梦于彼岸深红》 | 《鸣潮》演唱会「致予新世界」', desc: '鸣潮 演唱会' }
+    ])
 
     function particleStyle() {
       return {
@@ -238,7 +248,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, gameCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -358,7 +368,7 @@ export default {
 .phrolova-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .phrolova-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
-.phrolova-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fef2f2, #fff5f5); border-left: 4px solid #b91c1c; border-radius: 0 12px 12px 0; font-size: 15px; color: #7f1d1d; font-weight: 500; line-height: 1.8; }
+.phrolova-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fef2f2, #fff5f5); border-left: 4px solid #b91c1c; border-radius: 0 12px 12px 0; font-size: 17px; color: #7f1d1d; font-weight: 500; line-height: 1.8; }
 
 /* Section Headers */
 .phrolova-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
@@ -379,4 +389,34 @@ export default {
 /* Section spacing */
 .phrolova-page .anime-section { padding-top: 48px; }
 .phrolova-page .videos-section { padding: 48px 0 64px; }
+
+/* Section sub-title */
+.phrolova-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.phrolova-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .phrolova-page .relationships-grid { grid-template-columns: 1fr; } }
+.phrolova-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.phrolova-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.phrolova-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.phrolova-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.phrolova-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.phrolova-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.phrolova-page .rel-romance { background: #fce7f3; color: #be185d; }
+.phrolova-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.phrolova-page .rel-friend { background: #d1fae5; color: #047857; }
+.phrolova-page .rel-other { background: #f1f5f9; color: #475569; }
+
+/* Video grid */
+.phrolova-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .phrolova-page .video-grid { grid-template-columns: 1fr; } }
+.phrolova-page .video-card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
+.phrolova-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.phrolova-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a0a, #5e1f1f); display: flex; align-items: center; justify-content: center; }
+.phrolova-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(185,28,28,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(185,28,28,0.4); transition: all 0.3s ease; }
+.phrolova-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
+.phrolova-page .video-card:hover .video-play-btn { transform: scale(1.15); background: rgba(185,28,28,1); }
+.phrolova-page .video-info { padding: 14px 16px; }
+.phrolova-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.phrolova-page .video-info p { font-size: 12px; color: #94a3b8; }
 </style>

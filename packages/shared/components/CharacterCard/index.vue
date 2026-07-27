@@ -5,7 +5,7 @@
     :style="{ animationDelay: `${0.04 * index}s` }"
     @click.prevent="onClick"
   >
-    <div class="card-image" :class="{ 'kana-card': character.id === 'kana' }">
+    <div class="card-image" :class="{ 'kana-card': character.id === 'kana', 'white-bg-card': ['tomori', 'phrolova'].includes(character.id) }">
       <div class="card-image-inner" :style="imageStyle">
         <span v-if="!character.image" class="card-image-emoji">👤</span>
       </div>
@@ -40,8 +40,10 @@ export default {
 
     const imageStyle = computed(() => {
       if (props.character.image) {
-        const bg = props.character.id === 'kana' ? '#fff' : 'transparent'
-        return { backgroundImage: `url(${props.character.image})`, backgroundSize: 'cover', backgroundPosition: 'top center', backgroundColor: bg }
+        const whiteBg = ['kana', 'tomori', 'phrolova'].includes(props.character.id)
+        const bg = whiteBg ? '#fff' : 'transparent'
+        const size = props.character.id === 'phrolova' ? '150% 150%' : 'cover'
+        return { backgroundImage: `url(${props.character.image})`, backgroundSize: size, backgroundPosition: 'top center', backgroundColor: bg }
       }
       const gradients = [
         'linear-gradient(135deg, #2d1b4e, #1a1030)',
@@ -92,6 +94,8 @@ export default {
 }
 .card-image.kana-card { background: #fff; }
 .card-image.kana-card .card-image-inner { background-color: #fff; }
+.card-image.white-bg-card { background: #fff; }
+.card-image.white-bg-card .card-image-inner { background-color: #fff; }
 .card-image-inner {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;

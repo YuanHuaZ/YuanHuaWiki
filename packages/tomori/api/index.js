@@ -1,3 +1,5 @@
+import tomoriImg from '../images/1.jpg'
+
 export default {
   id: 'tomori',
   name: '友利奈绪',
@@ -5,7 +7,7 @@ export default {
   nameJp: '友利奈绪',
   title: '星之海学园学生会会长',
   series: 'Charlotte | シャーロット',
-  image: null,
+  image: tomoriImg,
   tags: [
     { text: '超能力者', cls: 'tag-purple' },
     { text: '学生会会长', cls: 'tag-blue' },
@@ -36,10 +38,10 @@ export default {
     },
     {
       key: 'appearance', label: '外貌特征', icon: '👁️',
-      tags: ['💇 粉色长发', '👁️ 红色眼眸', '👗 星之海校服', '📸 相机配件'],
+      tags: ['💇 粉色长发', '👁️ 碧蓝眼眸', '👗 星之海校服', '📸 相机配件'],
       content: [
         '友利奈绪拥有一头<span class="highlight">漂亮的粉色长发</span>，发丝柔顺飘逸，常常扎成一个<span class="highlight-pink">俏皮的侧马尾</span>，显得青春活力十足。',
-        '她的眼眸是<span class="highlight">清澈的红色</span>，如同红宝石一般晶莹剔透。这双眼睛总是<span class="highlight-pink">闪烁着好奇和坚定的光芒</span>，让人不由自主地被她吸引。',
+        '她的眼眸是<span class="highlight">清澈的碧蓝色</span>，如同晴朗的初空一般晶莹剔透。这双眼睛总是<span class="highlight-pink">闪烁着好奇和坚定的光芒</span>，让人不由自主地被她吸引。',
         '她身着<span class="highlight">星之海学园的校服</span>，蓝白相间的制服设计简洁大方，完美衬托出她<span class="highlight-pink">青春活力的气质</span>。作为学生会会长，她总是保持着整洁端庄的形象。',
         '奈绪常常随身携带一台<span class="highlight">数码相机</span>，这是她记录生活的重要工具。相机不仅是她的爱好象征，也在<span class="highlight-pink">特殊能力者搜寻行动中</span>发挥了重要作用。'
       ]
@@ -61,9 +63,9 @@ export default {
         '奈绪与乙坂有宇的相遇始于<span class="highlight">星之海学园</span>。起初她只是将有宇当作需要保护的特殊能力者之一，但随着接触的深入，她<span class="highlight-pink">逐渐发现了有宇身上更多的可能性</span>。',
         '在有宇经历了一系列变故后，奈绪始终<span class="highlight">陪伴在他身边</span>。即使面对巨大的危险和困难，她也<span class="highlight-pink">从未放弃过有宇</span>，这种坚定的支持成为了有宇继续前进的动力。',
         '剧情后期，有宇踏上了<span class="highlight">环游世界夺取特殊能力者的旅程</span>。奈绪虽然无法同行，但她<span class="highlight-pink">在学园中默默等待着有宇的归来</span>，这份等待充满了坚定和爱意。',
-        '故事的高潮中，有宇<span class="highlight">失去了所有的记忆</span>，但奈绪并没有放弃。她相信两人之间的<span class="highlight-pink">羁绊终将让他们再次相遇</span>。最终，他们确实<span class="highlight">在海边重逢</span>，印证了那份不变的约定。'
+        '故事的高潮中，有宇<span class="highlight">失去了所有的记忆</span>，但奈绪并没有放弃。她最终<span class="highlight-pink">在病房中见到了失忆后的有宇</span>，尽管有宇已经不记得她是谁，奈绪依然<span class="highlight">选择陪伴在他身边</span>，印证了那份不变的羁绊。'
       ],
-      quote: '我不会忘记你的，所以……请不要忘记我。',
+      quote: '我是你的恋人。',
       quoteAuthor: '—— 友利奈绪'
     }
   ],
@@ -72,5 +74,10 @@ export default {
     { icon: '📸', name: '相机调查', grade: 'B', desc: '利用数码相机<span class="highlight">记录和追踪特殊能力者</span>的活动。奈绪擅长通过影像资料<span class="highlight-pink">分析和定位目标</span>，是学生会的核心调查手段。' },
     { icon: '💪', name: '领导力', grade: 'S', desc: '作为学生会会长，奈绪拥有<span class="highlight">出色的领导能力</span>。她能够有效组织和指挥学生会成员，<span class="highlight-pink">协调各方力量</span>完成各种任务。' },
     { icon: '💕', name: '坚定的信念', grade: 'EX', desc: '奈绪最强大的力量来自她<span class="highlight">内心深处对重要之人的守护之心</span>。无论面对什么样的困难和挫折，她都<span class="highlight-pink">从未动摇过自己的信念</span>。' }
+  ],
+  relationships: [
+    { icon: '👦', name: '乙坂有宇', type: '恋人/搭档', desc: 'Charlotte的男主角。最初奈绪将他视为需要保护的特殊能力者，但在共同经历中<span class="highlight">逐渐产生了深厚的感情</span>。两人一起踏上了改变命运的旅程，有宇最终成为了奈绪<span class="highlight-pink">最重要的人</span>。', cls: 'rel-romance' },
+    { icon: '👤', name: '奈绪的哥哥', type: '家人', desc: '同样是特殊能力者。因为哥哥的遭遇，奈绪对<span class="highlight">特殊能力者群体有着深厚的感情</span>，这也是她投身于保护工作的<span class="highlight-pink">重要原因</span>。', cls: 'rel-family' },
+    { icon: '🏫', name: '星之海学园学生会', type: '同伴', desc: '奈绪作为学生会会长，带领成员们<span class="highlight">调查和保护特殊能力者</span>。学生会是她最信赖的后盾，也是她<span class="highlight-pink">归属感的重要来源</span>。', cls: 'rel-friend' }
   ]
 }

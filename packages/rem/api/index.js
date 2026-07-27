@@ -75,5 +75,10 @@ export default {
     { icon: '👿', name: '鬼化', grade: 'A', desc: '激活鬼族血脉后，额头上的角会发光，<span class="highlight">力量会得到一定提升</span>。能吸收周围的魔力恢复伤势，但<span class="highlight-pink">消耗极大且容易失控</span>，使用过度会失去理智。' },
     { icon: '🛡️', name: '家务全能', grade: 'A', desc: '擅长各种家务，包括料理、打扫、洗衣等。她的料理水平<span class="highlight">在宅邸中公认第一</span>，做出的菜肴<span class="highlight-pink">能让人感受到满满的幸福</span>。' },
     { icon: '❤️', name: '奉献之爱', grade: 'EX', desc: '为了所爱之人<span class="highlight">可以毫不犹豫地牺牲自己</span>。这种纯粹无私的爱与奉献精神，使她成为了<span class="highlight-pink">支撑昴继续前进的精神支柱</span>。' }
+  ],
+  relationships: [
+    { icon: '👦', name: '菜月昴', type: '恋人', desc: '雷姆最深爱的人。虽然起初对昴充满怀疑，但在经历了多次<span class="highlight">生死考验后深深爱上了他</span>。在昴最崩溃的时刻，是雷姆的<span class="highlight-pink">"昴是雷姆的英雄"</span>给了他继续前进的勇气。', cls: 'rel-romance' },
+    { icon: '👩', name: '拉姆', type: '双胞胎姐姐', desc: '雷姆的双胞胎姐姐。幼年时拉姆被称为天才，雷姆一直<span class="highlight">生活在姐姐的阴影下</span>。但雷姆始终以姐姐为荣，<span class="highlight-pink">始终尊重和照顾着拉姆</span>，姐妹感情深厚。', cls: 'rel-family' },
+    { icon: '🏠', name: '罗兹瓦尔', type: '主人', desc: '罗兹瓦尔宅邸的主人，收留了鬼族幸存的姐妹俩。他对雷姆姐妹<span class="highlight">有着复杂的目的</span>，但确实为她们提供了<span class="highlight-pink">一个可以栖身的家</span>。', cls: 'rel-other' }
   ]
 }

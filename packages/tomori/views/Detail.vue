@@ -20,7 +20,7 @@
         <div class="hero-visual animate-slide-up delay-200">
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar-ring"></div>
-            <div v-if="data.image" class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat` }"></div>
+            <div v-if="data.image" class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat, #fff` }"></div>
             <div v-else class="hero-avatar avatar-placeholder">
               <span class="avatar-emoji">🏫</span>
             </div>
@@ -111,16 +111,10 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🖼️ 图片画廊</h2>
-              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat, #fff` }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -137,12 +131,6 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🎬 相关视频</h2>
-              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="video-grid">
             <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0a1628, #1e3a5f)' }">
@@ -163,13 +151,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -189,6 +191,7 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import img1 from '../images/1.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -210,7 +213,7 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3050 0%, #0a1628 50%, #0a0a1a 100%)', icon: '📸', label: '角色立绘', badge: '立绘', overlay: '友利奈绪 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '友利奈绪 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #0d2847 0%, #1e3050 50%, #0a1628 100%)', icon: '👁️', label: '不可视', badge: '美图', overlay: '友利奈绪 · 美图 01' },
       { isImage: false, bg: 'linear-gradient(135deg, #1a1030 0%, #1e3050 50%, #0d2847 100%)', icon: '🏫', label: '星之海学园', badge: '美图', overlay: '友利奈绪 · 美图 02' },
       { isImage: false, bg: 'linear-gradient(135deg, #0a0a1a 0%, #0a1628 50%, #1e3050 100%)', icon: '💫', label: '特殊能力', badge: '美图', overlay: '友利奈绪 · 美图 03' },
@@ -350,9 +353,8 @@ export default {
 .tomori-page .gallery-overlay-text { color: #fff; font-size: 13px; font-weight: 500; }
 
 .tomori-page .videos-section { padding: 48px 0 64px; }
-.tomori-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .tomori-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .tomori-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.tomori-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .tomori-page .video-grid { grid-template-columns: 1fr; } }
 .tomori-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .tomori-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .tomori-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #0a1628, #1e3a5f); display: flex; align-items: center; justify-content: center; }
@@ -372,7 +374,7 @@ export default {
 .tomori-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .tomori-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
-.tomori-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #eff6ff, #fce7f3); border-left: 4px solid #60a5fa; border-radius: 0 12px 12px 0; font-size: 15px; color: #1e40af; font-weight: 500; line-height: 1.8; }
+.tomori-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #eff6ff, #fce7f3); border-left: 4px solid #60a5fa; border-radius: 0 12px 12px 0; font-size: 17px; color: #1e40af; font-weight: 500; line-height: 1.8; }
 
 /* Section Headers */
 .tomori-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
@@ -393,4 +395,21 @@ export default {
 /* Section spacing */
 .tomori-page .anime-section { padding-top: 48px; }
 .tomori-page .videos-section { padding: 48px 0 64px; }
+
+/* Section sub-title */
+.tomori-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.tomori-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .tomori-page .relationships-grid { grid-template-columns: 1fr; } }
+.tomori-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.tomori-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.tomori-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.tomori-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.tomori-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.tomori-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.tomori-page .rel-romance { background: #fce7f3; color: #be185d; }
+.tomori-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.tomori-page .rel-friend { background: #d1fae5; color: #047857; }
+.tomori-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

@@ -156,16 +156,16 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
-              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
+              <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a2e, #2d1b4e)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -175,13 +175,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -211,6 +225,10 @@ import img7 from '../images/7.jpg'
 import img8 from '../images/8.jpg'
 import animeCover from '../images/a.jpg'
 import gameCover from '../images/b.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -243,12 +261,12 @@ export default {
       { isImage: true, bg: img8, badge: '美图', overlay: '七海千秋 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: animeCover, title: '七海千秋相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: animeCover, title: '七海千秋相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: animeCover, title: '七海千秋相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: animeCover, title: '七海千秋相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yt4y1s7yN', title: 'ヒステリックナイトガール【弹丸论破2】手书【live2d动画】', desc: '七海千秋 手书' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Br4y1Z7ge', title: '⚠️OTOMEROID/VIVINOS 七海千秋/弹丸论破2［手书］', desc: '七海千秋 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1iS4y1u78t', title: '【弹丸论破2手书】BABY【七海千秋中心】', desc: '七海千秋 手书' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1WjQAYnEgT', title: '【弹丸论破2手书】ずっとずっとずっと【2025七海千秋生贺】', desc: '七海千秋 手书' }
+    ])
 
     function particleStyle() {
       return {
@@ -427,10 +445,9 @@ export default {
 
 /* ===== Videos ===== */
 .nanami-page .videos-section { padding: 48px 0 64px; }
-.nanami-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .nanami-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .nanami-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
-.nanami-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
+.nanami-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .nanami-page .video-grid { grid-template-columns: 1fr; } }
+.nanami-page .video-card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .nanami-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .nanami-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a28, #3b1f5e); display: flex; align-items: center; justify-content: center; }
 .nanami-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(168,85,247,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(168,85,247,0.4); transition: all 0.3s ease; }
@@ -440,4 +457,21 @@ export default {
 .nanami-page .video-info { padding: 14px 16px; }
 .nanami-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .nanami-page .video-info p { font-size: 12px; color: #94a3b8; }
+
+/* Section sub-title */
+.nanami-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.nanami-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .nanami-page .relationships-grid { grid-template-columns: 1fr; } }
+.nanami-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.nanami-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.nanami-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.nanami-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.nanami-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.nanami-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.nanami-page .rel-romance { background: #fce7f3; color: #be185d; }
+.nanami-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.nanami-page .rel-friend { background: #d1fae5; color: #047857; }
+.nanami-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

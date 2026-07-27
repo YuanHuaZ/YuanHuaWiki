@@ -5,6 +5,11 @@
 import nanamiImg from '@packages/nanami/images/1.jpg'
 import remImg from '@packages/rem/images/1.jpg'
 import kanaImg from '@packages/kana/images/1.jpg'
+import phrolovaImg from '@packages/phrolova/images/1.jpg'
+import hutaoImg from '@packages/hutao/images/1.jpg'
+import elainaImg from '@packages/elaina/images/1.jpg'
+import tomoriImg from '@packages/tomori/images/1.jpg'
+import komariImg from '@packages/komari/images/1.jpg'
 
 const tagClasses = ['tag-purple', 'tag-pink', 'tag-cyan', 'tag-green', 'tag-orange', 'tag-blue', 'tag-amber']
 
@@ -41,22 +46,22 @@ const characters = [
     id: 'phrolova',
     name: '弗洛洛',
     nameSub: 'Phrolova',
-    series: '鸣潮 | Wuthering Waves',
-    image: null,
+    series: '鸣潮',
+    image: phrolovaImg,
     hasDetail: true,
     tags: [
       { text: '湮灭', cls: 'tag-red' },
       { text: '音感仪', cls: 'tag-purple' },
       { text: '指挥家', cls: 'tag-dark' },
-      { text: '残响军团', cls: 'tag-dark' }
+      { text: '残星会', cls: 'tag-dark' }
     ]
   },
   {
     id: 'hutao',
     name: '胡桃',
     nameSub: 'Hu Tao',
-    series: '原神 | Genshin Impact',
-    image: null,
+    series: '原神',
+    image: hutaoImg,
     hasDetail: true,
     tags: [
       { text: '火元素', cls: 'tag-red' },
@@ -69,8 +74,8 @@ const characters = [
     id: 'elaina',
     name: '伊蕾娜',
     nameSub: 'Elaina',
-    series: '魔女之旅 | Wandering Witch',
-    image: null,
+    series: '魔女之旅',
+    image: elainaImg,
     hasDetail: true,
     tags: [
       { text: '魔法使', cls: 'tag-purple' },
@@ -84,7 +89,7 @@ const characters = [
     name: '友利奈绪',
     nameSub: 'Tomori Nao',
     series: 'Charlotte',
-    image: null,
+    image: tomoriImg,
     hasDetail: true,
     tags: [
       { text: '超能力者', cls: 'tag-purple' },
@@ -94,11 +99,11 @@ const characters = [
     ]
   },
   {
-    id: 'komori',
+    id: 'komari',
     name: '小鞠知花',
-    nameSub: 'Komori Chika',
+    nameSub: 'Komari Chika',
     series: '败犬女主太多了',
-    image: null,
+    image: komariImg,
     hasDetail: true,
     tags: [
       { text: '社恐', cls: 'tag-purple' },

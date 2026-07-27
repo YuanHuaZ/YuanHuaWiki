@@ -1,11 +1,13 @@
+import komariImg from '../images/1.jpg'
+
 export default {
-  id: 'komori',
+  id: 'komari',
   name: '小鞠知花',
-  nameSub: 'Komori Chika',
+  nameSub: 'Komari Chika',
   nameJp: '小鞠知花',
   title: '败犬青梅竹马',
   series: '败犬女主太多了',
-  image: null,
+  image: komariImg,
   tags: [
     { text: '社恐', cls: 'tag-purple' },
     { text: '青梅竹马', cls: 'tag-blue' },
@@ -19,7 +21,7 @@ export default {
     { icon: '🌟', label: '称号', value: '败犬青梅竹马', iconClass: 'cyan' },
     { icon: '🏫', label: '学校', value: '藤成女学院', iconClass: 'pink' },
     { icon: '💕', label: '喜欢的人', value: '朝日向', iconClass: 'purple' },
-    { icon: '🎤', label: '声优', value: '若山詩音（日）', iconClass: 'cyan' },
+    { icon: '🎤', label: '声优', value: '寺澤百花（日）', iconClass: 'cyan' },
     { icon: '📺', label: '所属作品', value: '败犬女主太多了', iconClass: 'purple' },
     { icon: '🎯', label: '角色定位', value: '女主角 / 败犬组', iconClass: 'pink' },
     { icon: '📅', label: '播出', value: '2024年7月', iconClass: 'cyan' }
@@ -73,5 +75,9 @@ export default {
     { icon: '💪', name: '超努力体质', grade: 'S', desc: '知花最大的才能是<span class="highlight">超乎常人的努力精神</span>。无论面对什么困难，她都会<span class="highlight-pink">拼尽全力直到最后一刻</span>，绝不会轻易放弃。' },
     { icon: '💕', name: '笨拙的温柔', grade: 'B', desc: '虽然不擅长直接表达，但知花会通过<span class="highlight">实际行动默默关心身边的人</span>。这种<span class="highlight-pink">傲娇式的温柔</span>虽不张扬却总能恰到好处。' },
     { icon: '😭', name: '感情爆发力', grade: 'EX', desc: '知花的情感极为丰富，<span class="highlight">喜怒哀乐全都写在脸上</span>。当她情感爆发时，那种<span class="highlight-pink">毫不掩饰的真实情感</span>具有极强的感染力，能让所有人都为之动容。' }
+  ],
+  relationships: [
+    { icon: '👦', name: '朝日向', type: '喜欢的人/青梅竹马', desc: '知花从小一起长大的<span class="highlight">青梅竹马</span>。她一直以"姐姐"的身份照顾着朝日向，但感情<span class="highlight-pink">逐渐转变为了爱恋</span>。当朝日向遇到其他女孩后，知花发现自己正在失去那份特殊的联系。', cls: 'rel-romance' },
+    { icon: '🏃', name: '田径部队友', type: '同伴', desc: '在田径部中，知花以<span class="highlight">刻苦训练和不服输的精神</span>获得了队友们的认可。虽然她患有社交恐惧，但在田径场上<span class="highlight-pink">用行动赢得了大家的尊重</span>。', cls: 'rel-friend' }
   ]
 }

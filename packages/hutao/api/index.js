@@ -1,11 +1,13 @@
+import hutaoImg from '../images/1.jpg'
+
 export default {
   id: 'hutao',
   name: '胡桃',
   nameSub: 'Hu Tao',
   nameJp: '胡桃',
   title: '往生堂第七十七代堂主',
-  series: '原神 | Genshin Impact',
-  image: null,
+  series: '原神',
+  image: hutaoImg,
   tags: [
     { text: '火元素', cls: 'tag-red' },
     { text: '长柄武器', cls: 'tag-purple' },
@@ -52,26 +54,31 @@ export default {
         '胡桃是<span class="highlight">往生堂第七十七代堂主</span>，年纪轻轻便继承了这一重要的职位。往生堂是璃月港<span class="highlight-pink">负责丧葬事务的机构</span>，在璃月有着悠久的历史和崇高的地位。',
         '虽然年纪不大，但胡桃对<span class="highlight">生死之道有着深刻的理解</span>。她的学识和能力甚至得到了<span class="highlight-pink">钟离的认可与辅佐</span>，这位神秘顾问在往生堂中扮演着重要角色。',
         '胡桃拥有<span class="highlight">火元素的神之眼</span>，这使她能够操控火焰之力进行战斗。她的战斗风格<span class="highlight-pink">灵动而华丽</span>，将长柄武器与火元素完美结合。',
-        '作为璃月港的重要人物之一，胡桃在<span class="highlight">璃月七星中也有一定的影响力</span>。她与凝光、刻晴等人保持着<span class="highlight-pink">良好的合作关系</span>。'
+        '作为璃月港的重要人物之一，胡桃与<span class="highlight">往生堂在璃月有着悠久的历史和崇高的地位</span>。她与凝光、刻晴等璃月重要人物<span class="highlight-pink">保持着良好的合作关系</span>，共同守护着璃月的安宁。'
       ]
     },
     {
       key: 'story', label: '剧情简介', icon: '📜',
-      tags: ['🏮 初登场璃月', '🔥 传说任务', '🌸 送仙典仪', '💀 生死之诗'],
+      tags: ['🏮 初登场璃月', '🦋 引蝶之章', '🌸 海灯节', '💀 生死之诗'],
       content: [
-        '胡桃在《原神》璃月主线剧情中首次登场。在<span class="highlight">送仙典仪</span>的过程中，旅行者与她有了<span class="highlight-pink">初次接触</span>。她以独特的个性和令人印象深刻的方式出现在众人面前。',
+        '胡桃在《原神》中通过传说任务<span class="highlight">「引蝶之章」</span>首次登场。旅行者在无妄坡遇见了正在举行仪式的胡桃，由此<span class="highlight-pink">展开了一段关于生死边界的故事</span>。',
         '胡桃的传说任务<span class="highlight">"引蝶之章"</span>中，她帮助一位年轻人理解<span class="highlight-pink">了生死离别的意义</span>。通过一系列事件，她展示了自己作为<span class="highlight">往生堂堂主的专业素养与温柔内心</span>。',
         '在任务中，胡桃写了一首<span class="highlight-pink">关于生死的诗</span>，虽然风格依旧古灵精怪，但字里行间透露出<span class="highlight">对生命的珍视与对死亡的坦然</span>。',
         '胡桃与钟离之间的<span class="highlight-pink">互动也是剧情的一大亮点</span>。虽然她是堂主，但对这位知识渊博的客卿<span class="highlight">充满了敬意与信任</span>，两人之间的关系既有趣又温馨。'
       ],
-      quote: '生老病死，天地万象，尽在吾体。',
+      quote: '生老病死，天地万象，尽在吾辈。',
       quoteAuthor: '—— 胡桃'
     }
   ],
   abilities: [
-    { icon: '🔥', name: '秘法·雪藏梅归', grade: 'B', desc: '使用长柄武器进行<span class="highlight">连续的火焰攻击</span>，每次攻击都会对敌人造成<span class="highlight-pink">火元素伤害</span>。招式灵活多变，如同翩翩起舞。' },
+    { icon: '🔥', name: '往生秘传枪法', grade: 'B', desc: '使用长柄武器进行<span class="highlight">至多六段的连续枪击</span>，重击可向前方突进。招式<span class="highlight-pink">灵活多变，如同翩翩起舞</span>，是胡桃持续输出的基础手段。' },
     { icon: '🦋', name: '蝶引来生', grade: 'A', desc: '胡桃的<span class="highlight">核心战斗技能</span>，消耗生命值获得<span class="highlight-pink">火元素附魔</span>，大幅提升攻击力。此时她的攻击将附带额外的火元素伤害，<span class="highlight">输出能力显著提升</span>。' },
     { icon: '💀', name: '安神秘法', grade: 'S', desc: '召唤强大的<span class="highlight">火焰之力</span>对范围内敌人造成<span class="highlight-pink">巨额火元素伤害</span>。此技能不仅威力巨大，视觉效果也极为华丽，是胡桃<span class="highlight">最具标志性的技能</span>。' },
     { icon: '🌸', name: '往生堂主的智慧', grade: 'EX', desc: '作为往生堂堂主，胡桃对<span class="highlight">生死之道有着超乎常人的理解</span>。这种智慧不仅体现在战斗中，更体现在她<span class="highlight-pink">对待生命的态度</span>上。' }
+  ],
+  relationships: [
+    { icon: '🧔', name: '钟离', type: '客卿/顾问', desc: '往生堂的神秘客卿，知识渊博、举止优雅。胡桃对他<span class="highlight">充满敬意与信任</span>，虽然常让他跑腿办事，但实际上<span class="highlight-pink">非常依赖这位可靠的顾问</span>。两人关系亦师亦友。', cls: 'rel-friend' },
+    { icon: '👻', name: '七七', type: '业务相关', desc: '不卜庐的僵尸药师。胡桃认为七七<span class="highlight">作为已死之人却仍在世间徘徊</span>，理应被送去往生。她<span class="highlight-pink">一直想超度七七</span>，但每次都未能成功，这也成了两人之间有趣的互动。', cls: 'rel-other' },
+    { icon: '👩‍🍳', name: '香菱', type: '好友', desc: '万民堂的厨师，与胡桃关系很好。两人经常<span class="highlight">一起讨论美食与人生</span>，胡桃也很喜欢香菱做的<span class="highlight-pink">各种创意料理</span>，尽管有些料理看起来也很"黑暗"。', cls: 'rel-friend' }
   ]
 }

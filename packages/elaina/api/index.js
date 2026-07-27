@@ -1,11 +1,13 @@
+import elainaImg from '../images/1.jpg'
+
 export default {
   id: 'elaina',
   name: '伊蕾娜',
   nameSub: 'Elaina',
   nameJp: '伊蕾娜',
   title: '灰之魔女',
-  series: '魔女之旅 | Wandering Witch',
-  image: null,
+  series: '魔女之旅',
+  image: elainaImg,
   tags: [
     { text: '魔法使', cls: 'tag-purple' },
     { text: '旅人', cls: 'tag-cyan' },
@@ -14,8 +16,8 @@ export default {
     { text: '女主角', cls: 'tag-green' }
   ],
   info: [
-    { icon: '🎂', label: '生日', value: '10月15日', iconClass: 'purple' },
-    { icon: '📏', label: '身高', value: '152cm', iconClass: 'pink' },
+    { icon: '🎂', label: '生日', value: '10月17日', iconClass: 'purple' },
+    { icon: '📏', label: '身高', value: '150cm', iconClass: 'pink' },
     { icon: '🌟', label: '称号', value: '灰之魔女', iconClass: 'cyan' },
     { icon: '🔮', label: '魔法', value: '万能魔法', iconClass: 'purple' },
     { icon: '📖', label: '武器', value: '魔杖', iconClass: 'pink' },
@@ -64,7 +66,7 @@ export default {
         '旅途中，伊蕾娜也遇到了<span class="highlight">无法改变的悲剧</span>。她深知作为旅者的界限——有时候<span class="highlight-pink">旁观记录比强行介入更加重要</span>。这种取舍让她感到痛苦，但也让她变得更加成熟。',
         '她将一路上的所见所闻<span class="highlight">记录在旅行日记</span>中。这些记录不仅是她个人的回忆，也是<span class="highlight-pink">留给读者的珍贵故事</span>。正如她所说："这个世界比想象中更加广阔，也更加有趣。"'
       ],
-      quote: '这个世界比我想象中要大得多，也要有趣得多。',
+      quote: '没错，就是我。',
       quoteAuthor: '—— 伊蕾娜'
     }
   ],
@@ -73,5 +75,10 @@ export default {
     { icon: '🛡️', name: '防护魔法', grade: 'A', desc: '能够生成<span class="highlight">强大的防护屏障</span>，抵御各种攻击。在旅途中，这层<span class="highlight-pink">屏障是她最可靠的防御</span>，多次帮助她化险为夷。' },
     { icon: '🧹', name: '飞天扫帚', grade: 'S', desc: '魔女标志性的<span class="highlight">飞行工具</span>。伊蕾娜能够熟练操控飞天扫帚，<span class="highlight-pink">在空中自由飞翔</span>，这是她旅途中不可或缺的交通工具。' },
     { icon: '✨', name: '天才资质', grade: 'EX', desc: '十四岁便成为<span class="highlight">最高位魔女的天才</span>。她的魔法天赋和学习能力远超常人，任何魔法<span class="highlight-pink">只要学习一次就能掌握</span>，是芙兰口中"百年难得一见的奇才"。' }
+  ],
+  relationships: [
+    { icon: '👩‍🏫', name: '芙兰', type: '师父', desc: '"星尘魔女"芙兰，伊蕾娜的<span class="highlight">授业恩师</span>。不仅教会了她强大的魔法，更教导了她作为魔女应有的<span class="highlight-pink">处世之道</span>。芙兰亲手授予了她魔女之证和旅行用的宽檐帽。', cls: 'rel-family' },
+    { icon: '📖', name: '妮可', type: '憧憬对象', desc: '《妮可冒险谭》的作者。年幼的伊蕾娜偶然得到这本书，从此<span class="highlight">对旅行充满了向往</span>。妮可的冒险故事是伊蕾娜踏上旅途的<span class="highlight-pink">最初动力</span>。', cls: 'rel-other' },
+    { icon: '🏠', name: '父母', type: '家人', desc: '伊蕾娜的父母支持她踏上旅途，虽然<span class="highlight">心中不舍但依然放手</span>。临别时的祝福成为了伊蕾娜旅途中<span class="highlight-pink">最温暖的回忆之一</span>。', cls: 'rel-family' }
   ]
 }

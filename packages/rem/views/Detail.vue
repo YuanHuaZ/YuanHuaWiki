@@ -130,16 +130,16 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
-              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
+              <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0a1628, #1e3a5f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -149,13 +149,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -184,6 +198,10 @@ import img6 from '../images/6.jpg'
 import img7 from '../images/7.jpg'
 import img8 from '../images/8.jpg'
 import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -215,12 +233,12 @@ export default {
       { isImage: true, bg: img8, badge: '美图', overlay: '雷姆 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: animeCover, title: '雷姆相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: animeCover, title: '雷姆相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: animeCover, title: '雷姆相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: animeCover, title: '雷姆相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1Ls411i7Zc', title: '轮到蕾姆来帮你洗脑了！', desc: '雷姆 洗脑向剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1GZ4y1v7SM', title: '【Re:0】只是一分钟的告白却是我六年的救赎', desc: '雷姆 告白剪辑' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1js411a7yH', title: '【Re异世界】前前前世(雷姆,就算你被全世界忘记,你的名字会一直被我记在心里！)', desc: '雷姆 MV' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1Vs411x79o', title: '【从零开始的异世界生活】手书 两个不同的结局', desc: '雷姆 手书' }
+    ])
 
     function particleStyle() {
       return {
@@ -352,9 +370,8 @@ export default {
 .rem-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
 .rem-page .videos-section { padding: 48px 0 64px; }
-.rem-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .rem-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .rem-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.rem-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .rem-page .video-grid { grid-template-columns: 1fr; } }
 .rem-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .rem-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .rem-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #0a1628, #1e3a5f); display: flex; align-items: center; justify-content: center; }
@@ -365,4 +382,21 @@ export default {
 .rem-page .video-info { padding: 14px 16px; }
 .rem-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .rem-page .video-info p { font-size: 12px; color: #94a3b8; }
+
+/* Section sub-title */
+.rem-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.rem-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .rem-page .relationships-grid { grid-template-columns: 1fr; } }
+.rem-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.rem-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.rem-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.rem-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rem-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.rem-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.rem-page .rel-romance { background: #fce7f3; color: #be185d; }
+.rem-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.rem-page .rel-friend { background: #d1fae5; color: #047857; }
+.rem-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

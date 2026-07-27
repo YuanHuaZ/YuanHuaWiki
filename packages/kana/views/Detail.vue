@@ -112,7 +112,7 @@
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat, #fff` }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -130,16 +130,16 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
-              <div class="video-cover" :style="{ background: `url(${v.cover}) center/cover no-repeat` }">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%2+1)*100)">
+              <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0a1628, #1e3a5f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
-                <div class="video-duration">{{ v.duration }}</div>
               </div>
               <div class="video-info">
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -149,13 +149,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -184,6 +198,10 @@ import img6 from '../images/6.jpg'
 import img7 from '../images/7.jpg'
 import img8 from '../images/8.jpg'
 import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -215,12 +233,12 @@ export default {
       { isImage: true, bg: img8, badge: '美图', overlay: '有马加奈 · 美图 07' }
     ]
 
-    const videoItems = [
-      { cover: animeCover, title: '有马加奈相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: animeCover, title: '有马加奈相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: animeCover, title: '有马加奈相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: animeCover, title: '有马加奈相关视频 04', desc: '视频描述占位', duration: '04:33' }
-    ]
+    const videoItems = ref([
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1fs4y1z74E', title: '【中日歌词/完整版/有马加奈】「满月」-有马加奈', desc: '满月 有马加奈角色歌' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1QE2xYUEi3', title: '【4K60帧/Hires无损音质】我推的孩子「POP IN 2」B小町【MV short ver./中日字幕】', desc: 'B小町 MV' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1yF411d7tM', title: 'TVアニメ『【推しの子】』／B小町「STAR☆T☆RAIN」「サインはB」「HEART\'s♡KISS」New Arrange Ver. 試聴映像', desc: 'B小町 MV' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1ui4y1C7Jt', title: '【TOS2021/静止画MAD】有马加奈的告白', desc: '有马加奈 MAD' }
+    ])
 
     function particleStyle() {
       return {
@@ -352,9 +370,8 @@ export default {
 .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
 .kana-page .videos-section { padding: 48px 0 64px; }
-.kana-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .kana-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .kana-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.kana-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .kana-page .video-grid { grid-template-columns: 1fr; } }
 .kana-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .kana-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .kana-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #2d1a3a, #4a2060); display: flex; align-items: center; justify-content: center; }
@@ -365,4 +382,21 @@ export default {
 .kana-page .video-info { padding: 14px 16px; }
 .kana-page .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .kana-page .video-info p { font-size: 12px; color: #94a3b8; }
+
+/* Section sub-title */
+.kana-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.kana-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .kana-page .relationships-grid { grid-template-columns: 1fr; } }
+.kana-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.kana-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.kana-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.kana-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.kana-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.kana-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.kana-page .rel-romance { background: #fce7f3; color: #be185d; }
+.kana-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.kana-page .rel-friend { background: #d1fae5; color: #047857; }
+.kana-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

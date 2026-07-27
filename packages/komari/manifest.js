@@ -4,15 +4,15 @@ const Detail = () => import('./views/Detail.vue')
 
 registerPackage([
   {
-    path: '/character/komori',
-    name: 'KomoriDetail',
+    path: '/character/komari',
+    name: 'KomariDetail',
     component: Detail,
     meta: { title: '小鞠知花 | 败犬女主太多了' }
   }
 ])
 
 export default {
-  name: 'komori',
+  name: 'komari',
   description: '小鞠知花角色详情',
   api: () => import('./api/index.js')
 }

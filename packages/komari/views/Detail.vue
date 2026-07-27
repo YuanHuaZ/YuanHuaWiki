@@ -94,7 +94,7 @@
                 <div class="anime-meta-item"><span class="meta-icon">🏢</span><span class="meta-label">制作：</span>A-1 Pictures</div>
                 <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">播出：</span>2024年7月</div>
                 <div class="anime-meta-item"><span class="meta-icon">📺</span><span class="meta-label">集数：</span>全12话</div>
-                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>若山詩音</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>寺澤百花</div>
               </div>
               <p class="anime-info-desc">在青春校园中，总有那么一些女孩——她们<span class="highlight">明明付出了全部真心</span>，却总是<span class="highlight-pink">与爱情失之交臂</span>。小鞠知花作为朝日向的青梅竹马，在这场<span class="highlight">注定的败北</span>中，用汗水和泪水书写着属于自己的青春故事。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">校园</span><span class="anime-tag dark">恋爱</span><span class="anime-tag dark">喜剧</span><span class="anime-tag live">正版引进</span></div>
@@ -111,12 +111,6 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🖼️ 图片画廊</h2>
-              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
@@ -137,12 +131,6 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🎬 相关视频</h2>
-              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="video-grid">
             <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e2f1f)' }">
@@ -163,13 +151,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -189,6 +191,7 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import img1 from '../images/1.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -210,7 +213,7 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #5e2f2f 0%, #2e1a1a 50%, #1a0a0a 100%)', icon: '💕', label: '角色立绘', badge: '立绘', overlay: '小鞠知花 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '小鞠知花 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #6b3a2f 0%, #5e2f2f 50%, #2e1a1a 100%)', icon: '🏃', label: '田径少女', badge: '美图', overlay: '小鞠知花 · 美图 01' },
       { isImage: false, bg: 'linear-gradient(135deg, #2e1a1a 0%, #5e2f2f 50%, #6b3a2f 100%)', icon: '😤', label: '傲娇时刻', badge: '美图', overlay: '小鞠知花 · 美图 02' },
       { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 50%, #5e2f2f 100%)', icon: '😢', label: '败犬泪水', badge: '美图', overlay: '小鞠知花 · 美图 03' },
@@ -349,9 +352,8 @@ export default {
 .komori-page .gallery-overlay-text { color: #fff; font-size: 13px; font-weight: 500; }
 
 .komori-page .videos-section { padding: 48px 0 64px; }
-.komori-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .komori-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .komori-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.komori-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .komori-page .video-grid { grid-template-columns: 1fr; } }
 .komori-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .komori-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .komori-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a0a, #5e2f2f); display: flex; align-items: center; justify-content: center; }
@@ -371,7 +373,7 @@ export default {
 .komori-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .komori-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
-.komori-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fff7ed, #fce7f3); border-left: 4px solid #e8795a; border-radius: 0 12px 12px 0; font-size: 15px; color: #9a3412; font-weight: 500; line-height: 1.8; }
+.komori-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fff7ed, #fce7f3); border-left: 4px solid #e8795a; border-radius: 0 12px 12px 0; font-size: 17px; color: #9a3412; font-weight: 500; line-height: 1.8; }
 
 /* Section Headers */
 .komori-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
@@ -385,4 +387,21 @@ export default {
 .komori-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(232,121,90,0.2); border: 1px solid rgba(232,121,90,0.3); border-radius: 50px; font-size: 12px; color: #fda4a4; font-weight: 600; }
 
 .komori-page .anime-section { padding-top: 48px; }
+
+/* Section sub-title */
+.komori-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.komori-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .komori-page .relationships-grid { grid-template-columns: 1fr; } }
+.komori-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.komori-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.komori-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.komori-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.komori-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.komori-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.komori-page .rel-romance { background: #fce7f3; color: #be185d; }
+.komori-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.komori-page .rel-friend { background: #d1fae5; color: #047857; }
+.komori-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

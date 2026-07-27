@@ -111,12 +111,6 @@
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🖼️ 图片画廊</h2>
-              <p>共 {{ galleryItems.length }} 张 · 图片占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
@@ -137,12 +131,6 @@
     <div v-show="activeMainTab === 'videos'" class="tab-panel-main">
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <h2>🎬 相关视频</h2>
-              <p>共 {{ videoItems.length }} 个视频 · 视频占位中，敬请期待</p>
-            </div>
-          </div>
           <div class="video-grid">
             <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e2f1f)' }">
@@ -163,13 +151,27 @@
     <div v-show="activeMainTab === 'abilities'" class="tab-panel-main">
       <section class="section">
         <div class="container">
+          <!-- Abilities -->
+          <div class="section-sub-title">🌟 能力</div>
           <div class="abilities-list">
-            <div v-for="(ab, idx) in data.abilities" :key="idx"
+            <div v-for="(ab, idx) in data.abilities" :key="'ab-'+idx"
               :class="['ability-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
               <div class="ability-icon">{{ ab.icon }}</div>
               <div class="ability-info">
                 <h4>{{ ab.name }}</h4>
                 <p v-html="ab.desc"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Relationships -->
+          <div class="section-sub-title" style="margin-top:48px;">🔗 关系</div>
+          <div class="relationships-grid">
+            <div v-for="(rel, idx) in data.relationships" :key="'rel-'+idx"
+              :class="['relationship-card', 'animate-slide-up', `delay-${(idx+1)*100}`]">
+              <div class="rel-icon">{{ rel.icon }}</div>
+              <div class="rel-info">
+                <h4>{{ rel.name }} <span :class="['rel-type', rel.cls]">{{ rel.type }}</span></h4>
+                <p v-html="rel.desc"></p>
               </div>
             </div>
           </div>
@@ -189,6 +191,7 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import img1 from '../images/1.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -210,11 +213,11 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #2e1a0a 50%, #1a0a0a 100%)', icon: '🦋', label: '角色立绘', badge: '立绘', overlay: '胡桃 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '胡桃 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #6b3a1f 0%, #5e2f1f 50%, #2e1a0a 100%)', icon: '🔥', label: '火元素力', badge: '美图', overlay: '胡桃 · 美图 01' },
       { isImage: false, bg: 'linear-gradient(135deg, #2e1a0d 0%, #5e2f1f 50%, #6b3a1f 100%)', icon: '💀', label: '往生堂', badge: '美图', overlay: '胡桃 · 美图 02' },
       { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e1a0a 50%, #5e2f1f 100%)', icon: '🏮', label: '璃月港', badge: '美图', overlay: '胡桃 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #1a0a0a 50%, #2e1a0d 100%)', icon: '⚰️', label: '送仙典仪', badge: '美图', overlay: '胡桃 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #1a0a0a 50%, #2e1a0d 100%)', icon: '⚰️', label: '引蝶之章', badge: '美图', overlay: '胡桃 · 美图 04' },
       { isImage: false, bg: 'linear-gradient(135deg, #2e1a0a 0%, #6b3a1f 50%, #5e2f1f 100%)', icon: '🌸', label: '梅花之瞳', badge: '美图', overlay: '胡桃 · 美图 05' },
       { isImage: false, bg: 'linear-gradient(135deg, #1a0a0a 0%, #2e1a0d 50%, #5e2f1f 100%)', icon: '👻', label: '古灵精怪', badge: '美图', overlay: '胡桃 · 美图 06' },
       { isImage: false, bg: 'linear-gradient(135deg, #5e2f1f 0%, #2e1a0a 50%, #1a0a0a 100%)', icon: '🎭', label: '往生堂堂主', badge: '美图', overlay: '胡桃 · 美图 07' }
@@ -351,9 +354,8 @@ export default {
 .hutao-page .gallery-overlay-text { color: #fff; font-size: 13px; font-weight: 500; }
 
 .hutao-page .videos-section { padding: 48px 0 64px; }
-.hutao-page .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .hutao-page .video-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .hutao-page .video-grid { grid-template-columns: repeat(2, 1fr); } }
+.hutao-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 640px) { .hutao-page .video-grid { grid-template-columns: 1fr; } }
 .hutao-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
 .hutao-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
 .hutao-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a0a, #5e2f1f); display: flex; align-items: center; justify-content: center; }
@@ -373,7 +375,7 @@ export default {
 .hutao-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .hutao-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
-.hutao-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-left: 4px solid #f97316; border-radius: 0 12px 12px 0; font-size: 15px; color: #9a3412; font-weight: 500; line-height: 1.8; }
+.hutao-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-left: 4px solid #f97316; border-radius: 0 12px 12px 0; font-size: 17px; color: #9a3412; font-weight: 500; line-height: 1.8; }
 
 /* Section Headers */
 .hutao-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
@@ -394,4 +396,21 @@ export default {
 /* Section spacing */
 .hutao-page .anime-section { padding-top: 48px; }
 .hutao-page .videos-section { padding: 48px 0 64px; }
+
+/* Section sub-title */
+.hutao-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+
+/* Relationships */
+.hutao-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .hutao-page .relationships-grid { grid-template-columns: 1fr; } }
+.hutao-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
+.hutao-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.hutao-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
+.hutao-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.hutao-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
+.hutao-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+.hutao-page .rel-romance { background: #fce7f3; color: #be185d; }
+.hutao-page .rel-family { background: #dbeafe; color: #1d4ed8; }
+.hutao-page .rel-friend { background: #d1fae5; color: #047857; }
+.hutao-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

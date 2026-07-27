@@ -101,7 +101,7 @@ a { text-decoration: none; color: inherit; }
   margin: 22px 0; padding: 20px 28px 20px 36px;
   background: linear-gradient(135deg, #faf5ff, #fdf2f8);
   border-left: 4px solid #a855f7; border-radius: 0 12px 12px 0;
-  font-size: 15px; font-style: italic; color: #6b21a8; line-height: 1.9;
+  font-size: 17px; font-style: italic; color: #6b21a8; line-height: 1.9;
   position: relative; font-family: 'Noto Serif SC', 'Noto Sans SC', serif; font-weight: 500;
 }
 .blockquote::before { content: '"'; position: absolute; top: 6px; left: 12px; font-size: 56px; color: #d8b4fe; font-family: 'Noto Serif SC', Georgia, serif; line-height: 1; font-style: normal; }
@@ -259,7 +259,7 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 480px) {
   .section { padding: 28px 0 40px; }
   .section-header { margin-bottom: 20px; }
-  .blockquote { padding: 14px 16px 14px 28px; font-size: 13.5px; }
+  .blockquote { padding: 14px 16px 14px 28px; font-size: 15px; }
   .blockquote::before { font-size: 40px; top: 2px; left: 6px; }
   .card-image-emoji { font-size: 48px !important; }
   .card-name { font-size: 15px !important; }
