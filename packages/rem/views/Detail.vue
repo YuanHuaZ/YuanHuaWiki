@@ -271,9 +271,9 @@ export default {
 .rem-page .particle { position: absolute; border-radius: 50%; background: rgba(59,130,246,0.3); animation: pixelFloat var(--dur) ease-in-out infinite; animation-delay: var(--delay); }
 .rem-page .hero-grid { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px); background-size: 60px 60px; }
 .rem-page .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 0 24px; max-width: 1060px; margin: 0 auto; width: 100%; }
-@media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
+@media (max-width: 1024px) { .rem-page .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
 .rem-page .hero-text { display: flex; flex-direction: column; gap: 10px; }
-@media (max-width: 1024px) { .hero-text { align-items: center; } }
+@media (max-width: 1024px) { .rem-page .hero-text { align-items: center; } }
 .rem-page .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(59,130,246,0.1)); border: 1px solid rgba(59,130,246,0.4); padding: 5px 14px; border-radius: 50px; font-size: 13px; color: #93c5fd; font-weight: 500; width: fit-content; margin-bottom: 6px; box-shadow: 0 0 16px rgba(59,130,246,0.2); }
 .rem-page .hero-badge .dot { width: 7px; height: 7px; background: #3b82f6; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .rem-page .hero-name-jp { font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 40%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; filter: drop-shadow(0 0 20px rgba(59,130,246,0.3)); }
@@ -281,10 +281,10 @@ export default {
 .rem-page .hero-title-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(59,130,246,0.12)); border: 1px solid rgba(59,130,246,0.4); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #a5f3fc; font-weight: 700; width: fit-content; margin-top: 4px; box-shadow: 0 4px 20px rgba(59,130,246,0.2), inset 0 1px 0 rgba(255,255,255,0.08); backdrop-filter: blur(8px); letter-spacing: 0.02em; }
 .rem-page .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
 .rem-page .tags .tag { padding: 6px 16px; font-size: 13px; border-radius: 50px; font-weight: 600; background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.06)); border: 1px solid rgba(59,130,246,0.25); color: #3b82f6; box-shadow: 0 2px 8px rgba(59,130,246,0.1); }
-@media (max-width: 1024px) { .hero-title-badge { margin: 0 auto; } .tags { justify-content: center; } }
+@media (max-width: 1024px) { .rem-page .hero-title-badge { margin: 0 auto; } .rem-page .tags { justify-content: center; } }
 .rem-page .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .rem-page .hero-avatar-wrapper { position: relative; width: 280px; height: 280px; }
-@media (max-width: 768px) { .hero-avatar-wrapper { width: 220px; height: 220px; } }
+@media (max-width: 768px) { .rem-page .hero-avatar-wrapper { width: 220px; height: 220px; } }
 .rem-page .hero-avatar-ring { position: absolute; inset: -14px; border-radius: 50%; border: 3px solid transparent; background: linear-gradient(135deg, #3b82f6, #06b6d4, #93c5fd, #3b82f6) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spinSlow 8s linear infinite; }
 .rem-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 60px rgba(59,130,246,0.4), 0 0 120px rgba(59,130,246,0.15); }
 .rem-page .avatar-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #1e3a5f 0%, #0f1b2d 50%, #0a0a1a 100%); }
@@ -292,9 +292,9 @@ export default {
 
 .rem-page .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #94a3b8; margin-bottom: 20px; flex-wrap: wrap; padding-top: 16px; }
 .rem-page .breadcrumb a { color: #64748b; transition: color 0.2s; }
-.rem-page .breadcrumb a:hover { color: #a855f7; }
+.rem-page .breadcrumb a:hover { color: #3b82f6; }
 .rem-page .breadcrumb .sep { color: #cbd5e1; }
-.rem-page .breadcrumb .current { color: #a855f7; font-weight: 600; }
+.rem-page .breadcrumb .current { color: #3b82f6; font-weight: 600; }
 
 .rem-page .main-tab-nav { z-index: 900; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid #f1f5f9; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
 .rem-page .main-tab-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -304,8 +304,8 @@ export default {
 .rem-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #3b82f6, #06b6d4); border-radius: 2px 2px 0 0; box-shadow: 0 2px 12px rgba(59,130,246,0.3); }
 
 .rem-page .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { .rem-page .info-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .rem-page .info-grid { grid-template-columns: 1fr; } }
 .rem-page .info-card { background: #fff; border-radius: 18px; padding: 26px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(59,130,246,0.08); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: flex-start; gap: 16px; }
 .rem-page .info-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(59,130,246,0.15); }
 .rem-page .info-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04)); }
@@ -348,8 +348,8 @@ export default {
 .rem-page .btn-outline-sm { display: inline-flex; align-items: center; gap: 6px; padding: 12px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; background: transparent; color: #64748b; border: 2px solid #e2e8f0; cursor: pointer; transition: all 0.3s ease; }
 
 .rem-page .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-@media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1024px) { .rem-page .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .rem-page .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 .rem-page .gallery-item { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; aspect-ratio: 3/4; transition: all 0.3s ease; }
 .rem-page .gallery-item:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
 .rem-page .gallery-item-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; transition: all 0.3s ease; }
@@ -362,7 +362,7 @@ export default {
 .rem-page .gallery-overlay-text { color: #fff; font-size: 13px; font-weight: 500; }
 
 .rem-page .abilities-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-@media (max-width: 640px) { .abilities-list { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .rem-page .abilities-list { grid-template-columns: 1fr; } }
 .rem-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
 .rem-page .ability-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(59,130,246,0.2); }
 .rem-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04)); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }

@@ -150,7 +150,12 @@ export default {
 
 @media (max-width: 480px) {
   .card-body { padding: 12px; }
-  .card-name { font-size: 15px; }
+  .card-name { font-size: 14px; }
+  .card-name-sub { font-size: 11px; }
   .card-image-emoji { font-size: 48px; }
+  .card-tags { gap: 4px; padding-top: 6px; }
+  .card-image-overlay { padding: 12px; }
+  .card-overlay-btn { padding: 8px; font-size: 12px; }
+  .card-series-badge { padding: 3px 8px; font-size: 9px; top: 8px; left: 8px; }
 }
 </style>

@@ -263,12 +263,15 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .hero { min-height: 60vh; }
+  .hero { min-height: 55vh; }
   .hero-content { padding: 0 16px; }
-  .hero-title { font-size: 32px; }
-  .hero-subtitle { font-size: 14px; margin-bottom: 24px; }
-  .hero-search { max-width: 100%; margin-bottom: 20px; }
+  .hero-title { font-size: 30px; }
+  .hero-subtitle { font-size: 14px; margin-bottom: 20px; }
+  .hero-search { max-width: 100%; margin-bottom: 18px; border-radius: 14px; }
+  .hero-search input { padding: 12px 10px; font-size: 14px; }
+  .hero-badge { padding: 6px 14px; font-size: 12px; margin-bottom: 18px; }
   .hero-stat-value { font-size: 22px; }
   .hero-stat-icon { font-size: 18px; }
+  .hero-stats { gap: 16px; }
 }
 </style>

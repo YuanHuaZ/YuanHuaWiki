@@ -260,7 +260,7 @@ export default {
 .elaina-page .detail-page { min-height: 100vh; }
 
 .elaina-page .hero {
-  position: relative; min-height: 75vh; padding: 100px 0 60px;
+  position: relative; min-height: 70vh; padding: 100px 0 60px;
   display: flex; align-items: center; overflow: hidden;
   background: linear-gradient(135deg, #0a0a1a 0%, #1a1030 25%, #1e1535 50%, #15101e 75%, #0a0a1a 100%);
 }

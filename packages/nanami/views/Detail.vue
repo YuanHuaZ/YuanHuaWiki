@@ -309,9 +309,9 @@ export default {
   position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   align-items: center; padding: 0 24px; max-width: 1060px; margin: 0 auto; width: 100%;
 }
-@media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
+@media (max-width: 1024px) { .nanami-page .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
 .nanami-page .hero-text { display: flex; flex-direction: column; gap: 10px; }
-@media (max-width: 1024px) { .hero-text { align-items: center; } }
+@media (max-width: 1024px) { .nanami-page .hero-text { align-items: center; } }
 .nanami-page .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(192,132,252,0.1)); border: 1px solid rgba(168,85,247,0.4); padding: 6px 16px; border-radius: 50px; font-size: 13px; color: #c084fc; font-weight: 600; width: fit-content; margin-bottom: 6px; box-shadow: 0 0 20px rgba(168,85,247,0.2); }
 .nanami-page .hero-badge .dot { width: 7px; height: 7px; background: #a855f7; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .nanami-page .hero-name-jp {
@@ -324,10 +324,10 @@ export default {
 .nanami-page .hero-title-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(192,132,252,0.12) 100%); border: 1px solid rgba(168,85,247,0.4); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #c084fc; font-weight: 700; width: fit-content; margin-top: 4px; box-shadow: 0 4px 20px rgba(168,85,247,0.2), inset 0 1px 0 rgba(255,255,255,0.08); backdrop-filter: blur(8px); letter-spacing: 0.02em; }
 .nanami-page .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
 .nanami-page .tags .tag { padding: 6px 16px; font-size: 13px; border: 1px solid rgba(168,85,247,0.25); background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(192,132,252,0.06)); border-radius: 50px; font-weight: 600; color: #c084fc; box-shadow: 0 0 12px rgba(168,85,247,0.1); }
-@media (max-width: 1024px) { .hero-title-badge { margin: 0 auto; } .tags { justify-content: center; } }
+@media (max-width: 1024px) { .nanami-page .hero-title-badge { margin: 0 auto; } .nanami-page .tags { justify-content: center; } }
 .nanami-page .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .nanami-page .hero-avatar-wrapper { position: relative; width: 280px; height: 280px; }
-@media (max-width: 768px) { .hero-avatar-wrapper { width: 220px; height: 220px; } }
+@media (max-width: 768px) { .nanami-page .hero-avatar-wrapper { width: 220px; height: 220px; } }
 .nanami-page .hero-avatar-ring {
   position: absolute; inset: -14px; border-radius: 50%; border: 3px solid transparent;
   background: linear-gradient(135deg, #a855f7, #c084fc, #a855f7) border-box;
@@ -352,13 +352,13 @@ export default {
 .nanami-page .main-tab-btn.active { color: #a855f7; }
 .nanami-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #a855f7, #c084fc); border-radius: 2px 2px 0 0; box-shadow: 0 0 8px rgba(168,85,247,0.4); }
 .nanami-page .main-tab-icon { font-size: 18px; }
-@media (max-width: 480px) { .main-tab-btn { padding: 14px 16px; font-size: 13px; } .main-tab-icon { font-size: 16px; } }
+@media (max-width: 480px) { .nanami-page .main-tab-btn { padding: 14px 16px; font-size: 13px; } .nanami-page .main-tab-icon { font-size: 16px; } }
 .nanami-page .tab-panel-main { animation: fadeIn 0.35s ease-out; }
 
 /* ===== Info Grid ===== */
 .nanami-page .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 1024px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { .nanami-page .info-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .nanami-page .info-grid { grid-template-columns: 1fr; } }
 .nanami-page .info-card { background: #fff; border-radius: 18px; padding: 26px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(168,85,247,0.08); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: flex-start; gap: 16px; }
 .nanami-page .info-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
 .nanami-page .info-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
@@ -375,7 +375,7 @@ export default {
 .nanami-page .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 20%; right: 20%; height: 3px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 2px; }
 .nanami-page .tab-panel { display: none; padding: 32px; }
 .nanami-page .tab-panel.active { display: block; animation: fadeIn 0.4s ease; }
-@media (max-width: 768px) { .tab-panel { padding: 20px; } .tab-btn { padding: 14px 18px; font-size: 14px; } }
+@media (max-width: 768px) { .nanami-page .tab-panel { padding: 20px; } .nanami-page .tab-btn { padding: 14px 18px; font-size: 14px; } }
 .nanami-page .tab-panel p { font-size: 15px; line-height: 2.1; color: #475569; white-space: pre-line; margin-bottom: 14px; font-weight: 400; }
 .nanami-page .tab-panel p:last-child { margin-bottom: 0; }
 .nanami-page .key-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
@@ -384,13 +384,13 @@ export default {
 /* ===== Anime Section ===== */
 .nanami-page .anime-section { background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); }
 .nanami-page .anime-hero-card { display: grid; grid-template-columns: 280px 1fr; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-@media (max-width: 768px) { .anime-hero-card { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .nanami-page .anime-hero-card { grid-template-columns: 1fr; } }
 .nanami-page .anime-cover { position: relative; min-height: 280px; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 40%, #1a1030 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; overflow: hidden; }
 .nanami-page .anime-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(168,85,247,0.3) 0%, transparent 70%); }
 .nanami-page .anime-cover-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .nanami-page .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(236,72,153,0.2); border: 1px solid rgba(236,72,153,0.3); border-radius: 50px; font-size: 12px; color: #f9a8d4; font-weight: 600; }
 .nanami-page .anime-info { padding: 36px; display: flex; flex-direction: column; gap: 16px; }
-@media (max-width: 768px) { .anime-info { padding: 24px; } }
+@media (max-width: 768px) { .nanami-page .anime-info { padding: 24px; } }
 .nanami-page .anime-info-label { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #a855f7; }
 .nanami-page .anime-info-label::before { content: ''; width: 20px; height: 2px; background: #a855f7; border-radius: 1px; }
 .nanami-page .anime-info-title { font-size: clamp(20px, 3vw, 28px); font-weight: 800; color: #0f172a; }
@@ -411,8 +411,8 @@ export default {
 
 /* ===== Gallery ===== */
 .nanami-page .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-@media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1024px) { .nanami-page .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .nanami-page .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 .nanami-page .gallery-item { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; aspect-ratio: 3/4; background: linear-gradient(135deg, #2d1b4e, #1a1030); transition: all 0.3s ease; }
 .nanami-page .gallery-item:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
 .nanami-page .gallery-item-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; transition: all 0.3s ease; }
@@ -426,7 +426,7 @@ export default {
 
 /* ===== Abilities ===== */
 .nanami-page .abilities-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-@media (max-width: 640px) { .abilities-list { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .nanami-page .abilities-list { grid-template-columns: 1fr; } }
 .nanami-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
 .nanami-page .ability-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
 .nanami-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.04)); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }

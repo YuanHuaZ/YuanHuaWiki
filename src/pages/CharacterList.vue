@@ -107,11 +107,14 @@ export default {
 }
 @media (max-width: 1200px) { .character-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
 @media (max-width: 768px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
-@media (max-width: 480px) { .character-grid { grid-template-columns: 1fr; gap: 14px; } }
+@media (max-width: 480px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 
 .result-count {
-  font-size: 12px; color: #94a3b8; font-weight: 500;
-  background: #f1f5f9; padding: 6px 14px; border-radius: 20px;
+  font-size: 12px; color: #7c3aed; font-weight: 600;
+  background: linear-gradient(135deg, #faf5ff, #fdf2f8);
+  padding: 6px 14px; border-radius: 20px;
+  border: 1px solid rgba(168,85,247,0.12);
+  box-shadow: 0 2px 8px rgba(168,85,247,0.06);
 }
 .result-count span { color: #7c3aed; font-weight: 700; }
 

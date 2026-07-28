@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: '/',
+  publicPath: '/YuanHuaWiki/',
   outputDir: 'dist',
   assetsDir: 'assets',
   devServer: {

@@ -200,7 +200,7 @@ a { text-decoration: none; color: inherit; }
 }
 @media (max-width: 1200px) { .character-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; } }
 @media (max-width: 768px) { .character-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; } }
-@media (max-width: 480px) { .character-grid { grid-template-columns: 1fr !important; gap: 14px !important; } }
+@media (max-width: 480px) { .character-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; } }
 
 /* Result count badge */
 .result-count {
@@ -250,11 +250,22 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============ Responsive ============ */
+@media (max-width: 1024px) {
+  .anime-hero-card { grid-template-columns: 1fr !important; }
+}
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
   .section { padding: 36px 0 48px; }
   .btn { min-height: 44px; }
   .btn-sm { min-height: 44px; padding: 8px 16px; }
+  .tab-panel { padding: 20px !important; }
+  .tab-btn { flex: 1 !important; padding: 14px 10px !important; font-size: 13px !important; text-align: center; justify-content: center; }
+  .tabs-nav { overflow-x: hidden !important; }
+  .anime-info { padding: 24px !important; }
+  .main-tab-nav .container::-webkit-scrollbar { display: none; }
+  .info-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+  .main-tab-btn { flex: 1 !important; padding: 12px 6px !important; font-size: 12px !important; gap: 3px !important; justify-content: center; }
+  .main-tab-icon { font-size: 14px !important; }
 }
 @media (max-width: 480px) {
   .section { padding: 28px 0 40px; }
@@ -262,6 +273,12 @@ a { text-decoration: none; color: inherit; }
   .blockquote { padding: 14px 16px 14px 28px; font-size: 15px; }
   .blockquote::before { font-size: 40px; top: 2px; left: 6px; }
   .card-image-emoji { font-size: 48px !important; }
-  .card-name { font-size: 15px !important; }
+  .card-name { font-size: 14px !important; }
+  .card-name-sub { font-size: 11px !important; }
   .card-body { padding: 12px !important; }
+  .card-tags { gap: 4px !important; padding-top: 6px !important; }
+  .card-series-badge { padding: 3px 8px !important; font-size: 9px !important; }
+  .main-tab-btn { padding: 10px 4px !important; font-size: 11px !important; gap: 2px !important; }
+  .main-tab-icon { font-size: 13px !important; }
+  .hero { min-height: 65vh !important; }
 }

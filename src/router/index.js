@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Package route registry — each package registers its routes via manifest
 const packageRoutes = []
@@ -16,7 +16,7 @@ const CharacterList = () => import('@/pages/CharacterList.vue')
 const CharacterDetail = () => import('@/pages/CharacterDetail.vue')
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     ...packageRoutes,
     {
