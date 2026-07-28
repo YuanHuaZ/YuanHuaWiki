@@ -294,10 +294,10 @@ export default {
   background: linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 25%, #1a1030 50%, #0d1a2e 75%, #0a0a1a 100%);
 }
 .nanami-page .hero-glow {
-  position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: 0.15;
+  position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; opacity: 0.25;
 }
-.nanami-page .hero-glow-1 { width: 360px; height: 360px; background: #a855f7; top: -80px; left: -80px; animation: float 8s ease-in-out infinite; }
-.nanami-page .hero-glow-2 { width: 260px; height: 260px; background: #ec4899; bottom: -60px; right: -50px; animation: float 10s ease-in-out infinite reverse; }
+.nanami-page .hero-glow-1 { width: 500px; height: 500px; background: #a855f7; top: -80px; left: -80px; animation: float 8s ease-in-out infinite; }
+.nanami-page .hero-glow-2 { width: 400px; height: 400px; background: #ec4899; bottom: -60px; right: -50px; animation: float 10s ease-in-out infinite reverse; }
 .nanami-page .hero-bg-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .nanami-page .particle { position: absolute; border-radius: 50%; background: rgba(168,85,247,0.3); animation: pixelFloat var(--dur) ease-in-out infinite; animation-delay: var(--delay); }
 .nanami-page .hero-grid {
@@ -312,39 +312,29 @@ export default {
 @media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
 .nanami-page .hero-text { display: flex; flex-direction: column; gap: 10px; }
 @media (max-width: 1024px) { .hero-text { align-items: center; } }
-.nanami-page .hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3);
-  padding: 5px 14px; border-radius: 50px; font-size: 12px; color: #c084fc; font-weight: 500;
-  width: fit-content; margin-bottom: 6px;
-}
+.nanami-page .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(192,132,252,0.1)); border: 1px solid rgba(168,85,247,0.4); padding: 6px 16px; border-radius: 50px; font-size: 13px; color: #c084fc; font-weight: 600; width: fit-content; margin-bottom: 6px; box-shadow: 0 0 20px rgba(168,85,247,0.2); }
 .nanami-page .hero-badge .dot { width: 7px; height: 7px; background: #a855f7; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .nanami-page .hero-name-jp {
-  font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.1;
-  background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 40%, #ec4899 100%);
+  font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, #c084fc 40%, #a855f7 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em; filter: drop-shadow(0 0 30px rgba(168,85,247,0.3));
 }
-.nanami-page .hero-name-sub { font-size: 16px; color: #94a3b8; font-weight: 400; letter-spacing: 0.06em; }
-.nanami-page .hero-title-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.25);
-  padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #f9a8d4; font-weight: 600;
-  width: fit-content; margin-top: 4px;
-}
-.nanami-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.nanami-page .tags .tag { padding: 3px 10px; font-size: 11px; }
+.nanami-page .hero-name-sub { font-size: 16px; color: #c084fc; font-weight: 400; letter-spacing: 0.06em; }
+.nanami-page .hero-title-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(192,132,252,0.12) 100%); border: 1px solid rgba(168,85,247,0.4); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #c084fc; font-weight: 700; width: fit-content; margin-top: 4px; box-shadow: 0 4px 20px rgba(168,85,247,0.2), inset 0 1px 0 rgba(255,255,255,0.08); backdrop-filter: blur(8px); letter-spacing: 0.02em; }
+.nanami-page .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.nanami-page .tags .tag { padding: 6px 16px; font-size: 13px; border: 1px solid rgba(168,85,247,0.25); background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(192,132,252,0.06)); border-radius: 50px; font-weight: 600; color: #c084fc; box-shadow: 0 0 12px rgba(168,85,247,0.1); }
 @media (max-width: 1024px) { .hero-title-badge { margin: 0 auto; } .tags { justify-content: center; } }
 .nanami-page .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .nanami-page .hero-avatar-wrapper { position: relative; width: 280px; height: 280px; }
 @media (max-width: 768px) { .hero-avatar-wrapper { width: 220px; height: 220px; } }
 .nanami-page .hero-avatar-ring {
   position: absolute; inset: -14px; border-radius: 50%; border: 3px solid transparent;
-  background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4, #a855f7) border-box;
+  background: linear-gradient(135deg, #a855f7, #c084fc, #a855f7) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude; animation: spinSlow 8s linear infinite;
 }
-.nanami-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 50px rgba(168,85,247,0.3); }
+.nanami-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 60px rgba(168,85,247,0.4), 0 0 120px rgba(168,85,247,0.15); }
 
 /* ===== Breadcrumb ===== */
 .nanami-page .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #94a3b8; margin-bottom: 20px; flex-wrap: wrap; padding-top: 16px; }
@@ -360,7 +350,7 @@ export default {
 .nanami-page .main-tab-btn { flex-shrink: 0; padding: 16px 24px; font-size: 14px; font-weight: 600; font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif; border: none; background: none; cursor: pointer; color: #64748b; transition: all 0.25s ease; position: relative; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
 .nanami-page .main-tab-btn:hover { color: #1e293b; background: #f8fafc; }
 .nanami-page .main-tab-btn.active { color: #a855f7; }
-.nanami-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 2px 2px 0 0; }
+.nanami-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #a855f7, #c084fc); border-radius: 2px 2px 0 0; box-shadow: 0 0 8px rgba(168,85,247,0.4); }
 .nanami-page .main-tab-icon { font-size: 18px; }
 @media (max-width: 480px) { .main-tab-btn { padding: 14px 16px; font-size: 13px; } .main-tab-icon { font-size: 16px; } }
 .nanami-page .tab-panel-main { animation: fadeIn 0.35s ease-out; }
@@ -369,9 +359,9 @@ export default {
 .nanami-page .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 1024px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
-.nanami-page .info-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; display: flex; align-items: flex-start; gap: 16px; }
-.nanami-page .info-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-.nanami-page .info-card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.nanami-page .info-card { background: #fff; border-radius: 18px; padding: 26px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(168,85,247,0.08); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: flex-start; gap: 16px; }
+.nanami-page .info-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
+.nanami-page .info-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .nanami-page .info-card-icon.purple { background: #f3e8ff; } .info-card-icon.pink { background: #fce7f3; } .info-card-icon.cyan { background: #ecfeff; }
 .nanami-page .info-card-text h4 { font-size: 11px; color: #94a3b8; font-weight: 500; margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
 .nanami-page .info-card-text p { font-size: 15px; color: #0f172a; font-weight: 600; }
@@ -389,7 +379,7 @@ export default {
 .nanami-page .tab-panel p { font-size: 15px; line-height: 2.1; color: #475569; white-space: pre-line; margin-bottom: 14px; font-weight: 400; }
 .nanami-page .tab-panel p:last-child { margin-bottom: 0; }
 .nanami-page .key-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-.nanami-page .key-tag { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; background: #f3e8ff; color: #7c3aed; }
+.nanami-page .key-tag { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.04)); border: 1px solid rgba(168,85,247,0.25); color: #7c3aed; }
 
 /* ===== Anime Section ===== */
 .nanami-page .anime-section { background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); }
@@ -437,9 +427,9 @@ export default {
 /* ===== Abilities ===== */
 .nanami-page .abilities-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 @media (max-width: 640px) { .abilities-list { grid-template-columns: 1fr; } }
-.nanami-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; }
-.nanami-page .ability-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-.nanami-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, #f3e8ff, #fce7f3); }
+.nanami-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+.nanami-page .ability-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
+.nanami-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.04)); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .nanami-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .nanami-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
@@ -447,8 +437,8 @@ export default {
 .nanami-page .videos-section { padding: 48px 0 64px; }
 .nanami-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 @media (max-width: 640px) { .nanami-page .video-grid { grid-template-columns: 1fr; } }
-.nanami-page .video-card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
-.nanami-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.nanami-page .video-card { display: block; text-decoration: none; color: inherit; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); cursor: pointer; }
+.nanami-page .video-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
 .nanami-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a0a28, #3b1f5e); display: flex; align-items: center; justify-content: center; }
 .nanami-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(168,85,247,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(168,85,247,0.4); transition: all 0.3s ease; }
 .nanami-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
@@ -459,13 +449,14 @@ export default {
 .nanami-page .video-info p { font-size: 12px; color: #94a3b8; }
 
 /* Section sub-title */
-.nanami-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+.nanami-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.nanami-page .section-sub-title::before { content: ''; display: inline-block; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(180deg, rgb(168,85,247), rgb(192,132,252)); flex-shrink: 0; }
 
 /* Relationships */
 .nanami-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 @media (max-width: 640px) { .nanami-page .relationships-grid { grid-template-columns: 1fr; } }
-.nanami-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
-.nanami-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.nanami-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-left: 4px solid rgb(168,85,247); }
+.nanami-page .relationship-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(168,85,247,0.15); }
 .nanami-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
 .nanami-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .nanami-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }

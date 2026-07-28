@@ -261,13 +261,13 @@ export default {
 .elaina-page .detail-page { min-height: 100vh; }
 
 .elaina-page .hero {
-  position: relative; min-height: 70vh; padding: 80px 0 50px;
+  position: relative; min-height: 75vh; padding: 100px 0 60px;
   display: flex; align-items: center; overflow: hidden;
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a1e 25%, #222226 50%, #1e1e22 75%, #0a0a1a 100%);
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1030 25%, #1e1535 50%, #15101e 75%, #0a0a1a 100%);
 }
-.elaina-page .hero-glow { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: 0.15; }
-.elaina-page .hero-glow-1 { width: 360px; height: 360px; background: #8c949e; top: -80px; left: -80px; animation: float 8s ease-in-out infinite; }
-.elaina-page .hero-glow-2 { width: 260px; height: 260px; background: #b8bec6; bottom: -60px; right: -50px; animation: float 10s ease-in-out infinite reverse; }
+.elaina-page .hero-glow { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; opacity: 0.25; }
+.elaina-page .hero-glow-1 { width: 500px; height: 500px; background: #a855f7; top: -120px; left: -100px; animation: float 8s ease-in-out infinite; }
+.elaina-page .hero-glow-2 { width: 400px; height: 400px; background: #c084fc; bottom: -100px; right: -80px; animation: float 10s ease-in-out infinite reverse; }
 .elaina-page .hero-bg-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .elaina-page .particle { position: absolute; border-radius: 50%; background: rgba(140,148,158,0.3); animation: pixelFloat var(--dur) ease-in-out infinite; animation-delay: var(--delay); }
 .elaina-page .hero-grid { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(140,148,158,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(140,148,158,0.05) 1px, transparent 1px); background-size: 60px 60px; }
@@ -275,19 +275,19 @@ export default {
 @media (max-width: 1024px) { .elaina-page .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
 .elaina-page .hero-text { display: flex; flex-direction: column; gap: 10px; }
 @media (max-width: 1024px) { .elaina-page .hero-text { align-items: center; } }
-.elaina-page .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(140,148,158,0.15); border: 1px solid rgba(140,148,158,0.3); padding: 5px 14px; border-radius: 50px; font-size: 12px; color: #dde0e4; font-weight: 500; width: fit-content; margin-bottom: 6px; }
-.elaina-page .hero-badge .dot { width: 7px; height: 7px; background: #8c949e; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
-.elaina-page .hero-name-jp { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #edf0f3 0%, #8c949e 40%, #b8bec6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; }
-.elaina-page .hero-name-sub { font-size: 16px; color: #94a3b8; font-weight: 400; letter-spacing: 0.06em; }
-.elaina-page .hero-title-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(140,148,158,0.1); border: 1px solid rgba(140,148,158,0.25); padding: 6px 16px; border-radius: 8px; font-size: 16px; color: #b8bec6; font-weight: 600; width: fit-content; margin-top: 4px; }
-.elaina-page .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.elaina-page .tags .tag { padding: 3px 10px; font-size: 11px; }
+.elaina-page .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(192,132,252,0.1)); border: 1px solid rgba(168,85,247,0.4); padding: 6px 18px; border-radius: 50px; font-size: 13px; color: #e9d5ff; font-weight: 500; width: fit-content; margin-bottom: 8px; box-shadow: 0 2px 12px rgba(168,85,247,0.15); }
+.elaina-page .hero-badge .dot { width: 8px; height: 8px; background: #a855f7; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; box-shadow: 0 0 8px rgba(168,85,247,0.6); }
+.elaina-page .hero-name-jp { font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1.1; background: linear-gradient(135deg, #f3e8ff 0%, #c084fc 35%, #a855f7 65%, #e9d5ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.05em; filter: drop-shadow(0 2px 12px rgba(168,85,247,0.2)); }
+.elaina-page .hero-name-sub { font-size: 17px; color: #a78bfa; font-weight: 400; letter-spacing: 0.08em; }
+.elaina-page .hero-title-badge { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(192,132,252,0.12) 100%); border: 1px solid rgba(168,85,247,0.4); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #e9d5ff; font-weight: 700; width: fit-content; margin-top: 6px; box-shadow: 0 4px 20px rgba(168,85,247,0.2), inset 0 1px 0 rgba(255,255,255,0.1); letter-spacing: 0.03em; backdrop-filter: blur(8px); }
+.elaina-page .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.elaina-page .tags .tag { padding: 6px 16px; font-size: 13px; border: 1px solid rgba(168,85,247,0.25); background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.06)); color: #d8b4fe; border-radius: 50px; font-weight: 600; box-shadow: 0 2px 8px rgba(168,85,247,0.1); }
 @media (max-width: 1024px) { .elaina-page .hero-title-badge { margin: 0 auto; } .elaina-page .tags { justify-content: center; } }
 .elaina-page .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .elaina-page .hero-avatar-wrapper { position: relative; width: 280px; height: 280px; }
 @media (max-width: 768px) { .elaina-page .hero-avatar-wrapper { width: 220px; height: 220px; } }
-.elaina-page .hero-avatar-ring { position: absolute; inset: -14px; border-radius: 50%; border: 3px solid transparent; background: linear-gradient(135deg, #8c949e, #b8bec6, #9ea5ad, #8c949e) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spinSlow 8s linear infinite; }
-.elaina-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 50px rgba(140,148,158,0.3); }
+.elaina-page .hero-avatar-ring { position: absolute; inset: -16px; border-radius: 50%; border: 3px solid transparent; background: linear-gradient(135deg, #a855f7, #c084fc, #e9d5ff, #a855f7) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spinSlow 8s linear infinite; }
+.elaina-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 60px rgba(168,85,247,0.4), 0 0 120px rgba(168,85,247,0.15); }
 .elaina-page .avatar-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #2e2e34 0%, #222226 50%, #0a0a1a 100%); }
 .elaina-page .avatar-emoji { font-size: 80px; filter: drop-shadow(0 0 30px rgba(140,148,158,0.5)); }
 
@@ -297,20 +297,20 @@ export default {
 .elaina-page .breadcrumb .sep { color: #cbd5e1; }
 .elaina-page .breadcrumb .current { color: #8c949e; font-weight: 600; }
 
-.elaina-page .main-tab-nav { z-index: 900; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid #f1f5f9; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.elaina-page .main-tab-nav { z-index: 900; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(168,85,247,0.08); box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(168,85,247,0.04); }
 .elaina-page .main-tab-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .elaina-page .main-tab-btn { flex-shrink: 0; padding: 16px 24px; font-size: 14px; font-weight: 600; font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif; border: none; background: none; cursor: pointer; color: #64748b; transition: all 0.25s ease; position: relative; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
 .elaina-page .main-tab-btn:hover { color: #1e293b; background: #f8fafc; }
-.elaina-page .main-tab-btn.active { color: #8c949e; }
-.elaina-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #8c949e, #b8bec6); border-radius: 2px 2px 0 0; }
+.elaina-page .main-tab-btn.active { color: #a855f7; }
+.elaina-page .main-tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 3px; background: linear-gradient(135deg, #a855f7, #c084fc); border-radius: 2px 2px 0 0; box-shadow: 0 -2px 8px rgba(168,85,247,0.2); }
 
 .elaina-page .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 1024px) { .elaina-page .info-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .elaina-page .info-grid { grid-template-columns: 1fr; } }
-.elaina-page .info-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; display: flex; align-items: flex-start; gap: 16px; }
-.elaina-page .info-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-.elaina-page .info-card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-.elaina-page .info-card-icon.purple { background: #f5f6f8; } .elaina-page .info-card-icon.pink { background: #fce7f3; } .elaina-page .info-card-icon.cyan { background: #ecfeff; }
+.elaina-page .info-card { background: #fff; border-radius: 18px; padding: 26px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: flex-start; gap: 16px; border: 1px solid rgba(168,85,247,0.08); }
+.elaina-page .info-card:hover { transform: translateY(-8px); box-shadow: 0 8px 24px rgba(0,0,0,0.06), 0 20px 48px rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.2); }
+.elaina-page .info-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; background: linear-gradient(135deg, #faf5ff, #f3e8ff); box-shadow: 0 2px 8px rgba(168,85,247,0.08); }
+.elaina-page .info-card-icon.purple { background: linear-gradient(135deg, #faf5ff, #f3e8ff); } .elaina-page .info-card-icon.pink { background: linear-gradient(135deg, #fdf2f8, #fce7f3); } .elaina-page .info-card-icon.cyan { background: linear-gradient(135deg, #ecfeff, #cffafe); }
 .elaina-page .info-card-text h4 { font-size: 11px; color: #94a3b8; font-weight: 500; margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
 .elaina-page .info-card-text p { font-size: 15px; color: #0f172a; font-weight: 600; }
 
@@ -324,7 +324,7 @@ export default {
 .elaina-page .tab-panel.active { display: block; animation: fadeIn 0.4s ease; }
 .elaina-page .tab-panel p { font-size: 15px; line-height: 2.1; color: #475569; white-space: pre-line; margin-bottom: 14px; font-weight: 400; }
 .elaina-page .key-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-.elaina-page .key-tag { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; background: #f5f6f8; color: #9ea5ad; }
+.elaina-page .key-tag { display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; background: linear-gradient(135deg, rgba(140,148,158,0.08), rgba(140,148,158,0.04)); color: #8c949e; border: 1px solid rgba(140,148,158,0.12); }
 
 .elaina-page .anime-section { background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); }
 .elaina-page .anime-hero-card { display: grid; grid-template-columns: 280px 1fr; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
@@ -366,8 +366,8 @@ export default {
 .elaina-page .videos-section { padding: 48px 0 64px; }
 .elaina-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 @media (max-width: 640px) { .elaina-page .video-grid { grid-template-columns: 1fr; } }
-.elaina-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
-.elaina-page .video-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.elaina-page .video-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); cursor: pointer; border: 1px solid rgba(0,0,0,0.04); }
+.elaina-page .video-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(140,148,158,0.15); border-color: rgba(140,148,158,0.15); }
 .elaina-page .video-cover { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a1e, #2e2e34); display: flex; align-items: center; justify-content: center; }
 .elaina-page .video-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(140,148,158,0.85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(140,148,158,0.4); transition: all 0.3s ease; }
 .elaina-page .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
@@ -379,13 +379,13 @@ export default {
 
 .elaina-page .abilities-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 @media (max-width: 640px) { .elaina-page .abilities-list { grid-template-columns: 1fr; } }
-.elaina-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; }
-.elaina-page .ability-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-.elaina-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, #f5f6f8, #edf0f3); }
+.elaina-page .ability-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border: 1px solid rgba(0,0,0,0.04); }
+.elaina-page .ability-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(140,148,158,0.15); border-color: rgba(140,148,158,0.15); }
+.elaina-page .ability-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: linear-gradient(135deg, rgba(140,148,158,0.1), rgba(140,148,158,0.04)); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .elaina-page .ability-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .elaina-page .ability-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
 
-.elaina-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, #f5f6f8, #f9fafb); border-left: 4px solid #8c949e; border-radius: 0 12px 12px 0; font-size: 17px; color: #b0b5bc; font-weight: 500; line-height: 1.8; }
+.elaina-page .blockquote { margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(140,148,158,0.06), rgba(140,148,158,0.02)); border-left: 4px solid #8c949e; border-radius: 0 12px 12px 0; font-size: 17px; color: #6b7280; font-weight: 500; line-height: 1.8; }
 
 /* Section Headers */
 .elaina-page .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
@@ -408,13 +408,14 @@ export default {
 .elaina-page .videos-section { padding: 48px 0 64px; }
 
 /* Section sub-title */
-.elaina-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; }
+.elaina-page .section-sub-title { font-size: 20px; font-weight: 800; color: #0f172a; padding: 12px 0; border-bottom: 2px solid #f1f5f9; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.elaina-page .section-sub-title::before { content: ''; display: inline-block; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(180deg, #8c949e, #b8bec6); }
 
 /* Relationships */
 .elaina-page .relationships-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 @media (max-width: 640px) { .elaina-page .relationships-grid { grid-template-columns: 1fr; } }
-.elaina-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.3s ease; border-left: 4px solid #e2e8f0; }
-.elaina-page .relationship-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.elaina-page .relationship-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; gap: 16px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-left: 4px solid #8c949e; border: 1px solid rgba(0,0,0,0.04); border-left: 4px solid #8c949e; }
+.elaina-page .relationship-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(140,148,158,0.15); }
 .elaina-page .rel-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; background: #f8fafc; }
 .elaina-page .rel-info h4 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .elaina-page .rel-info p { font-size: 13.5px; color: #64748b; line-height: 1.75; }
