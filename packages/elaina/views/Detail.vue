@@ -82,9 +82,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">📺</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -99,7 +97,7 @@
               <p class="anime-info-desc">少女伊蕾娜从小就憧憬着《妮可冒险谭》中的旅行。成为<span class="highlight">最高位"灰之魔女"</span>后，她终于踏上了<span class="highlight-pink">属于自己的旅途</span>，在广阔的世界中遇见了形形色色的人和故事。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">奇幻</span><span class="anime-tag dark">冒险</span><span class="anime-tag dark">治愈</span><span class="anime-tag live">正版引进</span></div>
               <div class="anime-info-actions">
-                <a href="https://www.bilibili.com/bangumi/play/ss34255/" class="btn-elaina" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
+                <a href="https://www.bilibili.com/bangumi/play/ep341208?spm_id_from=333.337.0.0" class="btn-elaina" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -203,6 +201,7 @@ import sp1 from '../images/sp1.jpg'
 import sp2 from '../images/sp2.jpg'
 import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
+import animeCover from '../images/a.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -252,7 +251,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

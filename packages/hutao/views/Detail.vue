@@ -82,9 +82,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">🎮</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -99,7 +97,7 @@
               <p class="anime-info-desc">在提瓦特大陆上，旅行者结识了众多伙伴。胡桃作为<span class="highlight">往生堂第七十七代堂主</span>，以她<span class="highlight-pink">独特的性格和强大的火元素力量</span>成为了璃月地区最受欢迎的角色之一。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">开放世界</span><span class="anime-tag dark">ARPG</span><span class="anime-tag dark">二次元</span><span class="anime-tag live">免费游玩</span></div>
               <div class="anime-info-actions">
-                <a href="https://genshin.hoyoverse.com/" class="btn-hutao" target="_blank" rel="noopener"><span class="game-icon">🎮</span> 前往官网 <span class="game-arrow">→</span></a>
+                <a href="https://www.yuanshen.com/#/" class="btn-hutao" target="_blank" rel="noopener"><span class="game-icon">🎮</span> 前往官网 <span class="game-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -132,7 +130,8 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #1a0a0a, #5e2f1f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
                 <div class="video-duration">{{ v.duration }}</div>
@@ -141,7 +140,7 @@
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -199,6 +198,11 @@ import img5 from '../images/5.jpg'
 import img6 from '../images/6.jpg'
 import img7 from '../images/7.jpg'
 import img8 from '../images/8.jpg'
+import gameCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -231,10 +235,10 @@ export default {
     ]
 
     const videoItems = [
-      { cover: null, title: '胡桃相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: null, title: '胡桃相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: null, title: '胡桃相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: null, title: '胡桃相关视频 04', desc: '视频描述占位', duration: '04:33' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1Dp4y1H7RE/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '胡桃单曲《嗷》', desc: '胡桃 原创单曲' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1o3411g7BP/?spm_id_from=333.788.comment.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【原神夏日放映节】动画短片—「燃火之蝶」', desc: '胡桃 动画短片' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1qb4y1o7jK/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【原神手书】胡桃个人向-《起风了》', desc: '胡桃 个人向手书' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1aH4y1z7dA/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '胡桃单曲《三拜红尘凉》', desc: '胡桃 原创单曲' }
     ]
 
     function particleStyle() {
@@ -248,7 +252,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, gameCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

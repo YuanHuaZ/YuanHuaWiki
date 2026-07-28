@@ -82,9 +82,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">📺</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -99,7 +97,7 @@
               <p class="anime-info-desc">在少数青春期少年少女中会引发<span class="highlight">特殊能力现象</span>。友利奈绪作为星之海学园学生会会长，一直<span class="highlight-pink">默默守护着这些特殊能力者</span>，并与乙坂有宇一起踏上了改变命运的旅程。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">校园</span><span class="anime-tag dark">超能力</span><span class="anime-tag dark">青春</span><span class="anime-tag live">正版引进</span></div>
               <div class="anime-info-actions">
-                <a href="https://www.bilibili.com/bangumi/play/ss2723/" class="btn-tomori" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
+                <a href="https://www.bilibili.com/bangumi/play/ep63840?spm_id_from=333.337.0.0" class="btn-tomori" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -132,7 +130,8 @@
       <section class="section videos-section" style="background:#f8fafc;">
         <div class="container">
           <div class="video-grid">
-            <div v-for="(v, idx) in videoItems" :key="idx" class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
+            <a v-for="(v, idx) in videoItems" :key="idx" :href="v.url || '#'" :target="v.url ? '_blank' : undefined" rel="noopener"
+              class="video-card animate-slide-up" :class="'delay-' + ((idx%4+1)*100)">
               <div class="video-cover" :style="v.cover ? { background: `url(${v.cover}) center/cover no-repeat` } : { background: 'linear-gradient(135deg, #0a1628, #1e3a5f)' }">
                 <div class="video-play-btn"><span>▶</span></div>
                 <div class="video-duration">{{ v.duration }}</div>
@@ -141,7 +140,7 @@
                 <h4>{{ v.title }}</h4>
                 <p>{{ v.desc }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -199,6 +198,11 @@ import img5 from '../images/5.jpg'
 import img6 from '../images/6.jpg'
 import img7 from '../images/7.jpg'
 import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -231,10 +235,10 @@ export default {
     ]
 
     const videoItems = [
-      { cover: null, title: '友利奈绪相关视频 01', desc: '视频描述占位', duration: '03:25' },
-      { cover: null, title: '友利奈绪相关视频 02', desc: '视频描述占位', duration: '05:12' },
-      { cover: null, title: '友利奈绪相关视频 03', desc: '视频描述占位', duration: '02:48' },
-      { cover: null, title: '友利奈绪相关视频 04', desc: '视频描述占位', duration: '04:33' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1TR4y1j7zB/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【𝟖𝐊】Charlotte NCOP 全站最高画质 夏洛特OP无字幕 Bravely You', desc: '夏洛特OP无字幕' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Tu411Q74X/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【𝟖𝐊𝟔𝟎𝐅𝐏𝐒】"我是你的恋人" Charlotte NCED03 全站最高画质 夏洛特第13话ED无字幕 君の文字', desc: '夏洛特第13话ED无字幕' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1Xt41157Ge/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【前方高萌/治愈/夏洛特】友利奈绪——多少人心中的理想型女友', desc: '友利奈绪治愈向剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1P34y1S78D/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【Charlotte/夏洛特】友利奈绪，新婚快乐！', desc: '友利奈绪剪辑' }
     ]
 
     function particleStyle() {
@@ -248,7 +252,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
