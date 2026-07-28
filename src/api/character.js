@@ -123,6 +123,34 @@ const characters = [
       { text: '童星', cls: 'tag-amber' },
       { text: '女主角', cls: 'tag-cyan' }
     ]
+  },
+  {
+    id: 'soyo',
+    name: '長崎素世',
+    nameSub: 'Nagasaki Soyo',
+    series: 'BanG Dream! It\'s MyGO!!!!!',
+    image: null,
+    hasDetail: true,
+    tags: [
+      { text: '温柔', cls: 'tag-green' },
+      { text: '贝斯手', cls: 'tag-cyan' },
+      { text: '表面天使', cls: 'tag-pink' },
+      { text: '内心沉重', cls: 'tag-purple' }
+    ]
+  },
+  {
+    id: 'sagiri',
+    name: '和泉纱雾',
+    nameSub: 'Izumi Sagiri',
+    series: '埃罗芒阿老师',
+    image: null,
+    hasDetail: true,
+    tags: [
+      { text: '插画师', cls: 'tag-purple' },
+      { text: '家里蹲', cls: 'tag-blue' },
+      { text: '傲娇', cls: 'tag-pink' },
+      { text: '女主角', cls: 'tag-cyan' }
+    ]
   }
 ]
 

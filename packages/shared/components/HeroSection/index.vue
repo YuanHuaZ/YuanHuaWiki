@@ -111,6 +111,8 @@ export default {
       { text: '「我等过很久，我不会再等了。」—— 弗洛洛', top: '68%', dur: '21s', delay: '4s', size: '13px', opacity: 0.4 },
       { text: '「从这里开始吧。从一开始……不，从零开始。」—— 蕾姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45 },
       { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5 },
+      { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42 },
+      { text: '「我最喜欢哥哥了！」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44 },
     ]
 
     const particles = [
