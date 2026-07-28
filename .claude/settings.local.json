@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory found\")",
+      "Read(//c/Users/zrf/**)",
+      "Bash(ssh-keygen -t ed25519 -C \"2473218133@qq.com\" -f ~/.ssh/id_ed25519 -N \"\")",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(npm install *)",
+      "Bash(npx vue-cli-service *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(pkill -f \"vue-cli-service serve\")",
+      "Bash(pkill -f \"vue-cli-service\")",
+      "Bash(pkill -9 -f \"vue-cli-service\")",
+      "Bash(pkill -9 -f \"node.*vue\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:3000)",
+      "Bash(pkill -9 -f \"node\")",
+      "Bash(curl -s -o /dev/null -w \"Port 3000: %{http_code}\" http://localhost:3000)",
+      "Bash(sed -i 's/\\\\.nanami-page @media/@media/g' packages/nanami/views/Detail.vue)",
+      "Bash(sed -i 's/\\\\.rem-page @media/@media/g' packages/rem/views/Detail.vue)",
+      "Bash(sed -i '/<style scoped>/,/<\\\\/style>/{ *)",
+      "Bash(sed -i 's/background: linear-gradient\\(135deg, #1a0a0a 0%, #2e1a1a 25%, #1a1020 50%, #1a0a1a 75%, #0a0a1a 100%\\);/background: linear-gradient\\(135deg, #0f0f11 0%, #1a1a1e 25%, #12121a 50%, #111118 75%, #0a0a0f 100%\\);/' packages/kana/views/Detail.vue)",
+      "Bash(sed -i 's/background: linear-gradient\\(135deg, #1a0a1a 0%, #2e1a2e 40%, #1a1020 100%\\);/background: linear-gradient\\(135deg, #111118 0%, #1e1e24 40%, #12121a 100%\\);/' packages/kana/views/Detail.vue)",
+      "Bash(npm run *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/phrolova/images/\")",
+      "Bash(cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/hutao/images/\")",
+      "Bash(mkdir -p \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/elaina/images\" && cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/elaina/images/\")",
+      "Bash(mkdir -p \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images\" && cp \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/rem/images/\"*.jpg \"c:/Users/zrf/Desktop/新建文件夹/YuanHuaWiki/packages/tomori/images/\")",
+      "Bash(find /c/Users/24732/Desktop/wiki -type f \\\\\\( -name \"*.vue\" -o -name \"*.html\" -o -name \"*.md\" -o -name \"*.jsx\" -o -name \"*.tsx\" \\\\\\) 2>/dev/null | head -50)",
+      "Read(//c/Users/24732/Desktop/wiki/**)",
+      "Bash(ls /c/Users/24732/Desktop/wiki/)",
+      "Read(//c/Users/24732/Desktop/wiki//**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\zrf\\Desktop\\新建文件夹\\YuanHuaWiki\\packages\\rem\\images"
+    ]
+  }
+}
