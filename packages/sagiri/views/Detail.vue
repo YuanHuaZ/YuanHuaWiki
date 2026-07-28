@@ -104,7 +104,7 @@
       </section>
     </div>
 
-    <!-- Tab 3: Gallery -->
+    <!-- Tab 4: Gallery -->
     <div v-show="activeMainTab === 'gallery'" class="tab-panel-main">
       <section class="section" style="background:#f1f5f9;">
         <div class="container">
@@ -421,6 +421,6 @@ export default {
 .sagiri-page .rel-type { display: inline-flex; align-items: center; gap: 3px; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
 .sagiri-page .rel-romance { background: #fce7f3; color: #be185d; }
 .sagiri-page .rel-family { background: #dbeafe; color: #1d4ed8; }
-.sagiri-page .rel-friend { background: #ffffff; color: #047857; }
+.sagiri-page .rel-friend { background: #faf9f6; color: #047857; }
 .sagiri-page .rel-other { background: #f1f5f9; color: #475569; }
 </style>

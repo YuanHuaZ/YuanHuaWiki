@@ -74,9 +74,9 @@ export default {
     { icon: '💔', name: '执念之力', grade: 'S', desc: '对CRYCHIC的<span class="highlight">强烈执念</span>驱动着素世的行动。这份执着虽然<span class="highlight-pink">曾经将她引向歧途</span>，但也展现了她对音乐和友情<span class="highlight">真挚而深沉的感情</span>。' }
   ],
   relationships: [
-    { icon: '🎸', name: '千早爱音', type: '乐队成员', desc: 'MyGO!!!!!的吉他手兼主唱。爱音给素世起了<span class="highlight">"soyorin"的昵称</span>，两人从最初的<span class="highlight-pink">塑料姐妹花般的互动</span>到逐渐建立真正的信任，关系微妙而有趣。', cls: 'rel-friend' },
+    { icon: '🎸', name: '千早爱音', type: '乐队成员', desc: 'MyGO!!!!!的吉他手。爱音给素世起了<span class="highlight">"soyorin"的昵称</span>，两人从最初的<span class="highlight-pink">塑料姐妹花般的互动</span>到逐渐建立真正的信任，关系微妙而有趣。', cls: 'rel-friend' },
     { icon: '🎤', name: '高松灯', type: '乐队成员', desc: 'MyGO!!!!!的主唱。素世最初<span class="highlight">以关心的姿态接近灯</span>，但在真实面目揭露后，两人的关系经历了<span class="highlight-pink">巨大的考验和修复</span>。', cls: 'rel-friend' },
-    { icon: '🎸', name: '丰川祥子', type: '前队友/执念', desc: 'CRYCHIC的键盘手，素世<span class="highlight">最深的执念所在</span>。素世一直渴望着与祥子<span class="highlight-pink">重建曾经的乐队</span>，这份感情是整个故事的核心矛盾之一。', cls: 'rel-other' },
-    { icon: '🎸', name: '椎名立希', type: '乐队成员', desc: 'MyGO!!!!!的鼓手。立希对素世的<span class="highlight">真实面目最为警觉</span>，两人之间有着<span class="highlight-pink">微妙而紧张的关系</span>。', cls: 'rel-friend' }
+    { icon: '🎹', name: '丰川祥子', type: '前队友/执念', desc: 'CRYCHIC的键盘手，素世<span class="highlight">最深的执念所在</span>。素世一直渴望着与祥子<span class="highlight-pink">重建曾经的乐队</span>，这份感情是整个故事的核心矛盾之一。', cls: 'rel-other' },
+    { icon: '🥁', name: '椎名立希', type: '乐队成员', desc: 'MyGO!!!!!的鼓手。立希对素世的<span class="highlight">真实面目最为警觉</span>，两人之间有着<span class="highlight-pink">微妙而紧张的关系</span>。', cls: 'rel-friend' }
   ]
 }

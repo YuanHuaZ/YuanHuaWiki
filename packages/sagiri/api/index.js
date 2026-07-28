@@ -16,7 +16,7 @@ export default {
     { icon: '🎂', label: '生日', value: '5月10日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '152cm', iconClass: 'pink' },
     { icon: '♉', label: '星座', value: '金牛座', iconClass: 'cyan' },
-    { icon: '🎨', label: '职业', value: '插画师（插画家）', iconClass: 'purple' },
+    { icon: '🎨', label: '职业', value: '插画师（埃罗芒阿老师）', iconClass: 'purple' },
     { icon: '🏫', label: '学校', value: '中学二年级', iconClass: 'pink' },
     { icon: '🎤', label: '声优', value: '藤田咲（日）', iconClass: 'cyan' },
     { icon: '📚', label: '所属作品', value: '埃罗芒阿老师', iconClass: 'purple' },
@@ -41,7 +41,7 @@ export default {
         '和泉纱雾拥有一头<span class="highlight">漂亮的银白色长发</span>，发丝柔顺飘逸，常常散落在肩膀上。这头银发是<span class="highlight-pink">她最显著的外貌特征之一</span>，让她看起来如同精灵般纯净。',
         '她的眼眸是<span class="highlight">清澈的蓝色</span>，如同透明的宝石。这双大眼睛总是带着<span class="highlight-pink">些许怯意和好奇</span>，反映出她内向但又对世界充满探索欲的复杂内心。',
         '因为长期待在家里，纱雾的<span class="highlight">皮肤非常白皙</span>。她平时穿着<span class="highlight-pink">宽松舒适的衣物</span>，不太在意自己的穿着打扮，但一旦出门就会精心打扮。',
-        '纱雾有一个标志性的<span class="highlight">动物面具</span>（山姥面具），她在不得不出门或面对陌生人时会戴上它来<span class="highlight-pink">给自己勇气</span>。这个面具成为了她角色形象的重要组成部分。'
+        '纱雾有一个标志性的<span class="highlight">山姥面具</span>，她在不得不出门或面对陌生人时会戴上它来<span class="highlight-pink">给自己勇气</span>。这个面具成为了她角色形象的重要组成部分。'
       ]
     },
     {
@@ -76,7 +76,7 @@ export default {
   relationships: [
     { icon: '👦', name: '和泉正宗', type: '义兄/恋人', desc: '和泉正宗是纱雾的<span class="highlight">义兄</span>，也是她最重要的人。纱雾对正宗怀有<span class="highlight-pink">超越兄妹的感情</span>，但一开始只能用傲娇的方式表达。', cls: 'rel-romance' },
     { icon: '👧', name: '山田妖精', type: '朋友/同行', desc: '同为轻小说插画师的<span class="highlight">山田妖精</span>是纱雾少有的朋友。她性格外向开朗，与纱雾形成了<span class="highlight-pink">鲜明的对比</span>。', cls: 'rel-friend' },
-    { icon: '👧', name: '千寿村征', type: '同行/后辈', desc: '轻小说作家<span class="highlight">千寿村征</span>是正宗的忠实粉丝，也是纱雾在创作道路上的<span class="highlight-pink">竞争对手和同行</span>。', cls: 'rel-friend' },
+    { icon: '👧', name: '千寿村征', type: '同行/后辈', desc: '轻小说作家<span class="highlight">千寿村征</span>是正宗的忠实粉丝，也是纱雾在创作道路上的<span class="highlight-pink">伙伴和同行</span>。', cls: 'rel-friend' },
     { icon: '👤', name: '神野惠', type: '朋友', desc: '正宗的同学<span class="highlight">神野惠</span>是少数能让纱雾感到<span class="highlight-pink">放松的外人之一</span>，她温柔体贴的性格很容易让人放下戒备。', cls: 'rel-friend' }
   ]
 }
