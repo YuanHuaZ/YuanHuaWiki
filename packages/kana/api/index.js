@@ -66,7 +66,7 @@ export default {
         '在B小町的活动中，加奈展现出了<span class="highlight">偶像的天赋</span>。她的舞台表现力极强，<span class="highlight-pink">粉丝数量稳步增长</span>。同时她也在各种演艺工作中努力证明自己，试图摆脱过气童星的标签。',
         '加奈对阿库亚的感情是<span class="highlight">全剧最复杂的感情线之一</span>——她一边嫌弃阿库亚的"人渣行为"，一边又<span class="highlight-pink">无法控制地被他吸引</span>，陷入了"嘴上说不要身体却很诚实"的经典傲娇困境。'
       ],
-      quote: '要推我的话，现在正是时候哦。',
+      quote: '我要成为你推的孩子。',
       quoteAuthor: '—— 有马加奈'
     }
   ],
