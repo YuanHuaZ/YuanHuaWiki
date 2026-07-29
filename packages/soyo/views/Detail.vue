@@ -79,9 +79,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">📺</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -96,7 +94,7 @@
               <p class="anime-info-desc">在月之森女子学园就读的<span class="highlight">長崎素世</span>，怀着对过去乐队CRYCHIC的<span class="highlight-pink">深深执念</span>，加入了新乐队MyGO!!!!!。然而，她真正想要的<span class="highlight">并非眼前这支乐队</span>，而是那个已经回不来的过去。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">音乐</span><span class="anime-tag dark">青春</span><span class="anime-tag dark">乐队</span></div>
               <div class="anime-info-actions">
-                <a href="https://www.bilibili.com/bangumi/play/ss43674/" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
+                <a href="https://www.bilibili.com/bangumi/play/ep1183102?spm_id_from=333.337.0.0" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -110,9 +108,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">🎮</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场游戏</span>
@@ -127,7 +123,7 @@
               <p class="anime-info-desc">在音乐节奏游戏<span class="highlight">「BanG Dream! 少女乐团派对」</span>中，MyGO!!!!!作为新乐队加入。素世以<span class="highlight-pink">温柔的外表和复杂的内心</span>，成为了游戏中最具话题性的角色之一。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">音乐</span><span class="anime-tag dark">节奏</span><span class="anime-tag dark">二次元</span></div>
               <div class="anime-info-actions">
-                <a href="https://store.steampowered.com/app/2376930/BanG_Dream/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam查看 <span class="bili-arrow">→</span></a>
+                <a href="https://game.bilibili.com/bangdream/#p1" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">🏠</span> 前往官网 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -220,6 +216,16 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import soyoImg from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import gameCover from '../images/b.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import sp5 from '../images/sp5.jpg'
+import sp6 from '../images/sp6.jpg'
+import sp7 from '../images/sp7.jpg'
+import sp8 from '../images/sp8.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -253,10 +259,14 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: null, url: '#', title: '長崎素世 相关视频 01', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '長崎素世 相关视频 02', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '長崎素世 相关视频 03', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '長崎素世 相关视频 04', desc: '视频描述占位' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1GK421v7zv/', title: '【填词/MyGO】素颜', desc: '長崎素世 填词' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1odwVefE8U/', title: '【MyGO/素世】坏心思的神明，给我带来了禮物。', desc: '長崎素世 MAD' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1fk4y1w7ha/', title: '【mygo填词/爱素对唱】有点坏', desc: '長崎素世 填词' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1Au411E78P/', title: '【MyGO】爱音和素世的「最佳损友」', desc: '長崎素世 剪辑' },
+      { cover: sp5, url: 'https://www.bilibili.com/video/BV1DC4y1w76G/', title: '「 手 写 的 从 前 」，想要的永远', desc: '長崎素世 填词' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1hs421G7ex/', title: '【填词/', desc: '長崎素世 填词' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1aH4y1c7UJ/', title: '【填词/', desc: '長崎素世 填词' },
+      { cover: sp8, url: 'https://www.bilibili.com/video/BV1nzB7Y9EmS/', title: '长期溯时导致的！', desc: '長崎素世 剪辑' }
     ])
 
     function particleStyle() {
@@ -270,7 +280,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, soyoImg, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, soyoImg, animeCover, gameCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

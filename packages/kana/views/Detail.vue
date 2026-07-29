@@ -234,10 +234,10 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: sp1, url: 'https://www.bilibili.com/video/BV1fs4y1z74E', title: '【中日歌词/完整版/有马加奈】「满月」-有马加奈', desc: '有马加奈 角色歌' },
-      { cover: sp2, url: 'https://www.bilibili.com/video/BV1QE2xYUEi3', title: '【4K60帧/Hires无损音质】我推的孩子「POP IN 2」B小町【MV short ver./中日字幕】', desc: 'B小町 MV' },
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1fs4y1z74E', title: '【中日歌词/', desc: '有马加奈 角色歌' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1QE2xYUEi3', title: '【4K60帧/', desc: 'B小町 MV' },
       { cover: sp3, url: 'https://www.bilibili.com/video/BV1yF411d7tM', title: 'TVアニメ『【推しの子】』／B小町「STAR☆T☆RAIN」「サインはB」「HEART\'s♡KISS」New Arrange Ver. 試聴映像', desc: 'B小町 MV' },
-      { cover: sp4, url: 'https://www.bilibili.com/video/BV1ui4y1C7Jt', title: '【TOS2021/静止画MAD】有马加奈的告白', desc: '有马加奈 MAD' }
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1ui4y1C7Jt', title: '【TOS2021/', desc: '有马加奈 MAD' }
     ])
 
     function particleStyle() {

@@ -81,9 +81,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-image">
-                <span class="anime-cover-emoji">🎮</span>
-              </div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场游戏</span>
@@ -98,7 +96,7 @@
               <p class="anime-info-desc">姬松学院中流传着<span class="highlight">「魔女」的传说</span>。因幡巡来到超自然研究会寻求帮助，在这场<span class="highlight-pink">青春与魔法交织的故事</span>中，用她自创的「Ciallo～」为玩家带来了一段难忘的恋爱体验。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">恋爱冒险</span><span class="anime-tag dark">视觉小说</span><span class="anime-tag dark">校园</span></div>
               <div class="anime-info-actions">
-                <a href="https://store.steampowered.com/app/2123450/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买 <span class="bili-arrow">→</span></a>
+                <a href="https://store.steampowered.com/app/2458530/_/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -199,11 +197,15 @@ import img1 from '../images/1.jpg'
 // import img6 from '../images/6.jpg'
 // import img7 from '../images/7.jpg'
 // import img8 from '../images/8.jpg'
-// import gameCover from '../images/b.jpg'
-// import sp1 from '../images/sp1.jpg'
-// import sp2 from '../images/sp2.jpg'
-// import sp3 from '../images/sp3.jpg'
-// import sp4 from '../images/sp4.jpg'
+import gameCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import sp5 from '../images/sp5.jpg'
+import sp6 from '../images/sp6.jpg'
+import sp7 from '../images/sp7.jpg'
+import sp8 from '../images/sp8.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -236,10 +238,14 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: null, url: '#', title: '【魔女的夜宴】因幡巡 剧情合集', desc: '巡线完整剧情' },
-      { cover: null, url: '#', title: '【サノバウィッチ】因幡めぐる 角色歌', desc: '因幡巡 角色曲' },
-      { cover: null, url: '#', title: '【魔女的夜宴】因幡巡 MAD / AMV', desc: '因幡巡 混剪' },
-      { cover: null, url: '#', title: '【柚子社】魔女的夜宴 全角色介绍', desc: '作品全角色介绍' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1tryhYHEBt/', title: '你知道前辈有几种叫法吗？轮到美咕噜来给你洗脑了！', desc: '因幡巡 洗脑向剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1hF411J7qa/', title: '【2022Gal拜年祭单品/美咕噜手书】『𝕱𝖚𝖙𝖆𝖗𝖎 𝖓𝖔 𝖒𝖆𝖍ō』Ciallo～(∠・ω< )⌒★', desc: '因幡巡 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1X8HKzkEu5/', title: '美咕噜辱骂合集，有点爽怎么回事…（话说保科被骂了多少遍！！）', desc: '因幡巡 合集' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1kfJXzHEhi/', title: '美咕噜太可爱了~Ciallo～(∠・ω< )⌒☆', desc: '因幡巡 剪辑' },
+      { cover: sp5, url: 'https://www.bilibili.com/video/BV196421G7xF/', title: 'Ciallo～(∠・ω< )⌒☆', desc: '因幡巡 剪辑' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1cNVU63Env/', title: '她的一句Ciallo火遍全网，这句话为什么能火10年？', desc: '因幡巡 杂谈' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1psjbz2E9o/', title: '美咕噜向你诉说爱意【柚子社音声/中文翻译】魔女的夜宴预约特典CD②因幡巡', desc: '因幡巡 音声' },
+      { cover: sp8, url: 'https://www.bilibili.com/video/BV1Pu411473C/', title: '【因幡巡】"能不能不要切歌，继续唱我们的歌"', desc: '因幡巡 剪辑' }
     ])
 
     function particleStyle() {
@@ -253,7 +259,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, gameCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

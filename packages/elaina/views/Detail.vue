@@ -234,7 +234,7 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: sp1, url: 'https://www.bilibili.com/video/BV1o14y1B7jy', title: '【伊蕾娜の小曲/4k】真的不来看看可爱的伊蕾娜吗', desc: '伊蕾娜 可爱向剪辑' },
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1o14y1B7jy', title: '【伊蕾娜の小曲/', desc: '伊蕾娜 可爱向剪辑' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1m54y1z79W', title: '♣𝘾𝙖𝙪𝙨𝙚 𝙄\'𝙢 𝙣𝙤𝙩 𝙟𝙪𝙨𝙩 𝙖 𝙥𝙧𝙚𝙩𝙩𝙮 𝙜𝙞𝙧𝙡♣', desc: '伊蕾娜 颜值向剪辑' },
       { cover: sp3, url: 'https://www.bilibili.com/video/BV1qf4y1t7L7', title: 'Super爱豆的笑容都没你的甜>>热爱105℃的伊蕾娜', desc: '伊蕾娜 可爱向剪辑' },
       { cover: sp4, url: 'https://www.bilibili.com/video/BV1nz4y127TS', title: '【可爱洗脑】AWSL！！！伊蕾娜真是太可爱了啦~~', desc: '伊蕾娜 洗脑向剪辑' }

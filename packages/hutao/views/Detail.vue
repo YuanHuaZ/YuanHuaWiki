@@ -235,10 +235,10 @@ export default {
     ]
 
     const videoItems = [
-      { cover: sp1, url: 'https://www.bilibili.com/video/BV1Dp4y1H7RE/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '胡桃单曲《嗷》', desc: '胡桃 原创单曲' },
-      { cover: sp2, url: 'https://www.bilibili.com/video/BV1o3411g7BP/?spm_id_from=333.788.comment.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【原神夏日放映节】动画短片—「燃火之蝶」', desc: '胡桃 动画短片' },
-      { cover: sp3, url: 'https://www.bilibili.com/video/BV1qb4y1o7jK/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【原神手书】胡桃个人向-《起风了》', desc: '胡桃 个人向手书' },
-      { cover: sp4, url: 'https://www.bilibili.com/video/BV1aH4y1z7dA/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '胡桃单曲《三拜红尘凉》', desc: '胡桃 原创单曲' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1Dp4y1H7RE/', title: '胡桃单曲《嗷》', desc: '胡桃 原创单曲' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1o3411g7BP/', title: '【原神夏日放映节】动画短片—「燃火之蝶」', desc: '胡桃 动画短片' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1qb4y1o7jK/', title: '【原神手书】胡桃个人向-《起风了》', desc: '胡桃 个人向手书' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1aH4y1z7dA/', title: '胡桃单曲《三拜红尘凉》', desc: '胡桃 原创单曲' }
     ]
 
     function particleStyle() {

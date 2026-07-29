@@ -235,10 +235,10 @@ export default {
     ]
 
     const videoItems = [
-      { cover: sp1, url: 'https://www.bilibili.com/video/BV1TR4y1j7zB/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【𝟖𝐊】Charlotte NCOP 全站最高画质 夏洛特OP无字幕 Bravely You', desc: '夏洛特OP无字幕' },
-      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Tu411Q74X/?spm_id_from=333.337.search-card.all.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【𝟖𝐊𝟔𝟎𝐅𝐏𝐒】"我是你的恋人" Charlotte NCED03 全站最高画质 夏洛特第13话ED无字幕 君の文字', desc: '夏洛特第13话ED无字幕' },
-      { cover: sp3, url: 'https://www.bilibili.com/video/BV1Xt41157Ge/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【前方高萌/治愈/夏洛特】友利奈绪——多少人心中的理想型女友', desc: '友利奈绪治愈向剪辑' },
-      { cover: sp4, url: 'https://www.bilibili.com/video/BV1P34y1S78D/?spm_id_from=333.1387.favlist.content.click&vd_source=d6889d3017b6c0ccbdb9994235f89bc1', title: '【Charlotte/夏洛特】友利奈绪，新婚快乐！', desc: '友利奈绪剪辑' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1TR4y1j7zB/', title: '【𝟖𝐊】Charlotte NCOP 全站最高画质 夏洛特OP无字幕 Bravely You', desc: '夏洛特OP无字幕' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Tu411Q74X/', title: '【𝟖𝐊𝟔𝟎𝐅𝐏𝐒】"我是你的恋人" Charlotte NCED03 全站最高画质 夏洛特第13话ED无字幕 君の文字', desc: '夏洛特第13话ED无字幕' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1Xt41157Ge/', title: '【前方高萌/治愈/夏洛特】友利奈绪——多少人心中的理想型女友', desc: '友利奈绪治愈向剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1P34y1S78D/', title: '【Charlotte/夏洛特】友利奈绪，新婚快乐！', desc: '友利奈绪剪辑' }
     ]
 
     function particleStyle() {

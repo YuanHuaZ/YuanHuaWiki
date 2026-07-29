@@ -79,7 +79,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-image"><span class="anime-cover-emoji">📺</span></div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -94,7 +94,7 @@
               <p class="anime-info-desc">四月十日的春假期间，五河士道在雨中邂逅了灵力失控中的第二精灵——<span class="highlight">「隐居者」四糸乃</span>。为了拯救她免于被AST消灭的命运，士道必须通过<span class="highlight-pink">约会和接吻</span>来封印她的灵力。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">恋爱</span><span class="anime-tag dark">奇幻</span><span class="anime-tag dark">战斗</span><span class="anime-tag live">正版引进</span></div>
               <div class="anime-info-actions">
-                <a href="https://www.bilibili.com/bangumi/media/md1140/" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
+                <a href="https://www.bilibili.com/bangumi/play/ep102835?spm_id_from=333.337.0.0" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -105,25 +105,48 @@
     <!-- Tab 3: Game -->
     <div v-show="activeMainTab === 'game'" class="tab-panel-main">
       <section class="section anime-section">
-        <div class="container">
+        <div class="container" style="display:flex;flex-direction:column;gap:24px;">
+          <!-- Game 1: 莲反乌托邦 -->
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-image"><span class="anime-cover-emoji">🎮</span></div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover2})` }"></div>
             </div>
             <div class="anime-info">
-              <span class="anime-info-label">相关游戏</span>
-              <h3 class="anime-info-title">约会大作战：凛祢乌托邦</h3>
-              <p class="anime-info-title-jp">デート・ア・ライブ 凛祢ユートピア</p>
+              <span class="anime-info-label">相关游戏 1</span>
+              <h3 class="anime-info-title">约会大作战：莲反乌托邦</h3>
+              <p class="anime-info-title-jp">デート・ア・ライブ 蓮ディストピア</p>
               <div class="anime-info-meta">
                 <div class="anime-meta-item"><span class="meta-icon">🏢</span><span class="meta-label">开发商：</span>Compile Heart / Sting</div>
-                <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">发售：</span>2013年~2015年（3部曲）</div>
-                <div class="anime-meta-item"><span class="meta-icon">🎮</span><span class="meta-label">平台：</span>PS3 / PS Vita</div>
+                <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">发售：</span>2024年</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎮</span><span class="meta-label">平台：</span>PS4 / Nintendo Switch / PC</div>
                 <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>野水伊織</div>
               </div>
-              <p class="anime-info-desc">《约会大作战》共推出三部<span class="highlight">官方视觉小说游戏</span>：凛祢乌托邦、或守Install、凛绪轮回。<span class="highlight-pink">四糸乃在每部作品中均有登场</span>，玩家可以体验与原作不同的平行故事。</p>
+              <p class="anime-info-desc">系列最新作，讲述了一个<span class="highlight">以莲为核心的全新故事</span>。<span class="highlight-pink">四糸乃在本作中继续登场</span>，与士道和其他精灵们共同面对新的危机。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">视觉小说</span><span class="anime-tag dark">恋爱冒险</span></div>
               <div class="anime-info-actions">
-                <a href="https://store.steampowered.com/app/1576780/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买（Rio Reincarnation） <span class="bili-arrow">→</span></a>
+                <a href="https://store.steampowered.com/app/2627780/DATE_A_LIVE_Ren_Dystopia/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买 <span class="bili-arrow">→</span></a>
+              </div>
+            </div>
+          </div>
+          <!-- Game 2: 凛绪轮回 -->
+          <div class="anime-hero-card">
+            <div class="anime-cover">
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${gameCover})` }"></div>
+            </div>
+            <div class="anime-info">
+              <span class="anime-info-label">相关游戏 2</span>
+              <h3 class="anime-info-title">约会大作战：凛绪轮回</h3>
+              <p class="anime-info-title-jp">デート・ア・ライブ 凜緒リンカーネイション</p>
+              <div class="anime-info-meta">
+                <div class="anime-meta-item"><span class="meta-icon">🏢</span><span class="meta-label">开发商：</span>Compile Heart / Sting</div>
+                <div class="anime-meta-item"><span class="meta-icon">📅</span><span class="meta-label">发售：</span>2019年</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎮</span><span class="meta-label">平台：</span>PS4 / PC</div>
+                <div class="anime-meta-item"><span class="meta-icon">🎤</span><span class="meta-label">CV：</span>野水伊織</div>
+              </div>
+              <p class="anime-info-desc">系列三部曲的整合与重制版，包含了<span class="highlight">凛祢乌托邦、或守Install、凛绪轮回</span>全部内容。<span class="highlight-pink">四糸乃在所有篇章中均有登场</span>。</p>
+              <div class="anime-tag-row"><span class="anime-tag dark">视觉小说</span><span class="anime-tag dark">恋爱冒险</span></div>
+              <div class="anime-info-actions">
+                <a href="https://store.steampowered.com/app/1047440/DATE_A_LIVE_Rio_Reincarnation/" class="btn-bilibili btn-steam" target="_blank" rel="noopener"><span class="steam-icon">🎮</span> 在Steam购买 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -216,6 +239,13 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import img1 from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import gameCover from '../images/b.jpg'
+import gameCover2 from '../images/b2.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 // 以下图片暂未添加，使用 emoji 占位
 // import img2 from '../images/2.jpg'
 // import img3 from '../images/3.jpg'
@@ -224,12 +254,6 @@ import img1 from '../images/1.jpg'
 // import img6 from '../images/6.jpg'
 // import img7 from '../images/7.jpg'
 // import img8 from '../images/8.jpg'
-// import animeCover from '../images/a.jpg'
-// import gameCover from '../images/b.jpg'
-// import sp1 from '../images/sp1.jpg'
-// import sp2 from '../images/sp2.jpg'
-// import sp3 from '../images/sp3.jpg'
-// import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -263,10 +287,10 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: null, url: '#', title: '【约会大作战】四糸乃 剧情合集', desc: '四糸乃相关剧情' },
-      { cover: null, url: '#', title: '四糸乃 角色歌 / MAD', desc: '四糸乃 混剪' },
-      { cover: null, url: '#', title: '【デート・ア・ライブ】全精灵介绍', desc: '全部精灵介绍' },
-      { cover: null, url: '#', title: '【约会大作战】四糸乃 手书', desc: '四糸乃 手书' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1gb411g73U/', title: '【约会大作战】四糸乃的60个超卡哇伊瞬间，awsl！', desc: '四糸乃 剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV18x41167TY/', title: '【约会大作战】四糸乃角色歌', desc: '四糸乃 角色歌' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1ht411c7RY/', title: '前方高能！！盘点约会大作战中四糸乃那些高能，高萌场面！', desc: '四糸乃 剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1M4411Q7dP/', title: '现在是四糸乃洗脑时间!', desc: '四糸乃 洗脑向剪辑' }
     ])
 
     function particleStyle() {
@@ -280,7 +304,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, animeCover, gameCover, gameCover2, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

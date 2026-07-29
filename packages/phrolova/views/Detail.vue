@@ -214,6 +214,10 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 import sp5 from '../images/sp5.jpg'
 import sp6 from '../images/sp6.jpg'
+import sp7 from '../images/sp7.jpg'
+import sp8 from '../images/sp8.jpg'
+import sp9 from '../images/sp9.jpg'
+import sp10 from '../images/sp10.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -259,7 +263,11 @@ export default {
       { cover: sp3, url: 'https://www.bilibili.com/video/BV1DR8sz2ECF', title: '"我或曾梦见，与你亲密无间"【弗洛洛原创PV】', desc: '弗洛洛 原创PV' },
       { cover: sp4, url: 'https://www.bilibili.com/video/BV1MfhJzYE1k', title: '【鸣潮PV】漂泊的浪子，可愿伴我短暂沉溺于此？', desc: '弗洛洛 原创PV' },
       { cover: sp5, url: 'https://www.bilibili.com/video/BV1c9MJ67Eg6', title: '【心月弗传】师兄，什么叫你下山三天带了一只狐狸回来？', desc: '心月弗传 同人作品' },
-      { cover: sp6, url: 'https://www.bilibili.com/video/BV1qtKn6KEHg', title: '《酣梦于彼岸深红》 | 《鸣潮》演唱会「致予新世界」', desc: '鸣潮 演唱会' }
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1qtKn6KEHg', title: '《酣梦于彼岸深红》 | 《鸣潮》演唱会「致予新世界」', desc: '鸣潮 演唱会' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1UHNi6aENQ/', title: '连狐妖公主都敢泡【第1集】', desc: '弗洛洛 同人作品' },
+      { cover: sp8, url: 'https://www.bilibili.com/video/BV1nQRqByEaN/', title: '【漂弗日记】第二十三集‖ 异世界—终章', desc: '漂弗日记 同人作品' },
+      { cover: sp9, url: 'https://www.bilibili.com/video/BV1MSTM64E8w/', title: '【漂弗情缘】第一集 | 我的师弗狐糯糯', desc: '漂弗情缘 同人作品' },
+      { cover: sp10, url: 'https://www.bilibili.com/video/BV1ikLC6tEZj/', title: '游泳课不运动怎么行【舍友弗洛洛·2】', desc: '弗洛洛 同人作品' }
     ])
 
     function particleStyle() {

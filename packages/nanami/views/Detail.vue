@@ -263,7 +263,7 @@ export default {
 
     const videoItems = ref([
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1yt4y1s7yN', title: 'ヒステリックナイトガール【弹丸论破2】手书【live2d动画】', desc: '七海千秋 手书' },
-      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Br4y1Z7ge', title: '⚠️OTOMEROID/VIVINOS 七海千秋/弹丸论破2［手书］', desc: '七海千秋 手书' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Br4y1Z7ge', title: '⚠️OTOMEROID/', desc: '七海千秋 手书' },
       { cover: sp3, url: 'https://www.bilibili.com/video/BV1iS4y1u78t', title: '【弹丸论破2手书】BABY【七海千秋中心】', desc: '七海千秋 手书' },
       { cover: sp4, url: 'https://www.bilibili.com/video/BV1WjQAYnEgT', title: '【弹丸论破2手书】ずっとずっとずっと【2025七海千秋生贺】', desc: '七海千秋 手书' }
     ])

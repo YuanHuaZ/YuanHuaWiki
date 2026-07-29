@@ -79,9 +79,7 @@
         <div class="container">
           <div class="anime-hero-card">
             <div class="anime-cover">
-              <div class="anime-cover-grid"></div>
-              <div class="anime-cover-icon">📺</div>
-              <div class="anime-cover-badge">暂无封面</div>
+              <div class="anime-cover-image" :style="{ backgroundImage: `url(${animeCover})` }"></div>
             </div>
             <div class="anime-info">
               <span class="anime-info-label">主要登场作品</span>
@@ -96,7 +94,7 @@
               <p class="anime-info-desc">高中生作家和泉正宗与<span class="highlight">从不露面的插画家"埃罗芒阿老师"合作</span>。某天他发现，这位画出色情插画的<span class="highlight-pink">神秘插画师竟然是自己家里蹲的义妹纱雾</span>。两人从此开始了全新的关系。</p>
               <div class="anime-tag-row"><span class="anime-tag dark">恋爱</span><span class="anime-tag dark">喜剧</span><span class="anime-tag dark">日常</span></div>
               <div class="anime-info-actions">
-                <span class="anime-tag-not-available">暂无B站正版</span>
+                <a href="https://www.bilibili.com/bangumi/play/ep103917?spm_id_from=333.337.0.0" class="btn-bilibili" target="_blank" rel="noopener"><span class="bili-icon">📺</span> 在Bilibili观看 <span class="bili-arrow">→</span></a>
               </div>
             </div>
           </div>
@@ -189,6 +187,11 @@ import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
 import sagiriImg from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -221,10 +224,10 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: null, url: '#', title: '和泉纱雾 相关视频 01', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '和泉纱雾 相关视频 02', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '和泉纱雾 相关视频 03', desc: '视频描述占位' },
-      { cover: null, url: '#', title: '和泉纱雾 相关视频 04', desc: '视频描述占位' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1zT4y177Am/', title: '【AMV】ヒトリゴト/自言自语 -OP（完整版）《埃罗芒阿老师》（中/日文字幕）', desc: '和泉纱雾 AMV' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1M7411a7Hp/', title: '再 来 亿 遍', desc: '和泉纱雾 剪辑' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1M84y1y7oy/', title: '💕和泉纱雾心动挑战💕你能坚持30秒吗？', desc: '和泉纱雾 剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1wQ4y1K7us/', title: '埃罗芒阿老师☆AWSL', desc: '和泉纱雾 手书' }
     ])
 
     function particleStyle() {
@@ -238,7 +241,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, sagiriImg, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, sagiriImg, animeCover, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>

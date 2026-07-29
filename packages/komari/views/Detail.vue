@@ -234,10 +234,10 @@ export default {
     ]
 
     const videoItems = ref([
-      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yVHwetE9r', title: '【剧情向MAD】明明是主演，却演着配角戏…（败犬女主/小鞠知花）', desc: '小鞠知花 剧情向MAD' },
-      { cover: sp2, url: 'https://www.bilibili.com/video/BV14qx8enEfx', title: '【温水×小鞠】陪伴你、一直到这故事说完。（剧情向MAD/败犬女主）', desc: '温水×小鞠 剧情向MAD' },
-      { cover: sp3, url: 'https://www.bilibili.com/video/BV1x726Y2ENx', title: '【败犬女主MAD/误解向】原来我们和爱情曾经靠得那么近 ⌈小鞠知花⌋', desc: '小鞠知花 误解向MAD' },
-      { cover: sp4, url: 'https://www.bilibili.com/video/BV1EUsge7EJ8', title: '【中日字幕/ED3完整版】败犬女主太多了！ED3「feel my soul」/小鞠知花(CV.寺澤百花)', desc: '小鞠知花 ED' }
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yVHwetE9r', title: '【剧情向MAD】明明是主演，却演着配角戏…（败犬女主/', desc: '小鞠知花 剧情向MAD' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV14qx8enEfx', title: '【温水×小鞠】陪伴你、一直到这故事说完。（剧情向MAD/', desc: '温水×小鞠 剧情向MAD' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1x726Y2ENx', title: '【败犬女主MAD/', desc: '小鞠知花 误解向MAD' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1EUsge7EJ8', title: '【中日字幕/', desc: '小鞠知花 ED' }
     ])
 
     function particleStyle() {
