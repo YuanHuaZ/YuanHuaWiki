@@ -20,7 +20,7 @@
         <div class="hero-visual animate-slide-up delay-200">
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar-ring"></div>
-            <div v-if="data.image" class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat` }"></div>
+            <div v-if="data.image" class="hero-avatar" :style="{ backgroundImage: `url(${data.image})`, backgroundPosition: 'top center', backgroundSize: '150% auto', backgroundRepeat: 'no-repeat' }"></div>
             <div v-else class="hero-avatar avatar-placeholder">
               <span class="avatar-emoji">💙</span>
             </div>

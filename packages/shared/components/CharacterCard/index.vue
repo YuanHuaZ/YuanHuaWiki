@@ -42,7 +42,7 @@ export default {
       if (props.character.image) {
         const whiteBg = ['kana', 'tomori', 'phrolova', 'meguru', 'soyo'].includes(props.character.id)
         const bg = whiteBg ? '#fff' : 'transparent'
-        const upperBody = ['soyo', 'sagiri'].includes(props.character.id)
+        const upperBody = ['soyo', 'sagiri', 'rem'].includes(props.character.id)
         const size = upperBody ? '140% auto' : props.character.id === 'phrolova' ? '150% 150%' : 'cover'
         return { backgroundImage: `url(${props.character.image})`, backgroundSize: size, backgroundPosition: 'top center', backgroundColor: bg }
       }
