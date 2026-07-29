@@ -3,11 +3,7 @@
     <AppHeader />
     <HeroSection @search="onSearch" />
 
-    <div class="hero-transition">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#f8fafc"/>
-      </svg>
-    </div>
+    <div class="hero-transition"></div>
 
     <section class="section" id="character-list">
       <div class="container">
@@ -93,13 +89,9 @@ export default {
 <style>
 .list-page { min-height: 100vh; }
 .hero-transition {
-  position: relative;
-  z-index: 3;
-  margin-top: -1px;
-  line-height: 0;
-  background: #0a0a1a;
+  height: 80px;
+  background: linear-gradient(180deg, #1a1030 0%, #f8fafc 100%);
 }
-.hero-transition svg { width: 100%; height: auto; display: block; }
 .character-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -109,14 +101,20 @@ export default {
 @media (max-width: 768px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
 @media (max-width: 480px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 
+/* Section background with subtle gradient */
+#character-list {
+  background: linear-gradient(180deg, #f8fafc 0%, #faf8ff 30%, #f8f4fc 70%, #f8fafc 100%);
+}
+
 .result-count {
   font-size: 12px; color: #7c3aed; font-weight: 600;
   background: linear-gradient(135deg, #faf5ff, #fdf2f8);
-  padding: 6px 14px; border-radius: 20px;
-  border: 1px solid rgba(168,85,247,0.12);
-  box-shadow: 0 2px 8px rgba(168,85,247,0.06);
+  padding: 7px 16px; border-radius: 20px;
+  border: 1px solid rgba(168,85,247,0.15);
+  box-shadow: 0 2px 12px rgba(168,85,247,0.08);
+  letter-spacing: 0.02em;
 }
-.result-count span { color: #7c3aed; font-weight: 700; }
+.result-count span { color: #6d28d9; font-weight: 700; }
 
 .empty-state {
   text-align: center; padding: 80px 24px;

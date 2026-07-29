@@ -35,19 +35,17 @@ export default {
   position: fixed;
   bottom: 32px;
   right: 32px;
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #e2e8f0;
-  border: 1px solid rgba(255,255,255,0.12);
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: #fff;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 20px rgba(168,85,247,0.4);
   opacity: 0;
-  transform: translateY(20px) scale(0.9);
+  transform: translateY(20px) scale(0.85);
   pointer-events: none;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -59,14 +57,12 @@ export default {
   pointer-events: auto;
 }
 .back-to-top:hover {
-  background: rgba(168, 85, 247, 0.85);
-  border-color: rgba(168, 85, 247, 0.4);
-  color: #fff;
-  transform: translateY(-3px) scale(1);
-  box-shadow: 0 8px 28px rgba(168,85,247,0.45);
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 32px rgba(168,85,247,0.6), 0 0 0 6px rgba(168,85,247,0.1);
 }
 .back-to-top:active {
-  transform: translateY(0) scale(0.95);
+  transform: translateY(-1px) scale(0.98);
 }
 @media (max-width: 480px) {
   .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }

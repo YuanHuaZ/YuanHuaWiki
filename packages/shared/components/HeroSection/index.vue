@@ -45,7 +45,8 @@
           animationDuration: d.dur,
           animationDelay: d.delay,
           fontSize: d.size,
-          opacity: d.opacity
+          opacity: d.opacity,
+          color: danmakuColors[d.color]
         }"
       >{{ d.text }}</div>
     </div>
@@ -103,23 +104,32 @@ export default {
       emit('search', '')
     }
 
-    // 弹幕台词
+    // 弹幕台词 — 不同角色使用不同颜色层级
+    const danmakuColors = [
+      'rgba(233,213,255,0.9)',  // 淡紫
+      'rgba(249,168,212,0.85)', // 粉
+      'rgba(192,132,252,0.9)',  // 紫
+      'rgba(165,243,252,0.8)',  // 青
+      'rgba(255,255,255,0.7)',  // 白
+      'rgba(253,186,116,0.8)',  // 橙
+      'rgba(216,180,254,0.9)',  // 浅紫
+    ]
     const danmakuItems = [
-      { text: '「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜', top: '8%', dur: '28s', delay: '0s', size: '14px', opacity: 0.45 },
-      { text: '「生老病死，天地万象，尽在吾辈。」—— 胡桃', top: '18%', dur: '22s', delay: '3s', size: '13px', opacity: 0.4 },
-      { text: '「我要成为你推的孩子。」—— 有马加奈', top: '30%', dur: '20s', delay: '6s', size: '15px', opacity: 0.45 },
-      { text: '「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花', top: '45%', dur: '30s', delay: '1s', size: '13px', opacity: 0.4 },
-      { text: '「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋', top: '55%', dur: '26s', delay: '8s', size: '14px', opacity: 0.42 },
-      { text: '「我等过很久，我不会再等了。」—— 弗洛洛', top: '68%', dur: '21s', delay: '4s', size: '13px', opacity: 0.4 },
-      { text: '「我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。」—— 弗洛洛', top: '22%', dur: '27s', delay: '11s', size: '14px', opacity: 0.42 },
-      { text: '「世界就这样终结，不是嘭的一响，而是嘘的一声。」—— 弗洛洛', top: '72%', dur: '25s', delay: '7s', size: '13px', opacity: 0.4 },
-      { text: '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡', top: '38%', dur: '29s', delay: '13s', size: '14px', opacity: 0.45 },
-      { text: '「Ciallo～(∠・ω< )⌒☆」—— 因幡巡', top: '82%', dur: '18s', delay: '2s', size: '15px', opacity: 0.48 },
-      { text: '「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 氷芽川四糸乃', top: '35%', dur: '23s', delay: '15s', size: '14px', opacity: 0.44 },
-      { text: '「从这里开始吧。从一开始……不，从零开始。」—— 雷姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45 },
-      { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5 },
-      { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42 },
-      { text: '「不，我不认识叫那种名字的人。」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44 },
+      { text: '「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜', top: '8%', dur: '28s', delay: '0s', size: '14px', opacity: 0.45, color: 0 },
+      { text: '「生老病死，天地万象，尽在吾辈。」—— 胡桃', top: '18%', dur: '22s', delay: '3s', size: '13px', opacity: 0.4, color: 5 },
+      { text: '「我要成为你推的孩子。」—— 有马加奈', top: '30%', dur: '20s', delay: '6s', size: '15px', opacity: 0.45, color: 1 },
+      { text: '「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花', top: '45%', dur: '30s', delay: '1s', size: '13px', opacity: 0.4, color: 2 },
+      { text: '「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋', top: '55%', dur: '26s', delay: '8s', size: '14px', opacity: 0.42, color: 3 },
+      { text: '「我等过很久，我不会再等了。」—— 弗洛洛', top: '68%', dur: '21s', delay: '4s', size: '13px', opacity: 0.4, color: 4 },
+      { text: '「我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。」—— 弗洛洛', top: '22%', dur: '27s', delay: '11s', size: '14px', opacity: 0.42, color: 2 },
+      { text: '「世界就这样终结，不是嘭的一响，而是嘘的一声。」—— 弗洛洛', top: '72%', dur: '25s', delay: '7s', size: '13px', opacity: 0.4, color: 1 },
+      { text: '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡', top: '38%', dur: '29s', delay: '13s', size: '14px', opacity: 0.45, color: 0 },
+      { text: '「Ciallo～(∠・ω< )⌒☆」—— 因幡巡', top: '82%', dur: '18s', delay: '2s', size: '15px', opacity: 0.48, color: 5 },
+      { text: '「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 氷芽川四糸乃', top: '35%', dur: '23s', delay: '15s', size: '14px', opacity: 0.44, color: 3 },
+      { text: '「从这里开始吧。从一开始……不，从零开始。」—— 雷姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45, color: 4 },
+      { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5, color: 1 },
+      { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42, color: 6 },
+      { text: '「不，我不认识叫那种名字的人。」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44, color: 2 },
     ]
 
     const particles = [
@@ -133,7 +143,7 @@ export default {
       { id: 8, w: '2px', h: '2px', top: '55%', left: '92%', dur: '4.5s', delay: '1.2s' },
     ]
 
-    return { searchQuery, characterCount, particles, danmakuItems, clearSearch }
+    return { searchQuery, characterCount, particles, danmakuItems, danmakuColors, clearSearch }
   }
 }
 </script>
@@ -171,7 +181,7 @@ export default {
 }
 .hero-glow-3 {
   width: 250px; height: 250px;
-  background: #06b6d4;
+  background: #c084fc;
   top: 50%; left: 60%;
   animation: float 7s ease-in-out infinite 3s;
 }
@@ -191,7 +201,7 @@ export default {
 .hero-deco-2 { top: 25%; right: 12%; font-size: 20px; animation-delay: 2s; animation-duration: 14s; color: #f0abfc; }
 .hero-deco-3 { bottom: 30%; left: 15%; font-size: 32px; animation-delay: 4s; animation-duration: 11s; color: #a78bfa; }
 .hero-deco-4 { top: 60%; right: 8%; font-size: 22px; animation-delay: 1s; animation-duration: 13s; color: #f9a8d4; }
-.hero-deco-5 { top: 8%; left: 55%; font-size: 18px; animation-delay: 3s; animation-duration: 15s; color: #67e8f9; }
+.hero-deco-5 { top: 8%; left: 55%; font-size: 18px; animation-delay: 3s; animation-duration: 15s; color: #f9a8d4; }
 .hero-deco-6 { bottom: 15%; right: 25%; font-size: 26px; animation-delay: 5s; animation-duration: 9s; color: #c084fc; }
 @keyframes decoFloat {
   0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.08; }
@@ -246,7 +256,7 @@ export default {
 }
 .hero-orb-3 {
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(6,182,212,0.3) 0%, rgba(6,182,212,0) 70%);
+  background: radial-gradient(circle, rgba(192,132,252,0.35) 0%, rgba(192,132,252,0) 70%);
   top: 50%; left: 60%;
   animation: orbMove3 12s ease-in-out infinite;
 }
@@ -298,7 +308,7 @@ export default {
 }
 .hero-beam-3 {
   width: 100%; height: 2px;
-  background: linear-gradient(to right, transparent, #06b6d4, transparent);
+  background: linear-gradient(to right, transparent, #c084fc, transparent);
   left: 0; top: 35%;
   animation: beamPulse 6s ease-in-out infinite 2s;
 }
@@ -319,16 +329,19 @@ export default {
   position: absolute;
   right: -500px;
   white-space: nowrap;
-  color: rgba(233,213,255,0.9);
   font-weight: 500;
   font-family: 'Noto Sans SC', sans-serif;
   letter-spacing: 0.08em;
   animation: danmakuFly linear infinite;
-  text-shadow: 0 0 15px rgba(168,85,247,0.4), 0 0 30px rgba(168,85,247,0.2);
+  text-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
 }
 @keyframes danmakuFly {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100vw - 400px)); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 @media (max-width: 768px) {
   .danmaku-item { font-size: 11px !important; }
@@ -369,41 +382,46 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(168,85,247,0.15);
-  border: 1px solid rgba(168,85,247,0.3);
-  padding: 5px 14px;
+  background: rgba(168,85,247,0.12);
+  border: 1px solid rgba(168,85,247,0.25);
+  padding: 6px 16px;
   border-radius: 50px;
   font-size: 12px;
-  color: #c084fc;
+  color: #d8b4fe;
   font-weight: 500;
   margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.04em;
 }
 .hero-badge .dot {
   width: 7px; height: 7px;
-  background: #a855f7;
+  background: #c084fc;
   border-radius: 50%;
   animation: pulseGlow 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(192,132,252,0.6);
 }
 
 .hero-title {
   font-size: clamp(38px, 7vw, 60px);
   font-weight: 900;
   line-height: 1.15;
-  background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 40%, #ec4899 100%);
+  background: linear-gradient(135deg, #f5eeff 0%, #c084fc 30%, #f0abfc 50%, #ec4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.02em;
   font-family: 'Noto Sans SC', 'Inter', sans-serif;
   margin-bottom: 14px;
+  filter: drop-shadow(0 0 30px rgba(168,85,247,0.35)) drop-shadow(0 0 60px rgba(236,72,153,0.2));
 }
 
 .hero-subtitle {
   font-size: 16px;
-  color: #7e8ba3;
+  color: #94a3b8;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 32px;
+  letter-spacing: 0.03em;
 }
 
 .hero-search {
@@ -411,48 +429,58 @@ export default {
   align-items: center;
   width: 100%;
   max-width: 480px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
   margin-bottom: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hero-search:focus-within {
-  border-color: rgba(168,85,247,0.45);
-  box-shadow: 0 0 0 4px rgba(168,85,247,0.08);
+  border-color: rgba(168,85,247,0.5);
+  box-shadow: 0 0 0 4px rgba(168,85,247,0.1), 0 8px 32px rgba(168,85,247,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.1);
 }
-.hero-search-icon { padding: 0 0 0 16px; font-size: 17px; flex-shrink: 0; }
+.hero-search-icon { padding: 0 0 0 18px; font-size: 17px; flex-shrink: 0; opacity: 0.7; }
 .hero-search input {
   flex: 1;
   background: none;
   border: none;
-  padding: 14px 12px;
+  padding: 15px 14px;
   font-size: 15px;
-  color: #e2e8f0;
+  color: #f1f5f9;
   font-family: inherit;
   outline: none;
   min-width: 0;
+  letter-spacing: 0.01em;
 }
 .hero-search input::placeholder { color: #5a6a80; }
 .search-clear {
-  background: none;
+  background: rgba(255,255,255,0.08);
   border: none;
-  color: #64748b;
+  color: #94a3b8;
   cursor: pointer;
-  padding: 8px 14px;
-  font-size: 16px;
-  transition: color 0.2s;
+  padding: 6px 12px;
+  margin-right: 6px;
+  font-size: 13px;
+  border-radius: 8px;
+  transition: all 0.2s;
   display: none;
 }
 .search-clear.visible { display: block; }
-.search-clear:hover { color: #e2e8f0; }
+.search-clear:hover { color: #f1f5f9; background: rgba(255,255,255,0.15); }
 
 .hero-stats {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   align-items: center;
+  padding: 16px 28px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .hero-stat {
   display: flex;
@@ -464,15 +492,16 @@ export default {
 .hero-stat-value {
   font-size: 26px;
   font-weight: 800;
-  color: #e9d5ff;
+  color: #f5eeff;
   letter-spacing: -0.02em;
   line-height: 1;
+  text-shadow: 0 0 20px rgba(192,132,252,0.4);
 }
-.hero-stat-label { font-size: 11px; color: #5a6a80; font-weight: 500; letter-spacing: 0.04em; }
+.hero-stat-label { font-size: 11px; color: #7e8ba3; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
 .hero-stat-divider {
   width: 1px;
   height: 36px;
-  background: linear-gradient(to bottom, transparent, rgba(168,85,247,0.25), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(168,85,247,0.3), transparent);
 }
 
 @media (max-width: 480px) {
