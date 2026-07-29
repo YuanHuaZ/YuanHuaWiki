@@ -71,10 +71,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '🎭', name: '十秒落泪', grade: 'S', desc: '能在十秒内<span class="highlight">随时流下眼泪</span>，是加奈作为童星时期最著名的绝技。不需要眼药水或情绪酝酿，<span class="highlight-pink">纯粹靠身体控制</span>，堪称演技的极致体现。' },
-    { icon: '🎤', name: '舞台表现力', grade: 'A', desc: '作为B小町的核心成员，加奈的<span class="highlight">舞台感染力极强</span>。即使初次登台也能<span class="highlight-pink">瞬间点燃全场</span>，这种能力源于她多年积累的表演经验。' },
-    { icon: '💪', name: '不服输精神', grade: 'EX', desc: '在演艺圈最残酷的环境中<span class="highlight">依然坚持梦想</span>。即使被贴上过气标签、被业界遗忘，她也从未放弃，<span class="highlight-pink">靠自己的努力一步一步往上爬</span>。' },
-    { icon: '🍳', name: '料理能力', grade: 'D', desc: '<span class="highlight">完全不会做饭</span>。曾经试图给阿库亚做便当，结果是<span class="highlight-pink">连自己都吃不下去的黑暗料理</span>。好在阿库亚并不嫌弃，反而觉得这样的加奈很可爱。' }
+    { icon: '🎭', name: '十秒落泪',  desc: '能在十秒内<span class="highlight">随时流下眼泪</span>，是加奈作为童星时期最著名的绝技。不需要眼药水或情绪酝酿，<span class="highlight-pink">纯粹靠身体控制</span>，堪称演技的极致体现。' },
+    { icon: '🎤', name: '舞台表现力',  desc: '作为B小町的核心成员，加奈的<span class="highlight">舞台感染力极强</span>。即使初次登台也能<span class="highlight-pink">瞬间点燃全场</span>，这种能力源于她多年积累的表演经验。' },
+    { icon: '💪', name: '不服输精神',  desc: '在演艺圈最残酷的环境中<span class="highlight">依然坚持梦想</span>。即使被贴上过气标签、被业界遗忘，她也从未放弃，<span class="highlight-pink">靠自己的努力一步一步往上爬</span>。' },
+    { icon: '🍳', name: '料理能力',  desc: '<span class="highlight">完全不会做饭</span>。曾经试图给阿库亚做便当，结果是<span class="highlight-pink">连自己都吃不下去的黑暗料理</span>。好在阿库亚并不嫌弃，反而觉得这样的加奈很可爱。' }
   ],
   relationships: [
     { icon: '👦', name: '星野阿库亚', type: '恋人/共演伙伴', desc: '童年时期与阿库亚<span class="highlight">有过共同出演的经历</span>。高中重逢后加奈一眼认出了他。在阿库亚的邀请下加入B小町，<span class="highlight-pink">对阿库亚有着复杂的感情</span>——嘴上嫌弃却逐渐被吸引，是经典的傲娇困境。', cls: 'rel-romance' },

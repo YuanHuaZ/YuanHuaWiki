@@ -67,8 +67,10 @@
             <div v-for="tab in data.tabs" :key="tab.key" :class="['tab-panel', { active: activeSubTab === tab.key }]">
               <div class="key-tags-row"><span v-for="(t,i) in tab.tags" :key="i" class="key-tag">{{ t }}</span></div>
               <p v-for="(para,i) in tab.content" :key="i" v-html="para"></p>
-              <div v-if="tab.quote" class="blockquote">
-                {{ tab.quote }}<br><span style="font-size:13px;font-style:italic;color:#94a3b8;">{{ tab.quoteAuthor }}</span>
+              <div v-if="tab.quotes" class="quotes-block">
+                <div v-for="(q, qi) in tab.quotes" :key="qi" class="blockquote" :style="qi > 0 ? 'margin-top:16px;' : ''">
+                  {{ q.text }}<br><span style="font-size:13px;font-style:italic;color:#94a3b8;">{{ q.author }}</span>
+                </div>
               </div>
             </div>
           </div>

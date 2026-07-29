@@ -71,10 +71,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '📝', name: '文学少女', grade: 'A', desc: '作为文艺部成员，知花拥有<span class="highlight">细腻的文字感受力</span>。她的文章<span class="highlight-pink">情感真挚、笔触温柔</span>，能够用文字表达那些口头上说不出口的感情。' },
-    { icon: '💪', name: '超努力体质', grade: 'S', desc: '知花最大的才能是<span class="highlight">超乎常人的努力精神</span>。无论面对什么困难，她都会<span class="highlight-pink">拼尽全力直到最后一刻</span>，绝不会轻易放弃。' },
-    { icon: '💕', name: '笨拙的温柔', grade: 'B', desc: '虽然不擅长直接表达，但知花会通过<span class="highlight">实际行动默默关心身边的人</span>。这种<span class="highlight-pink">傲娇式的温柔</span>虽不张扬却总能恰到好处。' },
-    { icon: '😭', name: '感情爆发力', grade: 'EX', desc: '知花的情感极为丰富，<span class="highlight">喜怒哀乐全都写在脸上</span>。当她情感爆发时，那种<span class="highlight-pink">毫不掩饰的真实情感</span>具有极强的感染力，能让所有人都为之动容。' }
+    { icon: '📝', name: '文学少女',  desc: '作为文艺部成员，知花拥有<span class="highlight">细腻的文字感受力</span>。她的文章<span class="highlight-pink">情感真挚、笔触温柔</span>，能够用文字表达那些口头上说不出口的感情。' },
+    { icon: '💪', name: '超努力体质',  desc: '知花最大的才能是<span class="highlight">超乎常人的努力精神</span>。无论面对什么困难，她都会<span class="highlight-pink">拼尽全力直到最后一刻</span>，绝不会轻易放弃。' },
+    { icon: '💕', name: '笨拙的温柔',  desc: '虽然不擅长直接表达，但知花会通过<span class="highlight">实际行动默默关心身边的人</span>。这种<span class="highlight-pink">傲娇式的温柔</span>虽不张扬却总能恰到好处。' },
+    { icon: '😭', name: '感情爆发力',  desc: '知花的情感极为丰富，<span class="highlight">喜怒哀乐全都写在脸上</span>。当她情感爆发时，那种<span class="highlight-pink">毫不掩饰的真实情感</span>具有极强的感染力，能让所有人都为之动容。' }
   ],
   relationships: [
     { icon: '👦', name: '温水和彦', type: '重要的伙伴/文艺部学长', desc: '文艺部的<span class="highlight">学长</span>，是少数能理解知花的人。石蕗祭后温水代替社恐的知花<span class="highlight-pink">上台演讲</span>成为社长，并对她承诺了<span class="highlight">"会一直在你身边"</span>。知花逐渐对他产生了超越友情的情感。', cls: 'rel-romance' },

@@ -71,10 +71,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '🔥', name: '往生秘传枪法', grade: 'B', desc: '使用长柄武器进行<span class="highlight">至多六段的连续枪击</span>，重击可向前方突进。招式<span class="highlight-pink">灵活多变，如同翩翩起舞</span>，是胡桃持续输出的基础手段。' },
-    { icon: '🦋', name: '蝶引来生', grade: 'A', desc: '胡桃的<span class="highlight">核心战斗技能</span>，消耗生命值获得<span class="highlight-pink">火元素附魔</span>，大幅提升攻击力。此时她的攻击将附带额外的火元素伤害，<span class="highlight">输出能力显著提升</span>。' },
-    { icon: '💀', name: '安神秘法', grade: 'S', desc: '召唤强大的<span class="highlight">火焰之力</span>对范围内敌人造成<span class="highlight-pink">巨额火元素伤害</span>。此技能不仅威力巨大，视觉效果也极为华丽，是胡桃<span class="highlight">最具标志性的技能</span>。' },
-    { icon: '🌸', name: '往生堂主的智慧', grade: 'EX', desc: '作为往生堂堂主，胡桃对<span class="highlight">生死之道有着超乎常人的理解</span>。这种智慧不仅体现在战斗中，更体现在她<span class="highlight-pink">对待生命的态度</span>上。' }
+    { icon: '🔥', name: '往生秘传枪法', desc: '使用长柄武器进行<span class="highlight">至多六段的连续枪击</span>，重击可向前方突进。招式<span class="highlight-pink">灵活多变，如同翩翩起舞</span>，是胡桃持续输出的基础手段。' },
+    { icon: '🦋', name: '蝶引来生', desc: '胡桃的<span class="highlight">核心战斗技能</span>，消耗生命值获得<span class="highlight-pink">火元素附魔</span>，大幅提升攻击力。此时她的攻击将附带额外的火元素伤害，<span class="highlight">输出能力显著提升</span>。' },
+    { icon: '💀', name: '安神秘法',  desc: '召唤强大的<span class="highlight">火焰之力</span>对范围内敌人造成<span class="highlight-pink">巨额火元素伤害</span>。此技能不仅威力巨大，视觉效果也极为华丽，是胡桃<span class="highlight">最具标志性的技能</span>。' },
+    { icon: '🌸', name: '往生堂主的智慧',  desc: '作为往生堂堂主，胡桃对<span class="highlight">生死之道有着超乎常人的理解</span>。这种智慧不仅体现在战斗中，更体现在她<span class="highlight-pink">对待生命的态度</span>上。' }
   ],
   relationships: [
     { icon: '🧔', name: '钟离', type: '客卿/顾问', desc: '往生堂的神秘客卿，知识渊博、举止优雅。胡桃对他<span class="highlight">充满敬意与信任</span>，虽然常让他跑腿办事，但实际上<span class="highlight-pink">非常依赖这位可靠的顾问</span>。两人关系亦师亦友。', cls: 'rel-friend' },

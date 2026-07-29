@@ -70,10 +70,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '👁️', name: '不可视', grade: 'A', desc: '奈绪的特殊能力，能在<span class="highlight">一个人的视线中隐身</span>。虽然范围有限，但在执行<span class="highlight-pink">秘密任务时非常实用</span>。是她调查特殊能力者时的关键技能。' },
-    { icon: '📸', name: '相机调查', grade: 'B', desc: '利用数码相机<span class="highlight">记录和追踪特殊能力者</span>的活动。奈绪擅长通过影像资料<span class="highlight-pink">分析和定位目标</span>，是学生会的核心调查手段。' },
-    { icon: '💪', name: '领导力', grade: 'S', desc: '作为学生会会长，奈绪拥有<span class="highlight">出色的领导能力</span>。她能够有效组织和指挥学生会成员，<span class="highlight-pink">协调各方力量</span>完成各种任务。' },
-    { icon: '💕', name: '坚定的信念', grade: 'EX', desc: '奈绪最强大的力量来自她<span class="highlight">内心深处对重要之人的守护之心</span>。无论面对什么样的困难和挫折，她都<span class="highlight-pink">从未动摇过自己的信念</span>。' }
+    { icon: '👁️', name: '不可视', desc: '奈绪的特殊能力，能在<span class="highlight">一个人的视线中隐身</span>。虽然范围有限，但在执行<span class="highlight-pink">秘密任务时非常实用</span>。是她调查特殊能力者时的关键技能。' },
+    { icon: '📸', name: '相机调查', desc: '利用数码相机<span class="highlight">记录和追踪特殊能力者</span>的活动。奈绪擅长通过影像资料<span class="highlight-pink">分析和定位目标</span>，是学生会的核心调查手段。' },
+    { icon: '💪', name: '领导力', desc: '作为学生会会长，奈绪拥有<span class="highlight">出色的领导能力</span>。她能够有效组织和指挥学生会成员，<span class="highlight-pink">协调各方力量</span>完成各种任务。' },
+    { icon: '💕', name: '坚定的信念', desc: '奈绪最强大的力量来自她<span class="highlight">内心深处对重要之人的守护之心</span>。无论面对什么样的困难和挫折，她都<span class="highlight-pink">从未动摇过自己的信念</span>。' }
   ],
   relationships: [
     { icon: '👦', name: '乙坂有宇', type: '恋人/搭档', desc: 'Charlotte的男主角。最初奈绪将他视为需要保护的特殊能力者，但在共同经历中<span class="highlight">逐渐产生了深厚的感情</span>。两人一起踏上了改变命运的旅程，有宇最终成为了奈绪<span class="highlight-pink">最重要的人</span>。', cls: 'rel-romance' },

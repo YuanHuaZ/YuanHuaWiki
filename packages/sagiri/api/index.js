@@ -63,15 +63,15 @@ export default {
         '故事中，纱雾经历了<span class="highlight">从封闭自我到逐渐敞开内心</span>的成长过程。她从完全不敢出门，到<span class="highlight-pink">能够戴着面具走在街上</span>，再到最终摘下面具面对人群，每一步都是巨大的进步。',
         '在故事的高潮部分，纱雾终于<span class="highlight">向正宗表达了自己的真实感情</span>。她摘下了代表恐惧的面具，<span class="highlight-pink">以最真实的自己站在哥哥面前</span>，完成了从"埃罗芒阿老师"到"和泉纱雾"的蜕变。'
       ],
-      quote: '我最喜欢哥哥了！',
+      quote: '不，我不认识叫那种名字的人。',
       quoteAuthor: '—— 和泉纱雾'
     }
   ],
   abilities: [
-    { icon: '🎨', name: '插画天赋', grade: 'EX', desc: '纱雾拥有<span class="highlight">天才级的插画能力</span>。她笔下的角色栩栩如生，色彩运用<span class="highlight-pink">极为出色</span>，这也是她作为"埃罗芒阿老师"大受欢迎的原因。' },
-    { icon: '😤', name: '傲娇防御', grade: 'S', desc: '纱雾的<span class="highlight">傲娇属性达到了极致</span>。面对害羞的情况时，她会自动进入<span class="highlight-pink">"笨蛋！"模式</span>，用愤怒来掩饰内心的动摇。' },
-    { icon: '🏠', name: '家里蹲生存', grade: 'A', desc: '作为资深家里蹲，纱雾<span class="highlight">精通一切室内生存技能</span>。她可以在完全不外出的情况下<span class="highlight-pink">维持正常生活</span>，网络购物和外卖是她的生命线。' },
-    { icon: '💕', name: '纯粹的喜欢', grade: 'EX', desc: '纱雾对正宗的感情<span class="highlight">纯粹而深沉</span>。虽然表达方式笨拙，但她<span class="highlight-pink">愿意为了哥哥走出自己的舒适区</span>，这份勇气来自她内心深处最真挚的爱。' }
+    { icon: '🎨', name: '插画天赋', desc: '纱雾拥有<span class="highlight">天才级的插画能力</span>。她笔下的角色栩栩如生，色彩运用<span class="highlight-pink">极为出色</span>，这也是她作为"埃罗芒阿老师"大受欢迎的原因。' },
+    { icon: '😤', name: '傲娇防御', desc: '纱雾的<span class="highlight">傲娇属性达到了极致</span>。面对害羞的情况时，她会自动进入<span class="highlight-pink">"笨蛋！"模式</span>，用愤怒来掩饰内心的动摇。' },
+    { icon: '🏠', name: '家里蹲生存', desc: '作为资深家里蹲，纱雾<span class="highlight">精通一切室内生存技能</span>。她可以在完全不外出的情况下<span class="highlight-pink">维持正常生活</span>，网络购物和外卖是她的生命线。' },
+    { icon: '💕', name: '纯粹的喜欢', desc: '纱雾对正宗的感情<span class="highlight">纯粹而深沉</span>。虽然表达方式笨拙，但她<span class="highlight-pink">愿意为了哥哥走出自己的舒适区</span>，这份勇气来自她内心深处最真挚的爱。' }
   ],
   relationships: [
     { icon: '👦', name: '和泉正宗', type: '义兄/恋人', desc: '和泉正宗是纱雾的<span class="highlight">义兄</span>，也是她最重要的人。纱雾对正宗怀有<span class="highlight-pink">超越兄妹的感情</span>，但一开始只能用傲娇的方式表达。', cls: 'rel-romance' },

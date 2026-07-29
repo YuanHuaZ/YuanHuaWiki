@@ -109,10 +109,14 @@ export default {
       { text: '「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花', top: '45%', dur: '30s', delay: '1s', size: '13px', opacity: 0.4 },
       { text: '「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋', top: '55%', dur: '26s', delay: '8s', size: '14px', opacity: 0.42 },
       { text: '「我等过很久，我不会再等了。」—— 弗洛洛', top: '68%', dur: '21s', delay: '4s', size: '13px', opacity: 0.4 },
+      { text: '「我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。」—— 弗洛洛', top: '22%', dur: '27s', delay: '11s', size: '14px', opacity: 0.42 },
+      { text: '「世界就这样终结，不是嘭的一响，而是嘘的一声。」—— 弗洛洛', top: '72%', dur: '25s', delay: '7s', size: '13px', opacity: 0.4 },
+      { text: '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡', top: '38%', dur: '29s', delay: '13s', size: '14px', opacity: 0.45 },
+      { text: '「Ciallo～(∠・ω< )⌒☆」—— 因幡巡', top: '82%', dur: '18s', delay: '2s', size: '15px', opacity: 0.48 },
       { text: '「从这里开始吧。从一开始……不，从零开始。」—— 蕾姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45 },
       { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5 },
       { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42 },
-      { text: '「我最喜欢哥哥了！」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44 },
+      { text: '「不，我不认识叫那种名字的人。」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44 },
     ]
 
     const particles = [

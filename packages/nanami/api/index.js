@@ -68,10 +68,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '🎮', name: '游戏精通', grade: 'S', desc: '对所有类型的电子游戏都有<span class="highlight">超乎常人的天赋</span>。据说<span class="highlight-pink">没有任何游戏能难倒她超过一天</span>。' },
-    { icon: '🧩', name: '逻辑推理', grade: 'A', desc: '常年沉浸解谜游戏所培养出的<span class="highlight">敏锐分析能力</span>。在学级裁判中能迅速抓住关键线索。' },
-    { icon: '💡', name: '希望之力', grade: 'EX', desc: '在绝望深渊中依然<span class="highlight">保持对未来的信念</span>。她的存在本身就是同学们的<span class="highlight-pink">精神支柱</span>。' },
-    { icon: '🛡️', name: '团结之力', grade: 'A', desc: '擅长用<span class="highlight">游戏的团队合作理念</span>来凝聚伙伴，<span class="highlight-pink">呼吁大家团结一致</span>。' }
+    { icon: '🎮', name: '游戏精通', desc: '对所有类型的电子游戏都有<span class="highlight">超乎常人的天赋</span>。据说<span class="highlight-pink">没有任何游戏能难倒她超过一天</span>。' },
+    { icon: '🧩', name: '逻辑推理', desc: '常年沉浸解谜游戏所培养出的<span class="highlight">敏锐分析能力</span>。在学级裁判中能迅速抓住关键线索。' },
+    { icon: '💡', name: '希望之力', desc: '在绝望深渊中依然<span class="highlight">保持对未来的信念</span>。她的存在本身就是同学们的<span class="highlight-pink">精神支柱</span>。' },
+    { icon: '🛡️', name: '团结之力', desc: '擅长用<span class="highlight">游戏的团队合作理念</span>来凝聚伙伴，<span class="highlight-pink">呼吁大家团结一致</span>。' }
   ],
   relationships: [
     { icon: '👦', name: '日向创', type: '亲密伙伴', desc: '在新世界程序的虚拟空间中，七海是日向<span class="highlight">最早结识的同学之一</span>。她逐渐成为了日向<span class="highlight-pink">最亲密的伙伴</span>，两人之间的羁绊是弹丸论破2最感人的情感线之一。', cls: 'rel-romance' },

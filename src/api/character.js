@@ -2,16 +2,45 @@
  * 角色 API — 当前使用静态数据，后续可接入后端
  */
 
+import meguruImg from '@packages/meguru/images/1.jpg'
+import phrolovaImg from '@packages/phrolova/images/1.jpg'
 import nanamiImg from '@packages/nanami/images/1.jpg'
 import remImg from '@packages/rem/images/1.jpg'
 import kanaImg from '@packages/kana/images/1.jpg'
-import phrolovaImg from '@packages/phrolova/images/1.jpg'
 import hutaoImg from '@packages/hutao/images/1.jpg'
 import elainaImg from '@packages/elaina/images/1.jpg'
 import tomoriImg from '@packages/tomori/images/1.jpg'
 import komariImg from '@packages/komari/images/1.jpg'
 
 const characters = [
+  {
+    id: 'meguru',
+    name: '因幡巡',
+    nameSub: 'Inaba Meguru',
+    series: '魔女的夜宴',
+    image: meguruImg,
+    hasDetail: true,
+    tags: [
+      { text: 'Ciallo～', cls: 'tag-orange' },
+      { text: '游戏宅', cls: 'tag-purple' },
+      { text: '小恶魔', cls: 'tag-pink' },
+      { text: '治愈', cls: 'tag-cyan' }
+    ]
+  },
+  {
+    id: 'phrolova',
+    name: '弗洛洛',
+    nameSub: 'Phrolova',
+    series: '鸣潮',
+    image: phrolovaImg,
+    hasDetail: true,
+    tags: [
+      { text: '湮灭', cls: 'tag-red' },
+      { text: '音感仪', cls: 'tag-purple' },
+      { text: '指挥家', cls: 'tag-red' },
+      { text: '残星会', cls: 'tag-dark' }
+    ]
+  },
   {
     id: 'nanami',
     name: '七海千秋',
@@ -27,6 +56,20 @@ const characters = [
     ]
   },
   {
+    id: 'soyo',
+    name: '長崎素世',
+    nameSub: 'Nagasaki Soyo',
+    series: 'BanG Dream! It\'s MyGO!!!!!',
+    image: null,
+    hasDetail: true,
+    tags: [
+      { text: '温柔', cls: 'tag-green' },
+      { text: '贝斯手', cls: 'tag-cyan' },
+      { text: '表面天使', cls: 'tag-pink' },
+      { text: '内心沉重', cls: 'tag-purple' }
+    ]
+  },
+  {
     id: 'rem',
     name: '雷姆',
     nameSub: 'Rem',
@@ -38,20 +81,6 @@ const characters = [
       { text: '女仆', cls: 'tag-pink' },
       { text: '温柔', cls: 'tag-green' },
       { text: '女主角', cls: 'tag-cyan' }
-    ]
-  },
-  {
-    id: 'phrolova',
-    name: '弗洛洛',
-    nameSub: 'Phrolova',
-    series: '鸣潮',
-    image: phrolovaImg,
-    hasDetail: true,
-    tags: [
-      { text: '湮灭', cls: 'tag-red' },
-      { text: '音感仪', cls: 'tag-purple' },
-      { text: '指挥家', cls: 'tag-red' },
-      { text: '残星会', cls: 'tag-dark' }
     ]
   },
   {
@@ -122,20 +151,6 @@ const characters = [
       { text: '天才', cls: 'tag-orange' },
       { text: '童星', cls: 'tag-amber' },
       { text: '女主角', cls: 'tag-cyan' }
-    ]
-  },
-  {
-    id: 'soyo',
-    name: '長崎素世',
-    nameSub: 'Nagasaki Soyo',
-    series: 'BanG Dream! It\'s MyGO!!!!!',
-    image: null,
-    hasDetail: true,
-    tags: [
-      { text: '温柔', cls: 'tag-green' },
-      { text: '贝斯手', cls: 'tag-cyan' },
-      { text: '表面天使', cls: 'tag-pink' },
-      { text: '内心沉重', cls: 'tag-purple' }
     ]
   },
   {

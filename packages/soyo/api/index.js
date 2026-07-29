@@ -68,10 +68,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '🎸', name: '贝斯演奏', grade: 'A', desc: '素世的贝斯技术<span class="highlight">扎实而富有表现力</span>。她的演奏风格<span class="highlight-pink">稳定而温暖</span>，为乐队的声音提供了坚实的根基。' },
-    { icon: '💬', name: '社交能力', grade: 'S', desc: '素世拥有<span class="highlight">极强的社交能力和亲和力</span>。她能够轻松地与任何人建立关系，<span class="highlight-pink">在团队中扮演着沟通的桥梁</span>。' },
-    { icon: '🎭', name: '表里切换', grade: 'EX', desc: '素世最特殊的能力——<span class="highlight">在温柔天使和沉重内心之间自由切换</span>。表面上的她完美无瑕，<span class="highlight-pink">内心的执念却深沉而强烈</span>。' },
-    { icon: '💔', name: '执念之力', grade: 'S', desc: '对CRYCHIC的<span class="highlight">强烈执念</span>驱动着素世的行动。这份执着虽然<span class="highlight-pink">曾经将她引向歧途</span>，但也展现了她对音乐和友情<span class="highlight">真挚而深沉的感情</span>。' }
+    { icon: '🎸', name: '贝斯演奏', desc: '素世的贝斯技术<span class="highlight">扎实而富有表现力</span>。她的演奏风格<span class="highlight-pink">稳定而温暖</span>，为乐队的声音提供了坚实的根基。' },
+    { icon: '💬', name: '社交能力', desc: '素世拥有<span class="highlight">极强的社交能力和亲和力</span>。她能够轻松地与任何人建立关系，<span class="highlight-pink">在团队中扮演着沟通的桥梁</span>。' },
+    { icon: '🎭', name: '表里切换', desc: '素世最特殊的能力——<span class="highlight">在温柔天使和沉重内心之间自由切换</span>。表面上的她完美无瑕，<span class="highlight-pink">内心的执念却深沉而强烈</span>。' },
+    { icon: '💔', name: '执念之力', desc: '对CRYCHIC的<span class="highlight">强烈执念</span>驱动着素世的行动。这份执着虽然<span class="highlight-pink">曾经将她引向歧途</span>，但也展现了她对音乐和友情<span class="highlight">真挚而深沉的感情</span>。' }
   ],
   relationships: [
     { icon: '🎸', name: '千早爱音', type: '乐队成员', desc: 'MyGO!!!!!的吉他手。爱音给素世起了<span class="highlight">"soyorin"的昵称</span>，两人从最初的<span class="highlight-pink">塑料姐妹花般的互动</span>到逐渐建立真正的信任，关系微妙而有趣。', cls: 'rel-friend' },

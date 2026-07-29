@@ -66,15 +66,18 @@ export default {
         '2.5版本「生命不灭的轻歌」中，弗洛洛<span class="highlight-pink">正式成为可玩角色</span>。主线剧情中，她因争夺鸣式宝石与漂泊者短暂合作后又走向对峙，最终<span class="highlight">被漂泊者一剑穿心坠海</span>。然而她的意识保存在「失亡彼岸」中，<span class="highlight-pink">最终重塑肉身归来</span>。',
         '弗洛洛与漂泊者之间的关系<span class="highlight">远非简单的敌对</span>——漂泊者是曾听懂她音乐中悲伤的人，也是那个许下承诺却<span class="highlight-pink">永远失约的人</span>。这份复杂的情感羁绊，使她成为了<span class="highlight">鸣潮中最令人唏嘘的角色之一</span>。'
       ],
-      quote: '我等过很久，我不会再等了。',
-      quoteAuthor: '—— 弗洛洛'
+      quotes: [
+        { text: '我等过很久，我不会再等了。', author: '—— 弗洛洛' },
+        { text: '我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。', author: '—— 弗洛洛' },
+        { text: '世界就这样终结，不是嘭的一响，而是嘘的一声。', author: '—— 弗洛洛' }
+      ]
     }
   ],
   abilities: [
-    { icon: '🎵', name: '音律连击', grade: 'B', desc: '挥动彼岸花指挥棒进行<span class="highlight">连续攻击</span>，普攻第3段获取<span class="highlight-pink">红色音符（弦乐）</span>，共鸣技能获取蓝色音符（管乐）。音符上限6枚，是弗洛洛<span class="highlight">谱曲战斗的核心机制</span>。' },
-    { icon: '✨', name: '谱曲终末', grade: 'A', desc: '集满6枚音符后重击释放，进入<span class="highlight">【定音】状态</span>。此状态下解锁共鸣解放，是弗洛洛<span class="highlight-pink">进入指挥状态的关键前置</span>。余响叠层可大幅提升此技能倍率。' },
-    { icon: '🎵', name: '往日深渊的圆舞曲', grade: 'S', desc: '弗洛洛的<span class="highlight">共鸣解放</span>，进入指挥状态持续24秒。攻击力提升<span class="highlight-pink">120%</span>，浮空指挥赫卡忒作战。赫卡忒按顺序演奏乐声，<span class="highlight">每枚音符4秒</span>，红音符定身、蓝音符聚怪、彩音符兼备两者。' },
-    { icon: '🌑', name: '重世的交响乐', grade: 'EX', desc: '弗洛洛的<span class="highlight">异能之力</span>——作为指挥家，她挥动彼岸花指挥棒，<span class="highlight-pink">将旋律转化为武器</span>。频率在她手中被重新排列调整，或沉寂或疯狂。切至后台时赫卡忒<span class="highlight">仍在场自动攻击</span>，前台施放声骸技能时赫卡忒发动强化攻击。' }
+    { icon: '🎵', name: '音律连击', desc: '挥动彼岸花指挥棒进行<span class="highlight">连续攻击</span>，普攻第3段获取<span class="highlight-pink">红色音符（弦乐）</span>，共鸣技能获取蓝色音符（管乐）。音符上限6枚，是弗洛洛<span class="highlight">谱曲战斗的核心机制</span>。' },
+    { icon: '✨', name: '谱曲终末', desc: '集满6枚音符后重击释放，进入<span class="highlight">【定音】状态</span>。此状态下解锁共鸣解放，是弗洛洛<span class="highlight-pink">进入指挥状态的关键前置</span>。余响叠层可大幅提升此技能倍率。' },
+    { icon: '🎵', name: '往日深渊的圆舞曲', desc: '弗洛洛的<span class="highlight">共鸣解放</span>，进入指挥状态持续24秒。攻击力提升<span class="highlight-pink">120%</span>，浮空指挥赫卡忒作战。赫卡忒按顺序演奏乐声，<span class="highlight">每枚音符4秒</span>，红音符定身、蓝音符聚怪、彩音符兼备两者。' },
+    { icon: '🌑', name: '重世的交响乐', desc: '弗洛洛的<span class="highlight">异能之力</span>——作为指挥家，她挥动彼岸花指挥棒，<span class="highlight-pink">将旋律转化为武器</span>。频率在她手中被重新排列调整，或沉寂或疯狂。切至后台时赫卡忒<span class="highlight">仍在场自动攻击</span>，前台施放声骸技能时赫卡忒发动强化攻击。' }
   ],
   relationships: [
     { icon: '🌊', name: '漂泊者', type: '知音/宿敌', desc: '漂泊者是曾<span class="highlight">唯一听懂她音乐中悲伤的人</span>，许诺会再来看她的演出却因救世而<span class="highlight-pink">永远失约</span>。这份失落让弗洛洛陷入更深的孤独，也使她对漂泊者怀有<span class="highlight">复杂的爱恨交织之情</span>——既是对手，也是她漫长生命中最在意的存在。', cls: 'rel-other' },

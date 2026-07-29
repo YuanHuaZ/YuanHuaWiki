@@ -71,10 +71,10 @@ export default {
     }
   ],
   abilities: [
-    { icon: '🔮', name: '万能魔法', grade: 'EX', desc: '伊蕾娜掌握了<span class="highlight">多种属性的魔法</span>，几乎可以应对所有情况。这种全面的能力使她能够在<span class="highlight-pink">各种场合灵活运用</span>，是她最强大的武器。' },
-    { icon: '🛡️', name: '防护魔法', grade: 'A', desc: '能够生成<span class="highlight">强大的防护屏障</span>，抵御各种攻击。在旅途中，这层<span class="highlight-pink">屏障是她最可靠的防御</span>，多次帮助她化险为夷。' },
-    { icon: '🧹', name: '飞天扫帚', grade: 'S', desc: '魔女标志性的<span class="highlight">飞行工具</span>。伊蕾娜能够熟练操控飞天扫帚，<span class="highlight-pink">在空中自由飞翔</span>，这是她旅途中不可或缺的交通工具。' },
-    { icon: '✨', name: '天才资质', grade: 'EX', desc: '十四岁便成为<span class="highlight">最高位魔女的天才</span>。她的魔法天赋和学习能力远超常人，任何魔法<span class="highlight-pink">只要学习一次就能掌握</span>，是芙兰口中"百年难得一见的奇才"。' }
+    { icon: '🔮', name: '万能魔法',  desc: '伊蕾娜掌握了<span class="highlight">多种属性的魔法</span>，几乎可以应对所有情况。这种全面的能力使她能够在<span class="highlight-pink">各种场合灵活运用</span>，是她最强大的武器。' },
+    { icon: '🛡️', name: '防护魔法',  desc: '能够生成<span class="highlight">强大的防护屏障</span>，抵御各种攻击。在旅途中，这层<span class="highlight-pink">屏障是她最可靠的防御</span>，多次帮助她化险为夷。' },
+    { icon: '🧹', name: '飞天扫帚',  desc: '魔女标志性的<span class="highlight">飞行工具</span>。伊蕾娜能够熟练操控飞天扫帚，<span class="highlight-pink">在空中自由飞翔</span>，这是她旅途中不可或缺的交通工具。' },
+    { icon: '✨', name: '天才资质',  desc: '十四岁便成为<span class="highlight">最高位魔女的天才</span>。她的魔法天赋和学习能力远超常人，任何魔法<span class="highlight-pink">只要学习一次就能掌握</span>，是芙兰口中"百年难得一见的奇才"。' }
   ],
   relationships: [
     { icon: '👩‍🏫', name: '芙兰', type: '师父', desc: '"星尘魔女"芙兰，伊蕾娜的<span class="highlight">授业恩师</span>。不仅教会了她强大的魔法，更教导了她作为魔女应有的<span class="highlight-pink">处世之道</span>。芙兰亲手授予了她魔女之证和旅行用的宽檐帽。', cls: 'rel-family' },
