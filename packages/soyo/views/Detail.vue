@@ -264,8 +264,8 @@ export default {
       { cover: sp3, url: 'https://www.bilibili.com/video/BV1fk4y1w7ha/', title: '【mygo填词/爱素对唱】有点坏', desc: '長崎素世 填词' },
       { cover: sp4, url: 'https://www.bilibili.com/video/BV1Au411E78P/', title: '【MyGO】爱音和素世的「最佳损友」', desc: '長崎素世 剪辑' },
       { cover: sp5, url: 'https://www.bilibili.com/video/BV1DC4y1w76G/', title: '「 手 写 的 从 前 」，想要的永远', desc: '長崎素世 填词' },
-      { cover: sp6, url: 'https://www.bilibili.com/video/BV1hs421G7ex/', title: '【填词/', desc: '長崎素世 填词' },
-      { cover: sp7, url: 'https://www.bilibili.com/video/BV1aH4y1c7UJ/', title: '【填词/', desc: '長崎素世 填词' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1hs421G7ex/', title: '【填词/MyGO】家有そよ', desc: '長崎素世 填词' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1aH4y1c7UJ/', title: '【填词/MyGO】习惯拥有', desc: '長崎素世 填词' },
       { cover: sp8, url: 'https://www.bilibili.com/video/BV1nzB7Y9EmS/', title: '长期溯时导致的！', desc: '長崎素世 剪辑' }
     ])
 

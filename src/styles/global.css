@@ -80,23 +80,24 @@ a { text-decoration: none; color: inherit; }
 
 /* ============ Tag Styles ============ */
 .tag {
-  display: inline-flex; align-items: center; gap: 3px;
-  padding: 4px 11px; border-radius: 50px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 2px;
+  padding: 2px 9px; border-radius: 50px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.02em;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 .character-card:hover .tag { transform: translateY(-1px); }
-.tag-purple { background: linear-gradient(135deg, #f3e8ff, #fae8ff); color: #7c3aed; border: 1px solid rgba(168,85,247,0.12); }
-.tag-pink { background: linear-gradient(135deg, #fce7f3, #ffe4f0); color: #db2777; border: 1px solid rgba(236,72,153,0.12); }
-.tag-cyan { background: linear-gradient(135deg, #ecfeff, #e0f7fa); color: #0891b2; border: 1px solid rgba(6,182,212,0.12); }
-.tag-green { background: linear-gradient(135deg, #dcfce7, #d1fae5); color: #16a34a; border: 1px solid rgba(34,197,94,0.12); }
-.tag-orange { background: linear-gradient(135deg, #ffedd5, #fff2df); color: #ea580c; border: 1px solid rgba(249,115,22,0.12); }
-.tag-blue { background: linear-gradient(135deg, #dbeafe, #e8f0fe); color: #2563eb; border: 1px solid rgba(59,130,246,0.12); }
-.tag-amber { background: linear-gradient(135deg, #fef3c7, #fef9e7); color: #d97706; border: 1px solid rgba(245,158,11,0.12); }
-.tag-yellow { background: linear-gradient(135deg, #fef9c3, #fefce8); color: #ca8a04; border: 1px solid rgba(234,179,8,0.12); }
-.tag-red { background: linear-gradient(135deg, #fee2e2, #ffe8e8); color: #dc2626; border: 1px solid rgba(239,68,68,0.12); }
-.tag-dark { background: linear-gradient(135deg, #1e293b, #334155); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.08); }
-.tag-gold { background: linear-gradient(135deg, #fef9c3, #fde68a); color: #92400e; border: 1px solid rgba(251,191,36,0.2); }
+.tag-purple { background: linear-gradient(135deg, #f3e8ff, #fae8ff); color: #7c3aed; }
+.tag-pink { background: linear-gradient(135deg, #fce7f3, #ffe4f0); color: #db2777; }
+.tag-cyan { background: linear-gradient(135deg, #ecfeff, #e0f7fa); color: #0891b2; }
+.tag-green { background: linear-gradient(135deg, #dcfce7, #d1fae5); color: #16a34a; }
+.tag-orange { background: linear-gradient(135deg, #ffedd5, #fff2df); color: #ea580c; }
+.tag-blue { background: linear-gradient(135deg, #dbeafe, #e8f0fe); color: #2563eb; }
+.tag-amber { background: linear-gradient(135deg, #fef3c7, #fef9e7); color: #d97706; }
+.tag-yellow { background: linear-gradient(135deg, #fef9c3, #fefce8); color: #ca8a04; }
+.tag-red { background: linear-gradient(135deg, #fee2e2, #ffe8e8); color: #dc2626; }
+.tag-dark { background: linear-gradient(135deg, #1e293b, #334155); color: #e2e8f0; }
+.tag-gold { background: linear-gradient(135deg, #fef9c3, #fde68a); color: #92400e; }
 
 /* ============ Text Highlight ============ */
 .highlight { font-weight: 700; background: linear-gradient(135deg, #7e22ce, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
