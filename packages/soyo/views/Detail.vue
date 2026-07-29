@@ -20,7 +20,7 @@
         <div class="hero-visual animate-slide-up delay-200">
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar-ring"></div>
-            <div class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat` }"></div>
+            <div class="hero-avatar" :style="{ backgroundImage: `url(${data.image})`, backgroundPosition: 'top center', backgroundSize: '140% auto', backgroundRepeat: 'no-repeat', backgroundColor: '#fff' }"></div>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ backgroundImage: `url(${item.bg})`, backgroundPosition: 'top center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundColor: '#fff' }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -219,6 +219,7 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import soyoImg from '../images/1.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -241,7 +242,7 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎸', label: '官方立绘 · 待补充', badge: '立绘', overlay: '長崎素世 · 官方角色立绘' },
+      { isImage: true, bg: soyoImg, badge: '立绘', overlay: '長崎素世 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎵', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 01' },
       { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎶', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 02' },
       { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎼', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 03' },
@@ -269,7 +270,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, soyoImg, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
@@ -281,18 +282,18 @@ export default {
 .soyo-page .hero {
   position: relative; min-height: 70vh; padding: 80px 0 50px;
   display: flex; align-items: center; overflow: hidden;
-  background: linear-gradient(135deg, #1a1510 0%, #2d2518 25%, #3a3020 50%, #2a2015 75%, #1a1510 100%);
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 30%, #fef3c7 70%, #fefce8 100%);
 }
 .soyo-page .hero-glow {
-  position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; opacity: 0.25;
+  position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; opacity: 0.18;
 }
 .soyo-page .hero-glow-1 { width: 500px; height: 500px; background: #C8A97E; top: -80px; left: -80px; animation: float 8s ease-in-out infinite; }
 .soyo-page .hero-glow-2 { width: 400px; height: 400px; background: #BFA06A; bottom: -60px; right: -50px; animation: float 10s ease-in-out infinite reverse; }
 .soyo-page .hero-bg-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-.soyo-page .particle { position: absolute; border-radius: 50%; background: rgba(200,169,126,0.3); animation: pixelFloat var(--dur) ease-in-out infinite; animation-delay: var(--delay); }
+.soyo-page .particle { position: absolute; border-radius: 50%; background: rgba(200,169,126,0.15); animation: pixelFloat var(--dur) ease-in-out infinite; animation-delay: var(--delay); }
 .soyo-page .hero-grid {
   position: absolute; inset: 0; z-index: 1;
-  background-image: linear-gradient(rgba(200,169,126,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,126,0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(200,169,126,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,126,0.1) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .soyo-page .hero-content {
@@ -302,18 +303,17 @@ export default {
 @media (max-width: 1024px) { .soyo-page .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; } }
 .soyo-page .hero-text { display: flex; flex-direction: column; gap: 10px; }
 @media (max-width: 1024px) { .soyo-page .hero-text { align-items: center; } }
-.soyo-page .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(200,169,126,0.2), rgba(212,184,150,0.1)); border: 1px solid rgba(200,169,126,0.4); padding: 6px 16px; border-radius: 50px; font-size: 13px; color: #D4B896; font-weight: 600; width: fit-content; margin-bottom: 6px; box-shadow: 0 0 20px rgba(200,169,126,0.2); }
+.soyo-page .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,169,126,0.15); border: 1px solid rgba(200,169,126,0.3); padding: 6px 16px; border-radius: 50px; font-size: 13px; color: #8B6914; font-weight: 600; width: fit-content; margin-bottom: 6px; }
 .soyo-page .hero-badge .dot { width: 7px; height: 7px; background: #C8A97E; border-radius: 50%; animation: pulseGlow 2s ease-in-out infinite; }
 .soyo-page .hero-name-jp {
   font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1.1;
-  background: linear-gradient(135deg, #fff 0%, #D4B896 40%, #C8A97E 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  letter-spacing: 0.05em; filter: drop-shadow(0 0 30px rgba(200,169,126,0.3));
+  color: #0f172a;
+  letter-spacing: 0.05em;
 }
-.soyo-page .hero-name-sub { font-size: 16px; color: #D4B896; font-weight: 400; letter-spacing: 0.06em; }
-.soyo-page .hero-title-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(200,169,126,0.2) 0%, rgba(212,184,150,0.12) 100%); border: 1px solid rgba(200,169,126,0.4); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #D4B896; font-weight: 700; width: fit-content; margin-top: 4px; box-shadow: 0 4px 20px rgba(200,169,126,0.2), inset 0 1px 0 rgba(255,255,255,0.08); backdrop-filter: blur(8px); letter-spacing: 0.02em; }
+.soyo-page .hero-name-sub { font-size: 16px; color: #8B6914; font-weight: 400; letter-spacing: 0.06em; }
+.soyo-page .hero-title-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,169,126,0.12); border: 1px solid rgba(200,169,126,0.3); padding: 10px 24px; border-radius: 12px; font-size: 18px; color: #8B6914; font-weight: 700; width: fit-content; margin-top: 4px; }
 .soyo-page .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-.soyo-page .tags .tag { padding: 6px 16px; font-size: 13px; border: 1px solid rgba(200,169,126,0.25); background: linear-gradient(135deg, rgba(200,169,126,0.12), rgba(212,184,150,0.06)); border-radius: 50px; font-weight: 600; color: #D4B896; box-shadow: 0 0 12px rgba(200,169,126,0.1); }
+.soyo-page .tags .tag { padding: 6px 16px; font-size: 13px; border: 1px solid rgba(200,169,126,0.2); background: rgba(200,169,126,0.08); border-radius: 50px; font-weight: 600; color: #8B6914; }
 @media (max-width: 1024px) { .soyo-page .hero-title-badge { margin: 0 auto; } .soyo-page .tags { justify-content: center; } }
 .soyo-page .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .soyo-page .hero-avatar-wrapper { position: relative; width: 280px; height: 280px; }
@@ -324,7 +324,7 @@ export default {
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude; animation: spinSlow 8s linear infinite;
 }
-.soyo-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 60px rgba(200,169,126,0.4), 0 0 120px rgba(200,169,126,0.15); }
+.soyo-page .hero-avatar { width: 100%; height: 100%; border-radius: 50%; background-color: #fff; box-shadow: 0 0 60px rgba(200,169,126,0.4), 0 0 120px rgba(200,169,126,0.15); }
 
 /* ===== Breadcrumb ===== */
 .soyo-page .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #94a3b8; margin-bottom: 20px; flex-wrap: wrap; padding-top: 16px; }
@@ -405,7 +405,7 @@ export default {
 @media (max-width: 640px) { .soyo-page .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 .soyo-page .gallery-item { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; aspect-ratio: 3/4; background: linear-gradient(135deg, #3a3020, #3a3020); transition: all 0.3s ease; }
 .soyo-page .gallery-item:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
-.soyo-page .gallery-item-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; transition: all 0.3s ease; }
+.soyo-page .gallery-item-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; transition: all 0.3s ease; background-color: #fff; }
 .soyo-page .gallery-item:hover .gallery-item-inner { transform: scale(1.05); }
 .soyo-page .gallery-item-icon { font-size: 56px; margin-bottom: 12px; }
 .soyo-page .gallery-item-label { font-size: 12px; color: #94a3b8; font-weight: 500; }

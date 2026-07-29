@@ -73,7 +73,7 @@
       <div class="hero-stats animate-slide-up delay-400">
         <div class="hero-stat">
           <span class="hero-stat-icon">📋</span>
-          <span class="hero-stat-value">49</span>
+          <span class="hero-stat-value">{{ characterCount }}</span>
           <span class="hero-stat-label">位角色</span>
         </div>
         <div class="hero-stat-divider"></div>
@@ -89,12 +89,14 @@
 
 <script>
 import { ref } from 'vue'
+import { getCharacterList } from '@/api/character.js'
 
 export default {
   name: 'HeroSection',
   emits: ['search'],
   setup(props, { emit }) {
     const searchQuery = ref('')
+    const characterCount = getCharacterList().length
 
     function clearSearch() {
       searchQuery.value = ''
@@ -113,7 +115,8 @@ export default {
       { text: '「世界就这样终结，不是嘭的一响，而是嘘的一声。」—— 弗洛洛', top: '72%', dur: '25s', delay: '7s', size: '13px', opacity: 0.4 },
       { text: '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡', top: '38%', dur: '29s', delay: '13s', size: '14px', opacity: 0.45 },
       { text: '「Ciallo～(∠・ω< )⌒☆」—— 因幡巡', top: '82%', dur: '18s', delay: '2s', size: '15px', opacity: 0.48 },
-      { text: '「从这里开始吧。从一开始……不，从零开始。」—— 蕾姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45 },
+      { text: '「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 氷芽川四糸乃', top: '35%', dur: '23s', delay: '15s', size: '14px', opacity: 0.44 },
+      { text: '「从这里开始吧。从一开始……不，从零开始。」—— 雷姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45 },
       { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5 },
       { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42 },
       { text: '「不，我不认识叫那种名字的人。」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44 },
@@ -130,7 +133,7 @@ export default {
       { id: 8, w: '2px', h: '2px', top: '55%', left: '92%', dur: '4.5s', delay: '1.2s' },
     ]
 
-    return { searchQuery, particles, danmakuItems, clearSearch }
+    return { searchQuery, characterCount, particles, danmakuItems, clearSearch }
   }
 }
 </script>

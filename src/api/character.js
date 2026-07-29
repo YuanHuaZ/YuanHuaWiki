@@ -5,12 +5,15 @@
 import meguruImg from '@packages/meguru/images/1.jpg'
 import phrolovaImg from '@packages/phrolova/images/1.jpg'
 import nanamiImg from '@packages/nanami/images/1.jpg'
+import soyoImg from '@packages/soyo/images/1.jpg'
+import sagiriImg from '@packages/sagiri/images/1.jpg'
 import remImg from '@packages/rem/images/1.jpg'
 import kanaImg from '@packages/kana/images/1.jpg'
 import hutaoImg from '@packages/hutao/images/1.jpg'
 import elainaImg from '@packages/elaina/images/1.jpg'
 import tomoriImg from '@packages/tomori/images/1.jpg'
 import komariImg from '@packages/komari/images/1.jpg'
+import yoshinoImg from '@packages/yoshino/images/1.jpg'
 
 const characters = [
   {
@@ -60,7 +63,7 @@ const characters = [
     name: '長崎素世',
     nameSub: 'Nagasaki Soyo',
     series: 'BanG Dream! It\'s MyGO!!!!!',
-    image: null,
+    image: soyoImg,
     hasDetail: true,
     tags: [
       { text: '温柔', cls: 'tag-green' },
@@ -158,13 +161,27 @@ const characters = [
     name: '和泉纱雾',
     nameSub: 'Izumi Sagiri',
     series: '埃罗芒阿老师',
-    image: null,
+    image: sagiriImg,
     hasDetail: true,
     tags: [
       { text: '插画师', cls: 'tag-purple' },
       { text: '家里蹲', cls: 'tag-blue' },
       { text: '傲娇', cls: 'tag-pink' },
       { text: '女主角', cls: 'tag-cyan' }
+    ]
+  },
+  {
+    id: 'yoshino',
+    name: '氷芽川四糸乃',
+    nameSub: 'Himekawa Yoshino',
+    series: '约会大作战',
+    image: yoshinoImg,
+    hasDetail: true,
+    tags: [
+      { text: '精灵', cls: 'tag-blue' },
+      { text: '冰与水', cls: 'tag-cyan' },
+      { text: '胆小', cls: 'tag-purple' },
+      { text: '女主角', cls: 'tag-pink' }
     ]
   }
 ]

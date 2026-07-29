@@ -1,3 +1,5 @@
+import soyoImg from '../images/1.jpg'
+
 export default {
   id: 'soyo',
   name: '長崎素世',
@@ -5,7 +7,7 @@ export default {
   nameJp: '長崎素世',
   title: 'MyGO!!!!!贝斯手',
   series: 'BanG Dream! It\'s MyGO!!!!!',
-  image: null,
+  image: soyoImg,
   tags: [
     { text: '温柔', cls: 'tag-green' },
     { text: '贝斯手', cls: 'tag-cyan' },

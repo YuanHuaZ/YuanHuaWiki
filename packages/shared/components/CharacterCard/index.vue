@@ -5,7 +5,7 @@
     :style="{ animationDelay: `${0.04 * index}s` }"
     @click.prevent="onClick"
   >
-    <div class="card-image" :class="{ 'kana-card': character.id === 'kana', 'white-bg-card': ['tomori', 'phrolova'].includes(character.id) }">
+    <div class="card-image" :class="{ 'kana-card': character.id === 'kana', 'white-bg-card': ['tomori', 'phrolova', 'meguru', 'soyo'].includes(character.id) }">
       <div class="card-image-inner" :style="imageStyle">
         <span v-if="!character.image" class="card-image-emoji">👤</span>
       </div>
@@ -40,9 +40,10 @@ export default {
 
     const imageStyle = computed(() => {
       if (props.character.image) {
-        const whiteBg = ['kana', 'tomori', 'phrolova'].includes(props.character.id)
+        const whiteBg = ['kana', 'tomori', 'phrolova', 'meguru', 'soyo'].includes(props.character.id)
         const bg = whiteBg ? '#fff' : 'transparent'
-        const size = props.character.id === 'phrolova' ? '150% 150%' : 'cover'
+        const upperBody = ['soyo', 'sagiri'].includes(props.character.id)
+        const size = upperBody ? '140% auto' : props.character.id === 'phrolova' ? '150% 150%' : 'cover'
         return { backgroundImage: `url(${props.character.image})`, backgroundSize: size, backgroundPosition: 'top center', backgroundColor: bg }
       }
       const gradients = [

@@ -1,3 +1,5 @@
+import sagiriImg from '../images/1.jpg'
+
 export default {
   id: 'sagiri',
   name: '和泉纱雾',
@@ -5,7 +7,7 @@ export default {
   nameJp: '和泉纱雾',
   title: '埃罗芒阿老师',
   series: 'エロマンガ先生',
-  image: null,
+  image: sagiriImg,
   tags: [
     { text: '插画师', cls: 'tag-purple' },
     { text: '家里蹲', cls: 'tag-blue' },

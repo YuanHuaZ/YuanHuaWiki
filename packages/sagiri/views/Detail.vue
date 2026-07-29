@@ -20,7 +20,7 @@
         <div class="hero-visual animate-slide-up delay-200">
           <div class="hero-avatar-wrapper">
             <div class="hero-avatar-ring"></div>
-            <div class="hero-avatar" :style="{ background: `url(${data.image}) top center/cover no-repeat` }"></div>
+            <div class="hero-avatar" :style="{ backgroundImage: `url(${data.image})`, backgroundPosition: 'top center', backgroundSize: '140% auto', backgroundRepeat: 'no-repeat', backgroundColor: '#fff' }"></div>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@
           <div class="gallery-grid">
             <div v-for="(item, idx) in galleryItems" :key="idx"
               :class="['gallery-item', 'animate-slide-up', `delay-${(idx%4+1)*100}`]" @click="openLightbox(item)">
-              <div v-if="item.isImage" class="gallery-item-inner" :style="{ background: `url(${item.bg}) top center/cover no-repeat` }"></div>
+              <div v-if="item.isImage" class="gallery-item-inner" :style="{ backgroundImage: `url(${item.bg})`, backgroundPosition: 'top center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundColor: '#fff' }"></div>
               <div v-else class="gallery-item-inner" :style="{ background: item.bg }">
                 <span class="gallery-item-icon">{{ item.icon }}</span>
                 <span class="gallery-item-label">{{ item.label }}</span>
@@ -188,6 +188,7 @@ import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import BackToTop from '@packages/shared/components/BackToTop/index.vue'
 import GalleryLightbox from '@packages/shared/components/GalleryLightbox/index.vue'
+import sagiriImg from '../images/1.jpg'
 import data from '../api/index.js'
 import { useToast } from '@/util/toast'
 
@@ -209,7 +210,7 @@ export default {
     ]
 
     const galleryItems = [
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '官方立绘 · 待补充', badge: '立绘', overlay: '和泉纱雾 · 官方角色立绘' },
+      { isImage: true, bg: sagiriImg, badge: '立绘', overlay: '和泉纱雾 · 官方角色立绘' },
       { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 01' },
       { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 02' },
       { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 03' },
@@ -237,7 +238,7 @@ export default {
     function showToastMsg(msg) { showToast(msg, 'info') }
     function openLightbox(item) { lightbox.value.open(item) }
 
-    return { data, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
+    return { data, sagiriImg, lightbox, activeMainTab, activeSubTab, mainTabs, galleryItems, videoItems, particleStyle, showToastMsg, openLightbox }
   }
 }
 </script>
