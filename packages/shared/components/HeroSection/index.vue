@@ -1,95 +1,67 @@
 <template>
-  <section class="hero">
-    <div class="hero-bg-particles">
-      <div v-for="p in particles" :key="p.id" class="particle"
-        :style="{ width: p.w, height: p.h, top: p.top, left: p.left, '--dur': p.dur, '--delay': p.delay }"
-      ></div>
-    </div>
-    <div class="hero-grid"></div>
-
-    <!-- 装饰光晕 -->
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="hero-glow hero-glow-3"></div>
-
-    <!-- 装饰浮动元素 -->
-    <div class="hero-deco hero-deco-1">✦</div>
-    <div class="hero-deco hero-deco-2">◇</div>
-    <div class="hero-deco hero-deco-3">✧</div>
-    <div class="hero-deco hero-deco-4">⬡</div>
-    <div class="hero-deco hero-deco-5">✦</div>
-    <div class="hero-deco hero-deco-6">◇</div>
-
-    <!-- 装饰光环 -->
-    <div class="hero-ring hero-ring-1"></div>
-    <div class="hero-ring hero-ring-2"></div>
-
-    <!-- 动态光球 -->
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
-    <div class="hero-orb hero-orb-4"></div>
-    <div class="hero-orb hero-orb-5"></div>
-
-    <!-- 光束 -->
-    <div class="hero-beam hero-beam-1"></div>
-    <div class="hero-beam hero-beam-2"></div>
-    <div class="hero-beam hero-beam-3"></div>
-
-    <!-- 弹幕 -->
-    <div class="hero-danmaku">
-      <div v-for="(d, idx) in danmakuItems" :key="'dm-'+idx"
-        class="danmaku-item"
-        :style="{
-          top: d.top,
-          animationDuration: d.dur,
-          animationDelay: d.delay,
-          fontSize: d.size,
-          opacity: d.opacity,
-          color: danmakuColors[d.color]
-        }"
-      >{{ d.text }}</div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge animate-fade-in">
-        <span class="dot"></span> 我的角色收藏
-      </div>
-      <h1 class="hero-title animate-slide-up delay-100">我喜欢的角色</h1>
-      <p class="hero-subtitle animate-slide-up delay-200">
-        记录那些让我心动的角色
-      </p>
-
-      <div class="hero-search animate-slide-up delay-300">
-        <span class="hero-search-icon">🔍</span>
-        <input
-          type="text"
-          v-model="searchQuery"
-          placeholder="搜索角色名称、作品…"
-          @input="$emit('search', searchQuery)"
-        />
-        <button v-if="searchQuery" class="search-clear visible" @click="clearSearch">✕</button>
-      </div>
-
-      <div class="hero-stats animate-slide-up delay-400">
-        <div class="hero-stat">
-          <span class="hero-stat-icon">📋</span>
-          <span class="hero-stat-value">{{ characterCount }}</span>
-          <span class="hero-stat-label">位角色</span>
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="hero-noise"></div>
+    <div class="hero-rule hero-rule-top"></div>
+    <div class="hero-rule hero-rule-bottom"></div>
+    <div class="home-hero__inner">
+      <div class="home-hero__copy">
+        <p class="hero-kicker"><span></span> Character archive / 2026</p>
+        <h1 id="home-title">YuanHua<br><em>Wiki</em></h1>
+        <p class="hero-intro">收藏那些在故事里闪闪发光，后来也留在心里的角色。</p>
+        <label class="hero-search" for="character-search">
+          <span class="search-mark" aria-hidden="true"></span>
+          <input id="character-search" v-model="searchQuery" type="search" placeholder="搜索角色、作品或英文名" @input="$emit('search', searchQuery)">
+          <button v-if="searchQuery" type="button" class="search-clear" aria-label="清除搜索" @click="clearSearch">×</button>
+        </label>
+        <div class="hero-meta">
+          <div><strong>{{ characterCount }}</strong><span> 位角色档案</span></div>
+          <div><strong>{{ seriesCount }}</strong><span> 部作品收录</span></div>
         </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-icon">✨</span>
-          <span class="hero-stat-value">持续更新</span>
-          <span class="hero-stat-label">敬请期待</span>
-        </div>
+        <a class="hero-browse" href="#character-list">浏览全部角色 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-portrait" aria-hidden="true">
+        <div class="portrait-caption">FEATURED<br>COLLECTION</div>
+        <div class="portrait-frame portrait-frame--back"></div>
+        <div class="portrait-image portrait-image--main" :style="imageStyle(featured[0])"></div>
+        <div class="portrait-frame portrait-frame--front"></div>
+        <div class="portrait-image portrait-image--small portrait-image--one" :style="imageStyle(featured[1])"></div>
+        <div class="portrait-image portrait-image--small portrait-image--two" :style="imageStyle(featured[2])"></div>
+        <div class="portrait-number">01 <span>/ {{ characterCount.toString().padStart(2, '0') }}</span></div>
+      </div>
+    </div>
+    <div class="hero-quotes">
+      <div class="hero-quotes__track">
+        <span>「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡</span>
+        <span>「生老病死，天地万象，尽在吾辈。」—— 胡桃</span>
+        <span>「我要成为你推的孩子。」—— 有马加奈</span>
+        <span>「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花</span>
+        <span>「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋</span>
+        <span>「我等过很久，我不会再等了。」—— 弗洛洛</span>
+        <span>「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜</span>
+        <span>「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世</span>
+        <span>「从这里开始吧。从一开始……不，从零开始。」—— 雷姆</span>
+        <span>「我是你的恋人。」—— 友利奈绪</span>
+        <span>「不，我不认识叫那种名字的人。」—— 和泉纱雾</span>
+        <span>「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 四糸乃</span>
+        <span aria-hidden="true">「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡</span>
+        <span aria-hidden="true">「生老病死，天地万象，尽在吾辈。」—— 胡桃</span>
+        <span aria-hidden="true">「我要成为你推的孩子。」—— 有马加奈</span>
+        <span aria-hidden="true">「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花</span>
+        <span aria-hidden="true">「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋</span>
+        <span aria-hidden="true">「我等过很久，我不会再等了。」—— 弗洛洛</span>
+        <span aria-hidden="true">「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜</span>
+        <span aria-hidden="true">「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世</span>
+        <span aria-hidden="true">「从这里开始吧。从一开始……不，从零开始。」—— 雷姆</span>
+        <span aria-hidden="true">「我是你的恋人。」—— 友利奈绪</span>
+        <span aria-hidden="true">「不，我不认识叫那种名字的人。」—— 和泉纱雾</span>
+        <span aria-hidden="true">「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 四糸乃</span>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { getCharacterList } from '@/api/character.js'
 
 export default {
@@ -97,423 +69,36 @@ export default {
   emits: ['search'],
   setup(props, { emit }) {
     const searchQuery = ref('')
-    const characterCount = getCharacterList().length
+    const characters = getCharacterList()
+    const featured = computed(() => [
+      characters.find(character => character.id === 'meguru'),
+      characters.find(character => character.id === 'phrolova'),
+      characters.find(character => character.id === 'nanami')
+    ])
+    const characterCount = characters.length
+    const seriesCount = new Set(characters.map(character => character.series)).size
 
-    function clearSearch() {
-      searchQuery.value = ''
-      emit('search', '')
-    }
+    function imageStyle(character) { return character ? { backgroundImage: `url(${character.image})` } : {} }
+    function clearSearch() { searchQuery.value = ''; emit('search', '') }
 
-    // 弹幕台词 — 不同角色使用不同颜色层级
-    const danmakuColors = [
-      'rgba(233,213,255,0.9)',  // 淡紫
-      'rgba(249,168,212,0.85)', // 粉
-      'rgba(192,132,252,0.9)',  // 紫
-      'rgba(165,243,252,0.8)',  // 青
-      'rgba(255,255,255,0.7)',  // 白
-      'rgba(253,186,116,0.8)',  // 橙
-      'rgba(216,180,254,0.9)',  // 浅紫
-    ]
-    const danmakuItems = [
-      { text: '「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜', top: '8%', dur: '28s', delay: '0s', size: '14px', opacity: 0.45, color: 0 },
-      { text: '「生老病死，天地万象，尽在吾辈。」—— 胡桃', top: '18%', dur: '22s', delay: '3s', size: '13px', opacity: 0.4, color: 5 },
-      { text: '「我要成为你推的孩子。」—— 有马加奈', top: '30%', dur: '20s', delay: '6s', size: '15px', opacity: 0.45, color: 1 },
-      { text: '「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花', top: '45%', dur: '30s', delay: '1s', size: '13px', opacity: 0.4, color: 2 },
-      { text: '「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋', top: '55%', dur: '26s', delay: '8s', size: '14px', opacity: 0.42, color: 3 },
-      { text: '「我等过很久，我不会再等了。」—— 弗洛洛', top: '68%', dur: '21s', delay: '4s', size: '13px', opacity: 0.4, color: 4 },
-      { text: '「我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。」—— 弗洛洛', top: '22%', dur: '27s', delay: '11s', size: '14px', opacity: 0.42, color: 2 },
-      { text: '「世界就这样终结，不是嘭的一响，而是嘘的一声。」—— 弗洛洛', top: '72%', dur: '25s', delay: '7s', size: '13px', opacity: 0.4, color: 1 },
-      { text: '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡', top: '38%', dur: '29s', delay: '13s', size: '14px', opacity: 0.45, color: 0 },
-      { text: '「Ciallo～(∠・ω< )⌒☆」—— 因幡巡', top: '82%', dur: '18s', delay: '2s', size: '15px', opacity: 0.48, color: 5 },
-      { text: '「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 氷芽川四糸乃', top: '35%', dur: '23s', delay: '15s', size: '14px', opacity: 0.44, color: 3 },
-      { text: '「从这里开始吧。从一开始……不，从零开始。」—— 雷姆', top: '78%', dur: '24s', delay: '10s', size: '15px', opacity: 0.45, color: 4 },
-      { text: '「我是你的恋人。」—— 友利奈绪', top: '12%', dur: '19s', delay: '12s', size: '16px', opacity: 0.5, color: 1 },
-      { text: '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世', top: '88%', dur: '22s', delay: '5s', size: '13px', opacity: 0.42, color: 6 },
-      { text: '「不，我不认识叫那种名字的人。」—— 和泉纱雾', top: '50%', dur: '20s', delay: '9s', size: '14px', opacity: 0.44, color: 2 },
-    ]
-
-    const particles = [
-      { id: 1, w: '3px', h: '3px', top: '10%', left: '8%', dur: '6s', delay: '0s' },
-      { id: 2, w: '5px', h: '5px', top: '20%', left: '85%', dur: '7s', delay: '1s' },
-      { id: 3, w: '2px', h: '2px', top: '65%', left: '12%', dur: '5s', delay: '0.5s' },
-      { id: 4, w: '4px', h: '4px', top: '75%', left: '78%', dur: '6.5s', delay: '2s' },
-      { id: 5, w: '3px', h: '3px', top: '40%', left: '55%', dur: '8s', delay: '1.5s' },
-      { id: 6, w: '6px', h: '6px', top: '15%', left: '35%', dur: '5.5s', delay: '0.8s' },
-      { id: 7, w: '4px', h: '4px', top: '80%', left: '30%', dur: '7.5s', delay: '2.5s' },
-      { id: 8, w: '2px', h: '2px', top: '55%', left: '92%', dur: '4.5s', delay: '1.2s' },
-    ]
-
-    return { searchQuery, characterCount, particles, danmakuItems, danmakuColors, clearSearch }
+    return { searchQuery, characterCount, seriesCount, featured, imageStyle, clearSearch }
   }
 }
 </script>
 
 <style>
-.hero {
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 25%, #1a1030 50%, #0d1a2e 75%, #0a0a1a 100%);
-}
-
-/* 装饰光晕 */
-.hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  opacity: 0.15;
-}
-.hero-glow-1 {
-  width: 400px; height: 400px;
-  background: #a855f7;
-  top: -100px; left: -80px;
-  animation: float 8s ease-in-out infinite;
-}
-.hero-glow-2 {
-  width: 300px; height: 300px;
-  background: #ec4899;
-  bottom: -80px; right: -60px;
-  animation: float 10s ease-in-out infinite reverse;
-}
-.hero-glow-3 {
-  width: 250px; height: 250px;
-  background: #c084fc;
-  top: 50%; left: 60%;
-  animation: float 7s ease-in-out infinite 3s;
-}
-
-/* 装饰浮动符号 */
-.hero-deco {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.12;
-  animation: decoFloat 12s ease-in-out infinite;
-  font-size: 24px;
-  color: #c084fc;
-  text-shadow: 0 0 20px rgba(192,132,252,0.5);
-}
-.hero-deco-1 { top: 12%; left: 8%; font-size: 28px; animation-delay: 0s; animation-duration: 10s; }
-.hero-deco-2 { top: 25%; right: 12%; font-size: 20px; animation-delay: 2s; animation-duration: 14s; color: #f0abfc; }
-.hero-deco-3 { bottom: 30%; left: 15%; font-size: 32px; animation-delay: 4s; animation-duration: 11s; color: #a78bfa; }
-.hero-deco-4 { top: 60%; right: 8%; font-size: 22px; animation-delay: 1s; animation-duration: 13s; color: #f9a8d4; }
-.hero-deco-5 { top: 8%; left: 55%; font-size: 18px; animation-delay: 3s; animation-duration: 15s; color: #f9a8d4; }
-.hero-deco-6 { bottom: 15%; right: 25%; font-size: 26px; animation-delay: 5s; animation-duration: 9s; color: #c084fc; }
-@keyframes decoFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.08; }
-  25% { transform: translateY(-20px) rotate(90deg) scale(1.1); opacity: 0.18; }
-  50% { transform: translateY(-10px) rotate(180deg) scale(0.95); opacity: 0.12; }
-  75% { transform: translateY(-25px) rotate(270deg) scale(1.05); opacity: 0.2; }
-}
-
-/* 装饰光环 */
-.hero-ring {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  border: 1px solid rgba(168,85,247,0.08);
-}
-.hero-ring-1 {
-  width: 500px; height: 500px;
-  top: -150px; right: -100px;
-  animation: ringPulse 8s ease-in-out infinite;
-}
-.hero-ring-2 {
-  width: 350px; height: 350px;
-  bottom: -100px; left: -80px;
-  animation: ringPulse 10s ease-in-out infinite 3s;
-  border-color: rgba(236,72,153,0.06);
-}
-@keyframes ringPulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.08); opacity: 0.6; }
-}
-
-/* 动态渐变光球 */
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(60px);
-}
-.hero-orb-1 {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(168,85,247,0.4) 0%, rgba(168,85,247,0) 70%);
-  top: 10%; left: 5%;
-  animation: orbMove1 15s ease-in-out infinite;
-}
-.hero-orb-2 {
-  width: 250px; height: 250px;
-  background: radial-gradient(circle, rgba(236,72,153,0.35) 0%, rgba(236,72,153,0) 70%);
-  bottom: 15%; right: 8%;
-  animation: orbMove2 18s ease-in-out infinite;
-}
-.hero-orb-3 {
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(192,132,252,0.35) 0%, rgba(192,132,252,0) 70%);
-  top: 50%; left: 60%;
-  animation: orbMove3 12s ease-in-out infinite;
-}
-.hero-orb-4 {
-  width: 180px; height: 180px;
-  background: radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(139,92,246,0) 70%);
-  top: 70%; left: 15%;
-  animation: orbMove1 20s ease-in-out infinite reverse;
-}
-.hero-orb-5 {
-  width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(244,114,182,0.25) 0%, rgba(244,114,182,0) 70%);
-  top: 5%; right: 20%;
-  animation: orbMove2 14s ease-in-out infinite 3s;
-}
-@keyframes orbMove1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
-}
-@keyframes orbMove2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-35px, 25px) scale(1.05); }
-  66% { transform: translate(25px, -35px) scale(0.9); }
-}
-@keyframes orbMove3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -40px) scale(1.15); }
-}
-
-/* 光束效果 */
-.hero-beam {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.06;
-}
-.hero-beam-1 {
-  width: 2px; height: 100%;
-  background: linear-gradient(to bottom, transparent, #a855f7, transparent);
-  left: 20%; top: 0;
-  animation: beamPulse 4s ease-in-out infinite;
-}
-.hero-beam-2 {
-  width: 2px; height: 100%;
-  background: linear-gradient(to bottom, transparent, #ec4899, transparent);
-  right: 25%; top: 0;
-  animation: beamPulse 5s ease-in-out infinite 1s;
-}
-.hero-beam-3 {
-  width: 100%; height: 2px;
-  background: linear-gradient(to right, transparent, #c084fc, transparent);
-  left: 0; top: 35%;
-  animation: beamPulse 6s ease-in-out infinite 2s;
-}
-@keyframes beamPulse {
-  0%, 100% { opacity: 0.03; }
-  50% { opacity: 0.1; }
-}
-
-/* 弹幕 */
-.hero-danmaku {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.danmaku-item {
-  position: absolute;
-  right: -500px;
-  white-space: nowrap;
-  font-weight: 500;
-  font-family: 'Noto Sans SC', sans-serif;
-  letter-spacing: 0.08em;
-  animation: danmakuFly linear infinite;
-  text-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
-}
-@keyframes danmakuFly {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100vw - 400px)); }
-}
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-@media (max-width: 768px) {
-  .danmaku-item { font-size: 11px !important; }
-}
-
-.hero-bg-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(168,85,247,0.35);
-  animation: pixelFloat var(--dur) ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image:
-    linear-gradient(rgba(168,85,247,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168,85,247,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  width: 100%;
-  text-align: center;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(168,85,247,0.12);
-  border: 1px solid rgba(168,85,247,0.25);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 12px;
-  color: #d8b4fe;
-  font-weight: 500;
-  margin-bottom: 24px;
-  backdrop-filter: blur(8px);
-  letter-spacing: 0.04em;
-}
-.hero-badge .dot {
-  width: 7px; height: 7px;
-  background: #c084fc;
-  border-radius: 50%;
-  animation: pulseGlow 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(192,132,252,0.6);
-}
-
-.hero-title {
-  font-size: clamp(38px, 7vw, 60px);
-  font-weight: 900;
-  line-height: 1.15;
-  background: linear-gradient(135deg, #f5eeff 0%, #c084fc 30%, #f0abfc 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
-  font-family: 'Noto Sans SC', 'Inter', sans-serif;
-  margin-bottom: 14px;
-  filter: drop-shadow(0 0 30px rgba(168,85,247,0.35)) drop-shadow(0 0 60px rgba(236,72,153,0.2));
-}
-
-.hero-subtitle {
-  font-size: 16px;
-  color: #94a3b8;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 32px;
-  letter-spacing: 0.03em;
-}
-
-.hero-search {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 480px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-  margin-bottom: 28px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
-}
-.hero-search:focus-within {
-  border-color: rgba(168,85,247,0.5);
-  box-shadow: 0 0 0 4px rgba(168,85,247,0.1), 0 8px 32px rgba(168,85,247,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.1);
-}
-.hero-search-icon { padding: 0 0 0 18px; font-size: 17px; flex-shrink: 0; opacity: 0.7; }
-.hero-search input {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 15px 14px;
-  font-size: 15px;
-  color: #f1f5f9;
-  font-family: inherit;
-  outline: none;
-  min-width: 0;
-  letter-spacing: 0.01em;
-}
-.hero-search input::placeholder { color: #5a6a80; }
-.search-clear {
-  background: rgba(255,255,255,0.08);
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  padding: 6px 12px;
-  margin-right: 6px;
-  font-size: 13px;
-  border-radius: 8px;
-  transition: all 0.2s;
-  display: none;
-}
-.search-clear.visible { display: block; }
-.search-clear:hover { color: #f1f5f9; background: rgba(255,255,255,0.15); }
-
-.hero-stats {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  padding: 16px 28px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-.hero-stat-icon { font-size: 22px; line-height: 1; }
-.hero-stat-value {
-  font-size: 26px;
-  font-weight: 800;
-  color: #f5eeff;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-shadow: 0 0 20px rgba(192,132,252,0.4);
-}
-.hero-stat-label { font-size: 11px; color: #7e8ba3; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
-.hero-stat-divider {
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(to bottom, transparent, rgba(168,85,247,0.3), transparent);
-}
-
-@media (max-width: 480px) {
-  .hero { min-height: 55vh; }
-  .hero-content { padding: 0 16px; }
-  .hero-title { font-size: 30px; }
-  .hero-subtitle { font-size: 14px; margin-bottom: 20px; }
-  .hero-search { max-width: 100%; margin-bottom: 18px; border-radius: 14px; }
-  .hero-search input { padding: 12px 10px; font-size: 14px; }
-  .hero-badge { padding: 6px 14px; font-size: 12px; margin-bottom: 18px; }
-  .hero-stat-value { font-size: 22px; }
-  .hero-stat-icon { font-size: 18px; }
-  .hero-stats { gap: 16px; }
-}
+.home-hero { position: relative; min-height: 720px; overflow: hidden; color: #f5f1e9; background: #18212c; isolation: isolate; }
+.home-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #18212c 0%, #18212c 47%, rgba(24,33,44,.82) 64%, rgba(24,33,44,.25) 100%); z-index: -1; }
+.home-hero::after { content: ''; position: absolute; right: -7%; top: 0; width: 61%; height: 100%; background: linear-gradient(90deg, #18212c 0%, transparent 28%), url('../../../meguru/images/1.jpg') center 21% / cover no-repeat; opacity: .13; filter: saturate(.6) contrast(1.1); z-index: -2; }
+.hero-noise { position: absolute; inset: 0; opacity: .22; pointer-events: none; background-image: radial-gradient(rgba(255,255,255,.36) .6px, transparent .6px); background-size: 5px 5px; mix-blend-mode: soft-light; }
+.hero-rule { position: absolute; height: 1px; left: 5vw; right: 5vw; background: rgba(245,241,233,.22); }.hero-rule-top { top: 112px; }.hero-rule-bottom { bottom: 42px; }
+.home-hero__inner { width: min(1280px, calc(100% - 48px)); min-height: 720px; margin: 0 auto; display: grid; grid-template-columns: minmax(390px,.9fr) 1.1fr; align-items: center; gap: 26px; padding: 132px 0 78px; }
+.home-hero__copy { position: relative; z-index: 2; padding-left: 4.8vw; }.hero-kicker { display: flex; align-items: center; gap: 10px; color: #d8c59c; font-family: Inter,sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }.hero-kicker span { width: 28px; height: 1px; background: #d8c59c; }
+.home-hero h1 { margin: 23px 0 16px; font-family: Georgia,'Noto Serif SC',serif; font-size: clamp(60px,7.8vw,112px); font-weight: 400; line-height: .8; letter-spacing: 0; color: #f7f3ea; }.home-hero h1 em { color: #d8c59c; font-weight: 400; }.hero-intro { max-width: 330px; color: #c5cbd0; font-size: 15px; line-height: 1.9; letter-spacing: .04em; }
+.hero-search { width: min(100%,390px); display: flex; align-items: center; margin-top: 31px; padding: 0 12px 0 17px; border-bottom: 1px solid rgba(245,241,233,.52); transition: border-color .2s ease; }.hero-search:focus-within { border-color: #d8c59c; }.search-mark { width: 14px; height: 14px; margin-right: 12px; border: 1.5px solid #d8c59c; border-radius: 50%; position: relative; flex: 0 0 auto; }.search-mark::after { content: ''; width: 6px; height: 1.5px; background: #d8c59c; position: absolute; right: -5px; bottom: -2px; transform: rotate(45deg); }.hero-search input { width: 100%; min-width: 0; padding: 13px 0; color: #fff; background: transparent; border: 0; outline: 0; font: 14px 'Noto Sans SC',sans-serif; }.hero-search input::placeholder { color: #9fa9b2; }.search-clear { width: 28px; height: 28px; border: 0; background: transparent; color: #d8c59c; font: 26px/1 Arial,sans-serif; cursor: pointer; }
+.hero-meta { display: flex; gap: 30px; margin-top: 31px; }.hero-meta div { display: flex; flex-direction: column; gap: 2px; }.hero-meta strong { color: #f5f1e9; font: 400 28px/1 Georgia,serif; }.hero-meta span { color: #9fa9b2; font-size: 11px; letter-spacing: .08em; }.hero-browse { display: inline-flex; gap: 13px; align-items: center; margin-top: 35px; color: #f5f1e9; font-size: 13px; font-weight: 600; letter-spacing: .06em; }.hero-browse span { color: #d8c59c; font-size: 19px; line-height: 1; }
+.hero-portrait { position: relative; height: 500px; align-self: end; }.portrait-frame { position: absolute; border: 1px solid rgba(216,197,156,.58); }.portrait-frame--back { width: min(41vw,492px); height: 456px; right: 8%; bottom: 32px; }.portrait-frame--front { width: min(37vw,447px); height: 422px; right: 0; bottom: 0; }.portrait-image { position: absolute; background-repeat: no-repeat; background-color: #eae7e1; }.portrait-image--main { width: min(36vw,430px); height: 510px; right: 5%; bottom: 0; background-size: 124%; background-position: 50% 0%; filter: saturate(.93) contrast(1.04); }.portrait-image--main::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 60%,rgba(24,33,44,.32)); }.portrait-image--small { width: 132px; height: 156px; background-size: 130%; border: 6px solid #18212c; box-shadow: 0 14px 30px rgba(0,0,0,.18); }.portrait-image--one { left: 1%; top: 55px; background-position: 50% 0%; }.portrait-image--two { left: 12%; bottom: -19px; background-position: 51% 0%; }.portrait-caption { position: absolute; top: 20px; right: 47%; z-index: 2; color: #d8c59c; font: 700 10px/1.6 Inter,sans-serif; letter-spacing: .16em; }.portrait-number { position: absolute; right: 2%; top: 4px; color: #f5f1e9; font: 400 34px/1 Georgia,serif; z-index: 3; }.portrait-number span { color: #a9afb1; font: 400 12px Inter,sans-serif; letter-spacing: .08em; }
+@media (max-width:900px) { .home-hero { min-height: 750px; }.home-hero__inner { grid-template-columns: .9fr 1fr; width: min(100% - 32px,780px); }.home-hero__copy { padding-left: 0; }.home-hero h1 { font-size: 72px; }.portrait-image--small { display: none; }.portrait-frame--back { right: 1%; }.portrait-image--main { right: 4%; } }
+@media (max-width:650px) { .home-hero { min-height: 760px; }.home-hero::after { width: 100%; right: -20%; opacity: .1; }.hero-rule-top { top: 82px; }.home-hero__inner { display: block; min-height: 760px; padding: 120px 0 44px; }.home-hero__copy { padding-left: 0; }.home-hero h1 { font-size: 69px; }.hero-intro { font-size: 14px; }.hero-portrait { height: 273px; margin: 8px -16px 0; }.portrait-frame--back { width: 250px; height: 230px; right: 22px; bottom: 20px; }.portrait-frame--front { width: 225px; height: 209px; right: 7px; bottom: 0; }.portrait-image--main { width: 216px; height: 270px; right: 17px; }.portrait-caption { display: none; }.portrait-number { top: 30px; right: 25px; font-size: 24px; }.hero-rule-bottom { bottom: 24px; } }
+.hero-quotes { position: absolute; right: 5vw; bottom: 42px; left: 5vw; overflow: hidden; padding-top: 13px; border-top: 1px solid rgba(245,241,233,.22); }.hero-quotes__track { display: flex; width: max-content; animation: hero-quote-scroll 65s linear infinite; }.hero-quotes span { padding: 0 34px; color: rgba(245,241,233,.64); font: 12px/1.5 serif; letter-spacing: .05em; white-space: nowrap; }.hero-quotes span::before { content: '*'; margin-right: 34px; color: #d8c59c; }@keyframes hero-quote-scroll { to { transform: translateX(-50%); } }@media (prefers-reduced-motion: reduce) { .hero-quotes__track { animation: none; } }
 </style>

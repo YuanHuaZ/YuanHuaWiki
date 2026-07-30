@@ -3,34 +3,24 @@
     <AppHeader />
     <HeroSection @search="onSearch" />
 
-    <div class="hero-transition"></div>
-
-    <section class="section" id="character-list">
+    <section id="character-list" class="archive-section">
       <div class="container">
-        <div class="section-header">
-          <div class="section-title-group">
-            <h2>📋 角色列表</h2>
-            <p>点击卡片查看完整角色资料</p>
+        <div class="archive-heading">
+          <div>
+            <p class="archive-eyebrow">The collection</p>
+            <h2>角色档案</h2>
+            <p class="archive-description">每一页，都是一次重新相遇。</p>
           </div>
-          <div class="result-count">
-            显示 <span>{{ visibleCount }}</span> / <span>{{ totalCount }}</span> 个角色
-          </div>
+          <div class="archive-count"><strong>{{ visibleCount }}</strong> / {{ totalCount }} entries</div>
         </div>
 
         <div class="character-grid">
-          <CharacterCard
-            v-for="(char, idx) in filteredCharacters"
-            :key="char.id"
-            :character="char"
-            :index="idx"
-          />
+          <CharacterCard v-for="(char, idx) in filteredCharacters" :key="char.id" :character="char" :index="idx" />
         </div>
 
         <div v-if="filteredCharacters.length === 0" class="empty-state">
-          <div class="empty-state-icon">🔍</div>
-          <h3>没有找到匹配的角色</h3>
-          <p>试试更换搜索关键词</p>
-          <button class="btn btn-outline" @click="searchQuery = ''">重置搜索</button>
+          <p>未找到匹配的角色档案。</p>
+          <button type="button" @click="resetFilters">重置筛选</button>
         </div>
       </div>
     </section>
@@ -41,7 +31,7 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import AppHeader from '@packages/shared/components/AppHeader/index.vue'
 import AppFooter from '@packages/shared/components/AppFooter/index.vue'
 import HeroSection from '@packages/shared/components/HeroSection/index.vue'
@@ -57,70 +47,35 @@ export default {
     const characters = ref(getCharacterList())
     const searchQuery = ref('')
     const { showToast } = useToast()
-
     const filteredCharacters = computed(() => {
-      if (!searchQuery.value) return characters.value
-      const q = searchQuery.value.toLowerCase()
-      return characters.value.filter(c => {
-        const text = `${c.name} ${c.nameSub} ${c.series}`.toLowerCase()
-        return text.includes(q)
+      const query = searchQuery.value.trim().toLowerCase()
+      return characters.value.filter(character => {
+        const matchesQuery = !query || `${character.name} ${character.nameSub} ${character.series}`.toLowerCase().includes(query)
+        return matchesQuery
       })
     })
-
     const visibleCount = computed(() => filteredCharacters.value.length)
     const totalCount = computed(() => characters.value.length)
-
-    function onSearch(query) {
-      searchQuery.value = query
-    }
-
-    function onToast(e) {
-      showToast(e.detail.message, e.detail.type)
-    }
+    function onSearch(query) { searchQuery.value = query }
+    function resetFilters() { searchQuery.value = '' }
+    function onToast(event) { showToast(event.detail.message, event.detail.type) }
 
     onMounted(() => window.addEventListener('toast', onToast))
     onUnmounted(() => window.removeEventListener('toast', onToast))
 
-    return { filteredCharacters, searchQuery, visibleCount, totalCount, onSearch }
+    return { filteredCharacters, visibleCount, totalCount, onSearch, resetFilters }
   }
 }
 </script>
 
 <style>
-.list-page { min-height: 100vh; }
-.hero-transition {
-  height: 80px;
-  background: linear-gradient(180deg, #1a1030 0%, #f8fafc 100%);
-}
-.character-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-@media (max-width: 1200px) { .character-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
-@media (max-width: 768px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
-@media (max-width: 480px) { .character-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
-
-/* Section background with subtle gradient */
-#character-list {
-  background: linear-gradient(180deg, #f8fafc 0%, #faf8ff 30%, #f8f4fc 70%, #f8fafc 100%);
-}
-
-.result-count {
-  font-size: 12px; color: #7c3aed; font-weight: 600;
-  background: linear-gradient(135deg, #faf5ff, #fdf2f8);
-  padding: 7px 16px; border-radius: 20px;
-  border: 1px solid rgba(168,85,247,0.15);
-  box-shadow: 0 2px 12px rgba(168,85,247,0.08);
-  letter-spacing: 0.02em;
-}
-.result-count span { color: #6d28d9; font-weight: 700; }
-
-.empty-state {
-  text-align: center; padding: 80px 24px;
-  grid-column: 1 / -1;
-}
-.empty-state-icon { font-size: 64px; margin-bottom: 16px; }
-.empty-state h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
-.empty-state p { font-size: 14px; color: #94a3b8; margin-bottom: 20px; }
+.archive-section { background: #f4f2ed; padding: 92px 0 108px; }
+.archive-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid #cfcac0; }
+.archive-eyebrow { margin-bottom: 6px; color: #9c7953; font: 700 10px Inter,sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.archive-heading h2 { color: #202d37; font: 400 clamp(33px,4vw,52px)/1 Georgia,'Noto Serif SC',serif; letter-spacing: 0; }
+.archive-description { margin-top: 10px; color: #75808a; font-size: 14px; }
+.archive-count { padding-bottom: 5px; color: #879098; font: 11px Inter,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.archive-count strong { color: #9c7953; font: 400 29px/1 Georgia,serif; letter-spacing: 0; }
+.empty-state { padding: 80px 24px; text-align: center; color: #66717a; }.empty-state p { margin-bottom: 18px; }.empty-state button { padding: 9px 16px; border: 1px solid #263640; color: #263640; background: transparent; cursor: pointer; font: inherit; }
+@media (max-width:768px) { .archive-section { padding: 55px 0 68px; }.archive-heading { align-items: start; flex-direction: column; gap: 10px; padding-bottom: 23px; }.archive-count { padding: 0; } }
 </style>
