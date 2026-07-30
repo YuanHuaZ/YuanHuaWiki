@@ -1,0 +1,114 @@
+/* Shared visual enhancement layer for every packaged character detail page. */
+.detail-page {
+  --detail-accent: #a855f7;
+  --detail-accent-soft: rgba(168, 85, 247, 0.14);
+  --detail-accent-line: rgba(168, 85, 247, 0.26);
+  --detail-hero-base: #272044;
+  --detail-hero-mid: #172a3a;
+  --detail-ink: #1f2d36;
+  --detail-paper: #f6f4ef;
+  background: var(--detail-paper);
+}
+
+.meguru-page { --detail-accent: #ff8a3d; --detail-accent-soft: rgba(255, 138, 61, 0.15); --detail-accent-line: rgba(255, 138, 61, 0.31); --detail-hero-base: #4c261d; --detail-hero-mid: #2a2033; }
+.phrolova-page { --detail-accent: #ca5577; --detail-accent-soft: rgba(202, 85, 119, 0.14); --detail-accent-line: rgba(202, 85, 119, 0.28); --detail-hero-base: #421f32; --detail-hero-mid: #202339; }
+.nanami-page { --detail-accent: #d28b73; --detail-accent-soft: rgba(210, 139, 115, 0.15); --detail-accent-line: rgba(210, 139, 115, 0.3); --detail-hero-base: #4c283b; --detail-hero-mid: #1f3140; }
+.soyo-page { --detail-accent: #c8a97e; --detail-accent-soft: rgba(200, 169, 126, 0.16); --detail-accent-line: rgba(200, 169, 126, 0.32); --detail-hero-base: #3a3020; --detail-hero-mid: #202a33; }
+.rem-page { --detail-accent: #5e9dd6; --detail-accent-soft: rgba(94, 157, 214, 0.15); --detail-accent-line: rgba(94, 157, 214, 0.28); --detail-hero-base: #1d3957; --detail-hero-mid: #1f2d47; }
+.hutao-page { --detail-accent: #f97316; --detail-accent-soft: rgba(249, 115, 22, 0.15); --detail-accent-line: rgba(249, 115, 22, 0.3); --detail-hero-base: #482018; --detail-hero-mid: #281d2d; }
+.elaina-page { --detail-accent: #8d77d6; --detail-accent-soft: rgba(141, 119, 214, 0.14); --detail-accent-line: rgba(141, 119, 214, 0.29); --detail-hero-base: #30204f; --detail-hero-mid: #1d2c44; }
+.tomori-page { --detail-accent: #637cd4; --detail-accent-soft: rgba(99, 124, 212, 0.14); --detail-accent-line: rgba(99, 124, 212, 0.29); --detail-hero-base: #22335d; --detail-hero-mid: #1c293b; }
+.komori-page { --detail-accent: #d77787; --detail-accent-soft: rgba(215, 119, 135, 0.14); --detail-accent-line: rgba(215, 119, 135, 0.29); --detail-hero-base: #4a283c; --detail-hero-mid: #252d45; }
+.kana-page { --detail-accent: #e26d75; --detail-accent-soft: rgba(226, 109, 117, 0.14); --detail-accent-line: rgba(226, 109, 117, 0.29); --detail-hero-base: #512438; --detail-hero-mid: #2c2946; }
+.sagiri-page { --detail-accent: #ec8fa8; --detail-accent-soft: rgba(236, 143, 168, 0.15); --detail-accent-line: rgba(236, 143, 168, 0.3); --detail-hero-base: #4f253b; --detail-hero-mid: #292844; }
+.yoshino-page { --detail-accent: #69a7d5; --detail-accent-soft: rgba(105, 167, 213, 0.14); --detail-accent-line: rgba(105, 167, 213, 0.28); --detail-hero-base: #1f4160; --detail-hero-mid: #213249; }
+
+.detail-page .breadcrumb {
+  margin: 0 auto !important;
+  padding: 21px 0 17px !important;
+  color: #7a858c !important;
+}
+.detail-page .breadcrumb .current,
+.detail-page .breadcrumb a:hover { color: var(--detail-accent) !important; }
+.detail-page .main-tab-nav {
+  top: 56px !important;
+  border-top: 1px solid rgba(31, 45, 54, 0.08) !important;
+  border-bottom: 1px solid rgba(31, 45, 54, 0.1) !important;
+  background: rgba(246, 244, 239, 0.91) !important;
+  box-shadow: none !important;
+}
+.detail-page .main-tab-btn { padding: 15px 21px !important; }
+.detail-page .main-tab-btn:hover { background: var(--detail-accent-soft) !important; }
+.detail-page .main-tab-btn.active { color: var(--detail-accent) !important; }
+.detail-page .main-tab-btn.active::after {
+  height: 2px !important;
+  background: var(--detail-accent) !important;
+  box-shadow: none !important;
+}
+
+.detail-page .section { padding: 66px 0 !important; }
+.detail-page .section:nth-of-type(even),
+.detail-page .anime-section { background: rgba(255, 255, 255, 0.42) !important; }
+.detail-page .section-header { margin-bottom: 26px !important; }
+.detail-page .section-title-group h2,
+.detail-page .section-sub-title { color: var(--detail-ink) !important; letter-spacing: 0 !important; }
+.detail-page .section-title-group h2::before,
+.detail-page .section-sub-title::before { background: var(--detail-accent) !important; }
+.detail-page .section-title-group p { color: #7c878e !important; }
+
+.detail-page .info-card,
+.detail-page .ability-card,
+.detail-page .relationship-card,
+.detail-page .video-card,
+.detail-page .tabs-card,
+.detail-page .anime-hero-card {
+  border: 1px solid rgba(31, 45, 54, 0.1) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 28px rgba(31, 45, 54, 0.05) !important;
+}
+.detail-page .info-card,
+.detail-page .ability-card,
+.detail-page .relationship-card { padding: 22px !important; }
+.detail-page .info-card:hover,
+.detail-page .ability-card:hover,
+.detail-page .relationship-card:hover,
+.detail-page .video-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--detail-accent-line) !important;
+  box-shadow: 0 18px 34px var(--detail-accent-soft) !important;
+}
+.detail-page .info-card-icon,
+.detail-page .ability-icon,
+.detail-page .rel-icon {
+  border-radius: 4px !important;
+  background: var(--detail-accent-soft) !important;
+}
+.detail-page .relationship-card { border-left: 3px solid var(--detail-accent) !important; }
+.detail-page .key-tag {
+  border: 1px solid var(--detail-accent-line) !important;
+  border-radius: 3px !important;
+  background: var(--detail-accent-soft) !important;
+  color: var(--detail-accent) !important;
+}
+.detail-page .tab-btn.active { color: var(--detail-accent) !important; }
+.detail-page .tab-btn.active::after { background: var(--detail-accent) !important; }
+.detail-page .tab-panel { padding: clamp(22px, 4vw, 40px) !important; }
+.detail-page .tab-panel p { color: #52616b !important; }
+
+.detail-page .anime-cover { background-image: linear-gradient(135deg, #1c2a33, color-mix(in srgb, var(--detail-accent) 58%, #1c2a33)) !important; }
+.detail-page .anime-info { padding: clamp(26px, 4vw, 42px) !important; }
+.detail-page .anime-info-label,
+.detail-page .anime-info-label::before { color: var(--detail-accent) !important; background-color: var(--detail-accent) !important; }
+.detail-page .gallery-grid { gap: 14px !important; }
+.detail-page .gallery-item { border-radius: 5px !important; border: 1px solid rgba(31, 45, 54, 0.08); }
+.detail-page .gallery-item:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 30px var(--detail-accent-soft) !important; }
+.detail-page .blockquote { border-left-color: var(--detail-accent) !important; }
+
+@media (max-width: 640px) {
+  .detail-page .main-tab-nav { top: 53px !important; }
+  .detail-page .main-tab-btn { min-width: auto !important; padding: 13px 12px !important; }
+  .detail-page .section { padding: 44px 0 !important; }
+  .detail-page .info-card,
+  .detail-page .ability-card,
+  .detail-page .relationship-card { padding: 17px !important; }
+}
