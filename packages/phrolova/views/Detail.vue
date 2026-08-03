@@ -179,6 +179,32 @@
       </section>
     </div>
 
+    <!-- Tab 6: Review -->
+    <div v-show="activeMainTab === 'review'" class="tab-panel-main">
+      <section class="review-hero">
+        <div class="review-hero-bg"></div>
+        <div class="review-hero-overlay"></div>
+        <div class="container review-hero-inner">
+          <div class="review-hero-avatar" :style="{ backgroundImage: `url(${data.image})` }"></div>
+          <div class="review-hero-text">
+            <span class="review-hero-label">Personal Review</span>
+            <h2>关于{{ data.name }}的评价</h2>
+            <p class="review-hero-desc">来自站长的个人感想与回忆</p>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding-top:40px;">
+        <div class="container">
+          <div class="review-article animate-fade-in">
+            <div class="review-body-card">
+              <p v-if="data.review" class="review-text">{{ data.review }}</p>
+              <p v-else class="review-placeholder">暂无评价，敬请期待。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <AppFooter />
     <BackToTop />
     <GalleryLightbox ref="lightbox" />
@@ -235,7 +261,8 @@ export default {
       { key: 'anime', icon: '🎮', label: '相关游戏' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
       { key: 'videos', icon: '🎬', label: '相关视频' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' }
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
     ]
 
     const galleryItems = [
@@ -440,6 +467,69 @@ export default {
 .phrolova-page .rel-family { background: #dbeafe; color: #1d4ed8; }
 .phrolova-page .rel-friend { background: #d1fae5; color: #047857; }
 .phrolova-page .rel-other { background: #f1f5f9; color: #475569; }
+
+/* ===== Review ===== */
+.phrolova-page .review-hero {
+  position: relative; padding: 64px 0 48px; overflow: hidden;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a0a 25%, #2e0d0d 50%, #0a0a1a 100%);
+}
+.phrolova-page .review-hero-bg {
+  position: absolute; inset: 0; opacity: 0.08;
+  background-image: radial-gradient(circle, #b91c1c 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.phrolova-page .review-hero-overlay {
+  position: absolute; top: -60px; right: -60px; width: 280px; height: 280px;
+  border-radius: 50%; background: rgba(185,28,28,0.15); filter: blur(50px);
+}
+.phrolova-page .review-hero-inner {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 28px;
+}
+.phrolova-page .review-hero-avatar {
+  width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;
+  background: #2e0d0d top/cover no-repeat;
+  box-shadow: 0 0 0 4px rgba(185,28,28,0.3), 0 4px 20px rgba(185,28,28,0.3);
+}
+.phrolova-page .review-hero-text h2 {
+  font-size: 28px; font-weight: 800; color: #f5f1e9; margin: 0 0 4px;
+}
+.phrolova-page .review-hero-label {
+  display: inline-block; padding: 3px 10px; border-radius: 4px;
+  background: rgba(185,28,28,0.25); color: #fca5a5;
+  font: 700 10px/1.5 'Inter', sans-serif; letter-spacing: .12em; text-transform: uppercase;
+}
+.phrolova-page .review-hero-desc {
+  font-size: 13px; color: #fca5a5; margin: 0;
+}
+.phrolova-page .review-article { max-width: 820px; margin: 0 auto; }
+.phrolova-page .review-quote-badge {
+  position: relative; padding: 28px 32px; margin-bottom: 28px;
+  background: linear-gradient(135deg, rgba(185,28,28,0.08), rgba(185,28,28,0.02));
+  border-left: 4px solid #b91c1c; border-radius: 0 12px 12px 0;
+}
+.phrolova-page .review-quote-mark {
+  position: absolute; top: 8px; left: 14px;
+  font: 400 48px/1 Georgia, serif; color: rgba(185,28,28,0.2);
+}
+.phrolova-page .review-quote-badge p {
+  font-size: 17px; line-height: 1.7; color: #fca5a5; font-weight: 500; font-style: italic; margin: 0;
+}
+.phrolova-page .review-quote-author {
+  display: block; margin-top: 10px; font-size: 13px; color: #dc2626; font-style: normal;
+}
+.phrolova-page .review-body-card {
+  background: #fff; border-radius: 20px; padding: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid rgba(185,28,28,0.06);
+}
+.phrolova-page .review-text {
+  font-size: 15.5px; line-height: 2.2; color: #334155; white-space: pre-line; letter-spacing: 0.01em;
+}
+.phrolova-page .review-placeholder { font-size: 15px; color: #94a3b8; text-align: center; padding: 32px 0; }
+@media (max-width: 640px) {
+  .phrolova-page .review-hero-inner { flex-direction: column; text-align: center; }
+  .phrolova-page .review-hero-text h2 { font-size: 24px; }
+  .phrolova-page .review-body-card { padding: 24px; }
+}
 
 /* Video grid */
 .phrolova-page .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }

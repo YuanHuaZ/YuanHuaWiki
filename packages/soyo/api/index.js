@@ -25,6 +25,7 @@ export default {
     { icon: '⭐', label: '血型', value: 'A型', iconClass: 'pink' },
     { icon: '🎯', label: '角色定位', value: 'MyGO!!!!! / 前CRYCHIC成员', iconClass: 'cyan' }
   ],
+  review: '最初看的时候觉得soyo是个夹子好恶心，而且好像在计划着什么，肯定不是什么好人，直到第七集爆了真的被吓到了，第八集惊世一跪更是让我想到了我的经历，然后我才发现soyo好像跟我也是同一类人，都是活在过去不肯向前走的人，也都有着同样的经历，都算不上什么好人，但不一样的是她有爱音，有高松灯，她们把soyo拉回了舞台，并且mygo会带着她一路前进。有时候也在想什么时候也能遇到属于我的爱音和高松灯呢。',
   tabs: [
     {
       key: 'personality', label: '性格特点', icon: '💭',
