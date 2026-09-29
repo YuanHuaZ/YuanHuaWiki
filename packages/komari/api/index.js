@@ -1,4 +1,24 @@
+/**
+ * komari 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import komariImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'komari',
@@ -80,5 +100,86 @@ export default {
     { icon: '👦', name: '温水和彦', type: '重要的伙伴/文艺部学长', desc: '文艺部的<span class="highlight">学长</span>，是少数能理解知花的人。石蕗祭后温水代替社恐的知花<span class="highlight-pink">上台演讲</span>成为社长，并对她承诺了<span class="highlight">"会一直在你身边"</span>。知花逐渐对他产生了超越友情的情感。', cls: 'rel-romance' },
     { icon: '🧑', name: '玉木慎太郎', type: '喜欢的人/文艺部部长', desc: '文艺部的<span class="highlight">前辈部长</span>，知花暗恋的对象。她在合宿时<span class="highlight-pink">鼓起勇气告白却被拒绝</span>——因为玉木喜欢的是副社长月之木古都。这段单恋使知花成为了"败犬女主"。', cls: 'rel-other' },
     { icon: '📚', name: '文艺部', type: '归属之地', desc: '知花所属的社团，对她来说是<span class="highlight">最重要的安心之所</span>。在文艺部中她找到了<span class="highlight-pink">理解自己的伙伴和归属感</span>。即使不擅长交流，大家依然接纳着真实的她。', cls: 'rel-friend' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  // 历史遗留：本包页面类名沿用 komori-page（非包名 komari），与 detail-enhancements.css 保持一致
+  pageClass: "komori-page",
+  placeholderEmoji: "💕",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0a0a1a 0%, #1a0a0a 25%, #2e1a1a 50%, #1a0a10 75%, #0a0a1a 100%)",
+    "glow1": "#e8795a",
+    "glow2": "#f472b6",
+    "particleBg": "rgba(232,121,90,0.3)",
+    "gridImage": "linear-gradient(rgba(232,121,90,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(232,121,90,0.05) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(232,121,90,0.2), rgba(253,164,164,0.1))",
+    "badgeBorder": "1px solid rgba(232,121,90,0.4)",
+    "badgeColor": "#fda4a4",
+    "badgeShadow": "0 0 20px rgba(232,121,90,0.2)",
+    "dotBg": "#e8795a",
+    "nameGrad": "linear-gradient(135deg, #fff 0%, #fda4a4 40%, #e8795a 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#fda4a4",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(232,121,90,0.2) 0%, rgba(253,164,164,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(232,121,90,0.4)",
+    "titleBadgeColor": "#fda4a4",
+    "tagBg": "linear-gradient(135deg, rgba(232,121,90,0.12), rgba(253,164,164,0.06))",
+    "tagBorder": "1px solid rgba(232,121,90,0.25)",
+    "tagColor": "#fda4a4",
+    "ringGrad": "linear-gradient(135deg, #e8795a, #fda4a4, #e8795a) border-box",
+    "avatarShadow": "0 0 60px rgba(232,121,90,0.4), 0 0 120px rgba(232,121,90,0.15)",
+    "placeholderBg": "linear-gradient(180deg, #5e2f2f 0%, #2e1a1a 50%, #0a0a1a 100%)",
+    "emojiShadow": "drop-shadow(0 0 30px rgba(232,121,90,0.5))",
+    "videoPlayBg": "rgba(232,121,90,0.85)",
+    "videoFallback": "linear-gradient(135deg, #1a0a0a, #5e2f1f)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "败犬女主太多了！",
+      titleJp: "負けヒロインが多すぎる！",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "A-1 Pictures" },
+      { icon: "📅", label: "播出：", value: "2024年7月" },
+      { icon: "📺", label: "集数：", value: "全12话" },
+      { icon: "🎤", label: "CV：", value: "寺澤百花" }
+      ],
+      desc: "在青春校园中，总有那么一些女孩——她们<span class=\"highlight\">明明付出了全部真心</span>，却总是<span class=\"highlight-pink\">与爱情失之交臂</span>。小鞠知花作为默默暗恋前辈的文艺部少女，在这场<span class=\"highlight\">注定的败北</span>中，用文字和泪水书写着属于自己的青春故事。",
+      tags: [
+      { cls: "dark", text: "校园" },
+      { cls: "dark", text: "恋爱" },
+      { cls: "dark", text: "喜剧" }
+      ],
+      action: null,
+      notice: "暂无B站正版"
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '小鞠知花 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '小鞠知花 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '小鞠知花 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '小鞠知花 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '小鞠知花 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '小鞠知花 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '小鞠知花 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '小鞠知花 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yVHwetE9r', title: '【剧情向MAD】明明是主演，却演着配角戏…（败犬女主/', desc: '小鞠知花 剧情向MAD' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV14qx8enEfx', title: '【温水×小鞠】陪伴你、一直到这故事说完。（剧情向MAD/', desc: '温水×小鞠 剧情向MAD' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1x726Y2ENx', title: '【败犬女主MAD/', desc: '小鞠知花 误解向MAD' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1EUsge7EJ8', title: '【中日字幕/', desc: '小鞠知花 ED' }
+    ]
 }

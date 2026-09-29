@@ -1,4 +1,38 @@
+/**
+ * phrolova 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import phrolovaImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import img9 from '../images/9.jpg'
+import img10 from '../images/10.jpg'
+import img11 from '../images/11.jpg'
+import img12 from '../images/12.jpg'
+import img13 from '../images/13.jpg'
+import img14 from '../images/14.jpg'
+import img15 from '../images/15.jpg'
+import img16 from '../images/16.jpg'
+import gameCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import sp5 from '../images/sp5.jpg'
+import sp6 from '../images/sp6.jpg'
+import sp7 from '../images/sp7.jpg'
+import sp8 from '../images/sp8.jpg'
+import sp9 from '../images/sp9.jpg'
+import sp10 from '../images/sp10.jpg'
 
 export default {
   id: 'phrolova',
@@ -85,5 +119,107 @@ export default {
     { icon: '🥀', name: '赫卡忒', type: '半身/残像', desc: '赫卡忒是弗洛洛的<span class="highlight">"彼世的半身"</span>——她们本质为一体。弗洛洛死亡觉醒后成为<span class="highlight-pink">半人半残像的存在</span>，赫卡忒正是她的另一半。战斗中赫卡忒随弗洛洛的指挥浮现，<span class="highlight">按乐声发动不同类型的强化攻击</span>，是弗洛洛力量不可分割的一部分。', cls: 'rel-family' },
     { icon: '🔥', name: '伤痕', type: '同僚/互不认同', desc: '同为残星会会监，弗洛洛对伤痕<span class="highlight">混乱嗜血的作风颇为不喜</span>。伤痕热衷于制造<span class="highlight-pink">破坏与混沌</span>，而弗洛洛行事更为克制、目标明确。二人仅在<span class="highlight">必要时才会合作</span>，私下几乎没有交集。', cls: 'rel-other' },
     { icon: '🎭', name: '克里斯托弗', type: '同僚/合作者', desc: '残星会的另一名会监，弗洛洛与其合作时<span class="highlight">相对更为默契</span>。克里斯托弗热衷戏剧化的行事方式她并不完全认同，但<span class="highlight-pink">比起伤痕的混乱</span>，这种方式至少还在她的接受范围之内。', cls: 'rel-friend' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "🎵",
+  avatarSize: "150%",
+  avatarBg: "#fff",
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0a0a1a 0%, #1a0a0a 25%, #2e0d0d 50%, #280a10 75%, #0a0a1a 100%)",
+    "glow1": "#b91c1c",
+    "glow2": "#991b1b",
+    "particleBg": "rgba(185,28,28,0.3)",
+    "gridImage": "linear-gradient(rgba(185,28,28,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(185,28,28,0.05) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(185,28,28,0.2), rgba(185,28,28,0.1))",
+    "badgeBorder": "1px solid rgba(185,28,28,0.4)",
+    "badgeColor": "#fca5a5",
+    "badgeShadow": "0 0 16px rgba(185,28,28,0.2)",
+    "dotBg": "#b91c1c",
+    "nameGrad": "linear-gradient(135deg, #fee2e2 0%, #fca5a5 40%, #dc2626 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#fca5a5",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(185,28,28,0.2), rgba(185,28,28,0.12))",
+    "titleBadgeBorder": "1px solid rgba(185,28,28,0.4)",
+    "titleBadgeColor": "#fca5a5",
+    "tagBg": "linear-gradient(135deg, rgba(185,28,28,0.12), rgba(185,28,28,0.06))",
+    "tagBorder": "1px solid rgba(185,28,28,0.25)",
+    "tagColor": "#dc2626",
+    "ringGrad": "linear-gradient(135deg, #b91c1c, #dc2626, #fca5a5, #b91c1c) border-box",
+    "avatarShadow": "0 0 60px rgba(185,28,28,0.4), 0 0 120px rgba(185,28,28,0.15)",
+    "placeholderBg": "linear-gradient(180deg, #5e1f1f 0%, #2e0a0a 50%, #0a0a1a 100%)",
+    "emojiShadow": "drop-shadow(0 0 30px rgba(185,28,28,0.5))",
+    "videoPlayBg": "rgba(185,28,28,0.85)",
+    "reviewBg": "linear-gradient(135deg, #0a0a1a 0%, #1a0a0a 25%, #2e0d0d 50%, #0a0a1a 100%)",
+    "reviewDots": "radial-gradient(circle, #b91c1c 1px, transparent 1px)",
+    "reviewOverlay": "rgba(185,28,28,0.15)",
+    "reviewAvatarShadow": "0 0 0 4px rgba(185,28,28,0.3), 0 4px 20px rgba(185,28,28,0.3)",
+    "reviewLabelBg": "rgba(185,28,28,0.25)",
+    "reviewLabelColor": "#fca5a5",
+    "reviewDescColor": "#fca5a5",
+    "reviewBodyBorder": "1px solid rgba(185,28,28,0.06)",
+    "videoFallback": "linear-gradient(135deg, #1a0a0a, #5e1f1f)"
+  },
+  works: {
+    anime: [
+    {
+      cover: gameCover,
+      label: "主要登场作品",
+      title: "鸣潮 | Wuthering Waves",
+      titleJp: "鸣潮 2.5 版本",
+      meta: [
+      { icon: "🏢", label: "开发：", value: "Kuro Games" },
+      { icon: "📅", label: "发行：", value: "2024年5月" },
+      { icon: "🎮", label: "类型：", value: "开放世界ARPG" },
+      { icon: "🎤", label: "CV：", value: "张琦（中）/ 藤田咲（日）" }
+      ],
+      desc: "在这片被<span class=\"highlight\">悲鸣所摧毁的大地</span>上，漂泊者将面对残星会的威胁。弗洛洛作为<span class=\"highlight-pink\">残星会会监</span>，以彼岸花之力操控残像，<span class=\"highlight\">是漂泊者旅途中最神秘而危险的对手之一</span>。",
+      tags: [
+      { cls: "dark", text: "开放世界" },
+      { cls: "dark", text: "ARPG" },
+      { cls: "dark", text: "二次元" },
+      { cls: "live", text: "免费游玩" }
+      ],
+      action:       { url: "https://mc.kurogames.com/", cls: "btn-bilibili", icon: "🎮", text: "前往官网" }
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '弗洛洛 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '弗洛洛 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '弗洛洛 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '弗洛洛 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '弗洛洛 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '弗洛洛 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '弗洛洛 · 美图 07' },
+      { isImage: true, bg: img9, badge: '美图', overlay: '弗洛洛 · 美图 08' },
+      { isImage: true, bg: img10, badge: '美图', overlay: '弗洛洛 · 美图 09' },
+      { isImage: true, bg: img11, badge: '美图', overlay: '弗洛洛 · 美图 10' },
+      { isImage: true, bg: img12, badge: '美图', overlay: '弗洛洛 · 美图 11' },
+      { isImage: true, bg: img13, badge: '美图', overlay: '弗洛洛 · 美图 12' },
+      { isImage: true, bg: img14, badge: '美图', overlay: '弗洛洛 · 美图 13' },
+      { isImage: true, bg: img15, badge: '美图', overlay: '弗洛洛 · 美图 14' },
+      { isImage: true, bg: img16, badge: '美图', overlay: '弗洛洛 · 美图 15' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1pB87zLEPU', title: '原来乐曲完成的那一天，我的知音来赴约了……【弗洛洛盘点——不乐得】', desc: '弗洛洛 剧情解析' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1DWtEzoELQ', title: '【鸣潮小剧场】Wonderful U', desc: '弗洛洛 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1DR8sz2ECF', title: '"我或曾梦见，与你亲密无间"【弗洛洛原创PV】', desc: '弗洛洛 原创PV' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1MfhJzYE1k', title: '【鸣潮PV】漂泊的浪子，可愿伴我短暂沉溺于此？', desc: '弗洛洛 原创PV' },
+      { cover: sp5, url: 'https://www.bilibili.com/video/BV1c9MJ67Eg6', title: '【心月弗传】师兄，什么叫你下山三天带了一只狐狸回来？', desc: '心月弗传 同人作品' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1qtKn6KEHg', title: '《酣梦于彼岸深红》 | 《鸣潮》演唱会「致予新世界」', desc: '鸣潮 演唱会' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1UHNi6aENQ/', title: '连狐妖公主都敢泡【第1集】', desc: '弗洛洛 同人作品' },
+      { cover: sp8, url: 'https://www.bilibili.com/video/BV1nQRqByEaN/', title: '【漂弗日记】第二十三集‖ 异世界—终章', desc: '漂弗日记 同人作品' },
+      { cover: sp9, url: 'https://www.bilibili.com/video/BV1MSTM64E8w/', title: '【漂弗情缘】第一集 | 我的师弗狐糯糯', desc: '漂弗情缘 同人作品' },
+      { cover: sp10, url: 'https://www.bilibili.com/video/BV1ikLC6tEZj/', title: '游泳课不运动怎么行【舍友弗洛洛·2】', desc: '弗洛洛 同人作品' }
+    ]
 }

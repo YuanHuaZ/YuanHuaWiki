@@ -1,4 +1,16 @@
+/**
+ * sagiri 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import sagiriImg from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'sagiri',
@@ -80,5 +92,81 @@ export default {
     { icon: '👧', name: '山田妖精', type: '朋友/同行', desc: '同为轻小说插画师的<span class="highlight">山田妖精</span>是纱雾少有的朋友。她性格外向开朗，与纱雾形成了<span class="highlight-pink">鲜明的对比</span>。', cls: 'rel-friend' },
     { icon: '👧', name: '千寿村征', type: '同行/后辈', desc: '轻小说作家<span class="highlight">千寿村征</span>是正宗的忠实粉丝，也是纱雾在创作道路上的<span class="highlight-pink">伙伴和同行</span>。', cls: 'rel-friend' },
     { icon: '👤', name: '神野惠', type: '朋友', desc: '正宗的同学<span class="highlight">神野惠</span>是少数能让纱雾感到<span class="highlight-pink">放松的外人之一</span>，她温柔体贴的性格很容易让人放下戒备。', cls: 'rel-friend' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "⭐",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #18181b 0%, #27272a 25%, #3f3f46 50%, #3f3f46 75%, #18181b 100%)",
+    "glow1": "#f4f4f5",
+    "glow2": "#a1a1aa",
+    "particleBg": "rgba(244,244,245,0.3)",
+    "gridImage": "linear-gradient(rgba(244,244,245,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(244,244,245,0.06) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(244,244,245,0.2), rgba(228,228,231,0.1))",
+    "badgeBorder": "1px solid rgba(244,244,245,0.4)",
+    "badgeColor": "#e4e4e7",
+    "badgeShadow": "0 0 20px rgba(244,244,245,0.2)",
+    "dotBg": "#f4f4f5",
+    "nameGrad": "linear-gradient(135deg, #fff 0%, #e4e4e7 40%, #f4f4f5 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#e4e4e7",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(244,244,245,0.2) 0%, rgba(228,228,231,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(244,244,245,0.4)",
+    "titleBadgeColor": "#e4e4e7",
+    "tagBg": "linear-gradient(135deg, rgba(244,244,245,0.12), rgba(228,228,231,0.06))",
+    "tagBorder": "1px solid rgba(244,244,245,0.25)",
+    "tagColor": "#e4e4e7",
+    "ringGrad": "linear-gradient(135deg, #f4f4f5, #e4e4e7, #f4f4f5) border-box",
+    "avatarShadow": "0 0 60px rgba(244,244,245,0.4), 0 0 120px rgba(244,244,245,0.15)",
+    "videoPlayBg": "rgba(244,244,245,0.85)",
+    "videoFallback": "linear-gradient(135deg, #27272a, #3f3f46)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "埃罗芒阿老师",
+      titleJp: "エロマンガ先生",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "A-1 Pictures" },
+      { icon: "📅", label: "播出：", value: "2017年4月" },
+      { icon: "📺", label: "集数：", value: "全12话" },
+      { icon: "🎨", label: "CV：", value: "藤田咲" }
+      ],
+      desc: "高中生作家和泉正宗与<span class=\"highlight\">从不露面的插画家\"埃罗芒阿老师\"合作</span>。某天他发现，这位画出色情插画的<span class=\"highlight-pink\">神秘插画师竟然是自己家里蹲的义妹纱雾</span>。两人从此开始了全新的关系。",
+      tags: [
+      { cls: "dark", text: "恋爱" },
+      { cls: "dark", text: "喜剧" },
+      { cls: "dark", text: "日常" }
+      ],
+      action:       { url: "https://www.bilibili.com/bangumi/play/ep103917?spm_id_from=333.337.0.0", cls: "btn-bilibili", icon: "📺", text: "在Bilibili观看" }
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: sagiriImg, badge: '立绘', overlay: '和泉纱雾 · 官方角色立绘' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 01' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1zT4y177Am/', title: '【AMV】ヒトリゴト/自言自语 -OP（完整版）《埃罗芒阿老师》（中/日文字幕）', desc: '和泉纱雾 AMV' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1M7411a7Hp/', title: '再 来 亿 遍', desc: '和泉纱雾 剪辑' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1M84y1y7oy/', title: '💕和泉纱雾心动挑战💕你能坚持30秒吗？', desc: '和泉纱雾 剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1wQ4y1K7us/', title: '埃罗芒阿老师☆AWSL', desc: '和泉纱雾 手书' }
+    ]
 }

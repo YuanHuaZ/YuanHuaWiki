@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="character.hasDetail ? `/character/${character.id}` : '#'"
+    :href="character.hasDetail ? `#/character/${character.id}` : '#'"
     class="character-card"
     :style="{ animationDelay: `${0.04 * index}s` }"
     @click.prevent="onClick"

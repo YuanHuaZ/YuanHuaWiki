@@ -1,70 +1,56 @@
 <template>
-  <div class="detail-page">
-    <AppHeader />
+  <CharacterDetailLayout v-if="character" :data="character" />
 
-    <!-- 占位角色：简化 Hero -->
-    <section class="hero hero-simple">
-      <div class="hero-grid"></div>
-      <div class="hero-content hero-content-simple" v-if="character">
-        <div class="hero-visual animate-slide-up">
-          <div class="hero-avatar-wrapper hero-avatar-simple">
-            <div class="hero-avatar-ring"></div>
-            <div class="hero-avatar avatar-placeholder" :class="{ 'kana-bg': character.id === 'kana' }">
-              <img v-if="character.image" :src="character.image" class="avatar-img" />
-              <span v-else class="avatar-emoji">👤</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-text animate-fade-in" style="text-align:center;">
-          <div class="hero-badge" style="margin:0 auto;"><span class="dot"></span> {{ character.series }}</div>
-          <h1 class="hero-name-jp">{{ character.name }}</h1>
-          <p class="hero-name-sub">{{ character.nameSub }}</p>
-          <div class="tags" style="justify-content:center;">
-            <span v-for="(t,i) in character.tags" :key="i" :class="['tag', t.cls]">{{ t.text }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <NotFound v-else-if="loaded" />
 
-
-    <div class="container">
-      <nav class="breadcrumb">
-        <router-link to="/">首页</router-link> <span class="sep">›</span>
-        <router-link to="/">角色列表</router-link> <span class="sep">›</span>
-        <span class="current">{{ character ? character.name : '...' }}</span>
-      </nav>
-    </div>
-
-    <section class="section">
-      <div class="container" style="text-align:center;padding:80px 24px;">
-        <div style="font-size:64px;margin-bottom:20px;">🚧</div>
-        <h2 style="font-size:22px;font-weight:700;color:#0f172a;margin-bottom:10px;">详细资料即将上线</h2>
-        <p style="color:#94a3b8;font-size:15px;margin-bottom:24px;">该角色的完整资料正在整理中，敬请期待。</p>
-        <router-link to="/" class="btn btn-outline">← 返回角色列表</router-link>
-      </div>
-    </section>
-
-    <AppFooter />
-    <BackToTop />
+  <div v-else class="detail-loading">
+    <div class="loading-spinner"></div>
+    <p>正在翻开这页档案…</p>
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import AppHeader from '@packages/shared/components/AppHeader/index.vue'
-import AppFooter from '@packages/shared/components/AppFooter/index.vue'
-import BackToTop from '@packages/shared/components/BackToTop/index.vue'
-import './detail-shared.css'
-import { getCharacterById } from '@/api/character.js'
+import CharacterDetailLayout from '@packages/shared/components/CharacterDetailLayout/index.vue'
+import NotFound from '@/pages/NotFound.vue'
+import { loadCharacter } from '@/api/character.js'
+
+const SITE_TITLE = 'YuanHuaWiki — 我喜欢的角色'
 
 export default {
   name: 'CharacterDetail',
-  components: { AppHeader, AppFooter, BackToTop },
+  components: { CharacterDetailLayout, NotFound },
   setup() {
     const route = useRoute()
-    const character = computed(() => getCharacterById(route.params.id))
-    return { character }
+    const character = ref(null)
+    const loaded = ref(false)
+
+    async function load(id) {
+      loaded.value = false
+      character.value = await loadCharacter(id)
+      loaded.value = true
+      document.title = character.value
+        ? character.value.name + ' | ' + character.value.series + ' — YuanHuaWiki'
+        : SITE_TITLE
+    }
+
+    watch(() => route.params.id, id => { if (id) load(id) }, { immediate: true })
+
+    return { character, loaded }
   }
 }
 </script>
+
+<style>
+.detail-loading {
+  min-height: 60vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 18px;
+  color: #94a3b8; font-size: 14px; letter-spacing: 0.04em;
+}
+.detail-loading .loading-spinner {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 3px solid #e2e8f0; border-top-color: #94a3b8;
+  animation: spinSlow 0.9s linear infinite;
+}
+</style>

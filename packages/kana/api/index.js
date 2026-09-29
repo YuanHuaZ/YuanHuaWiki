@@ -1,4 +1,24 @@
+/**
+ * kana 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import kanaImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'kana',
@@ -81,5 +101,84 @@ export default {
     { icon: '👩', name: '星野露比', type: 'B小町同伴', desc: '新生B小町的成员之一。加奈与露比一起作为偶像<span class="highlight">共同活动</span>。虽然两人性格迥异，但在舞台上<span class="highlight-pink">配合默契</span>，共同支撑着B小町。', cls: 'rel-friend' },
     { icon: '👩', name: 'MEM啾', type: 'B小町同伴', desc: 'B小町的另一位成员。加奈、露比和MEM啾<span class="highlight">三人组成了新生B小町</span>。虽然加奈对偶像工作最初充满抵触，但在同伴的影响下<span class="highlight-pink">逐渐找到了自己的价值</span>。', cls: 'rel-friend' },
     { icon: '👩', name: '加奈的母亲', type: '家人', desc: '曾是加奈演艺事业的<span class="highlight">最大推手</span>。但随着加奈逐渐过气，母女关系变得<span class="highlight-pink">微妙而紧张</span>。这段经历是加奈对演艺圈既爱又恨的根源。', cls: 'rel-family' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "🎭",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #fff5f5 0%, #fef2f8 25%, #fdf4ff 50%, #f5f3ff 75%, #fff 100%)",
+    "glow1": "#f9a8d4",
+    "glow2": "#e9d5ff",
+    "particleBg": "rgba(244,63,94,0.15)",
+    "gridImage": "linear-gradient(rgba(244,63,94,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(244,63,94,0.04) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(244,63,94,0.2), rgba(251,113,133,0.1))",
+    "badgeBorder": "1px solid rgba(244,63,94,0.4)",
+    "badgeColor": "#fb7185",
+    "badgeShadow": "0 0 20px rgba(244,63,94,0.2)",
+    "dotBg": "#f43f5e",
+    "nameGrad": "linear-gradient(135deg, #fff 0%, #fb7185 40%, #f43f5e 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#fb7185",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(244,63,94,0.2) 0%, rgba(251,113,133,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(244,63,94,0.4)",
+    "titleBadgeColor": "#fb7185",
+    "tagBg": "linear-gradient(135deg, rgba(244,63,94,0.12), rgba(251,113,133,0.06))",
+    "tagBorder": "1px solid rgba(244,63,94,0.25)",
+    "tagColor": "#fb7185",
+    "ringGrad": "linear-gradient(135deg, #f43f5e, #fb7185, #f43f5e) border-box",
+    "avatarShadow": "0 0 60px rgba(244,63,94,0.4), 0 0 120px rgba(244,63,94,0.15)",
+    "placeholderBg": "linear-gradient(180deg, #f1f5f9 0%, #fdf2f8 50%, #fef2f8 100%)",
+    "emojiShadow": "drop-shadow(0 0 30px rgba(244,63,94,0.3))",
+    "videoPlayBg": "rgba(236,72,153,0.85)",
+    "videoFallback": "linear-gradient(135deg, #0a1628, #1e3a5f)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "我推的孩子",
+      titleJp: "【推しの子】",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "动画工房" },
+      { icon: "📅", label: "播出：", value: "2023年4月" },
+      { icon: "📺", label: "集数：", value: "全11话" },
+      { icon: "🎤", label: "CV：", value: "潘惠美" }
+      ],
+      desc: "有马加奈作为<span class=\"highlight\">过气天才童星</span>登场，在星野阿库亚的邀请下加入新生B小町，<span class=\"highlight-pink\">重新找到了属于自己的舞台</span>。她在演艺圈挣扎求存的故事感动了无数观众。",
+      tags: [
+      { cls: "dark", text: "演艺圈" },
+      { cls: "dark", text: "偶像" },
+      { cls: "dark", text: "恋爱" }
+      ],
+      action: null,
+      notice: "暂无B站正版"
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '有马加奈 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '有马加奈 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '有马加奈 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '有马加奈 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '有马加奈 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '有马加奈 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '有马加奈 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '有马加奈 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1fs4y1z74E', title: '【中日歌词/', desc: '有马加奈 角色歌' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1QE2xYUEi3', title: '【4K60帧/', desc: 'B小町 MV' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1yF411d7tM', title: 'TVアニメ『【推しの子】』／B小町「STAR☆T☆RAIN」「サインはB」「HEART\'s♡KISS」New Arrange Ver. 試聴映像', desc: 'B小町 MV' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1ui4y1C7Jt', title: '【TOS2021/', desc: '有马加奈 MAD' }
+    ]
 }

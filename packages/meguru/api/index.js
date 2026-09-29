@@ -1,4 +1,21 @@
+/**
+ * meguru 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import meguruImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import gameCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import sp5 from '../images/sp5.jpg'
+import sp6 from '../images/sp6.jpg'
+import sp7 from '../images/sp7.jpg'
+import sp8 from '../images/sp8.jpg'
 
 export default {
   id: 'meguru',
@@ -83,5 +100,92 @@ export default {
     { icon: '✨', name: '绫地宁宁', type: '超自研的学姐', desc: '超自然研究会的同伴，巡最喜欢<span class="highlight">突然扑上去抱住</span>的学姐。宁宁虽然嘴上抱怨，却一直在<span class="highlight-pink">默默守护着巡的成长</span>。两人的互动是社团日常中最温馨的画面。', cls: 'rel-friend' },
     { icon: '👧', name: '木月千穗子（小千）', type: '挚友', desc: '巡<span class="highlight">最重要的童年好友</span>。小千为了拯救身患重症的巡，<span class="highlight-pink">与赤城缔结了魔女契约</span>。即使失去记忆，她仍在暗中收集心之碎片——这是巡路线中最催泪的核心真相。', cls: 'rel-friend' },
     { icon: '🔮', name: '赤城', type: '重要的关联者', desc: '与巡的好友小千有关的魔女契约者。<span class="highlight">幕后守护着巡的生命</span>，是整个故事中<span class="highlight-pink">连接魔女传说与现实的重要纽带</span>。', cls: 'rel-other' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "⭐",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #fff7ed 0%, #ffedd5 30%, #fed7aa 70%, #fff7ed 100%)",
+    "glow1": "#f97316",
+    "glow2": "#f59e0b",
+    "particleBg": "rgba(249,115,22,0.15)",
+    "gridImage": "linear-gradient(rgba(249,115,22,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.1) 1px, transparent 1px)",
+    "badgeBg": "rgba(249,115,22,0.12)",
+    "badgeBorder": "1px solid rgba(249,115,22,0.3)",
+    "badgeColor": "#c2410c",
+    "dotBg": "#f97316",
+    "nameColor": "#0f172a",
+    "nameSubColor": "#c2410c",
+    "titleBadgeBg": "rgba(249,115,22,0.1)",
+    "titleBadgeBorder": "1px solid rgba(249,115,22,0.3)",
+    "titleBadgeColor": "#c2410c",
+    "tagBg": "rgba(249,115,22,0.08)",
+    "tagBorder": "1px solid rgba(249,115,22,0.2)",
+    "tagColor": "#c2410c",
+    "ringGrad": "linear-gradient(135deg, #f97316, #fb923c, #f97316) border-box",
+    "avatarShadow": "0 0 40px rgba(249,115,22,0.2), 0 0 80px rgba(249,115,22,0.08)",
+    "videoPlayBg": "rgba(249,115,22,0.85)",
+    "reviewBg": "linear-gradient(135deg, #fff7ed 0%, #ffedd5 30%, #fed7aa 70%, #fff7ed 100%)",
+    "reviewDots": "radial-gradient(circle, #f97316 1px, transparent 1px)",
+    "reviewOverlay": "rgba(249,115,22,0.1)",
+    "reviewAvatarShadow": "0 0 0 4px rgba(249,115,22,0.15), 0 4px 20px rgba(249,115,22,0.2)",
+    "reviewLabelBg": "rgba(249,115,22,0.12)",
+    "reviewLabelColor": "#c2410c",
+    "reviewDescColor": "#9a6b3a",
+    "reviewBodyBorder": "1px solid rgba(249,115,22,0.06)",
+    "videoFallback": "linear-gradient(135deg, #2d1810, #4e2a1b)"
+  },
+  works: {
+    anime: [],
+    game: [
+    {
+      cover: gameCover,
+      label: "主要登场游戏",
+      title: "魔女的夜宴",
+      titleJp: "サノバウィッチ（Sabbat of the Witch）",
+      meta: [
+      { icon: "🏢", label: "开发商：", value: "YUZUSOFT（柚子社）" },
+      { icon: "📅", label: "发售：", value: "2015年2月27日" },
+      { icon: "🎮", label: "平台：", value: "PC / PS Vita" },
+      { icon: "🎤", label: "CV：", value: "遥空" }
+      ],
+      desc: "姬松学院中流传着<span class=\"highlight\">「魔女」的传说</span>。因幡巡来到超自然研究会寻求帮助，在这场<span class=\"highlight-pink\">青春与魔法交织的故事</span>中，用她自创的「Ciallo～」为玩家带来了一段难忘的恋爱体验。",
+      tags: [
+      { cls: "dark", text: "恋爱冒险" },
+      { cls: "dark", text: "视觉小说" },
+      { cls: "dark", text: "校园" }
+      ],
+      action:       { url: "https://store.steampowered.com/app/2458530/_/", cls: "btn-bilibili btn-steam", icon: "🎮", text: "在Steam购买" }
+    }
+    ],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '因幡巡 · 官方角色立绘' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 01', badge: '美图', overlay: '因幡巡 · 美图 01' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 02', badge: '美图', overlay: '因幡巡 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 03', badge: '美图', overlay: '因幡巡 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 04', badge: '美图', overlay: '因幡巡 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 05', badge: '美图', overlay: '因幡巡 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 06', badge: '美图', overlay: '因幡巡 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #fff7ed, #ffedd5)', icon: '🖼️', label: '美图 07', badge: '美图', overlay: '因幡巡 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1tryhYHEBt/', title: '你知道前辈有几种叫法吗？轮到美咕噜来给你洗脑了！', desc: '因幡巡 洗脑向剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1hF411J7qa/', title: '【2022Gal拜年祭单品/美咕噜手书】『𝕱𝖚𝖙𝖆𝖗𝖎 𝖓𝖔 𝖒𝖆𝖍ō』Ciallo～(∠・ω< )⌒★', desc: '因幡巡 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1X8HKzkEu5/', title: '美咕噜辱骂合集，有点爽怎么回事…（话说保科被骂了多少遍！！）', desc: '因幡巡 合集' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1kfJXzHEhi/', title: '美咕噜太可爱了~Ciallo～(∠・ω< )⌒☆', desc: '因幡巡 剪辑' },
+      { cover: sp5, url: 'https://www.bilibili.com/video/BV196421G7xF/', title: 'Ciallo～(∠・ω< )⌒☆', desc: '因幡巡 剪辑' },
+      { cover: sp6, url: 'https://www.bilibili.com/video/BV1cNVU63Env/', title: '她的一句Ciallo火遍全网，这句话为什么能火10年？', desc: '因幡巡 杂谈' },
+      { cover: sp7, url: 'https://www.bilibili.com/video/BV1psjbz2E9o/', title: '美咕噜向你诉说爱意【柚子社音声/中文翻译】魔女的夜宴预约特典CD②因幡巡', desc: '因幡巡 音声' },
+      { cover: sp8, url: 'https://www.bilibili.com/video/BV1Pu411473C/', title: '【因幡巡】"能不能不要切歌，继续唱我们的歌"', desc: '因幡巡 剪辑' }
+    ]
 }

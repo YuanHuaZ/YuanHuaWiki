@@ -1,4 +1,24 @@
+/**
+ * tomori 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import tomoriImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'tomori',
@@ -79,5 +99,84 @@ export default {
     { icon: '👦', name: '乙坂有宇', type: '恋人/搭档', desc: 'Charlotte的男主角。最初奈绪将他视为需要保护的特殊能力者，但在共同经历中<span class="highlight">逐渐产生了深厚的感情</span>。两人一起踏上了改变命运的旅程，有宇最终成为了奈绪<span class="highlight-pink">最重要的人</span>。', cls: 'rel-romance' },
     { icon: '👤', name: '奈绪的哥哥', type: '家人', desc: '同样是特殊能力者。因为哥哥的遭遇，奈绪对<span class="highlight">特殊能力者群体有着深厚的感情</span>，这也是她投身于保护工作的<span class="highlight-pink">重要原因</span>。', cls: 'rel-family' },
     { icon: '🏫', name: '星之海学园学生会', type: '同伴', desc: '奈绪作为学生会会长，带领成员们<span class="highlight">调查和保护特殊能力者</span>。学生会是她最信赖的后盾，也是她<span class="highlight-pink">归属感的重要来源</span>。', cls: 'rel-friend' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "🏫",
+  avatarSize: "cover",
+  avatarBg: "#fff",
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0a0a1a 0%, #0a1628 25%, #1a0d2e 50%, #0f1028 75%, #0a0a1a 100%)",
+    "glow1": "#60a5fa",
+    "glow2": "#f472b6",
+    "particleBg": "rgba(96,165,250,0.3)",
+    "gridImage": "linear-gradient(rgba(96,165,250,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(96,165,250,0.05) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(96,165,250,0.2), rgba(96,165,250,0.1))",
+    "badgeBorder": "1px solid rgba(96,165,250,0.4)",
+    "badgeColor": "#93c5fd",
+    "badgeShadow": "0 0 16px rgba(96,165,250,0.2)",
+    "dotBg": "#60a5fa",
+    "nameGrad": "linear-gradient(135deg, #bfdbfe 0%, #93c5fd 40%, #f472b6 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#bfdbfe",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(96,165,250,0.2), rgba(244,114,182,0.12))",
+    "titleBadgeBorder": "1px solid rgba(96,165,250,0.4)",
+    "titleBadgeColor": "#bfdbfe",
+    "tagBg": "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(96,165,250,0.06))",
+    "tagBorder": "1px solid rgba(96,165,250,0.25)",
+    "tagColor": "#60a5fa",
+    "ringGrad": "linear-gradient(135deg, #60a5fa, #f472b6, #bfdbfe, #60a5fa) border-box",
+    "avatarShadow": "0 0 60px rgba(96,165,250,0.4), 0 0 120px rgba(96,165,250,0.15)",
+    "placeholderBg": "linear-gradient(180deg, #1e3a5f 0%, #1a0d2e 50%, #0a0a1a 100%)",
+    "emojiShadow": "drop-shadow(0 0 30px rgba(96,165,250,0.5))",
+    "videoPlayBg": "rgba(96,165,250,0.85)",
+    "videoFallback": "linear-gradient(135deg, #0a1628, #1e3a5f)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "Charlotte | シャーロット",
+      titleJp: "Charlotte",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "P.A.WORKS" },
+      { icon: "📅", label: "播出：", value: "2015年7月" },
+      { icon: "📺", label: "集数：", value: "全13话" },
+      { icon: "🎤", label: "CV：", value: "佐仓绫音" }
+      ],
+      desc: "在少数青春期少年少女中会引发<span class=\"highlight\">特殊能力现象</span>。友利奈绪作为星之海学园学生会会长，一直<span class=\"highlight-pink\">默默守护着这些特殊能力者</span>，并与乙坂有宇一起踏上了改变命运的旅程。",
+      tags: [
+      { cls: "dark", text: "校园" },
+      { cls: "dark", text: "超能力" },
+      { cls: "dark", text: "青春" },
+      { cls: "live", text: "正版引进" }
+      ],
+      action:       { url: "https://www.bilibili.com/bangumi/play/ep63840?spm_id_from=333.337.0.0", cls: "btn-tomori", icon: "📺", text: "在Bilibili观看" }
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '友利奈绪 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '友利奈绪 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '友利奈绪 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '友利奈绪 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '友利奈绪 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '友利奈绪 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '友利奈绪 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '友利奈绪 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1TR4y1j7zB/', title: '【𝟖𝐊】Charlotte NCOP 全站最高画质 夏洛特OP无字幕 Bravely You', desc: '夏洛特OP无字幕' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Tu411Q74X/', title: '【𝟖𝐊𝟔𝟎𝐅𝐏𝐒】"我是你的恋人" Charlotte NCED03 全站最高画质 夏洛特第13话ED无字幕 君の文字', desc: '夏洛特第13话ED无字幕' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1Xt41157Ge/', title: '【前方高萌/治愈/夏洛特】友利奈绪——多少人心中的理想型女友', desc: '友利奈绪治愈向剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1P34y1S78D/', title: '【Charlotte/夏洛特】友利奈绪，新婚快乐！', desc: '友利奈绪剪辑' }
+    ]
 }

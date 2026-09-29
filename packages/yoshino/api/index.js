@@ -1,4 +1,19 @@
+/**
+ * yoshino 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import yoshinoImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import animeCover from '../images/a.jpg'
+import gameCover from '../images/b.jpg'
+import gameCover2 from '../images/b2.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'yoshino',
@@ -80,5 +95,120 @@ export default {
     { icon: '🐰', name: '四糸奈', type: '不可替代的搭档', desc: '由灵力链接而生的<span class="highlight">独立人格</span>，四糸乃最好的朋友与精神依靠。<span class="highlight-pink">代替内向的四糸乃与他人对话</span>。失去四糸奈时四糸乃会陷入极度恐慌并可能暴走——因为那是她<span class="highlight">唯一能表达自我的窗口</span>。', cls: 'rel-friend' },
     { icon: '👧', name: '五河琴里', type: '司令/妹妹', desc: '拉塔托斯克的司令官，士道的妹妹。琴里在攻略四糸乃时<span class="highlight">提供了关键的支援</span>，虽然方式有时过于<span class="highlight-pink">激进直接</span>，但四糸乃对此心怀感激。', cls: 'rel-friend' },
     { icon: '🌸', name: '夜刀神十香', type: '同为精灵的伙伴', desc: '与四糸乃同期被封印的<span class="highlight">精灵同伴</span>。十香的直率开朗与四糸乃的腼腆形成<span class="highlight-pink">鲜明对比</span>，但两人在一起时意外地和谐——十香会保护四糸乃，四糸乃则以温柔回馈。', cls: 'rel-friend' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "⭐",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0a1020 0%, #0a1a3a 25%, #102040 50%, #0a1a3a 75%, #0a1020 100%)",
+    "glow1": "#3b82f6",
+    "glow2": "#06b6d4",
+    "particleBg": "rgba(59,130,246,0.3)",
+    "gridImage": "linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(59,130,246,0.2), rgba(96,165,250,0.1))",
+    "badgeBorder": "1px solid rgba(59,130,246,0.4)",
+    "badgeColor": "#60a5fa",
+    "badgeShadow": "0 0 20px rgba(59,130,246,0.2)",
+    "dotBg": "#3b82f6",
+    "nameGrad": "linear-gradient(135deg, #fff 0%, #60a5fa 40%, #3b82f6 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#60a5fa",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(96,165,250,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(59,130,246,0.4)",
+    "titleBadgeColor": "#60a5fa",
+    "tagBg": "linear-gradient(135deg, rgba(59,130,246,0.12), rgba(96,165,250,0.06))",
+    "tagBorder": "1px solid rgba(59,130,246,0.25)",
+    "tagColor": "#60a5fa",
+    "ringGrad": "linear-gradient(135deg, #3b82f6, #60a5fa, #3b82f6) border-box",
+    "avatarShadow": "0 0 60px rgba(59,130,246,0.4), 0 0 120px rgba(59,130,246,0.15)",
+    "videoPlayBg": "rgba(59,130,246,0.85)",
+    "videoFallback": "linear-gradient(135deg, #0f172a, #1e3a5f)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "约会大作战",
+      titleJp: "デート・ア・ライブ",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "AIC PLUS+（第1季）/ J.C.STAFF（第3季）" },
+      { icon: "📅", label: "播出：", value: "2013年~2022年（共4季）" },
+      { icon: "📺", label: "集数：", value: "全四季48话 + 剧场版" },
+      { icon: "🎤", label: "CV：", value: "野水伊織" }
+      ],
+      desc: "四月十日的春假期间，五河士道在雨中邂逅了灵力失控中的第二精灵——<span class=\"highlight\">「隐居者」四糸乃</span>。为了拯救她免于被AST消灭的命运，士道必须通过<span class=\"highlight-pink\">约会和接吻</span>来封印她的灵力。",
+      tags: [
+      { cls: "dark", text: "恋爱" },
+      { cls: "dark", text: "奇幻" },
+      { cls: "dark", text: "战斗" },
+      { cls: "live", text: "正版引进" }
+      ],
+      action:       { url: "https://www.bilibili.com/bangumi/play/ep102835?spm_id_from=333.337.0.0", cls: "btn-bilibili", icon: "📺", text: "在Bilibili观看" }
+    }
+    ],
+    game: [
+    {
+      cover: gameCover2,
+      label: "相关游戏 1",
+      title: "约会大作战：莲反乌托邦",
+      titleJp: "デート・ア・ライブ 蓮ディストピア",
+      meta: [
+      { icon: "🏢", label: "开发商：", value: "Compile Heart / Sting" },
+      { icon: "📅", label: "发售：", value: "2024年" },
+      { icon: "🎮", label: "平台：", value: "PS4 / Nintendo Switch / PC" },
+      { icon: "🎤", label: "CV：", value: "野水伊織" }
+      ],
+      desc: "系列最新作，讲述了一个<span class=\"highlight\">以莲为核心的全新故事</span>。<span class=\"highlight-pink\">四糸乃在本作中继续登场</span>，与士道和其他精灵们共同面对新的危机。",
+      tags: [
+      { cls: "dark", text: "视觉小说" },
+      { cls: "dark", text: "恋爱冒险" }
+      ],
+      action:       { url: "https://store.steampowered.com/app/2627780/DATE_A_LIVE_Ren_Dystopia/", cls: "btn-bilibili btn-steam", icon: "🎮", text: "在Steam购买" }
+    },
+    {
+      cover: gameCover,
+      label: "相关游戏 2",
+      title: "约会大作战：凛绪轮回",
+      titleJp: "デート・ア・ライブ 凜緒リンカーネイション",
+      meta: [
+      { icon: "🏢", label: "开发商：", value: "Compile Heart / Sting" },
+      { icon: "📅", label: "发售：", value: "2019年" },
+      { icon: "🎮", label: "平台：", value: "PS4 / PC" },
+      { icon: "🎤", label: "CV：", value: "野水伊織" }
+      ],
+      desc: "系列三部曲的整合与重制版，包含了<span class=\"highlight\">凛祢乌托邦、或守Install、凛绪轮回</span>全部内容。<span class=\"highlight-pink\">四糸乃在所有篇章中均有登场</span>。",
+      tags: [
+      { cls: "dark", text: "视觉小说" },
+      { cls: "dark", text: "恋爱冒险" }
+      ],
+      action:       { url: "https://store.steampowered.com/app/1047440/DATE_A_LIVE_Rio_Reincarnation/", cls: "btn-bilibili btn-steam", icon: "🎮", text: "在Steam购买" }
+    }
+    ],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '四糸乃 · 官方角色立绘' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 01', badge: '美图', overlay: '四糸乃 · 美图 01' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 02', badge: '美图', overlay: '四糸乃 · 美图 02' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 03', badge: '美图', overlay: '四糸乃 · 美图 03' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 04', badge: '美图', overlay: '四糸乃 · 美图 04' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 05', badge: '美图', overlay: '四糸乃 · 美图 05' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 06', badge: '美图', overlay: '四糸乃 · 美图 06' },
+      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 07', badge: '美图', overlay: '四糸乃 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1gb411g73U/', title: '【约会大作战】四糸乃的60个超卡哇伊瞬间，awsl！', desc: '四糸乃 剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV18x41167TY/', title: '【约会大作战】四糸乃角色歌', desc: '四糸乃 角色歌' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1ht411c7RY/', title: '前方高能！！盘点约会大作战中四糸乃那些高能，高萌场面！', desc: '四糸乃 剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1M4411Q7dP/', title: '现在是四糸乃洗脑时间!', desc: '四糸乃 洗脑向剪辑' }
+    ]
 }

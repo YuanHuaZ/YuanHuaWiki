@@ -1,4 +1,25 @@
+/**
+ * nanami 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import nanamiImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import animeCover from '../images/a.jpg'
+import gameCover from '../images/b.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
 
 export default {
   id: 'nanami',
@@ -78,5 +99,112 @@ export default {
     { icon: '👦', name: '日向创', type: '亲密伙伴', desc: '在新世界程序的虚拟空间中，七海是日向<span class="highlight">最早结识的同学之一</span>。她逐渐成为了日向<span class="highlight-pink">最亲密的伙伴</span>，两人之间的羁绊是弹丸论破2最感人的情感线之一。', cls: 'rel-romance' },
     { icon: '🏫', name: '77期同学们', type: '同伴', desc: '作为希望之峰学园77期的学生，七海是班级的<span class="highlight">精神支柱</span>。她总是用游戏的比喻来解释困境，<span class="highlight-pink">坚持相信大家</span>，努力维护班级团结。', cls: 'rel-friend' },
     { icon: '🐻', name: '黑白熊', type: '对立', desc: '残酷杀戮游戏的主谋。七海深知黑白熊的<span class="highlight">真正目的</span>，她始终拒绝屈服于绝望，<span class="highlight-pink">努力寻找破局的方法</span>。', cls: 'rel-other' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "⭐",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 25%, #1a1030 50%, #0d1a2e 75%, #0a0a1a 100%)",
+    "glow1": "#a855f7",
+    "glow2": "#ec4899",
+    "particleBg": "rgba(168,85,247,0.3)",
+    "gridImage": "linear-gradient(rgba(168,85,247,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.06) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(168,85,247,0.2), rgba(192,132,252,0.1))",
+    "badgeBorder": "1px solid rgba(168,85,247,0.4)",
+    "badgeColor": "#c084fc",
+    "badgeShadow": "0 0 20px rgba(168,85,247,0.2)",
+    "dotBg": "#a855f7",
+    "nameGrad": "linear-gradient(135deg, #fff 0%, #c084fc 40%, #a855f7 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#c084fc",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(192,132,252,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(168,85,247,0.4)",
+    "titleBadgeColor": "#c084fc",
+    "tagBg": "linear-gradient(135deg, rgba(168,85,247,0.12), rgba(192,132,252,0.06))",
+    "tagBorder": "1px solid rgba(168,85,247,0.25)",
+    "tagColor": "#c084fc",
+    "ringGrad": "linear-gradient(135deg, #a855f7, #c084fc, #a855f7) border-box",
+    "avatarShadow": "0 0 60px rgba(168,85,247,0.4), 0 0 120px rgba(168,85,247,0.15)",
+    "videoPlayBg": "rgba(168,85,247,0.85)",
+    "reviewBg": "linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 25%, #1a1030 50%, #0a0a1a 100%)",
+    "reviewDots": "radial-gradient(circle, #a855f7 1px, transparent 1px)",
+    "reviewOverlay": "rgba(168,85,247,0.15)",
+    "reviewAvatarShadow": "0 0 0 4px rgba(168,85,247,0.3), 0 4px 20px rgba(168,85,247,0.3)",
+    "reviewLabelBg": "rgba(168,85,247,0.25)",
+    "reviewLabelColor": "#c084fc",
+    "reviewDescColor": "#c084fc",
+    "reviewBodyBorder": "1px solid rgba(168,85,247,0.06)",
+    "videoFallback": "linear-gradient(135deg, #1a0a2e, #2d1b4e)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "弹丸论破3 -The End of 希望之峰学园- 绝望篇",
+      titleJp: "ダンガンロンパ3 -The End of 希望ヶ峰学園- 絶望編",
+      meta: [
+      { icon: "🏢", label: "制作：", value: "Lerche" },
+      { icon: "📅", label: "播出：", value: "2016年7月" },
+      { icon: "📺", label: "集数：", value: "全11话" },
+      { icon: "🎤", label: "CV：", value: "花泽香菜" }
+      ],
+      desc: "希望之峰学园第77届学生们的过往故事。七海千秋作为<span class=\"highlight\">「超高校级的游戏玩家」</span>，在班级中经历了<span class=\"highlight-pink\">从希望到绝望的转变</span>。",
+      tags: [
+      { cls: "dark", text: "悬疑" },
+      { cls: "dark", text: "推理" },
+      { cls: "dark", text: "校园" },
+      { cls: "live", text: "正版引进" }
+      ],
+      action:       { url: "https://www.bilibili.com/bangumi/play/ep90847?spm_id_from=333.337.0.0", cls: "btn-bilibili", icon: "📺", text: "在Bilibili观看" }
+    }
+    ],
+    game: [
+    {
+      cover: gameCover,
+      label: "主要登场游戏",
+      title: "超级弹丸论破2：再见绝望学园",
+      titleJp: "スーパーダンガンロンパ2 さよなら絶望学園",
+      meta: [
+      { icon: "🏢", label: "开发商：", value: "Spike Chunsoft" },
+      { icon: "📅", label: "发售：", value: "2012年7月26日" },
+      { icon: "🎮", label: "平台：", value: "PSP / PS Vita / PC" },
+      { icon: "🎤", label: "CV：", value: "花泽香菜" }
+      ],
+      desc: "被带到贾巴沃克岛的<span class=\"highlight\">77届学生们</span>被迫参与黑白熊的<span class=\"highlight-pink\">「修学旅行」</span>。七海千秋是日向创最早结识的同学之一，用<span class=\"highlight\">游戏的比喻</span>鼓励着陷入困境的同伴。",
+      tags: [
+      { cls: "dark", text: "推理" },
+      { cls: "dark", text: "冒险" },
+      { cls: "dark", text: "视觉小说" }
+      ],
+      action:       { url: "https://store.steampowered.com/app/413420/Danganronpa_2_Goodbye_Despair/", cls: "btn-bilibili btn-steam", icon: "🎮", text: "在Steam购买" }
+    }
+    ],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '七海千秋 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '七海千秋 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '七海千秋 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '七海千秋 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '七海千秋 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '七海千秋 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '七海千秋 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '七海千秋 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1yt4y1s7yN', title: 'ヒステリックナイトガール【弹丸论破2】手书【live2d动画】', desc: '七海千秋 手书' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1Br4y1Z7ge', title: '⚠️OTOMEROID/', desc: '七海千秋 手书' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1iS4y1u78t', title: '【弹丸论破2手书】BABY【七海千秋中心】', desc: '七海千秋 手书' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1WjQAYnEgT', title: '【弹丸论破2手书】ずっとずっとずっと【2025七海千秋生贺】', desc: '七海千秋 手书' }
+    ]
 }

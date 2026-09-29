@@ -194,3 +194,40 @@ export function getCharacterList() {
 export function getCharacterById(id) {
   return characters.find(c => c.id === id) || null
 }
+
+/**
+ * 角色详情数据懒加载表
+ * 每个角色的完整数据（资料 / 作品 / 画廊 / 视频 / 主题色）位于 packages/<id>/api/index.js
+ * 新增角色时：创建 packages/<id>/ 数据包，并在下方登记一行
+ */
+const loaders = {
+  meguru: () => import('@packages/meguru/api/index.js'),
+  phrolova: () => import('@packages/phrolova/api/index.js'),
+  nanami: () => import('@packages/nanami/api/index.js'),
+  soyo: () => import('@packages/soyo/api/index.js'),
+  sagiri: () => import('@packages/sagiri/api/index.js'),
+  rem: () => import('@packages/rem/api/index.js'),
+  kana: () => import('@packages/kana/api/index.js'),
+  hutao: () => import('@packages/hutao/api/index.js'),
+  elaina: () => import('@packages/elaina/api/index.js'),
+  tomori: () => import('@packages/tomori/api/index.js'),
+  komari: () => import('@packages/komari/api/index.js'),
+  yoshino: () => import('@packages/yoshino/api/index.js')
+}
+
+export function hasCharacterData(id) {
+  return Object.prototype.hasOwnProperty.call(loaders, id)
+}
+
+/** 加载某个角色的完整详情数据；不存在或失败时返回 null */
+export async function loadCharacter(id) {
+  const loader = loaders[id]
+  if (!loader) return null
+  try {
+    const mod = await loader()
+    return mod.default || mod
+  } catch (err) {
+    console.error(`[YuanHuaWiki] 加载角色数据失败: ${id}`, err)
+    return null
+  }
+}

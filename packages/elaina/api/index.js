@@ -1,4 +1,24 @@
+/**
+ * elaina 角色数据包 — 由 CharacterDetailLayout 布局组件消费
+ * theme: 主题色（映射为 CSS 变量 --acc-*）
+ * works: 相关作品卡片（anime/game）
+ * gallery / videos: 画廊与视频数据
+ */
+
 import elainaImg from '../images/1.jpg'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import sp1 from '../images/sp1.jpg'
+import sp2 from '../images/sp2.jpg'
+import sp3 from '../images/sp3.jpg'
+import sp4 from '../images/sp4.jpg'
+import animeCover from '../images/a.jpg'
 
 export default {
   id: 'elaina',
@@ -80,5 +100,84 @@ export default {
     { icon: '👩‍🏫', name: '芙兰', type: '师父', desc: '"星尘魔女"芙兰，伊蕾娜的<span class="highlight">授业恩师</span>。不仅教会了她强大的魔法，更教导了她作为魔女应有的<span class="highlight-pink">处世之道</span>。芙兰亲手授予了她魔女之证和旅行用的宽檐帽。', cls: 'rel-family' },
     { icon: '📖', name: '妮可', type: '憧憬对象', desc: '《妮可冒险谭》的作者。年幼的伊蕾娜偶然得到这本书，从此<span class="highlight">对旅行充满了向往</span>。妮可的冒险故事是伊蕾娜踏上旅途的<span class="highlight-pink">最初动力</span>。', cls: 'rel-other' },
     { icon: '🏠', name: '父母', type: '家人', desc: '伊蕾娜的父母支持她踏上旅途，虽然<span class="highlight">心中不舍但依然放手</span>。临别时的祝福成为了伊蕾娜旅途中<span class="highlight-pink">最温暖的回忆之一</span>。', cls: 'rel-family' }
-  ]
+  ],
+  // ===== 布局数据（自 views/Detail.vue 迁移）=====
+  placeholderEmoji: "🧙‍♀️",
+  avatarSize: "cover",
+  avatarBg: null,
+  mainTabs: [
+      { key: 'profile', icon: '📋', label: '角色资料' },
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
+    ],
+  theme: {
+    "heroBg": "linear-gradient(135deg, #0a0a1a 0%, #1a1030 25%, #1e1535 50%, #15101e 75%, #0a0a1a 100%)",
+    "glow1": "#a855f7",
+    "glow2": "#c084fc",
+    "particleBg": "rgba(140,148,158,0.3)",
+    "gridImage": "linear-gradient(rgba(140,148,158,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(140,148,158,0.05) 1px, transparent 1px)",
+    "badgeBg": "linear-gradient(135deg, rgba(168,85,247,0.2), rgba(192,132,252,0.1))",
+    "badgeBorder": "1px solid rgba(168,85,247,0.4)",
+    "badgeColor": "#e9d5ff",
+    "badgeShadow": "0 2px 12px rgba(168,85,247,0.15)",
+    "dotBg": "#a855f7",
+    "nameGrad": "linear-gradient(135deg, #f3e8ff 0%, #c084fc 35%, #a855f7 65%, #e9d5ff 100%)",
+    "nameColor": "transparent",
+    "nameSubColor": "#a78bfa",
+    "titleBadgeBg": "linear-gradient(135deg, rgba(168,85,247,0.2) 0%, rgba(192,132,252,0.12) 100%)",
+    "titleBadgeBorder": "1px solid rgba(168,85,247,0.4)",
+    "titleBadgeColor": "#e9d5ff",
+    "tagBg": "linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.06))",
+    "tagBorder": "1px solid rgba(168,85,247,0.25)",
+    "tagColor": "#d8b4fe",
+    "ringGrad": "linear-gradient(135deg, #a855f7, #c084fc, #e9d5ff, #a855f7) border-box",
+    "avatarShadow": "0 0 60px rgba(168,85,247,0.4), 0 0 120px rgba(168,85,247,0.15)",
+    "placeholderBg": "linear-gradient(180deg, #2e2e34 0%, #222226 50%, #0a0a1a 100%)",
+    "emojiShadow": "drop-shadow(0 0 30px rgba(140,148,158,0.5))",
+    "videoPlayBg": "rgba(140,148,158,0.85)",
+    "videoFallback": "linear-gradient(135deg, #1a1a1e, #2e2e34)"
+  },
+  works: {
+    anime: [
+    {
+      cover: animeCover,
+      label: "主要登场作品",
+      title: "魔女之旅 | Wandering Witch",
+      titleJp: "魔女の旅々",
+      meta: [
+      { icon: "🏢", label: "原作：", value: "白石定规" },
+      { icon: "📅", label: "播出：", value: "2020年10月" },
+      { icon: "📺", label: "集数：", value: "全12话" },
+      { icon: "🎤", label: "CV：", value: "本渡枫" }
+      ],
+      desc: "少女伊蕾娜从小就憧憬着《妮可冒险谭》中的旅行。成为<span class=\"highlight\">最高位\"灰之魔女\"</span>后，她终于踏上了<span class=\"highlight-pink\">属于自己的旅途</span>，在广阔的世界中遇见了形形色色的人和故事。",
+      tags: [
+      { cls: "dark", text: "奇幻" },
+      { cls: "dark", text: "冒险" },
+      { cls: "dark", text: "治愈" },
+      { cls: "live", text: "正版引进" }
+      ],
+      action:       { url: "https://www.bilibili.com/bangumi/play/ep341208?spm_id_from=333.337.0.0", cls: "btn-elaina", icon: "📺", text: "在Bilibili观看" }
+    }
+    ],
+    game: [],
+  },
+  gallery: [
+      { isImage: true, bg: img1, badge: '立绘', overlay: '伊蕾娜 · 官方角色立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '伊蕾娜 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '伊蕾娜 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '伊蕾娜 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '伊蕾娜 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '伊蕾娜 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '伊蕾娜 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '伊蕾娜 · 美图 07' }
+    ],
+  videos: [
+      { cover: sp1, url: 'https://www.bilibili.com/video/BV1o14y1B7jy', title: '【伊蕾娜の小曲/', desc: '伊蕾娜 可爱向剪辑' },
+      { cover: sp2, url: 'https://www.bilibili.com/video/BV1m54y1z79W', title: '♣𝘾𝙖𝙪𝙨𝙚 𝙄\'𝙢 𝙣𝙤𝙩 𝙟𝙪𝙨𝙩 𝙖 𝙥𝙧𝙚𝙩𝙩𝙮 𝙜𝙞𝙧𝙡♣', desc: '伊蕾娜 颜值向剪辑' },
+      { cover: sp3, url: 'https://www.bilibili.com/video/BV1qf4y1t7L7', title: 'Super爱豆的笑容都没你的甜>>热爱105℃的伊蕾娜', desc: '伊蕾娜 可爱向剪辑' },
+      { cover: sp4, url: 'https://www.bilibili.com/video/BV1nz4y127TS', title: '【可爱洗脑】AWSL！！！伊蕾娜真是太可爱了啦~~', desc: '伊蕾娜 洗脑向剪辑' }
+    ]
 }
