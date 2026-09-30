@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import kanaImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,20 +21,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'kana',
-  name: '有马加奈',
-  nameSub: 'Arima Kana',
+  ...meta,
   nameJp: '有马加奈',
   title: '天才童星',
-  series: '我推的孩子',
-  image: kanaImg,
-  tags: [
-    { text: '傲娇', cls: 'tag-pink' },
-    { text: '天才', cls: 'tag-orange' },
-    { text: '童星', cls: 'tag-amber' },
-    { text: '努力家', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-cyan' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '7月4日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '150cm', iconClass: 'pink' },

@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import yoshinoImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import animeCover from '../images/a.jpg'
 import gameCover from '../images/b.jpg'
@@ -16,19 +16,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'yoshino',
-  name: '氷芽川四糸乃',
-  nameSub: 'Himekawa Yoshino',
+  ...meta,
   nameJp: '氷芽川四糸乃',
   title: '隐居者（Hermit）',
-  series: '约会大作战',
-  image: yoshinoImg,
-  tags: [
-    { text: '精灵', cls: 'tag-blue' },
-    { text: '冰与水', cls: 'tag-cyan' },
-    { text: '胆小', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-pink' }
-  ],
   info: [
     { icon: '🎤', label: '声优', value: '野水伊織', iconClass: 'blue' },
     { icon: '🎂', label: '生日', value: '3月20日', iconClass: 'pink' },

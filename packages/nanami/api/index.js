@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import nanamiImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -22,19 +22,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'nanami',
-  name: '七海千秋',
-  nameSub: 'Nanami Chiaki',
+  ...meta,
   nameJp: '七海千秋',
   title: '超高校级的游戏玩家',
-  series: '超级弹丸论破2',
-  image: nanamiImg,
-  tags: [
-    { text: '天然呆', cls: 'tag-purple' },
-    { text: '温柔', cls: 'tag-pink' },
-    { text: '游戏宅', cls: 'tag-cyan' },
-    { text: '主角', cls: 'tag-orange' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '3月14日', iconClass: 'purple' },
     { icon: '🩸', label: '血型', value: 'O型', iconClass: 'pink' },

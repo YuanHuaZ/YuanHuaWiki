@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import tomoriImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,19 +21,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'tomori',
-  name: '友利奈绪',
-  nameSub: 'Tomori Nao',
+  ...meta,
   nameJp: '友利奈绪',
   title: '星之海学园学生会会长',
-  series: 'Charlotte | シャーロット',
-  image: tomoriImg,
-  tags: [
-    { text: '超能力者', cls: 'tag-purple' },
-    { text: '学生会会长', cls: 'tag-blue' },
-    { text: '傲娇', cls: 'tag-pink' },
-    { text: '女主角', cls: 'tag-green' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '7月7日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '155cm', iconClass: 'pink' },

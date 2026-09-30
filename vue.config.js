@@ -20,8 +20,7 @@ module.exports = defineConfig({
     resolve: {
       alias: {
         '@': require('path').resolve(__dirname, 'src'),
-        '@packages': require('path').resolve(__dirname, 'packages'),
-        '@assets': require('path').resolve(__dirname, 'assets')
+        '@packages': require('path').resolve(__dirname, 'packages')
       }
     }
   }

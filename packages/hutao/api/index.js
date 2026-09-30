@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import hutaoImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,20 +21,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'hutao',
-  name: '胡桃',
-  nameSub: 'Hu Tao',
+  ...meta,
   nameJp: '胡桃',
   title: '往生堂第七十七代堂主',
-  series: '原神',
-  image: hutaoImg,
-  tags: [
-    { text: '火元素', cls: 'tag-red' },
-    { text: '长柄武器', cls: 'tag-purple' },
-    { text: '往生堂堂主', cls: 'tag-dark' },
-    { text: '璃月', cls: 'tag-orange' },
-    { text: '五星角色', cls: 'tag-gold' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '7月15日', iconClass: 'red' },
     { icon: '📏', label: '身高', value: '157cm', iconClass: 'pink' },

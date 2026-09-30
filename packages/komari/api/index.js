@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import komariImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,20 +21,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'komari',
-  name: '小鞠知花',
-  nameSub: 'Komari Chika',
+  ...meta,
   nameJp: '小鞠知花',
   title: '败犬女主',
-  series: '败犬女主太多了',
-  image: komariImg,
-  tags: [
-    { text: '社恐', cls: 'tag-purple' },
-    { text: '文艺部', cls: 'tag-blue' },
-    { text: '努力家', cls: 'tag-amber' },
-    { text: '败犬女主', cls: 'tag-cyan' },
-    { text: '女主角', cls: 'tag-green' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '12月3日', iconClass: 'pink' },
     { icon: '📏', label: '身高', value: '148cm', iconClass: 'purple' },

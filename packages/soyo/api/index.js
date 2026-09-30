@@ -5,6 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
+import meta from '../meta.js'
 import soyoImg from '../images/1.jpg'
 import animeCover from '../images/a.jpg'
 import gameCover from '../images/b.jpg'
@@ -18,19 +19,9 @@ import sp7 from '../images/sp7.jpg'
 import sp8 from '../images/sp8.jpg'
 
 export default {
-  id: 'soyo',
-  name: '長崎素世',
-  nameSub: 'Nagasaki Soyo',
+  ...meta,
   nameJp: '長崎素世',
   title: 'MyGO!!!!!贝斯手',
-  series: 'BanG Dream! It\'s MyGO!!!!!',
-  image: soyoImg,
-  tags: [
-    { text: '温柔', cls: 'tag-green' },
-    { text: '贝斯手', cls: 'tag-cyan' },
-    { text: '表面天使', cls: 'tag-pink' },
-    { text: '内心沉重', cls: 'tag-purple' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '5月27日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '162cm', iconClass: 'pink' },

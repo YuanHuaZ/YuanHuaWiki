@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import meguruImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import gameCover from '../images/a.jpg'
 import sp1 from '../images/sp1.jpg'
@@ -18,19 +18,9 @@ import sp7 from '../images/sp7.jpg'
 import sp8 from '../images/sp8.jpg'
 
 export default {
-  id: 'meguru',
-  name: '因幡巡',
-  nameSub: 'Inaba Meguru',
+  ...meta,
   nameJp: '因幡巡',
   title: 'Ciallo～的元气宅女',
-  series: '魔女的夜宴',
-  image: meguruImg,
-  tags: [
-    { text: 'Ciallo～', cls: 'tag-orange' },
-    { text: '游戏宅', cls: 'tag-purple' },
-    { text: '小恶魔', cls: 'tag-pink' },
-    { text: '治愈', cls: 'tag-cyan' }
-  ],
   info: [
     { icon: '🎤', label: '声优', value: '遥空', iconClass: 'orange' },
     { icon: '🏫', label: '学校', value: '姬松学院', iconClass: 'pink' },

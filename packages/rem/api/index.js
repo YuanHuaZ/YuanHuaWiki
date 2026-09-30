@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import remImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,20 +21,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'rem',
-  name: '雷姆',
-  nameSub: 'Rem',
+  ...meta,
   nameJp: '雷姆',
   title: '罗兹瓦尔宅邸女仆',
-  series: 'Re:从零开始的异世界生活',
-  image: remImg,
-  tags: [
-    { text: '鬼族', cls: 'tag-blue' },
-    { text: '女仆', cls: 'tag-pink' },
-    { text: '温柔', cls: 'tag-green' },
-    { text: '毒舌', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-orange' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '2月2日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '154cm', iconClass: 'pink' },

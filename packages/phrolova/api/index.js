@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import phrolovaImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -35,20 +35,9 @@ import sp9 from '../images/sp9.jpg'
 import sp10 from '../images/sp10.jpg'
 
 export default {
-  id: 'phrolova',
-  name: '弗洛洛',
-  nameSub: 'Phrolova',
+  ...meta,
   nameJp: '弗洛洛',
   title: '残星会会监 · 指挥家',
-  series: '鸣潮',
-  image: phrolovaImg,
-  tags: [
-    { text: '湮灭', cls: 'tag-red' },
-    { text: '音感仪', cls: 'tag-purple' },
-    { text: '指挥家', cls: 'tag-red' },
-    { text: '残星会', cls: 'tag-dark' },
-    { text: '五星角色', cls: 'tag-gold' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '未知', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '168cm', iconClass: 'pink' },

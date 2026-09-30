@@ -5,7 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
-import elainaImg from '../images/1.jpg'
+import meta from '../meta.js'
 import img1 from '../images/1.jpg'
 import img2 from '../images/2.jpg'
 import img3 from '../images/3.jpg'
@@ -21,20 +21,9 @@ import sp4 from '../images/sp4.jpg'
 import animeCover from '../images/a.jpg'
 
 export default {
-  id: 'elaina',
-  name: '伊蕾娜',
-  nameSub: 'Elaina',
+  ...meta,
   nameJp: '伊蕾娜',
   title: '灰之魔女',
-  series: '魔女之旅',
-  image: elainaImg,
-  tags: [
-    { text: '魔法使', cls: 'tag-purple' },
-    { text: '旅人', cls: 'tag-cyan' },
-    { text: '自恋', cls: 'tag-pink' },
-    { text: '天才', cls: 'tag-amber' },
-    { text: '女主角', cls: 'tag-green' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '10月17日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '150cm', iconClass: 'pink' },

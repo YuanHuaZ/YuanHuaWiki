@@ -5,6 +5,7 @@
  * gallery / videos: 画廊与视频数据
  */
 
+import meta from '../meta.js'
 import sagiriImg from '../images/1.jpg'
 import animeCover from '../images/a.jpg'
 import sp1 from '../images/sp1.jpg'
@@ -13,19 +14,9 @@ import sp3 from '../images/sp3.jpg'
 import sp4 from '../images/sp4.jpg'
 
 export default {
-  id: 'sagiri',
-  name: '和泉纱雾',
-  nameSub: 'Izumi Sagiri',
+  ...meta,
   nameJp: '和泉纱雾',
   title: '埃罗芒阿老师',
-  series: 'エロマンガ先生',
-  image: sagiriImg,
-  tags: [
-    { text: '插画师', cls: 'tag-purple' },
-    { text: '家里蹲', cls: 'tag-blue' },
-    { text: '傲娇', cls: 'tag-pink' },
-    { text: '女主角', cls: 'tag-cyan' }
-  ],
   info: [
     { icon: '🎂', label: '生日', value: '5月10日', iconClass: 'purple' },
     { icon: '📏', label: '身高', value: '152cm', iconClass: 'pink' },

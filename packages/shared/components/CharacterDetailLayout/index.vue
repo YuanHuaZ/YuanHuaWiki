@@ -376,7 +376,10 @@ export default {
 .cdl .info-card-icon.purple { background: #f3e8ff; }
 .cdl .info-card-icon.pink { background: #fce7f3; }
 .cdl .info-card-icon.cyan { background: #ecfeff; }
-.cdl .info-card-icon.amber { background: #fef3c7; }
+.cdl .info-card-icon.blue { background: #dbeafe; }
+.cdl .info-card-icon.red { background: #fee2e2; }
+.cdl .info-card-icon.orange { background: #ffedd5; }
+.cdl .info-card-icon.gold { background: #fef9c3; }
 .cdl .info-card-text h4 { font-size: 11px; color: #94a3b8; font-weight: 500; margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
 .cdl .info-card-text p { font-size: 15px; color: #0f172a; font-weight: 600; }
 
@@ -399,7 +402,6 @@ export default {
 .cdl .anime-cover { position: relative; min-height: 280px; background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 40%, #0d1a2e 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; overflow: hidden; }
 .cdl .anime-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(59,130,246,0.3) 0%, transparent 70%); }
 .cdl .anime-cover-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
-.cdl .anime-cover-badge { position: relative; z-index: 1; margin-top: 12px; padding: 6px 16px; background: rgba(6,182,212,0.2); border: 1px solid rgba(6,182,212,0.3); border-radius: 50px; font-size: 12px; color: #67e8f9; font-weight: 600; }
 .cdl .anime-info { padding: 36px; display: flex; flex-direction: column; gap: 16px; }
 .cdl .anime-info-label { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--acc-glow-1, #3b82f6); }
 .cdl .anime-info-label::before { content: ''; width: 20px; height: 2px; background: var(--acc-glow-1, #3b82f6); border-radius: 1px; }
@@ -412,7 +414,6 @@ export default {
 .cdl .anime-tag { padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; }
 .cdl .anime-tag.dark { background: #f1f5f9; color: #475569; }
 .cdl .anime-tag.live { background: #dcfce7; color: #16a34a; }
-.cdl .anime-tag.not-available { background: #fef2f2; color: #dc2626; border: 1px dashed #fca5a5; }
 .cdl .anime-info-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 .cdl .anime-tag-not-available { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; background: #fef2f2; color: #dc2626; border: 1px dashed #fca5a5; }
 /* 外链按钮：基础样式 + 配色变体（bilibili / steam / silver / orange / duo） */
@@ -423,7 +424,6 @@ export default {
 .cdl .btn-action.orange { background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 4px 16px rgba(249,115,22,0.4); }
 .cdl .btn-action.duo { background: linear-gradient(135deg, #60a5fa, #f472b6); box-shadow: 0 4px 16px rgba(96,165,250,0.4); }
 .cdl .btn-action:hover { transform: translateY(-2px); filter: brightness(1.05); }
-.cdl .btn-outline-sm { display: inline-flex; align-items: center; gap: 6px; padding: 12px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; background: transparent; color: #64748b; border: 2px solid #e2e8f0; cursor: pointer; transition: all 0.3s ease; }
 
 .cdl .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 @media (max-width: 1024px) { .cdl .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -458,7 +458,6 @@ export default {
 .cdl .video-play-btn { position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%; background: var(--acc-video-play-bg, rgba(59,130,246,0.85)); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3); transition: all 0.3s ease; }
 .cdl .video-play-btn span { color: #fff; font-size: 16px; margin-left: 3px; }
 .cdl .video-card:hover .video-play-btn { transform: scale(1.15); }
-.cdl .video-duration { position: absolute; bottom: 8px; right: 8px; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.75); color: #fff; font-size: 11px; font-weight: 600; }
 .cdl .video-info { padding: 14px 16px; }
 .cdl .video-info h4 { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .cdl .video-info p { font-size: 12px; color: #94a3b8; }
