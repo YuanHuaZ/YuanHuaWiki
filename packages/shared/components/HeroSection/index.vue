@@ -1,60 +1,70 @@
 <template>
   <section class="home-hero" aria-labelledby="home-title">
-    <div class="hero-noise"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-vignette"></div>
     <div class="hero-rule hero-rule-top"></div>
-    <div class="hero-rule hero-rule-bottom"></div>
-    <div class="home-hero__inner">
-      <div class="home-hero__copy">
-        <p class="hero-kicker"><span></span> Character archive / 2026</p>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">
+          <span class="kicker-line"></span>
+          Character Archive — Vol. 01
+        </p>
+
         <h1 id="home-title">YuanHua<br><em>Wiki</em></h1>
-        <p class="hero-intro">收藏那些在故事里闪闪发光，后来也留在心里的角色。</p>
+
+        <p class="hero-intro">收藏那些在故事里闪闪发光，<br>后来也留在心里的角色。</p>
+
         <label class="hero-search" for="character-search">
           <span class="search-mark" aria-hidden="true"></span>
-          <input id="character-search" v-model="searchQuery" type="search" placeholder="搜索角色、作品或英文名" @input="$emit('search', searchQuery)">
+          <input
+            id="character-search"
+            v-model="searchQuery"
+            type="search"
+            placeholder="搜索角色、作品或英文名"
+            @input="$emit('search', searchQuery)"
+          >
           <button v-if="searchQuery" type="button" class="search-clear" aria-label="清除搜索" @click="clearSearch">×</button>
         </label>
+
         <div class="hero-meta">
-          <div><strong>{{ characterCount }}</strong><span> 位角色档案</span></div>
-          <div><strong>{{ seriesCount }}</strong><span> 部作品收录</span></div>
+          <div class="meta-item">
+            <strong>{{ characterCount }}</strong>
+            <span>Characters</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <strong>{{ seriesCount }}</strong>
+            <span>Series</span>
+          </div>
         </div>
-        <a class="hero-browse" href="#character-list">浏览全部角色 <span aria-hidden="true">↓</span></a>
+
+        <a class="hero-browse" href="#character-list">
+          <span>浏览全部角色</span>
+          <span class="browse-arrow" aria-hidden="true">↓</span>
+        </a>
       </div>
-      <div class="hero-portrait" aria-hidden="true">
-        <div class="portrait-caption">FEATURED<br>COLLECTION</div>
-        <div class="portrait-frame portrait-frame--back"></div>
-        <div class="portrait-image portrait-image--main" :style="imageStyle(featured[0])"></div>
-        <div class="portrait-frame portrait-frame--front"></div>
-        <div class="portrait-image portrait-image--small portrait-image--one" :style="imageStyle(featured[1])"></div>
-        <div class="portrait-image portrait-image--small portrait-image--two" :style="imageStyle(featured[2])"></div>
-        <div class="portrait-number">01 <span>/ {{ characterCount.toString().padStart(2, '0') }}</span></div>
+
+      <div class="hero-mosaic" aria-hidden="true">
+        <span class="mosaic-caption">FEATURED&nbsp;SELECTION</span>
+
+        <div class="frame frame-back"></div>
+        <div class="plate plate-main" :style="imageStyle(featured[0])"></div>
+        <div class="frame frame-front"></div>
+
+        <div class="plate plate-sm plate-one" :style="imageStyle(featured[1])"></div>
+        <div class="plate plate-sm plate-two" :style="imageStyle(featured[2])"></div>
+
+        <div class="mosaic-index">
+          <span class="index-now">01</span>
+          <span class="index-all">/ {{ String(characterCount).padStart(2, '0') }}</span>
+        </div>
       </div>
     </div>
+
     <div class="hero-quotes">
       <div class="hero-quotes__track">
-        <span>「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡</span>
-        <span>「生老病死，天地万象，尽在吾辈。」—— 胡桃</span>
-        <span>「我要成为你推的孩子。」—— 有马加奈</span>
-        <span>「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花</span>
-        <span>「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋</span>
-        <span>「我等过很久，我不会再等了。」—— 弗洛洛</span>
-        <span>「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜</span>
-        <span>「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世</span>
-        <span>「从这里开始吧。从一开始……不，从零开始。」—— 雷姆</span>
-        <span>「我是你的恋人。」—— 友利奈绪</span>
-        <span>「不，我不认识叫那种名字的人。」—— 和泉纱雾</span>
-        <span>「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 四糸乃</span>
-        <span aria-hidden="true">「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡</span>
-        <span aria-hidden="true">「生老病死，天地万象，尽在吾辈。」—— 胡桃</span>
-        <span aria-hidden="true">「我要成为你推的孩子。」—— 有马加奈</span>
-        <span aria-hidden="true">「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花</span>
-        <span aria-hidden="true">「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋</span>
-        <span aria-hidden="true">「我等过很久，我不会再等了。」—— 弗洛洛</span>
-        <span aria-hidden="true">「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜</span>
-        <span aria-hidden="true">「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世</span>
-        <span aria-hidden="true">「从这里开始吧。从一开始……不，从零开始。」—— 雷姆</span>
-        <span aria-hidden="true">「我是你的恋人。」—— 友利奈绪</span>
-        <span aria-hidden="true">「不，我不认识叫那种名字的人。」—— 和泉纱雾</span>
-        <span aria-hidden="true">「四糸奈是我的理想，是我心目中的英雄。我希望变得像四糸奈一样强大、坚强、帅气。」—— 四糸乃</span>
+        <span v-for="(q, i) in quotesDoubled" :key="i" :aria-hidden="i >= quotes.length ? 'true' : null">{{ q }}</span>
       </div>
     </div>
   </section>
@@ -64,6 +74,20 @@
 import { computed, ref } from 'vue'
 import { getCharacterList } from '@/api/character.js'
 
+const QUOTES = [
+  '「我并不向往和很多人拥有表面交情，我只想和一个人深交到底。」—— 因幡巡',
+  '「生老病死，天地万象，尽在吾辈。」—— 胡桃',
+  '「既然你话都说出口了，就负起责任。你逃不掉了——靠你了，社长。」—— 小鞠知花',
+  '「看吧，放手去做总会有办法的。如果是你的话，一定能够创造未来。」—— 七海千秋',
+  '「我等过很久，我不会再等了。」—— 弗洛洛',
+  '「我只是个旅人、只是个魔女，仅此而已。既非无所不能，也不可能万事如意。」—— 伊蕾娜',
+  '「我大概一辈子都忘不了CRYCHIC了。」—— 長崎素世',
+  '「从这里开始吧。从一开始……不，从零开始。」—— 雷姆',
+  '「我是你的恋人。」—— 友利奈绪',
+  '「不，我不认识叫那种名字的人。」—— 和泉纱雾',
+  '「四糸奈是我的理想，是我心目中的英雄。」—— 四糸乃'
+]
+
 export default {
   name: 'HeroSection',
   emits: ['search'],
@@ -71,34 +95,340 @@ export default {
     const searchQuery = ref('')
     const characters = getCharacterList()
     const featured = computed(() => [
-      characters.find(character => character.id === 'meguru'),
-      characters.find(character => character.id === 'phrolova'),
-      characters.find(character => character.id === 'nanami')
+      characters.find(c => c.id === 'meguru'),
+      characters.find(c => c.id === 'phrolova'),
+      characters.find(c => c.id === 'nanami')
     ])
     const characterCount = characters.length
-    const seriesCount = new Set(characters.map(character => character.series)).size
+    const seriesCount = new Set(characters.map(c => c.series)).size
+    const quotesDoubled = [...QUOTES, ...QUOTES]
 
-    function imageStyle(character) { return character ? { backgroundImage: `url(${character.image})` } : {} }
-    function clearSearch() { searchQuery.value = ''; emit('search', '') }
+    function imageStyle(character) {
+      return character ? { backgroundImage: `url(${character.image})` } : {}
+    }
+    function clearSearch() {
+      searchQuery.value = ''
+      emit('search', '')
+    }
 
-    return { searchQuery, characterCount, seriesCount, featured, imageStyle, clearSearch }
+    return { searchQuery, characterCount, seriesCount, featured, imageStyle, clearSearch, quotesDoubled, quotes: QUOTES }
   }
 }
 </script>
 
-<style>
-.home-hero { position: relative; min-height: 720px; overflow: hidden; color: #f5f1e9; background: #18212c; isolation: isolate; }
-.home-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #18212c 0%, #18212c 47%, rgba(24,33,44,.82) 64%, rgba(24,33,44,.25) 100%); z-index: -1; }
-.home-hero::after { content: ''; position: absolute; right: -7%; top: 0; width: 61%; height: 100%; background: linear-gradient(90deg, #18212c 0%, transparent 28%), url('../../../meguru/images/1.jpg') center 21% / cover no-repeat; opacity: .13; filter: saturate(.6) contrast(1.1); z-index: -2; }
-.hero-noise { position: absolute; inset: 0; opacity: .22; pointer-events: none; background-image: radial-gradient(rgba(255,255,255,.36) .6px, transparent .6px); background-size: 5px 5px; mix-blend-mode: soft-light; }
-.hero-rule { position: absolute; height: 1px; left: 5vw; right: 5vw; background: rgba(245,241,233,.22); }.hero-rule-top { top: 112px; }.hero-rule-bottom { bottom: 42px; }
-.home-hero__inner { width: min(1280px, calc(100% - 48px)); min-height: 720px; margin: 0 auto; display: grid; grid-template-columns: minmax(390px,.9fr) 1.1fr; align-items: center; gap: 26px; padding: 132px 0 78px; }
-.home-hero__copy { position: relative; z-index: 2; padding-left: 4.8vw; }.hero-kicker { display: flex; align-items: center; gap: 10px; color: #d8c59c; font-family: Inter,sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }.hero-kicker span { width: 28px; height: 1px; background: #d8c59c; }
-.home-hero h1 { margin: 23px 0 16px; font-family: Georgia,'Noto Serif SC',serif; font-size: clamp(60px,7.8vw,112px); font-weight: 400; line-height: .8; letter-spacing: 0; color: #f7f3ea; }.home-hero h1 em { color: #d8c59c; font-weight: 400; }.hero-intro { max-width: 330px; color: #c5cbd0; font-size: 15px; line-height: 1.9; letter-spacing: .04em; }
-.hero-search { width: min(100%,390px); display: flex; align-items: center; margin-top: 31px; padding: 0 12px 0 17px; border-bottom: 1px solid rgba(245,241,233,.52); transition: border-color .2s ease; }.hero-search:focus-within { border-color: #d8c59c; }.search-mark { width: 14px; height: 14px; margin-right: 12px; border: 1.5px solid #d8c59c; border-radius: 50%; position: relative; flex: 0 0 auto; }.search-mark::after { content: ''; width: 6px; height: 1.5px; background: #d8c59c; position: absolute; right: -5px; bottom: -2px; transform: rotate(45deg); }.hero-search input { width: 100%; min-width: 0; padding: 13px 0; color: #fff; background: transparent; border: 0; outline: 0; font: 14px 'Noto Sans SC',sans-serif; }.hero-search input::placeholder { color: #9fa9b2; }.search-clear { width: 28px; height: 28px; border: 0; background: transparent; color: #d8c59c; font: 26px/1 Arial,sans-serif; cursor: pointer; }
-.hero-meta { display: flex; gap: 30px; margin-top: 31px; }.hero-meta div { display: flex; flex-direction: column; gap: 2px; }.hero-meta strong { color: #f5f1e9; font: 400 28px/1 Georgia,serif; }.hero-meta span { color: #9fa9b2; font-size: 11px; letter-spacing: .08em; }.hero-browse { display: inline-flex; gap: 13px; align-items: center; margin-top: 35px; color: #f5f1e9; font-size: 13px; font-weight: 600; letter-spacing: .06em; }.hero-browse span { color: #d8c59c; font-size: 19px; line-height: 1; }
-.hero-portrait { position: relative; height: 500px; align-self: end; }.portrait-frame { position: absolute; border: 1px solid rgba(216,197,156,.58); }.portrait-frame--back { width: min(41vw,492px); height: 456px; right: 8%; bottom: 32px; }.portrait-frame--front { width: min(37vw,447px); height: 422px; right: 0; bottom: 0; }.portrait-image { position: absolute; background-repeat: no-repeat; background-color: #eae7e1; }.portrait-image--main { width: min(36vw,430px); height: 510px; right: 5%; bottom: 0; background-size: 124%; background-position: 50% 0%; filter: saturate(.93) contrast(1.04); }.portrait-image--main::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 60%,rgba(24,33,44,.32)); }.portrait-image--small { width: 132px; height: 156px; background-size: 130%; border: 6px solid #18212c; box-shadow: 0 14px 30px rgba(0,0,0,.18); }.portrait-image--one { left: 1%; top: 55px; background-position: 50% 0%; }.portrait-image--two { left: 12%; bottom: -19px; background-position: 51% 0%; }.portrait-caption { position: absolute; top: 20px; right: 47%; z-index: 2; color: #d8c59c; font: 700 10px/1.6 Inter,sans-serif; letter-spacing: .16em; }.portrait-number { position: absolute; right: 2%; top: 4px; color: #f5f1e9; font: 400 34px/1 Georgia,serif; z-index: 3; }.portrait-number span { color: #a9afb1; font: 400 12px Inter,sans-serif; letter-spacing: .08em; }
-@media (max-width:900px) { .home-hero { min-height: 750px; }.home-hero__inner { grid-template-columns: .9fr 1fr; width: min(100% - 32px,780px); }.home-hero__copy { padding-left: 0; }.home-hero h1 { font-size: 72px; }.portrait-image--small { display: none; }.portrait-frame--back { right: 1%; }.portrait-image--main { right: 4%; } }
-@media (max-width:650px) { .home-hero { min-height: 760px; }.home-hero::after { width: 100%; right: -20%; opacity: .1; }.hero-rule-top { top: 82px; }.home-hero__inner { display: block; min-height: 760px; padding: 120px 0 44px; }.home-hero__copy { padding-left: 0; }.home-hero h1 { font-size: 69px; }.hero-intro { font-size: 14px; }.hero-portrait { height: 273px; margin: 8px -16px 0; }.portrait-frame--back { width: 250px; height: 230px; right: 22px; bottom: 20px; }.portrait-frame--front { width: 225px; height: 209px; right: 7px; bottom: 0; }.portrait-image--main { width: 216px; height: 270px; right: 17px; }.portrait-caption { display: none; }.portrait-number { top: 30px; right: 25px; font-size: 24px; }.hero-rule-bottom { bottom: 24px; } }
-.hero-quotes { position: absolute; right: 5vw; bottom: 42px; left: 5vw; overflow: hidden; padding-top: 13px; border-top: 1px solid rgba(245,241,233,.22); }.hero-quotes__track { display: flex; width: max-content; animation: hero-quote-scroll 65s linear infinite; }.hero-quotes span { padding: 0 34px; color: rgba(245,241,233,.64); font: 12px/1.5 serif; letter-spacing: .05em; white-space: nowrap; }.hero-quotes span::before { content: '*'; margin-right: 34px; color: #d8c59c; }@keyframes hero-quote-scroll { to { transform: translateX(-50%); } }@media (prefers-reduced-motion: reduce) { .hero-quotes__track { animation: none; } }
+<style scoped>
+.home-hero {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--night-ink);
+  isolation: isolate;
+}
+
+/* 背景：右侧立绘残影 + 暗角 */
+.home-hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(ellipse 70% 80% at 88% 30%, rgba(200, 168, 106, .10), transparent 62%),
+    linear-gradient(90deg, #161d24 0%, #161d24 48%, rgba(22,29,36,.9) 66%, rgba(22,29,36,.5) 100%);
+}
+.home-hero::after {
+  content: '';
+  position: absolute; right: -2%; top: 0; width: 54%; height: 100%; z-index: -1;
+  background:
+    linear-gradient(90deg, #161d24 0%, rgba(22,29,36,.82) 32%, rgba(22,29,36,.42) 68%, rgba(22,29,36,.18) 100%),
+    url('../../../meguru/images/1.jpg') center 20% / cover no-repeat;
+  opacity: .1;
+  filter: grayscale(.4) contrast(1.1) saturate(.65);
+}
+
+.hero-grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);
+  mix-blend-mode: soft-light;
+}
+.hero-vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 90% 90% at 50% 45%, transparent 40%, rgba(10,14,18,.55) 100%);
+}
+
+.hero-rule { position: absolute; height: 1px; left: 4vw; right: 4vw; background: rgba(244,239,228,.14); }
+.hero-rule-top { top: 96px; }
+
+.hero-inner {
+  position: relative;
+  width: min(var(--page), calc(100% - 48px));
+  min-height: 780px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(360px, .92fr) 1.08fr;
+  align-items: center;
+  gap: 40px;
+  padding: 118px 0 96px;
+}
+
+/* ---------- 文案 ---------- */
+.hero-copy { position: relative; z-index: 3; }
+
+.hero-kicker {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold-line);
+}
+.kicker-line { width: 34px; height: 1px; background: var(--gold-line); }
+
+.home-hero h1 {
+  margin: 26px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(58px, 7.6vw, 108px);
+  font-weight: 400;
+  line-height: .86;
+  letter-spacing: -.02em;
+  color: #f7f3ea;
+}
+.home-hero h1 em {
+  font-style: italic;
+  color: var(--gold-line);
+  letter-spacing: -.01em;
+}
+
+.hero-intro {
+  margin-top: 26px;
+  max-width: 340px;
+  color: rgba(244,239,228,.62);
+  font-size: 14.5px;
+  line-height: 1.95;
+  letter-spacing: .02em;
+}
+
+/* ---------- 搜索 ---------- */
+.hero-search {
+  position: relative;
+  display: flex; align-items: center;
+  width: min(100%, 340px);
+  margin-top: 36px;
+  padding: 0 0 0 0;
+  border-bottom: 1px solid rgba(244,239,228,.28);
+  transition: border-color .35s var(--ease);
+}
+.hero-search::after {
+  content: ''; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%;
+  background: var(--gold-line);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+.hero-search:focus-within { border-color: transparent; }
+.hero-search:focus-within::after { transform: scaleX(1); }
+
+.search-mark {
+  position: relative; flex: 0 0 auto;
+  width: 13px; height: 13px; margin-right: 14px;
+  border: 1px solid var(--gold-line); border-radius: 50%;
+}
+.search-mark::after {
+  content: ''; position: absolute; right: -5px; bottom: -3px;
+  width: 6px; height: 1px; background: var(--gold-line); transform: rotate(45deg);
+}
+.hero-search input {
+  width: 100%; min-width: 0;
+  padding: 13px 0;
+  border: 0; outline: 0; background: transparent;
+  color: #fff; font-size: 14px; letter-spacing: .02em;
+}
+.hero-search input::placeholder { color: rgba(244,239,228,.34); }
+.hero-search input::-webkit-search-cancel-button { display: none; }
+.search-clear {
+  width: 26px; height: 26px; flex: 0 0 auto;
+  border: 0; background: transparent; color: var(--gold-line);
+  font-size: 20px; line-height: 1; cursor: pointer; opacity: .7;
+  transition: opacity .2s;
+}
+.search-clear:hover { opacity: 1; }
+
+/* ---------- 统计 ---------- */
+.hero-meta { display: flex; align-items: center; gap: 26px; margin-top: 32px; }
+.meta-item { display: flex; flex-direction: column; gap: 3px; }
+.meta-item strong {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 30px; line-height: 1; color: #f7f3ea;
+  font-variant-numeric: tabular-nums;
+}
+.meta-item span {
+  font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(244,239,228,.4);
+}
+.meta-divider { width: 1px; height: 30px; background: rgba(244,239,228,.16); }
+
+/* ---------- 浏览入口 ---------- */
+.hero-browse {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-top: 38px;
+  font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(244,239,228,.9);
+  transition: color .3s var(--ease);
+}
+.hero-browse:hover { color: var(--gold-line); }
+.browse-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border: 1px solid rgba(244,239,228,.24);
+  font-size: 12px;
+  transition: border-color .3s, transform .3s var(--ease);
+}
+.hero-browse:hover .browse-arrow { border-color: var(--gold-line); transform: translateY(3px); }
+
+/* ---------- 立绘拼贴 ---------- */
+.hero-mosaic {
+  position: relative;
+  height: 540px;
+  align-self: end;
+}
+
+.hero-mosaic .plate {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-color: var(--night-2);
+  background-position: top center;
+  box-shadow: 0 30px 70px rgba(0,0,0,.5);
+}
+
+/* 装裱内衬线 */
+.hero-mosaic .plate::after {
+  content: '';
+  position: absolute; inset: 10px;
+  border: 1px solid rgba(244,239,228,.16);
+  pointer-events: none;
+}
+
+.plate-main {
+  width: min(35vw, 404px);
+  height: 526px;
+  right: 7%;
+  bottom: 0;
+  background-size: 132%;
+  background-position: 50% 0%;
+  filter: saturate(.94) contrast(1.05);
+  animation: slideUp .9s var(--ease) both;
+}
+
+.frame { position: absolute; border: 1px solid rgba(200,168,106,.34); pointer-events: none; }
+.frame-back { width: min(32vw, 372px); height: 466px; right: 15%; bottom: 40px; }
+.frame-back::before,
+.frame-front::before {
+  content: ''; position: absolute; width: 40px; height: 1px; background: var(--gold-line);
+  top: -1px; left: -1px;
+}
+.frame-front { width: min(33vw, 384px); height: 428px; right: 2%; bottom: 18px; }
+
+.plate-sm {
+  width: 122px; height: 152px;
+  background-size: 136%;
+  border: 5px solid var(--night);
+  box-shadow: 0 18px 40px rgba(0,0,0,.48);
+  animation: slideUp .9s var(--ease) both;
+}
+.plate-one { left: 7%; top: 38px; animation-delay: .12s; }
+.plate-two { left: 16%; bottom: -10px; animation-delay: .22s; }
+
+.mosaic-caption {
+  position: absolute; top: 18px; right: 44%; z-index: 2;
+  writing-mode: vertical-rl;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .28em;
+  color: var(--gold-line);
+}
+.mosaic-index {
+  position: absolute; right: 0; top: 4px; z-index: 3;
+  display: flex; align-items: baseline; gap: 6px;
+  font-family: var(--serif);
+}
+.index-now { font-size: 34px; line-height: 1; color: #f7f3ea; }
+.index-all { font-size: 11px; letter-spacing: .1em; color: rgba(244,239,228,.42); }
+
+/* ---------- 引文滚动条 ---------- */
+.hero-quotes {
+  position: absolute; left: 4vw; right: 4vw; bottom: 0;
+  overflow: hidden;
+  padding: 14px 0;
+  border-top: 1px solid rgba(244,239,228,.14);
+}
+.hero-quotes__track {
+  display: flex; width: max-content;
+  animation: hero-quote-scroll 78s linear infinite;
+}
+.hero-quotes span {
+  display: inline-flex; align-items: center;
+  padding: 0 38px;
+  font-family: var(--serif);
+  font-size: 11.5px; font-style: italic;
+  letter-spacing: .04em; white-space: nowrap;
+  color: rgba(244,239,228,.52);
+}
+.hero-quotes span::before {
+  content: '✦'; margin-right: 38px; font-style: normal;
+  font-size: 7px; color: var(--gold-line);
+}
+@keyframes hero-quote-scroll { to { transform: translateX(-50%); } }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: .95fr 1.05fr; gap: 24px; }
+  .plate-main { height: 470px; }
+  .frame-back { height: 420px; }
+  .frame-front { height: 380px; }
+  .hero-mosaic { height: 490px; }
+}
+@media (max-width: 900px) {
+  .home-hero { min-height: 820px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: 820px;
+    padding: 130px 0 110px;
+    gap: 0;
+  }
+  .hero-mosaic { height: 320px; align-self: auto; margin-top: 18px; }
+  /* 移动端改用居中定位，避免容器变窄后 right 百分比导致溢出。
+     用 margin-left 而非 translateX：卡片有 slideUp 动画（fill: both），
+     动画结束后 transform: none 会盖掉 translateX。 */
+  .plate-main {
+    left: 50%; right: auto;
+    margin-left: -105px;
+    width: 210px; height: 278px;
+  }
+  .frame-back {
+    left: 50%; right: auto;
+    margin-left: -116px;
+    width: 232px; height: 250px;
+    bottom: 26px;
+  }
+  .frame-front {
+    left: 50%; right: auto;
+    margin-left: -100px;
+    width: 200px; height: 228px;
+    bottom: 12px;
+  }
+  .plate-sm { display: none; }
+  .mosaic-caption { display: none; }
+  .mosaic-index { right: 6%; top: 10px; }
+  .index-now { font-size: 24px; }
+}
+@media (max-width: 640px) {
+  .home-hero { min-height: 720px; }
+  .hero-inner { min-height: 720px; padding: 104px 0 68px; }
+  .home-hero h1 { font-size: 56px; margin-top: 18px; }
+  .hero-intro { font-size: 13.5px; margin-top: 18px; }
+  .hero-search { margin-top: 24px; }
+  .hero-meta { margin-top: 22px; gap: 20px; }
+  .meta-item strong { font-size: 26px; }
+  .hero-browse { margin-top: 26px; }
+  .hero-mosaic { height: 244px; margin-top: 10px; }
+  .plate-main { width: 164px; height: 218px; margin-left: -82px; }
+  .frame-back { width: 182px; height: 196px; margin-left: -91px; bottom: 20px; }
+  .frame-front { width: 158px; height: 180px; margin-left: -79px; bottom: 8px; }
+  .hero-rule-top { top: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-quotes__track { animation: none; }
+}
 </style>

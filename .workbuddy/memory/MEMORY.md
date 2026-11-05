@@ -2,6 +2,22 @@
 
 ## 架构演进
 
+### 2026-11-05 整体 UI 大改：Editorial Archive 设计系统
+
+**问题**：站内并存三套视觉语言 —— 首页「米白纸感 + 衬线 + 金棕」、详情页「深色蓝紫霓虹 + 白色圆角卡」、卡片「紫粉渐变光晕 + 3px 圆角」。风格割裂是"不好看"的真正原因，不是配色需微调。
+
+**方案**：以首页已有基因（纸/墨/金/衬线）为基准，升级为一套完整设计系统，全站统一。
+
+- **Token 层**（`src/styles/global.css` 重写，`:root`）：
+  `--paper/-2/-3/-4` 纸面阶梯、`--ink/-2/-3/-4/-5` 墨字阶梯、`--rule/-2` 细线、`--gold/-gold-2/-gold-line/-gold-wash` 金棕、`--night/-2/-3/-night-ink` 深墨扉页、`--serif`(Georgia+Noto Serif SC) / `--sans`(Inter+Noto Sans SC)、`--ease`、`--page`。
+  原则：**零圆角（标签除外）、极轻阴影、靠细线分层、正文靠留白**。
+- **角色签名色**：`--acc-accent / -soft / -line` 只在 `src/styles/detail-enhancements.css` 按 `.xxx-page` 定义（12 个角色各一个饱和色）。**注意**：`CharacterDetailLayout` 的 `themeVars` 是 inline style，优先级高于样式表，所以它**不能生成 `--acc-accent`**，否则整页强调色被 theme 覆盖。
+- **组件重写**：AppHeader（透明→纸面收窄 + 金色滚动进度线）、HeroSection（深墨扉页 + 装裱式立绘拼贴 + 竖排 caption）、CharacterCard（图版 + 下方著录信息，序号/作品名压在图上）、AppFooter（版权页，去 emoji 与彩虹渐变）、BackToTop（方角细线）、CharacterDetailLayout（扉页 + 著录表式 info + 细线 tab + 条目式能力/关系 + 左对齐书页正文）、GalleryLightbox（细线画框）、ToastContainer（深墨 + 左金线）、NotFound（巨号淡衬线 404）。
+- **图版占位**：`gallery` 里 `isImage:false` 的项不再用数据里的橙粉渐变，改为纸面网格 + 细线方框打叉（档案缺图感）。
+- **详情页 info** 从「浮起白卡」改成「细线著录表」（3 列，`nth-child(3n)` 控制边框与缩进），移动端降为 1 列。
+
+**验证**：`npm run build` 通过（15 个异步 chunk）；用 headless Edge 逐页截图核对 —— 桌面 1440、平板 1024、移动 390，以及详情页 profile/相关作品/图版/评价/能力五个 tab。
+
 ### 2026-09-29 角色详情页重构
 
 - **旧架构**：每个角色包含 `manifest.js` + `views/Detail.vue`（400-560 行，70% 复制粘贴），路由通过 `require.context` 自动扫描 manifest.js，存在专属路由与通用 `/character/:id` 双轨。
@@ -30,15 +46,15 @@
 
 ## 已知坑（改样式前必看）
 
-### 样式来源冲突（global.css 的 !important 覆盖层）
-`src/styles/global.css` 长期被当作「覆盖层」使用，用 `!important` 压制组件样式，导致同一元素有两份定义、取值还不一致。**已修复卡片一处，其余仍在**：
+### 样式来源冲突（global.css 的 !important 覆盖层）— 2026-11-05 已全部清除
+`src/styles/global.css` 曾长期被当作「覆盖层」，用 `!important` 压制组件样式，导致同一元素两份定义、取值不一致。2026-11-05 整体 UI 大改时**整个文件重写为设计系统基础层**，组件内重复定义同步删除，`!important` 归零。
 
 | 位置 | 状态 | 说明 |
 |------|------|------|
-| 角色卡片（`CharacterCard`） | ✅ 已合并 | 原 28 条规则、126 处生效值全部并入组件，`!important` 已移除 |
-| 返回顶部（`BackToTop`） | ❌ 待修 | 真冲突且有可见影响：背景渐变被 global 的更深紫色覆盖、过渡被改成 0.3s、hover 光晕环被吃掉；宽高 global 写 48px 但实际渲染 46px（组件 `<style scoped>` 特异性更高） |
-| 详情页（`CharacterDetailLayout`） | ❌ 待修 | global.css 实为「移动端覆盖层」（18 处 `!important`）。其中 1 处是真 bug：`.info-grid` 在 ≤640px 仍显示 2 列，因为 global 的 768px 规则压掉了布局自己的 640px「1 列」规则 |
-| `.empty-state` / `.footer` | ⚠️ 仅重复 | 有重复声明但无可见差异（取值相同，或被 `.footer::before` 替代实现） |
+| 角色卡片（`CharacterCard`） | ✅ 已合并 | 原 28 条规则并入组件 |
+| 返回顶部（`BackToTop`） | ✅ 已重写 | 改为方角细线按钮，样式只在组件内定义 |
+| 详情页（`CharacterDetailLayout`） | ✅ 已重写 | `detail-enhancements.css` 从 18 处 `!important` 覆盖层缩到只剩「每角色强调色变量」 |
+| `.empty-state` / `.footer` | ✅ 已重写 | 重复声明消除 |
 
 **关键机制（本次实测确认）**：
 - CSS `!important` 优先于行内 `style`，也优先于更高特异性的选择器。
@@ -46,6 +62,7 @@
 - 拿不准就**不要靠肉眼看**：用「级联求值器」脚本算出每条 `(media, selector, prop)` 的胜出值，改动前后对比，零差异才写回。
 
 ### 其他
+- **无头浏览器截图有最小视口**：Edge/Chrome `--headless --window-size=390,844` 时**布局视口会被钳到约 500px**，截图却按 390 裁切 → 看起来"右侧卡片被截断/元素溢出"，实际 CSS 完全正常。390 真机效果要用「父页面内嵌 390px iframe + 截图父页面」验证（`public/debug.html` 临时方案，验完删除）。判断依据：在 iframe 里读 `innerWidth / scrollWidth / getBoundingClientRect`，比肉眼可靠。
 - **仓库统一 CRLF**（`core.autocrlf=true`）。写脚本处理源文件时：读取后归一化为 `\n`，写出时还原 `\r\n`，否则 `git diff` 会出现整文件重写。
 - **改文档里的 ASCII 框图**：按「原始行显示宽度」补空格（全角字符按 2 列），不要按改后文本自身宽度补，否则整块会缩掉。
 

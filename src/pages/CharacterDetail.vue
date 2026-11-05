@@ -42,15 +42,22 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .detail-loading {
-  min-height: 60vh; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 18px;
-  color: #94a3b8; font-size: 14px; letter-spacing: 0.04em;
+  min-height: 70vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 20px;
+  background: var(--paper);
+  color: var(--ink-4);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
 .detail-loading .loading-spinner {
-  width: 34px; height: 34px; border-radius: 50%;
-  border: 3px solid #e2e8f0; border-top-color: #94a3b8;
-  animation: spinSlow 0.9s linear infinite;
+  width: 30px; height: 30px;
+  border: 1px solid var(--rule-2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spinSlow .9s linear infinite;
 }
 </style>

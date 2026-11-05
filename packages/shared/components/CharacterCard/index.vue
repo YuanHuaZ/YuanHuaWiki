@@ -2,22 +2,28 @@
   <a
     :href="character.hasDetail ? `#/character/${character.id}` : '#'"
     class="character-card"
-    :style="{ animationDelay: `${0.04 * index}s` }"
+    :style="{ animationDelay: `${0.045 * index}s` }"
     @click.prevent="onClick"
   >
-    <div class="card-image">
+    <div class="card-plate">
       <div class="card-image-inner" :style="imageStyle">
         <span v-if="!character.image" class="card-image-emoji">👤</span>
       </div>
-      <div class="card-image-shine"></div>
-      <div class="card-image-overlay">
-        <span class="card-overlay-btn">查看详情 →</span>
+
+      <span class="card-index">{{ String(index + 1).padStart(2, '0') }}</span>
+      <span class="card-series">{{ character.seriesShort || character.series }}</span>
+
+      <div class="card-hover">
+        <span class="hover-label">查看档案</span>
+        <span class="hover-arrow" aria-hidden="true">→</span>
       </div>
-      <span class="card-series-badge">{{ character.seriesShort || character.series }}</span>
     </div>
+
     <div class="card-body">
-      <h3 class="card-name">{{ character.name }}</h3>
-      <span class="card-name-sub">{{ character.nameSub }}</span>
+      <div class="card-heading">
+        <h3 class="card-name">{{ character.name }}</h3>
+        <span class="card-name-sub">{{ character.nameSub }}</span>
+      </div>
       <div class="card-tags">
         <span v-for="(tag, idx) in character.tags" :key="idx" :class="['tag', tag.cls]">{{ tag.text }}</span>
       </div>
@@ -29,14 +35,12 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-// 无立绘时的兜底渐变（当前 12 个角色都有立绘，正常走不到这里）
+// 无立绘时的兜底纸面色（当前 12 个角色都有立绘，正常走不到这里）
 const FALLBACK_GRADIENTS = [
-  'linear-gradient(135deg, #2d1b4e, #1a1030)',
-  'linear-gradient(135deg, #1e3a5f, #0f1b2d)',
-  'linear-gradient(135deg, #1a2e2e, #0d1a1a)',
-  'linear-gradient(135deg, #2e1a2e, #1a1020)',
-  'linear-gradient(135deg, #1a2e1a, #0d1a0d)',
-  'linear-gradient(135deg, #2e241a, #1a100d)'
+  'linear-gradient(150deg, #e7e0d1, #d5cbb6)',
+  'linear-gradient(150deg, #dfd8c8, #cbc0a8)',
+  'linear-gradient(150deg, #e4dccd, #cfc4ad)',
+  'linear-gradient(150deg, #e0d9ca, #cdc2ab)'
 ]
 
 export default {
@@ -59,8 +63,6 @@ export default {
           backgroundColor: c.cardBg || 'transparent'
         }
       }
-      // 兜底渐变按卡片序号轮换
-      // （原实现按 id 里的数字取模，但 12 个 id 全是纯字母，parseInt 恒为 0，只会取到第一条）
       return { background: FALLBACK_GRADIENTS[props.index % FALLBACK_GRADIENTS.length] }
     })
 
@@ -79,41 +81,159 @@ export default {
 }
 </script>
 
-<style>/* 角色卡片样式（唯一定义处）
-   原先同时写在 src/styles/global.css 与本组件里，global.css 用 !important 压制组件，
-   两处取值还不一致（圆角、阴影、过渡、缩放比例等），改一处常常看不出效果。
-   现已按「实际生效值」合并到此处，不再需要 !important。 */
-.character-card:hover .tag { transform: translateY(-1px); }
-.character-card { display: flex; flex-direction: column; background: #fff; border-radius: 3px; overflow: hidden; box-shadow: 0 2px 8px rgba(38,54,64,0.06), 0 8px 24px rgba(0,0,0,0.04); transition: all 0.45s cubic-bezier(0.33,1,0.68,1); cursor: pointer; opacity: 0; animation: cardIn 0.5s ease-out forwards; border: 1px solid #dedbd3; position: relative; }
-.character-card::before { content: ''; position: absolute; inset: 0; z-index: 3; border-radius: 3px; border: 2px solid transparent; background: linear-gradient(135deg, rgba(168,85,247,0), rgba(236,72,153,0)) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; transition: all 0.45s cubic-bezier(0.33,1,0.68,1); pointer-events: none; }
-.character-card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(38,54,64,0.14), 0 2px 8px rgba(0,0,0,0.06); border-color: #a48b6c; }
-.character-card:hover::before { background: linear-gradient(135deg, rgba(168,85,247,0.5), rgba(236,72,153,0.4)) border-box; }
-.card-image { position: relative; aspect-ratio: 3/4; overflow: hidden; background: #0a0520; }
-.card-image-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.55s cubic-bezier(0.33,1,0.68,1); }
-.character-card:hover .card-image-inner { transform: scale(1.1); }
-.card-image-shine { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.08) 55%, transparent 60%); transform: translateX(-100%); transition: transform 0.6s ease; pointer-events: none; z-index: 2; }
-.character-card:hover .card-image-shine { transform: translateX(100%); }
-.card-image-emoji { font-size: 64px; filter: drop-shadow(0 0 30px rgba(168,85,247,0.3)); transition: all 0.4s ease; }
-.character-card:hover .card-image-emoji { transform: scale(1.2); filter: drop-shadow(0 0 40px rgba(168,85,247,0.5)); }
-.card-image-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); opacity: 0; transition: opacity 0.35s ease; display: flex; align-items: flex-end; padding: 16px; }
-.character-card:hover .card-image-overlay { opacity: 1; }
-.card-overlay-btn { width: 100%; padding: 10px; border-radius: 10px; background: rgba(168,85,247,0.85); color: #fff; text-align: center; font-size: 13px; font-weight: 600; backdrop-filter: blur(4px); letter-spacing: 0.02em; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 16px rgba(168,85,247,0.3); transition: all 0.3s ease; }
-.character-card:hover .card-overlay-btn { box-shadow: 0 6px 24px rgba(168,85,247,0.45); }
-.card-series-badge { position: absolute; top: 10px; left: 10px; z-index: 1; padding: 3px 10px; border-radius: 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; background: rgba(0,0,0,0.5); color: #e2e8f0; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.card-body { padding: 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-.card-name { font-size: 16px; font-weight: 700; color: #0f172a; letter-spacing: -0.01em; line-height: 1.2; transition: color 0.3s ease; }
-.character-card:hover .card-name { color: #7c3aed; }
-.card-name-sub { font-size: 11px; color: #94a3b8; font-weight: 500; margin-top: -2px; letter-spacing: 0.03em; }
-.card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 8px; }
+<style scoped>
+/* ============================================================
+   角色卡片 —— 唯一定义处（图版 + 下方著录信息，零圆角细线）
+   ============================================================ */
+.character-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;              /* 允许在窄屏 grid 列内收缩，防止 nowrap 内容撑破 */
+  cursor: pointer;
+  opacity: 0;
+  animation: cardIn .7s var(--ease-out) both;
+}
 
+/* ---------- 图版 ---------- */
+.card-plate {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+  transition: border-color .45s var(--ease), box-shadow .45s var(--ease);
+}
+.character-card:hover .card-plate {
+  border-color: var(--gold);
+  box-shadow: 0 22px 44px -18px rgba(24, 32, 39, .32);
+}
+
+.card-image-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background-repeat: no-repeat;
+  transition: transform 1.1s var(--ease-out);
+  will-change: transform;
+}
+.character-card:hover .card-image-inner { transform: scale(1.045); }
+
+.card-image-emoji { font-size: 58px; opacity: .4; }
+
+/* 序号：衬线体，压在图上 */
+.card-index {
+  position: absolute; top: 12px; left: 13px; z-index: 2;
+  font-family: var(--serif);
+  font-size: 13px; line-height: 1;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .55);
+  mix-blend-mode: normal;
+}
+
+/* 作品名：底部黑纱上的字距小字 */
+.card-series {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 30px 13px 11px;
+  background: linear-gradient(to top, rgba(12, 16, 20, .72) 0%, rgba(12, 16, 20, .3) 55%, transparent 100%);
+  color: rgba(255, 255, 255, .92);
+  font-size: 9.5px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: opacity .35s var(--ease);
+}
+
+/* hover 提示：细线框 + 箭头 */
+.card-hover {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  background: rgba(22, 29, 36, .34);
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+.character-card:hover .card-hover { opacity: 1; }
+.character-card:hover .card-series { opacity: 0; }
+
+.hover-label {
+  padding: 9px 20px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  color: #fff;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  transform: translateY(6px);
+  transition: transform .45s var(--ease), background .3s, color .3s;
+}
+.hover-arrow {
+  font-size: 14px; color: var(--gold-line);
+  transform: translateY(6px);
+  transition: transform .45s var(--ease), opacity .45s;
+}
+.character-card:hover .hover-label,
+.character-card:hover .hover-arrow { transform: translateY(0); }
+.character-card:hover .hover-label { background: rgba(255,255,255,.96); color: var(--ink); }
+
+/* ---------- 著录信息 ---------- */
+.card-body {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 15px 2px 0;
+  border-top: 1px solid transparent;
+  transition: border-color .45s var(--ease);
+}
+.character-card:hover .card-body { border-top-color: var(--rule); }
+
+.card-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+
+.card-name {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: .01em;
+  transition: color .35s var(--ease);
+}
+.character-card:hover .card-name { color: var(--gold); }
+
+.card-name-sub {
+  font-size: 9.5px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-5);
+  line-height: 1.4;
+}
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.card-tags .tag {
+  padding: 2px 8px;
+  font-size: 10px;
+  letter-spacing: .06em;
+  border-color: var(--rule);
+  color: var(--ink-4);
+}
+/* 实心深色标签在卡片里保留对比 */
+.card-tags .tag.tag-dark {
+  border-color: var(--ink-3);
+  background: transparent;
+  color: var(--ink-2);
+}
+.character-card:hover .card-tags .tag { border-color: var(--rule-2); color: var(--ink-3); }
+.character-card:hover .card-tags .tag.tag-dark { border-color: var(--ink); color: var(--ink); }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 860px) {
+  .card-name { font-size: 17px; }
+  .card-index { font-size: 11px; top: 9px; left: 10px; }
+  .card-series { font-size: 9px; padding: 24px 10px 9px; }
+  .card-body { padding-top: 12px; gap: 8px; }
+}
 @media (max-width: 480px) {
-  .card-image-emoji { font-size: 48px; }
-  .card-name { font-size: 14px; }
-  .card-name-sub { font-size: 11px; }
-  .card-body { padding: 12px; }
-  .card-tags { gap: 4px; padding-top: 6px; }
-  .card-series-badge { padding: 3px 8px; font-size: 9px; top: 8px; left: 8px; }
-  .card-image-overlay { padding: 12px; }
-  .card-overlay-btn { padding: 8px; font-size: 12px; }
+  .card-name { font-size: 15px; }
+  .card-name-sub { font-size: 8.5px; }
+  .card-tags { gap: 4px; }
+  .card-tags .tag { font-size: 9px; padding: 2px 6px; }
+  .hover-label { padding: 7px 14px; font-size: 10px; }
+  .card-series { font-size: 8px; letter-spacing: .08em; }
+}
+
+@media (hover: none) {
+  .card-hover { display: none; }
 }
 </style>
