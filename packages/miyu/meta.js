@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'miyu',
   name: '佐原海夕',
   nameSub: 'Miyu Sahara',
   series: 'P5X',
-  image: null,
+  image,
   tags: [
     { text: '木偶师', cls: 'tag-cyan' },
     { text: '大小姐', cls: 'tag-amber' },

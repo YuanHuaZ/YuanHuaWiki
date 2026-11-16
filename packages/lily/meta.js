@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'lily',
   name: '天音莉莉',
   nameSub: 'Amane Riri',
   series: '愚蠢天使与恶魔共舞',
-  image: null,
+  image,
   tags: [
     { text: '天使', cls: 'tag-cyan' },
     { text: '腹黑', cls: 'tag-purple' },

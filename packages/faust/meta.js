@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'faust',
   name: '浮士德',
   nameSub: 'Faust',
   series: '边狱巴士',
-  image: null,
+  image,
   tags: [
     { text: '学者', cls: 'tag-purple' },
     { text: '冷静', cls: 'tag-blue' },

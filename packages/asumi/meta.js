@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'asumi',
   name: '锦亚澄',
   nameSub: 'Nishiki Asumi',
   series: '常轨脱离',
-  image: null,
+  image,
   tags: [
     { text: 'VTuber', cls: 'tag-pink' },
     { text: '学妹', cls: 'tag-cyan' },

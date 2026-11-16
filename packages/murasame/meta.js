@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'murasame',
   name: '丛雨',
   nameSub: 'Murasame',
   series: '千恋万花',
-  image: null,
+  image,
   tags: [
     { text: '神刀', cls: 'tag-purple' },
     { text: '傲娇', cls: 'tag-red' },

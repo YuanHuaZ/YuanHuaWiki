@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'manaka',
   name: '长尾爱歌',
   nameSub: 'Nagao Manaka',
   series: 'P5X',
-  image: null,
+  image,
   tags: [
     { text: '歌手', cls: 'tag-cyan' },
     { text: '轮椅', cls: 'tag-blue' },

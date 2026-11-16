@@ -3,12 +3,14 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'noa',
   name: '白雪乃爱',
   nameSub: 'Shirayuki Noa',
   series: '天使嚣嚣',
-  image: null,
+  image,
   tags: [
     { text: '天使', cls: 'tag-cyan' },
     { text: '吃货', cls: 'tag-amber' },
