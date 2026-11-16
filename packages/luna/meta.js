@@ -6,7 +6,7 @@
 export default {
   id: 'luna',
   name: '月下',
-  nameSub: 'Luna Kindred',
+  nameSub: 'Luna',
   series: '崩坏3rd',
   image: null,
   tags: [
