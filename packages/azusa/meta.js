@@ -11,6 +11,7 @@ export default {
   nameSub: 'Mera Azusa',
   series: 'Dracu-Riot!',
   image,
+  cardBg: '#fff',
   cardSize: '145% auto',
   tags: [
     { text: '宿舍长', cls: 'tag-amber' },

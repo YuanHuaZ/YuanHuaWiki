@@ -11,7 +11,7 @@ export default {
   nameSub: 'Hella',
   series: '无期迷途',
   image,
-  cardSize: 'cover',
+  cardSize: '190% auto',
   tags: [
     { text: '自愈', cls: 'tag-green' },
     { text: '嘴臭', cls: 'tag-dark' },

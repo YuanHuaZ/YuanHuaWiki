@@ -11,7 +11,8 @@ export default {
   nameSub: 'Dusk',
   series: '明日方舟',
   image,
-  cardSize: 'cover',
+  cardBg: '#fff',
+  cardSize: '200% auto',
   tags: [
     { text: '画家', cls: 'tag-purple' },
     { text: '墨', cls: 'tag-dark' },

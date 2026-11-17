@@ -63,8 +63,8 @@ export default {
     { icon: '🏙️', name: '鼠王', type: '上级 / 影子', desc: '龙门真正的秩序制定者，<span class="highlight">她在他手下做事</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '🍵',
-  avatarSize: 'cover',
-  avatarBg: null,
+  avatarSize: '200% auto',
+  avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关作品' },

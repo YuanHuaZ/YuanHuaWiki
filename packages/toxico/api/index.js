@@ -62,7 +62,7 @@ export default {
     { icon: '🌻', name: '花畑', type: '青梅竹马 / 队友', desc: '从小一起长大，也是<span class="highlight-pink">唯一知道她另一面的人</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🧪',
-  avatarSize: 'cover',
+  avatarSize: '185% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

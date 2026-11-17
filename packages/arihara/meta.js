@@ -11,6 +11,7 @@ export default {
   nameSub: 'Arihara Nanami',
   series: 'RIDDLE JOKER',
   image,
+  cardBg: '#fff',
   cardSize: '145% auto',
   tags: [
     { text: '妹妹', cls: 'tag-pink' },

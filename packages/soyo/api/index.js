@@ -93,7 +93,7 @@ export default {
   // ===== 布局数据（自 views/Detail.vue 迁移）=====
   placeholderEmoji: "⭐",
   avatarSize: "cover",
-  avatarBg: null,
+  avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关番剧' },

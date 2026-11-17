@@ -62,7 +62,7 @@ export default {
     { icon: '🕵️', name: '局长', type: '收容者 / 上司', desc: '她嘴上最不服、<span class="highlight-pink">行动上最听话的人</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '🐀',
-  avatarSize: 'cover',
+  avatarSize: '190% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

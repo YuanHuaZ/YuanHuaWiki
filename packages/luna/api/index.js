@@ -62,7 +62,7 @@ export default {
     { icon: '🎓', name: '天命众人', type: '部下', desc: '学园的同僚与学生们，<span class="highlight-pink">她守夜的理由</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🦇',
-  avatarSize: '145% auto',
+  avatarSize: 'cover',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

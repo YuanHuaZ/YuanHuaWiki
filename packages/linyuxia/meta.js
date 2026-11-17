@@ -11,7 +11,8 @@ export default {
   nameSub: 'Lin Yuxia',
   series: '明日方舟',
   image,
-  cardSize: 'cover',
+  cardBg: '#fff',
+  cardSize: '200% auto',
   tags: [
     { text: '龙门', cls: 'tag-amber' },
     { text: '富婆', cls: 'tag-orange' },

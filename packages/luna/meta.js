@@ -11,7 +11,7 @@ export default {
   nameSub: 'Luna',
   series: '崩坏3rd',
   image,
-  cardSize: '145% auto',
+  cardSize: 'cover',
   tags: [
     { text: '吸血鬼', cls: 'tag-red' },
     { text: '德丽莎', cls: 'tag-blue' },

@@ -11,7 +11,7 @@ export default {
   nameSub: 'Yue',
   series: '平凡职业造就世界最强',
   image,
-  cardSize: '145% auto',
+  cardSize: '200% auto',
   tags: [
     { text: '吸血鬼', cls: 'tag-red' },
     { text: '忠诚', cls: 'tag-pink' },

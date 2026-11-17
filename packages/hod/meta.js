@@ -11,7 +11,7 @@ export default {
   nameSub: 'Hod',
   series: '脑叶公司',
   image,
-  cardSize: '145% auto',
+  cardSize: 'cover',
   tags: [
     { text: '训练层', cls: 'tag-amber' },
     { text: '温柔', cls: 'tag-green' },

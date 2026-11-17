@@ -62,7 +62,7 @@ export default {
     { icon: '🔧', name: '其他 Sephirah', type: '同僚', desc: '各有各的伤，<span class="highlight-pink">彼此看不惯又离不开</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '📘',
-  avatarSize: '145% auto',
+  avatarSize: 'cover',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

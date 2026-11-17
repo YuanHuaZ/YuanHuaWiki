@@ -62,8 +62,8 @@ export default {
     { icon: '📜', name: '令', type: '姐妹', desc: '岁相中的另一位，<span class="highlight-pink">能和她聊到一处去</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🖌️',
-  avatarSize: 'cover',
-  avatarBg: null,
+  avatarSize: '200% auto',
+  avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关作品' },
