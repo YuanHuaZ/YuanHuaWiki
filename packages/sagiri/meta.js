@@ -22,7 +22,6 @@ export default {
   tags: [
     { text: '插画师', cls: 'tag-purple' },
     { text: '家里蹲', cls: 'tag-blue' },
-    { text: '傲娇', cls: 'tag-pink' },
-    { text: '女主角', cls: 'tag-cyan' }
+    { text: '傲娇', cls: 'tag-pink' }
   ]
 }

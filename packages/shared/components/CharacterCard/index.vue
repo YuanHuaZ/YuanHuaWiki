@@ -49,14 +49,15 @@ export default {
   setup(props) {
     const router = useRouter()
 
-    // 立绘适配规则来自角色数据（packages/<id>/meta.js 的 cardBg / cardSize），组件不再认 id
+    // 立绘适配规则来自角色数据（packages/<id>/meta.js 的 cardBg / cardSize / cardPos），组件不再认 id
     const imageStyle = computed(() => {
       const c = props.character
       if (c.image) {
         return {
           backgroundImage: `url(${c.image})`,
           backgroundSize: c.cardSize || 'cover',
-          backgroundPosition: 'top center',
+          backgroundPosition: c.cardPos || 'top center',
+          backgroundRepeat: 'no-repeat',
           backgroundColor: c.cardBg || 'transparent'
         }
       }

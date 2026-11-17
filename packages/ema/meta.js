@@ -13,7 +13,6 @@ export default {
   image,
   cardSize: '145% auto',
   tags: [
-    { text: '樱花', cls: 'tag-pink' },
     { text: '怕生', cls: 'tag-cyan' },
     { text: '推理', cls: 'tag-purple' },
     { text: '魔女', cls: 'tag-dark' }

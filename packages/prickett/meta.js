@@ -14,7 +14,7 @@ export default {
   cardSize: 'cover',
   tags: [
     { text: '偶像', cls: 'tag-pink' },
-    { text: '红之女王', cls: 'tag-red' },
+    { text: '红偶像', cls: 'tag-red' },
     { text: '姐姐系', cls: 'tag-purple' },
     { text: '腹黑', cls: 'tag-dark' }
   ]

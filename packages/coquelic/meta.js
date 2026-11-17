@@ -15,7 +15,6 @@ export default {
   tags: [
     { text: '业师', cls: 'tag-red' },
     { text: '红花', cls: 'tag-pink' },
-    { text: '精神操控', cls: 'tag-purple' },
     { text: '优雅', cls: 'tag-amber' }
   ]
 }

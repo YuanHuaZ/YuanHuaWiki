@@ -20,7 +20,6 @@ export default {
   tags: [
     { text: '精灵', cls: 'tag-blue' },
     { text: '冰与水', cls: 'tag-cyan' },
-    { text: '胆小', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-pink' }
+    { text: '胆小', cls: 'tag-purple' }
   ]
 }

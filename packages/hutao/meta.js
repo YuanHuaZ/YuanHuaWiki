@@ -21,7 +21,6 @@ export default {
     { text: '火元素', cls: 'tag-red' },
     { text: '长柄武器', cls: 'tag-purple' },
     { text: '往生堂堂主', cls: 'tag-dark' },
-    { text: '璃月', cls: 'tag-orange' },
-    { text: '五星角色', cls: 'tag-gold' }
+    { text: '璃月', cls: 'tag-orange' }
   ]
 }

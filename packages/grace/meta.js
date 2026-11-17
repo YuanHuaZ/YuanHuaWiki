@@ -16,7 +16,6 @@ export default {
     { text: '衍射', cls: 'tag-amber' },
     { text: '佩枪', cls: 'tag-cyan' },
     { text: '调香师', cls: 'tag-pink' },
-    { text: '治疗', cls: 'tag-green' },
-    { text: '五星', cls: 'tag-purple' }
+    { text: '治疗', cls: 'tag-green' }
   ]
 }

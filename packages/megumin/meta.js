@@ -12,10 +12,11 @@ export default {
   series: '为美好的世界献上祝福！',
   image,
   cardSize: '145% auto',
+  cardPos: 'center 12%',
+  cardBg: '#fff',
   tags: [
     { text: '爆裂魔法', cls: 'tag-red' },
     { text: '中二', cls: 'tag-purple' },
-    { text: '红魔族', cls: 'tag-orange' },
-    { text: '女主角', cls: 'tag-pink' }
+    { text: '红魔族', cls: 'tag-orange' }
   ]
 }

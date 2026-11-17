@@ -285,7 +285,7 @@ export default {
       const d = props.data
       return {
         backgroundImage: `url(${d.image})`,
-        backgroundPosition: 'top center',
+        backgroundPosition: d.avatarPos || 'top center',
         backgroundSize: d.avatarSize || 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundColor: d.avatarBg || 'transparent'

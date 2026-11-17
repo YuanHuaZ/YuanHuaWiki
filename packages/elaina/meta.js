@@ -21,7 +21,6 @@ export default {
     { text: '魔法使', cls: 'tag-purple' },
     { text: '旅人', cls: 'tag-cyan' },
     { text: '自恋', cls: 'tag-pink' },
-    { text: '天才', cls: 'tag-amber' },
-    { text: '女主角', cls: 'tag-green' }
+    { text: '天才', cls: 'tag-amber' }
   ]
 }

@@ -23,7 +23,6 @@ export default {
     { text: '湮灭', cls: 'tag-red' },
     { text: '音感仪', cls: 'tag-purple' },
     { text: '指挥家', cls: 'tag-red' },
-    { text: '残星会', cls: 'tag-dark' },
-    { text: '五星角色', cls: 'tag-gold' }
+    { text: '残星会', cls: 'tag-dark' }
   ]
 }

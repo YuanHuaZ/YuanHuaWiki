@@ -64,7 +64,8 @@ export default {
   ],
   placeholderEmoji: '💥',
   avatarSize: '145% auto',
-  avatarBg: null,
+  avatarPos: 'center 8%',
+  avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关番剧' },

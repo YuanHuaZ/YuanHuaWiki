@@ -64,12 +64,14 @@ export default {
   placeholderEmoji: '🦇',
   avatarSize: 'cover',
   avatarBg: null,
+  review: '', // TODO 站长评价（自填）
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'game', icon: '🎮', label: '相关游戏' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
       { key: 'videos', icon: '🎬', label: '相关视频' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' }
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2b080b 25%, #3d0b10 50%, #4a0d13 75%, #0a0a14 100%)",

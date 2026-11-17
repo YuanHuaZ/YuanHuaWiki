@@ -17,7 +17,7 @@
           <div><strong>{{ characterCount }}</strong><span> 位角色档案</span></div>
           <div><strong>{{ seriesCount }}</strong><span> 部作品收录</span></div>
         </div>
-        <a class="hero-browse" href="#character-list">浏览全部角色 <span aria-hidden="true">↓</span></a>
+        <a class="hero-browse" href="#character-list" @click.prevent="scrollToArchive">浏览全部角色 <span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-portrait" aria-hidden="true">
         <div class="portrait-caption">FEATURED<br>COLLECTION</div>
@@ -81,7 +81,18 @@ export default {
     function imageStyle(character) { return character ? { backgroundImage: `url(${character.image})` } : {} }
     function clearSearch() { searchQuery.value = ''; emit('search', '') }
 
-    return { searchQuery, characterCount, seriesCount, featured, imageStyle, clearSearch }
+    // 平滑滚动到角色档案区；顶部固定导航约 71px，留出 16px 呼吸位
+    function scrollToArchive() {
+      const target = document.getElementById('character-list')
+      if (!target) return
+      const header = document.querySelector('.header')
+      const offset = (header ? header.offsetHeight : 72) + 16
+      const top = target.getBoundingClientRect().top + window.scrollY - offset
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' })
+    }
+
+    return { searchQuery, characterCount, seriesCount, featured, imageStyle, clearSearch, scrollToArchive }
   }
 }
 </script>

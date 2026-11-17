@@ -15,7 +15,6 @@ export default {
   tags: [
     { text: '圣女', cls: 'tag-green' },
     { text: '天然呆', cls: 'tag-pink' },
-    { text: '温柔', cls: 'tag-cyan' },
-    { text: '女主角', cls: 'tag-purple' }
+    { text: '温柔', cls: 'tag-cyan' }
   ]
 }

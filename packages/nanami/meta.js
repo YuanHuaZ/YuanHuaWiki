@@ -20,7 +20,6 @@ export default {
   tags: [
     { text: '天然呆', cls: 'tag-purple' },
     { text: '温柔', cls: 'tag-pink' },
-    { text: '游戏宅', cls: 'tag-cyan' },
-    { text: '主角', cls: 'tag-orange' }
+    { text: '游戏宅', cls: 'tag-cyan' }
   ]
 }

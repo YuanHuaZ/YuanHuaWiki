@@ -22,7 +22,6 @@ export default {
   tags: [
     { text: '超能力者', cls: 'tag-purple' },
     { text: '学生会会长', cls: 'tag-blue' },
-    { text: '傲娇', cls: 'tag-pink' },
-    { text: '女主角', cls: 'tag-green' }
+    { text: '傲娇', cls: 'tag-pink' }
   ]
 }

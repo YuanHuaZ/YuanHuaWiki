@@ -22,7 +22,6 @@ export default {
     { text: '傲娇', cls: 'tag-pink' },
     { text: '天才', cls: 'tag-orange' },
     { text: '童星', cls: 'tag-amber' },
-    { text: '努力家', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-cyan' }
+    { text: '努力家', cls: 'tag-purple' }
   ]
 }

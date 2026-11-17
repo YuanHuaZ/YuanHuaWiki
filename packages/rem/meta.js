@@ -22,7 +22,6 @@ export default {
     { text: '鬼族', cls: 'tag-blue' },
     { text: '女仆', cls: 'tag-pink' },
     { text: '温柔', cls: 'tag-green' },
-    { text: '毒舌', cls: 'tag-purple' },
-    { text: '女主角', cls: 'tag-orange' }
+    { text: '毒舌', cls: 'tag-purple' }
   ]
 }

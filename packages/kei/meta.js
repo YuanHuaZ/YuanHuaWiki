@@ -15,7 +15,6 @@ export default {
   tags: [
     { text: '辣妹', cls: 'tag-pink' },
     { text: '假面', cls: 'tag-purple' },
-    { text: '坚强', cls: 'tag-amber' },
-    { text: '女主角', cls: 'tag-cyan' }
+    { text: '坚强', cls: 'tag-amber' }
   ]
 }
