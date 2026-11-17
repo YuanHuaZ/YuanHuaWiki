@@ -32,39 +32,30 @@ export default {
 
 <style scoped>
 .back-to-top {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
+  position: fixed; bottom: 34px; right: 34px;
   width: 46px; height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #a855f7, #7c3aed);
-  color: #fff;
-  border: none;
+  display: flex; align-items: center; justify-content: center;
+  background: #1b262e;
+  color: #d8bf8e;
+  border: 1px solid rgba(201, 168, 106, 0.38);
+  border-radius: 2px;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(168,85,247,0.4);
-  opacity: 0;
-  transform: translateY(20px) scale(0.85);
+  opacity: 0; transform: translateY(16px);
   pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 10px 26px rgba(29, 42, 51, 0.22);
 }
-.back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .back-to-top:hover {
-  background: linear-gradient(135deg, #c084fc, #a855f7);
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 8px 32px rgba(168,85,247,0.6), 0 0 0 6px rgba(168,85,247,0.1);
+  background: #121b21;
+  color: #fff;
+  transform: translateY(-3px);
+  border-color: rgba(201, 168, 106, 0.7);
+  box-shadow: 0 14px 30px rgba(29, 42, 51, 0.3);
 }
-.back-to-top:active {
-  transform: translateY(-1px) scale(0.98);
-}
+.back-to-top:active { transform: translateY(-1px); }
 @media (max-width: 480px) {
-  .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+  .back-to-top { bottom: 20px; right: 18px; width: 42px; height: 42px; }
 }
 </style>

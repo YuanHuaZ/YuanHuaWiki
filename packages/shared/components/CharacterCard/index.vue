@@ -11,9 +11,10 @@
       </div>
       <div class="card-image-shine"></div>
       <div class="card-image-overlay">
-        <span class="card-overlay-btn">查看详情 →</span>
+        <span class="card-overlay-btn">查看档案 →</span>
       </div>
       <span class="card-series-badge">{{ character.seriesShort || character.series }}</span>
+      <span class="card-index">{{ String(index + 1).padStart(2, '0') }}</span>
     </div>
     <div class="card-body">
       <h3 class="card-name">{{ character.name }}</h3>
@@ -29,14 +30,14 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-// 无立绘时的兜底渐变（当前 12 个角色都有立绘，正常走不到这里）
+// 无立绘时的兜底渐变（当前角色都有立绘，正常走不到这里）
 const FALLBACK_GRADIENTS = [
-  'linear-gradient(135deg, #2d1b4e, #1a1030)',
-  'linear-gradient(135deg, #1e3a5f, #0f1b2d)',
-  'linear-gradient(135deg, #1a2e2e, #0d1a1a)',
-  'linear-gradient(135deg, #2e1a2e, #1a1020)',
-  'linear-gradient(135deg, #1a2e1a, #0d1a0d)',
-  'linear-gradient(135deg, #2e241a, #1a100d)'
+  'linear-gradient(150deg, #2b3540, #141c23)',
+  'linear-gradient(150deg, #33302a, #191713)',
+  'linear-gradient(150deg, #2a3336, #141b1d)',
+  'linear-gradient(150deg, #332e35, #191518)',
+  'linear-gradient(150deg, #2c3330, #141b18)',
+  'linear-gradient(150deg, #34302b, #1a1714)'
 ]
 
 export default {
@@ -59,8 +60,6 @@ export default {
           backgroundColor: c.cardBg || 'transparent'
         }
       }
-      // 兜底渐变按卡片序号轮换
-      // （原实现按 id 里的数字取模，但 12 个 id 全是纯字母，parseInt 恒为 0，只会取到第一条）
       return { background: FALLBACK_GRADIENTS[props.index % FALLBACK_GRADIENTS.length] }
     })
 
@@ -79,41 +78,126 @@ export default {
 }
 </script>
 
-<style>/* 角色卡片样式（唯一定义处）
-   原先同时写在 src/styles/global.css 与本组件里，global.css 用 !important 压制组件，
-   两处取值还不一致（圆角、阴影、过渡、缩放比例等），改一处常常看不出效果。
-   现已按「实际生效值」合并到此处，不再需要 !important。 */
-.character-card:hover .tag { transform: translateY(-1px); }
-.character-card { display: flex; flex-direction: column; background: #fff; border-radius: 3px; overflow: hidden; box-shadow: 0 2px 8px rgba(38,54,64,0.06), 0 8px 24px rgba(0,0,0,0.04); transition: all 0.45s cubic-bezier(0.33,1,0.68,1); cursor: pointer; opacity: 0; animation: cardIn 0.5s ease-out forwards; border: 1px solid #dedbd3; position: relative; }
-.character-card::before { content: ''; position: absolute; inset: 0; z-index: 3; border-radius: 3px; border: 2px solid transparent; background: linear-gradient(135deg, rgba(168,85,247,0), rgba(236,72,153,0)) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; transition: all 0.45s cubic-bezier(0.33,1,0.68,1); pointer-events: none; }
-.character-card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(38,54,64,0.14), 0 2px 8px rgba(0,0,0,0.06); border-color: #a48b6c; }
-.character-card:hover::before { background: linear-gradient(135deg, rgba(168,85,247,0.5), rgba(236,72,153,0.4)) border-box; }
-.card-image { position: relative; aspect-ratio: 3/4; overflow: hidden; background: #0a0520; }
-.card-image-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.55s cubic-bezier(0.33,1,0.68,1); }
-.character-card:hover .card-image-inner { transform: scale(1.1); }
-.card-image-shine { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.08) 55%, transparent 60%); transform: translateX(-100%); transition: transform 0.6s ease; pointer-events: none; z-index: 2; }
-.character-card:hover .card-image-shine { transform: translateX(100%); }
-.card-image-emoji { font-size: 64px; filter: drop-shadow(0 0 30px rgba(168,85,247,0.3)); transition: all 0.4s ease; }
-.character-card:hover .card-image-emoji { transform: scale(1.2); filter: drop-shadow(0 0 40px rgba(168,85,247,0.5)); }
-.card-image-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); opacity: 0; transition: opacity 0.35s ease; display: flex; align-items: flex-end; padding: 16px; }
+<style>/* 角色卡片 —— 画册藏品卡：细白框 + 编号 + 金色悬停 */
+.character-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--surface, #fffdf8);
+  border: 1px solid var(--rule, #dcd5c7);
+  border-radius: var(--radius, 3px);
+  overflow: hidden;
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 0;
+  animation: cardIn 0.55s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  transition: transform 0.45s var(--ease, cubic-bezier(0.33,1,0.68,1)),
+              box-shadow 0.45s var(--ease, cubic-bezier(0.33,1,0.68,1)),
+              border-color 0.45s var(--ease, cubic-bezier(0.33,1,0.68,1));
+}
+.character-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-line, rgba(168, 130, 63, 0.34));
+  box-shadow: 0 22px 44px rgba(29, 42, 51, 0.13), 0 2px 6px rgba(29, 42, 51, 0.05);
+}
+
+/* 立绘区 */
+.card-image { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #161f26; }
+.card-image-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.7s var(--ease, cubic-bezier(0.33,1,0.68,1));
+}
+.character-card:hover .card-image-inner { transform: scale(1.045); }
+
+/* 底部压暗，保证徽标与按钮可读 */
+.card-image::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(18, 26, 32, 0.62) 0%, rgba(18, 26, 32, 0.08) 34%, transparent 62%);
+}
+
+/* 光泽扫过 */
+.card-image-shine {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, 0.16) 48%, rgba(255, 255, 255, 0.05) 54%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+}
+.character-card:hover .card-image-shine { transform: translateX(120%); }
+
+.card-image-emoji { font-size: 56px; opacity: 0.75; }
+
+/* 悬停按钮 */
+.card-image-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; align-items: flex-end; padding: 16px;
+  opacity: 0; transition: opacity 0.35s ease;
+}
 .character-card:hover .card-image-overlay { opacity: 1; }
-.card-overlay-btn { width: 100%; padding: 10px; border-radius: 10px; background: rgba(168,85,247,0.85); color: #fff; text-align: center; font-size: 13px; font-weight: 600; backdrop-filter: blur(4px); letter-spacing: 0.02em; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 16px rgba(168,85,247,0.3); transition: all 0.3s ease; }
-.character-card:hover .card-overlay-btn { box-shadow: 0 6px 24px rgba(168,85,247,0.45); }
-.card-series-badge { position: absolute; top: 10px; left: 10px; z-index: 1; padding: 3px 10px; border-radius: 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; background: rgba(0,0,0,0.5); color: #e2e8f0; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.card-body { padding: 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-.card-name { font-size: 16px; font-weight: 700; color: #0f172a; letter-spacing: -0.01em; line-height: 1.2; transition: color 0.3s ease; }
-.character-card:hover .card-name { color: #7c3aed; }
-.card-name-sub { font-size: 11px; color: #94a3b8; font-weight: 500; margin-top: -2px; letter-spacing: 0.03em; }
-.card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 8px; }
+.card-overlay-btn {
+  width: 100%; padding: 10px; text-align: center;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink, #1d2a33);
+  background: rgba(245, 242, 234, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  backdrop-filter: blur(6px);
+  transform: translateY(6px);
+  transition: transform 0.4s var(--ease, cubic-bezier(0.33,1,0.68,1)), background 0.3s ease;
+}
+.character-card:hover .card-overlay-btn { transform: translateY(0); }
+.card-overlay-btn:hover { background: #fff; }
+
+/* 作品徽标 */
+.card-series-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 3;
+  max-width: calc(100% - 62px);
+  padding: 4px 9px;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245, 242, 234, 0.92);
+  background: rgba(18, 26, 32, 0.42);
+  border: 1px solid rgba(245, 242, 234, 0.22);
+  backdrop-filter: blur(6px);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* 编号 */
+.card-index {
+  position: absolute; top: 9px; right: 12px; z-index: 3;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 15px; font-style: italic;
+  color: rgba(245, 242, 234, 0.72);
+  letter-spacing: 0.06em; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* 文字区 */
+.card-body {
+  padding: 16px 16px 15px;
+  display: flex; flex-direction: column; gap: 5px; flex: 1;
+  border-top: 1px solid var(--rule, #dcd5c7);
+}
+.card-name {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 18px; font-weight: 400; color: var(--ink, #1d2a33);
+  letter-spacing: 0.02em; line-height: 1.25;
+  transition: color 0.3s ease;
+}
+.character-card:hover .card-name { color: var(--gold, #a8823f); }
+.card-name-sub {
+  font-size: 10px; font-weight: 600; color: var(--ink-4, #98a2ab);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-top: -1px;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 10px; }
+.character-card:hover .tag { border-color: var(--gold-line, rgba(168,130,63,0.34)); }
 
 @media (max-width: 480px) {
-  .card-image-emoji { font-size: 48px; }
-  .card-name { font-size: 14px; }
-  .card-name-sub { font-size: 11px; }
-  .card-body { padding: 12px; }
-  .card-tags { gap: 4px; padding-top: 6px; }
-  .card-series-badge { padding: 3px 8px; font-size: 9px; top: 8px; left: 8px; }
-  .card-image-overlay { padding: 12px; }
-  .card-overlay-btn { padding: 8px; font-size: 12px; }
+  .card-body { padding: 11px 11px 12px; }
+  .card-name { font-size: 15px; }
+  .card-name-sub { font-size: 9px; }
+  .card-image-emoji { font-size: 40px; }
+  .card-tags { gap: 4px; padding-top: 7px; }
+  .card-series-badge { top: 8px; left: 8px; padding: 3px 7px; font-size: 8px; }
+  .card-index { top: 6px; right: 8px; font-size: 12px; }
+  .card-image-overlay { padding: 10px; }
 }
 </style>

@@ -69,13 +69,42 @@ export default {
 </script>
 
 <style>
-.archive-section { background: #f4f2ed; padding: 92px 0 108px; }
-.archive-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid #cfcac0; }
-.archive-eyebrow { margin-bottom: 6px; color: #9c7953; font: 700 10px Inter,sans-serif; letter-spacing: .16em; text-transform: uppercase; }
-.archive-heading h2 { color: #202d37; font: 400 clamp(33px,4vw,52px)/1 Georgia,'Noto Serif SC',serif; letter-spacing: 0; }
-.archive-description { margin-top: 10px; color: #75808a; font-size: 14px; }
-.archive-count { padding-bottom: 5px; color: #879098; font: 11px Inter,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
-.archive-count strong { color: #9c7953; font: 400 29px/1 Georgia,serif; letter-spacing: 0; }
-.empty-state { padding: 80px 24px; text-align: center; color: #66717a; }.empty-state p { margin-bottom: 18px; }.empty-state button { padding: 9px 16px; border: 1px solid #263640; color: #263640; background: transparent; cursor: pointer; font: inherit; }
-@media (max-width:768px) { .archive-section { padding: 55px 0 68px; }.archive-heading { align-items: start; flex-direction: column; gap: 10px; padding-bottom: 23px; }.archive-count { padding: 0; } }
+.archive-section { background: var(--paper); padding: 96px 0 112px; }
+.archive-heading {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+  padding-bottom: 26px; border-bottom: 1px solid var(--rule-2);
+  margin-bottom: 38px;
+}
+.archive-eyebrow {
+  margin-bottom: 10px; color: var(--gold);
+  font: 700 10px var(--sans); letter-spacing: 0.24em; text-transform: uppercase;
+}
+.archive-heading h2 {
+  color: var(--ink); font: 400 clamp(34px, 4.2vw, 52px)/1.05 var(--serif);
+  letter-spacing: 0.01em;
+}
+.archive-description { margin-top: 12px; color: var(--ink-3); font-size: 13.5px; letter-spacing: 0.02em; }
+.archive-count {
+  padding-bottom: 6px; color: var(--ink-4);
+  font: 11px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap;
+}
+.archive-count strong {
+  color: var(--gold); font: 400 30px/1 var(--serif); letter-spacing: 0.02em;
+  margin-right: 4px;
+}
+.empty-state { padding: 88px 24px; text-align: center; color: var(--ink-3); }
+.empty-state p { margin-bottom: 20px; font-size: 14px; letter-spacing: 0.04em; }
+.empty-state button {
+  padding: 10px 20px; border: 1px solid var(--rule-2); color: var(--ink);
+  background: transparent; cursor: pointer; font: 600 12px var(--sans);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: all 0.3s var(--ease);
+}
+.empty-state button:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-soft); }
+@media (max-width: 768px) {
+  .archive-section { padding: 58px 0 70px; }
+  .archive-heading { align-items: flex-start; flex-direction: column; gap: 12px; padding-bottom: 22px; margin-bottom: 26px; }
+  .archive-count { padding: 0; }
+  .archive-count strong { font-size: 24px; }
+}
 </style>

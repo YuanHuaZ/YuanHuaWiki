@@ -25,32 +25,25 @@ export default {
 </script>
 
 <style scoped>
-.toast-container {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+.toast-container { position: fixed; top: 26px; right: 26px; z-index: 3000; display: flex; flex-direction: column; gap: 10px; }
 .toast {
-  padding: 14px 24px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  animation: slideDown 0.3s ease-out;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 20px 13px 18px;
+  background: #1b262e;
+  color: #f2ede2;
+  border: 1px solid rgba(201, 168, 106, 0.32);
+  border-left: 2px solid #c9a86a;
+  border-radius: 2px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  box-shadow: 0 16px 34px rgba(20, 28, 34, 0.32);
+  animation: slideDown 0.32s cubic-bezier(0.33, 1, 0.68, 1);
 }
-.toast.success { background: #16a34a; }
-.toast.info { background: #a855f7; }
-.toast.error { background: #ef4444; }
+.toast span { font-size: 13px; opacity: 0.9; }
+.toast.success { border-left-color: #6f9c6a; }
+.toast.info { border-left-color: #c9a86a; }
+.toast.error { border-left-color: #b4534b; }
 @media (max-width: 480px) {
   .toast-container { top: 12px; right: 12px; left: 12px; }
-  .toast { font-size: 13px; padding: 12px 16px; }
+  .toast { font-size: 12.5px; padding: 11px 15px; }
 }
 </style>
