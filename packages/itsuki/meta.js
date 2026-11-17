@@ -3,14 +3,12 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
-import image from './images/1.jpg'
-
 export default {
   id: 'itsuki',
   name: '中野五月',
   nameSub: 'Nakano Itsuki',
   series: '五等分的花嫁',
-  image,
+  image: null,
   tags: [
     { text: '吃货', cls: 'tag-amber' },
     { text: '努力家', cls: 'tag-orange' },

@@ -57,6 +57,7 @@ import tsumugiMeta from '@packages/tsumugi/meta.js'
 import kannaMeta from '@packages/kanna/meta.js'
 import hutaoMeta from '@packages/hutao/meta.js'
 import c37Meta from '@packages/37/meta.js'
+import yingMeta from '@packages/ying/meta.js'
 
 /**
  * 角色详情数据懒加载表
@@ -110,7 +111,8 @@ const loaders = {
   tsumugi: () => import('@packages/tsumugi/api/index.js'),
   kanna: () => import('@packages/kanna/api/index.js'),
   hutao: () => import('@packages/hutao/api/index.js'),
-  37: () => import('@packages/37/api/index.js')
+  37: () => import('@packages/37/api/index.js'),
+  ying: () => import('@packages/ying/api/index.js')
 }
 
 /** 该角色是否已接入详情数据包 */
@@ -167,7 +169,8 @@ const characters = [
   tsumugiMeta,
   kannaMeta,
   hutaoMeta,
-  c37Meta
+  c37Meta,
+  yingMeta
 ].map(meta => ({ ...meta, hasDetail: hasCharacterData(meta.id) }))
 
 export function getCharacterList() {
