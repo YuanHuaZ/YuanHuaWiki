@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2a0c09 25%, #3a110d 50%, #471510 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #320f0b, #4b1611)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: 'BLACK SOULS',
         titleJp: 'BLACK SOULS',
         meta: [
-          { icon: "🎮", label: "开发：", value: "寿司勇者トロ" },
+          { icon: "🎮", label: "主要登场作品", value: "寿司勇者トロ" },
           { icon: "🕹️", label: "类型：", value: "黑暗童话 RPG" },
           { icon: "💻", label: "平台：", value: "PC" },
           { icon: "📦", label: "系列：", value: "BS1 / BS2" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: 'BS 里最让人难受的一条线。她从头到尾都在失去：被夺走的童年、被写死的命运、只剩二十年的寿命。可她一次都没求过谁——这种硬，比哭更疼。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '蕾克 · 官方立绘' }
+  ],
+  videos: []
 }

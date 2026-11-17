@@ -70,8 +70,9 @@ export default {
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'game', icon: '🎮', label: '相关游戏' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #290a0f 25%, #390e16 50%, #45111a 75%, #0a0a14 100%)",
@@ -109,7 +110,7 @@ export default {
         title: '王者荣耀',
         titleJp: 'Honor of Kings',
         meta: [
-          { icon: "🏢", label: "开发：", value: "天美工作室群" },
+          { icon: "🏢", label: "主要登场作品", value: "天美工作室群" },
           { icon: "📅", label: "上线：", value: "2015年11月" },
           { icon: "🕹️", label: "类型：", value: "MOBA" },
           { icon: "⚔️", label: "定位：", value: "战士" }
@@ -124,7 +125,8 @@ export default {
       }
     ]
   },
-  gallery: [],
-  videos: [],
-  review: '王者荣耀这两年写得最好的一个英雄故事：不是「黑化成反派」，是「被辜负的人回来讨账」。她的疯和话痨都有出处，台词越轻佻，背景越沉。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '影 · 官方立绘' }
+  ],
+  videos: []
 }

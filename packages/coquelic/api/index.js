@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2c0717 25%, #3d0a21 50%, #4a0c28 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #34091c, #4f0d2a)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '无期迷途',
         titleJp: '無期迷途',
         meta: [
-          { icon: "🏢", label: "开发：", value: "自意网络" },
+          { icon: "🏢", label: "主要登场作品", value: "自意网络" },
           { icon: "📅", label: "上线：", value: "2022年10月" },
           { icon: "🕹️", label: "类型：", value: "策略 RPG" },
           { icon: "💻", label: "平台：", value: "移动" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '无期迷途美术与文本结合得最好的角色之一。她明明随时会死，却始终保持着那点讲究——这种「不合时宜的体面」比任何悲情独白都有力。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '可可莉克 · 官方立绘' }
+  ],
+  videos: []
 }

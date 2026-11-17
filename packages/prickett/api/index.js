@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2a0914 25%, #3b0c1d 50%, #480f23 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #330a18, #4c0f25)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: 'BLACK SOULS 2',
         titleJp: 'BLACK SOULS II',
         meta: [
-          { icon: "🎮", label: "开发：", value: "寿司勇者トロ" },
+          { icon: "🎮", label: "主要登场作品", value: "寿司勇者トロ" },
           { icon: "🕹️", label: "类型：", value: "黑暗童话 RPG" },
           { icon: "💻", label: "平台：", value: "PC" },
           { icon: "🎡", label: "舞台：", value: "Queenland" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '她是我在 BS2 里最舍不得的角色。整条线都在笑，可每一句甜话后面都垫着刀。那首歌唱完，你会明白她早就知道结局。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '普利凯特 · 官方立绘' }
+  ],
+  videos: []
 }

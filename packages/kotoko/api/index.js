@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #160c27 25%, #1e1037 50%, #251443 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '虚构推理',
         titleJp: '虚構推理',
         meta: [
-          { icon: "🏢", label: "制作：", value: "Brain's Base" },
+          { icon: "🏢", label: "主要登场作品", value: "Brain's Base" },
           { icon: "📅", label: "播出：", value: "2020年1月 / 2023年1月" },
           { icon: "📺", label: "集数：", value: "两季各 12 话" },
           { icon: "🎤", label: "CV：", value: "鬼头明里" }
@@ -122,7 +123,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '把「推理」这个类型翻过来写的作品，而琴子就是那个翻桌的人。她不给真相，她给一个大家都能接受的谎言——这种设定太有意思了。加上那张嘴，越看越上头。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '岩永琴子 · 官方立绘' }
+  ],
+  videos: []
 }

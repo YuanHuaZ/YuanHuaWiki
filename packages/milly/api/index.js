@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #321501 25%, #461e02 50%, #552402 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #3c1902, #592602)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '无期迷途',
         titleJp: '無期迷途',
         meta: [
-          { icon: "🏢", label: "开发：", value: "自意网络" },
+          { icon: "🏢", label: "主要登场作品", value: "自意网络" },
           { icon: "📅", label: "上线：", value: "2022年10月" },
           { icon: "🕹️", label: "类型：", value: "策略 RPG" },
           { icon: "💻", label: "平台：", value: "移动" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '设计上非常「危险甜心」的一位。她的声音一出来就让人放松警惕，而档案越往下读越冷——这种反差是无期迷途的看家本领。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '蜜莉 · 官方立绘' }
+  ],
+  videos: []
 }

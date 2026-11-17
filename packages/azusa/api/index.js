@@ -67,9 +67,10 @@ export default {
   avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0b2528 25%, #0f3339 50%, #123e45 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0d2c30, #134249)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: 'DRACU-RIOT!',
         titleJp: 'DRACU-RIOT!',
         meta: [
-          { icon: "🎮", label: "开发：", value: "ゆずソフト" },
+          { icon: "🎮", label: "主要登场作品", value: "ゆずソフト" },
           { icon: "📅", label: "发售：", value: "2012年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '柚子社里少见的「有正经世界观」的一条线。梓表面是最叽叽喳喳的那个，真到关键处却是最扛得住的。安娜那段我到现在还记得。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '布良梓 · 官方立绘' }
+  ],
+  videos: []
 }

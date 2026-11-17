@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2f040f 25%, #420615 50%, #50071a 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #380512, #54081b)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '魔法少女的魔女审判',
         titleJp: '魔法少女の魔女裁判',
         meta: [
-          { icon: "🎮", label: "开发：", value: "Acacia" },
+          { icon: "🎮", label: "主要登场作品", value: "Acacia" },
           { icon: "📅", label: "发售：", value: "2025年7月18日" },
           { icon: "🕹️", label: "类型：", value: "文字冒险 / 推理" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '2025 年最让我意外的剧本。艾玛那种「明明很聪明却拼命装笨」的写法非常扎人——她不是被害者模板，她是带着罪活着的人。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '樱羽艾玛 · 官方立绘' }
+  ],
+  videos: []
 }

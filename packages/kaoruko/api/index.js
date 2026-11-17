@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2d0610 25%, #3f0816 50%, #4c0a1b 75%, #0a0a14 100%)",
@@ -105,7 +106,7 @@ export default {
         title: '薰香花朵凛然绽放',
         titleJp: '薫る花は凛と咲く',
         meta: [
-          { icon: "🏢", label: "制作：", value: "CloverWorks" },
+          { icon: "🏢", label: "主要登场作品", value: "CloverWorks" },
           { icon: "📅", label: "播出：", value: "2025年7月" },
           { icon: "🎤", label: "CV：", value: "井上穗乃花" }
         ],
@@ -120,7 +121,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '2025 年最舒服的校园恋爱之一。没有狗血、没有算计，就是两个好人慢慢靠近。薰子那种「先笑出来再说」的性格，看完会让人心情变好。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '和栗薰子 · 官方立绘' }
+  ],
+  videos: []
 }

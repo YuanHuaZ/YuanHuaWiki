@@ -67,9 +67,10 @@ export default {
   avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0a2922 25%, #0e3930 50%, #11463a 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0c3129, #124a3e)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '明日方舟',
         titleJp: 'アークナイツ',
         meta: [
-          { icon: "🏢", label: "开发：", value: "鹰角网络" },
+          { icon: "🏢", label: "主要登场作品", value: "鹰角网络" },
           { icon: "📅", label: "上线：", value: "2019年5月" },
           { icon: "🕹️", label: "类型：", value: "塔防 RPG" },
           { icon: "💻", label: "平台：", value: "移动" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '方舟里最会写「聪明人」的一批角色之一。她不做慈善，也不装好人，可你真出事的时候，她会用最不体面的方式帮你。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '林雨霞 · 官方立绘' }
+  ],
+  videos: []
 }

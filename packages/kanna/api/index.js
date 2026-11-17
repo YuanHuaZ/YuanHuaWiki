@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #160e25 25%, #1f1334 50%, #26173f 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #1a102d, #281943)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '星光咖啡馆与死神之蝶',
         titleJp: '星光咖啡馆と死神の蝶',
         meta: [
-          { icon: "🎮", label: "开发：", value: "ゆずソフト" },
+          { icon: "🎮", label: "主要登场作品", value: "ゆずソフト" },
           { icon: "📅", label: "发售：", value: "2020年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '柚子社里气质最特别的一位。她的「脱节」不是笑点设定，是百年孤独的证据。越甜越让人心里发酸。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '明月栞那 · 官方立绘' }
+  ],
+  videos: []
 }

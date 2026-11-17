@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0f2418 25%, #143322 50%, #193e29 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #112c1d, #1a422c)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '千恋＊万花',
         titleJp: '千恋＊万花',
         meta: [
-          { icon: "🎮", label: "开发：", value: "ゆずソフト" },
+          { icon: "🎮", label: "主要登场作品", value: "ゆずソフト" },
           { icon: "📅", label: "发售：", value: "2016年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '柚子社最出圈的「幼刀」。她吵、她闹、她怕鬼，可你一想到她一个人在刀里待了五百年，那些吵闹就全变成了心疼。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '丛雨 · 官方立绘' }
+  ],
+  videos: []
 }

@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2c0707 25%, #3d0a0a 50%, #4a0d0d 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '为美好的世界献上祝福！',
         titleJp: 'この素晴らしい世界に祝福を！',
         meta: [
-          { icon: "🏢", label: "制作：", value: "Studio Deen" },
+          { icon: "🏢", label: "主要登场作品", value: "Studio Deen" },
           { icon: "📅", label: "播出：", value: "2016年1月" },
           { icon: "📺", label: "集数：", value: "全10话" },
           { icon: "🎤", label: "CV：", value: "高桥李依" }
@@ -122,7 +123,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '中二角色的教科书。她的中二不是装出来的，是真的相信自己那一套，而且真的能把山炸平。笑完之后你会发现，全队最讲义气的就是她。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '惠惠 · 官方立绘' }
+  ],
+  videos: []
 }

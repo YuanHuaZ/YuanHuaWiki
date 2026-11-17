@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #091e2a 25%, #0c2a3b 50%, #0f3348 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0a2433, #10364c)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '重返未来：1999',
         titleJp: 'Reverse: 1999',
         meta: [
-          { icon: "🏢", label: "开发：", value: "深蓝互动" },
+          { icon: "🏢", label: "主要登场作品", value: "深蓝互动" },
           { icon: "📅", label: "上线：", value: "2023年10月" },
           { icon: "🕹️", label: "类型：", value: "策略卡牌" },
           { icon: "💻", label: "平台：", value: "移动 / PC" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '她的台词很少，但每一句都像从另一个维度递过来的。美术和设定咬得极紧——冰、水、数字、天真，全部长在同一个人身上。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '37 · 官方立绘' }
+  ],
+  videos: []
 }

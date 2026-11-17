@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #132014 25%, #1a2d1c 50%, #203722 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '白圣女与黑牧师',
         titleJp: '白聖女と黒牧師',
         meta: [
-          { icon: "🏢", label: "制作：", value: "动画工房" },
+          { icon: "🏢", label: "主要登场作品", value: "动画工房" },
           { icon: "📅", label: "播出：", value: "2023年7月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "泽田姬" }
@@ -123,7 +124,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '圣女题材里少见的「不端着」：她的圣洁不是高高在上，而是会摔跤、会赌气、会因为一块巧克力蛋糕开心一整天。看的时候一直在笑，看完却发现心里被熨平了。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '塞西莉亚 · 官方立绘' }
+  ],
+  videos: []
 }

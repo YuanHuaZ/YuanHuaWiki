@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #1d270c 25%, #293611 50%, #324215 75%, #0a0a14 100%)",
@@ -105,7 +106,7 @@ export default {
         title: '不道德公会',
         titleJp: '不徳のギルド',
         meta: [
-          { icon: "🏢", label: "制作：", value: "TNK" },
+          { icon: "🏢", label: "主要登场作品", value: "TNK" },
           { icon: "📅", label: "播出：", value: "2022年10月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "大地叶" }
@@ -121,7 +122,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '毒毒子属于那种「一眼看过去最没干劲、打起来最离谱」的角色。她不装、不热血、不逞强，就是懒懒地放一发大魔法把场面炸平，然后回去睡觉。很对我的胃口。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '毒毒子 · 官方立绘' }
+  ],
+  videos: []
 }

@@ -70,8 +70,9 @@ export default {
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'game', icon: '🎮', label: '相关游戏' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #1d082b 25%, #290b3c 50%, #310e49 75%, #0a0a14 100%)",
@@ -109,7 +110,7 @@ export default {
         title: '鸣潮',
         titleJp: 'Wuthering Waves',
         meta: [
-          { icon: "🏢", label: "开发：", value: "库洛游戏" },
+          { icon: "🏢", label: "主要登场作品", value: "库洛游戏" },
           { icon: "📅", label: "上线：", value: "2024年5月" },
           { icon: "🕹️", label: "类型：", value: "开放世界 ARPG" },
           { icon: "🌼", label: "实装：", value: "3.8「旧梦凋零」" }
@@ -124,7 +125,8 @@ export default {
       }
     ]
   },
-  gallery: [],
-  videos: [],
-  review: '鸣潮这次的辅助写得有点东西：不是「温柔奶妈」的模板，而是把「救不了所有人」这件事直接摆在台面上。她的甜和她的无力感是一起给的，所以更可信。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '莉莉 · 官方立绘' }
+  ],
+  videos: []
 }

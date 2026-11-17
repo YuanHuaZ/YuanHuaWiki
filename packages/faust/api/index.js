@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0e2325 25%, #133134 50%, #183c3f 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #112a2d, #193f43)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '边狱巴士公司',
         titleJp: 'Limbus Company',
         meta: [
-          { icon: "🏢", label: "开发：", value: "Project Moon" },
+          { icon: "🏢", label: "主要登场作品", value: "Project Moon" },
           { icon: "📅", label: "上线：", value: "2023年2月" },
           { icon: "🕹️", label: "类型：", value: "策略 RPG" },
           { icon: "💻", label: "平台：", value: "PC / 移动" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: 'Project Moon 写「聪明人」的方式很对我口味：她不炫技，只是平静地宣布结论，然后世界就按她说的那样运转。最迷人的是她也有不知道的东西。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '浮士德 · 官方立绘' }
+  ],
+  videos: []
 }

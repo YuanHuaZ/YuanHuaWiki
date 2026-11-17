@@ -66,9 +66,11 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0c2724 25%, #103732 50%, #14433d 75%, #0a0a14 100%)",
@@ -105,7 +107,7 @@ export default {
         title: 'Summer Pockets',
         titleJp: 'Summer Pockets',
         meta: [
-          { icon: "🎮", label: "开发：", value: "Key" },
+          { icon: "🎮", label: "主要登场作品", value: "Key" },
           { icon: "📅", label: "发售：", value: "2018年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,9 +121,30 @@ export default {
         action: null
       }
     ],
-    game: []
+    game: [
+      {
+        cover: null,
+        label: '主要登场作品',
+        title: 'Summer Pockets',
+        titleJp: 'Summer Pockets',
+        meta: [
+          { icon: "🎮", label: "主要登场作品", value: "Key" },
+          { icon: "📅", label: "发售：", value: "2018年" },
+          { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
+          { icon: "💻", label: "平台：", value: "PC" }
+        ],
+        desc: '一个只有夏天的小岛，和几个把遗憾藏在蝉鸣里的女孩。<span class="highlight">紬的线最像一场会醒的梦</span>。',
+        tags: [
+          { cls: "dark", text: "治愈" },
+          { cls: "dark", text: "夏日" },
+          { cls: "dark", text: "催泪" }
+        ],
+        action: null
+      }
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: 'Key 的老配方，但对我依旧有效。紬的可爱不在台词，在于她每个动作都像在确认「我真的在这里」。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '紬文德斯 · 官方立绘' }
+  ],
+  videos: []
 }

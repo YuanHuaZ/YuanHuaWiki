@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2c1e07 25%, #3d2a0a 50%, #4a340d 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '欢迎来到实力至上主义的教室',
         titleJp: 'ようこそ実力至上主義の教室へ',
         meta: [
-          { icon: "🏢", label: "制作：", value: "Lerche" },
+          { icon: "🏢", label: "主要登场作品", value: "Lerche" },
           { icon: "📅", label: "播出：", value: "2017年7月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "竹达彩奈" }
@@ -122,7 +123,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '她不是那种让人一眼喜欢的角色。前半段觉得她烦、势利、会卖队友，可等你知道她被霸凌到什么程度，那些讨厌就全变成了心疼。D班最像「求生」二字的其实是她。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '轻井泽惠 · 官方立绘' }
+  ],
+  videos: []
 }

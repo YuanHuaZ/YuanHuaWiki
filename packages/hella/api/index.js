@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #1a0a29 25%, #240e3a 50%, #2c1146 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #1f0c31, #2f124a)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '无期迷途',
         titleJp: '無期迷途',
         meta: [
-          { icon: "🏢", label: "开发：", value: "自意网络" },
+          { icon: "🏢", label: "主要登场作品", value: "自意网络" },
           { icon: "📅", label: "上线：", value: "2022年10月" },
           { icon: "🕹️", label: "类型：", value: "策略 RPG" },
           { icon: "💻", label: "平台：", value: "移动" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '无期迷途里最扎我的一条线。她的嘴臭是有功能的——先把人推开，就不必再经历被抛弃。看懂这一点之后再听她骂人，全是心酸。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '海拉 · 官方立绘' }
+  ],
+  videos: []
 }

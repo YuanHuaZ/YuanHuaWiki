@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2f2004 25%, #422d05 50%, #503607 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '愚蠢天使与恶魔共舞',
         titleJp: '愚かな天使は悪魔と踊る',
         meta: [
-          { icon: "🏢", label: "制作：", value: "童园" },
+          { icon: "🏢", label: "主要登场作品", value: "童园" },
           { icon: "📅", label: "播出：", value: "2024年1月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "佐仓绫音" }
@@ -122,7 +123,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '佐仓绫音配腹黑小恶魔简直量身定做。她越是想装天使，破功的时候就越可爱——尤其是被反将一军之后那张脸。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '天音莉莉 · 官方立绘' }
+  ],
+  videos: []
 }

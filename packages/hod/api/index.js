@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #271a0c 25%, #372410 50%, #432b14 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #2f1f0e, #472e15)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '脑叶公司',
         titleJp: 'Lobotomy Corporation',
         meta: [
-          { icon: "🏢", label: "开发：", value: "Project Moon" },
+          { icon: "🏢", label: "主要登场作品", value: "Project Moon" },
           { icon: "📅", label: "发售：", value: "2016年" },
           { icon: "🕹️", label: "类型：", value: "模拟经营 / 恐怖" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: 'Hod 的核心抑制是我第一次在游戏里哭。她不是坏主管，她只是真心相信「好好说话能救人」，然后被现实一次次打脸。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: 'Hod · 官方立绘' }
+  ],
+  videos: []
 }

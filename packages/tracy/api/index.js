@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2d1a06 25%, #3e2509 50%, #4c2d0b 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #362008, #502f0c)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '第五人格',
         titleJp: 'Identity V',
         meta: [
-          { icon: "🏢", label: "开发：", value: "网易" },
+          { icon: "🏢", label: "主要登场作品", value: "网易" },
           { icon: "📅", label: "上线：", value: "2018年4月" },
           { icon: "🕹️", label: "类型：", value: "非对称对抗" },
           { icon: "💻", label: "平台：", value: "移动 / PC" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '第五人格里我最常用的求生者。她的强度是「稳」，性格也是「稳」——不声不响地把全场密码机修完，那种可靠感很难替代。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '特蕾西 · 官方立绘' }
+  ],
+  videos: []
 }

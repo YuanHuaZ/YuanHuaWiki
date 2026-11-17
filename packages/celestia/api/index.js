@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2b2208 25%, #3c300c 50%, #493b0e 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #33290a, #4d3e0f)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '弹丸论破',
         titleJp: 'ダンガンロンパ',
         meta: [
-          { icon: "🏢", label: "制作：", value: "Lerche" },
+          { icon: "🏢", label: "主要登场作品", value: "Lerche" },
           { icon: "📅", label: "播出：", value: "2013年7月" },
           { icon: "📺", label: "集数：", value: "全13话" },
           { icon: "🎤", label: "CV：", value: "椎名碧流" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '弹丸里最像「反派」也最像「棋手」的角色。她不靠暴力，靠的是把所有人都当成筹码。这种人写好了非常可怕，写砸了很蠢——她属于前者。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '塞蕾丝缇雅 · 官方立绘' }
+  ],
+  videos: []
 }

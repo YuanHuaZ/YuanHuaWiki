@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #170f24 25%, #211533 50%, #28193e 75%, #0a0a14 100%)",
@@ -105,7 +106,7 @@ export default {
         title: '平凡职业造就世界最强',
         titleJp: 'ありふれた職業で世界最強',
         meta: [
-          { icon: "🏢", label: "制作：", value: "asread × WHITE FOX" },
+          { icon: "🏢", label: "主要登场作品", value: "asread × WHITE FOX" },
           { icon: "📅", label: "播出：", value: "2019年7月" },
           { icon: "📺", label: "集数：", value: "全13话" },
           { icon: "🎤", label: "CV：", value: "大西沙织" }
@@ -121,7 +122,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '典型的「强强联合」型女主：不拖后腿、不无理取闹，认定了就一路跟到底。迷宫那段她从王座上站起来、决定跟人走的画面，我记了很久。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '月 · 官方立绘' }
+  ],
+  videos: []
 }

@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2b080e 25%, #3c0b14 50%, #490e18 75%, #0a0a14 100%)",
@@ -105,7 +106,7 @@ export default {
         title: '五等分的花嫁',
         titleJp: '五等分の花嫁',
         meta: [
-          { icon: "🏢", label: "制作：", value: "手冢 Production" },
+          { icon: "🏢", label: "主要登场作品", value: "手冢 Production" },
           { icon: "📅", label: "播出：", value: "2019年1月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "水濑祈" }
@@ -121,7 +122,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '五姐妹里最容易被低估的一位。她不够甜、不够萌，甚至有点倔，但她是唯一一个从头到尾都在认真规划未来的。那份「笨拙的正经」很难不喜欢。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '中野五月 · 官方立绘' }
+  ],
+  videos: []
 }

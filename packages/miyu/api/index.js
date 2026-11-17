@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #091f2a 25%, #0d2b3b 50%, #0f3447 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0b2532, #10374c)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '女神异闻录：夜幕魅影',
         titleJp: 'P5X',
         meta: [
-          { icon: "🏢", label: "开发：", value: "完美世界 黑羽工作室 × Atlus" },
+          { icon: "🏢", label: "主要登场作品", value: "完美世界 黑羽工作室 × Atlus" },
           { icon: "📅", label: "上线：", value: "2024年4月" },
           { icon: "🕹️", label: "类型：", value: "回合制 JRPG" },
           { icon: "💻", label: "平台：", value: "移动 / PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: 'P5X 里我最喜欢的一位。她的「乖」是真的，「倔」也是真的——能为了不听安排就去睡街头的人，温柔起来才更有分量。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '佐原海夕 · 官方立绘' }
+  ],
+  videos: []
 }

@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #121721 25%, #1a202e 50%, #1f2737 75%, #0a0a14 100%)",
@@ -106,7 +107,7 @@ export default {
         title: '变态王子与不笑猫',
         titleJp: '変態王子と笑わない猫。',
         meta: [
-          { icon: "🏢", label: "制作：", value: "J.C.STAFF" },
+          { icon: "🏢", label: "主要登场作品", value: "J.C.STAFF" },
           { icon: "📅", label: "播出：", value: "2013年4月" },
           { icon: "📺", label: "集数：", value: "全12话" },
           { icon: "🎤", label: "CV：", value: "小仓唯" }
@@ -122,7 +123,8 @@ export default {
     ],
     game: []
   },
-  gallery: [],
-  videos: [],
-  review: '月子最妙的地方是「没有表情却全是情绪」。动画里她一句话都不多，可那束头发一动，观众就知道她在闹别扭。看完会理解为什么那么多人说她是最治愈的面瘫。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '筒隐月子 · 官方立绘' }
+  ],
+  videos: []
 }

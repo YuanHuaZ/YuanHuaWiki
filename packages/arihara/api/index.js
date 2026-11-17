@@ -67,9 +67,10 @@ export default {
   avatarBg: '#fff',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #0d261e 25%, #12352a 50%, #164133 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0f2e24, #174536)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: 'RIDDLE JOKER',
         titleJp: 'RIDDLE JOKER',
         meta: [
-          { icon: "🎮", label: "开发：", value: "ゆずソフト" },
+          { icon: "🎮", label: "主要登场作品", value: "ゆずソフト" },
           { icon: "📅", label: "发售：", value: "2018年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '七海是那种「越日常越打动人」的角色。她的可爱全在细节里：包饺子、抱怨、把哥哥的衬衫叠得整整齐齐。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '在原七海 · 官方立绘' }
+  ],
+  videos: []
 }

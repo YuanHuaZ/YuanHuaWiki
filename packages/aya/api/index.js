@@ -67,9 +67,11 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'anime', icon: '📺', label: '相关番剧' },
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2e0517 25%, #400720 50%, #4e0927 75%, #0a0a14 100%)",
@@ -106,7 +108,7 @@ export default {
         title: 'BanG Dream!',
         titleJp: 'バンドリ！',
         meta: [
-          { icon: "🏢", label: "制作：", value: "ISSEN × 三次元" },
+          { icon: "🏢", label: "主要登场作品", value: "ISSEN × 三次元" },
           { icon: "📅", label: "播出：", value: "2017年1月" },
           { icon: "🎤", label: "CV：", value: "前岛亚美" }
         ],
@@ -119,9 +121,29 @@ export default {
         action: null
       }
     ],
-    game: []
+    game: [
+      {
+        cover: null,
+        label: '主要登场作品',
+        title: 'BanG Dream!',
+        titleJp: 'バンドリ！',
+        meta: [
+          { icon: "🏢", label: "主要登场作品", value: "ISSEN × 三次元" },
+          { icon: "📅", label: "播出：", value: "2017年1月" },
+          { icon: "🎤", label: "CV：", value: "前岛亚美" }
+        ],
+        desc: '少女乐队企划的核心动画。偶像乐队 Pastel*Palettes 的主唱，<span class="highlight">用努力补天赋</span>的那一个。',
+        tags: [
+          { cls: "dark", text: "音乐" },
+          { cls: "dark", text: "校园" },
+          { cls: "live", text: "正版引进" }
+        ],
+        action: null
+      }
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '彩是那种「越看越想替她加油」的角色。她不强、不利落、经常出丑，但每次摔倒都能自己爬起来。偶像这个身份在她身上不是光环，是负重。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '丸山彩 · 官方立绘' }
+  ],
+  videos: []
 }

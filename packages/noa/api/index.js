@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #302403 25%, #443304 50%, #523d04 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #3a2b03, #574105)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '天使☆嚣嚣 RE-BOOT!',
         titleJp: '天使☆騒々 RE-BOOT!',
         meta: [
-          { icon: "🎮", label: "开发：", value: "ゆずソフト" },
+          { icon: "🎮", label: "主要登场作品", value: "ゆずソフト" },
           { icon: "📅", label: "发售：", value: "2023年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "💻", label: "平台：", value: "PC" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '乃爱身上有个很妙的反差：她是最「圣洁」的角色，也是最好笑的那个。而当你笑够了，剧本又开始讲她前世欠下的债。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '白雪乃爱 · 官方立绘' }
+  ],
+  videos: []
 }

@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2b080b 25%, #3d0b10 50%, #4a0d13 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #34090e, #4e0e14)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '崩坏3rd',
         titleJp: '崩壊3rd',
         meta: [
-          { icon: "🏢", label: "开发：", value: "miHoYo" },
+          { icon: "🏢", label: "主要登场作品", value: "miHoYo" },
           { icon: "🕹️", label: "类型：", value: "动作 RPG" },
           { icon: "💻", label: "平台：", value: "移动 / PC" },
           { icon: "🦇", label: "形态：", value: "月下初拥" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '德丽莎本来就是个「装大人的小孩」，月下初拥把这点放大成了夜色下的孤独感。喜欢她这套装甲胜过任何战斗形态。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '月下 · 官方立绘' }
+  ],
+  videos: []
 }

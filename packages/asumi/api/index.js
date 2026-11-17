@@ -67,9 +67,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #09122a 25%, #0c193b 50%, #0f1f48 75%, #0a0a14 100%)",
@@ -99,14 +100,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #0a1633, #10214c)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '常轨脱离 Creative',
         titleJp: '常軌脱離 Creative',
         meta: [
-          { icon: "🎮", label: "开发：", value: "Madosoft" },
+          { icon: "🎮", label: "主要登场作品", value: "Madosoft" },
           { icon: "📅", label: "发售：", value: "2021年" },
           { icon: "🕹️", label: "类型：", value: "恋爱冒险" },
           { icon: "📺", label: "衍生：", value: "2024年10月动画" }
@@ -119,10 +121,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '「台上台下两个人」的设定很多人写过，但亚澄的可爱在于她两个身份都很真诚。她不是在演，是在找能呼吸的地方。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '锦亚澄 · 官方立绘' }
+  ],
+  videos: []
 }

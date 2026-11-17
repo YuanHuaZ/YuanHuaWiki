@@ -66,9 +66,10 @@ export default {
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
-      { key: 'anime', icon: '📺', label: '相关作品' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' },
-      { key: 'review', icon: '📝', label: '站长评价' }
+      { key: 'game', icon: '🎮', label: '相关游戏' },
+      { key: 'gallery', icon: '🖼️', label: '图片画廊' },
+      { key: 'videos', icon: '🎬', label: '相关视频' },
+      { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2f1004 25%, #421605 50%, #501b06 75%, #0a0a14 100%)",
@@ -98,14 +99,15 @@ export default {
     "videoFallback": "linear-gradient(135deg, #391304, #551d07)"
   },
   works: {
-    anime: [
+    anime: [],
+    game: [
       {
         cover: null,
         label: '主要登场作品',
         title: '明日方舟',
         titleJp: 'アークナイツ',
         meta: [
-          { icon: "🏢", label: "开发：", value: "鹰角网络" },
+          { icon: "🏢", label: "主要登场作品", value: "鹰角网络" },
           { icon: "📅", label: "上线：", value: "2019年5月" },
           { icon: "🕹️", label: "类型：", value: "塔防 RPG" },
           { icon: "💻", label: "平台：", value: "移动" }
@@ -118,10 +120,10 @@ export default {
         ],
         action: null
       }
-    ],
-    game: []
+    ]
   },
-  gallery: [],
-  videos: [],
-  review: '方舟里写得最「学术」也最悲伤的一条线。她越礼貌、越努力，你越意识到她听不见的东西正在变多。火山那段是真的燃。'
+  gallery: [
+      { isImage: true, bg: meta.image, badge: '立绘', overlay: '艾雅法拉 · 官方立绘' }
+  ],
+  videos: []
 }
