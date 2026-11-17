@@ -62,7 +62,7 @@ export default {
     { icon: '👧', name: '岛上的少女们', type: '朋友', desc: '夏天的同伴，<span class="highlight-pink">一起度过最短也最长的假期</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🌊',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

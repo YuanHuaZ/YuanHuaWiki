@@ -11,6 +11,7 @@ export default {
   nameSub: '37',
   series: '重返未来1999',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '神秘学家', cls: 'tag-purple' },
     { text: '浮冰', cls: 'tag-blue' },

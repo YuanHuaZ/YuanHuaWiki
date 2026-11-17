@@ -63,7 +63,7 @@ export default {
     { icon: '🎀', name: '和泉妃爱', type: '小姑', desc: '主角的妹妹，<span class="highlight">两人关系微妙又有趣</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🎧',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

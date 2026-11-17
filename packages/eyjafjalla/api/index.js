@@ -62,7 +62,7 @@ export default {
     { icon: '🏥', name: '罗德岛众人', type: '同伴', desc: '她的雇主与病友，<span class="highlight-pink">也是她的新田野</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🌋',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

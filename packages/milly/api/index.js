@@ -62,7 +62,7 @@ export default {
     { icon: '💃', name: '极乐边境的旧识', type: '过去', desc: '她已经回不去的舞台，<span class="highlight-pink">和那场爆炸一起烧掉了</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '🍯',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

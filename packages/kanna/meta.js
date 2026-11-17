@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'kanna',
-  name: '明月栞娜',
+  name: '明月栞那',
   nameSub: 'Akizuki Kanna',
   series: '星光咖啡馆与死神之蝶',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '死神', cls: 'tag-purple' },
     { text: '机械白痴', cls: 'tag-amber' },

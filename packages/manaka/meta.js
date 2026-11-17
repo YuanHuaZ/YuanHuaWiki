@@ -11,6 +11,7 @@ export default {
   nameSub: 'Nagao Manaka',
   series: 'P5X',
   image,
+  cardSize: 'cover',
   tags: [
     { text: '歌手', cls: 'tag-cyan' },
     { text: '轮椅', cls: 'tag-blue' },

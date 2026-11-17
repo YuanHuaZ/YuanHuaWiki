@@ -63,7 +63,7 @@ export default {
     { icon: '👧', name: '绫小路绫音', type: '情敌', desc: '同校的对手，<span class="highlight">两人针锋相对</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '😇',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

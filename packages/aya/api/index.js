@@ -63,7 +63,7 @@ export default {
     { icon: '🍔', name: '松原花音', type: '同事 / 队友', desc: '一起打工的温柔同伴，<span class="highlight">两人一起慌一起撑</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🎤',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

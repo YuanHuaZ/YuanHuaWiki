@@ -63,7 +63,7 @@ export default {
     { icon: '👩‍🏫', name: '式部茉优', type: '学姐', desc: '成熟又爱撒娇的前辈，<span class="highlight">常被她照顾</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🥟',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

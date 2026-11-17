@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'linyuxia',
   name: '林雨霞',
   nameSub: 'Lin Yuxia',
   series: '明日方舟',
-  image: null,
+  image,
+  cardSize: 'cover',
   tags: [
     { text: '龙门', cls: 'tag-amber' },
     { text: '富婆', cls: 'tag-orange' },

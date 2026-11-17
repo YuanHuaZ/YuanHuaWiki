@@ -11,6 +11,7 @@ export default {
   nameSub: 'Tsumugi Wenders',
   series: '夏日口袋',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '巫女', cls: 'tag-cyan' },
     { text: '异国血统', cls: 'tag-amber' },

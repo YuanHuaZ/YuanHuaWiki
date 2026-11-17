@@ -11,6 +11,7 @@ export default {
   nameSub: 'Faust',
   series: '边狱巴士',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '学者', cls: 'tag-purple' },
     { text: '冷静', cls: 'tag-blue' },

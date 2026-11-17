@@ -11,6 +11,7 @@ export default {
   nameSub: 'Miyu Sahara',
   series: 'P5X',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '木偶师', cls: 'tag-cyan' },
     { text: '大小姐', cls: 'tag-amber' },

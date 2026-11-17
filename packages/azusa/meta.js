@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'azusa',
   name: '布良梓',
   nameSub: 'Mera Azusa',
   series: 'Dracu-Riot!',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '宿舍长', cls: 'tag-amber' },
     { text: '狙击', cls: 'tag-blue' },

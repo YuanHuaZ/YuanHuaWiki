@@ -11,6 +11,7 @@ export default {
   nameSub: 'Eyjafjalla',
   series: '明日方舟',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '术师', cls: 'tag-red' },
     { text: '火山', cls: 'tag-orange' },

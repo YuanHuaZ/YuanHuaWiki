@@ -62,7 +62,7 @@ export default {
     { icon: '👦', name: '宇佐美翔平 / 夏泽朔', type: '同学', desc: '凛太郎的朋友，<span class="highlight-pink">热闹的三人组</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🌸',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

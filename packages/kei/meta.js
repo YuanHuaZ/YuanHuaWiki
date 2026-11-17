@@ -11,6 +11,7 @@ export default {
   nameSub: 'Karuizawa Kei',
   series: '欢迎来到实力至上主义的教室',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '辣妹', cls: 'tag-pink' },
     { text: '假面', cls: 'tag-purple' },

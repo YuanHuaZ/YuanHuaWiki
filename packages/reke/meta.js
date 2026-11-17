@@ -11,6 +11,7 @@ export default {
   nameSub: 'Reke',
   series: 'Black Souls',
   image,
+  cardSize: 'cover',
   tags: [
     { text: '小红帽', cls: 'tag-red' },
     { text: '无口', cls: 'tag-dark' },

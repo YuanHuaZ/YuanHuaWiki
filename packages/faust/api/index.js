@@ -62,7 +62,7 @@ export default {
     { icon: '🚌', name: '边狱罪人们', type: '同僚', desc: '一车问题人物，<span class="highlight-pink">她负责让他们活到下一站</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '📕',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

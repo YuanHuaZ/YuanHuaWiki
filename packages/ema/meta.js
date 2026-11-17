@@ -11,6 +11,7 @@ export default {
   nameSub: 'Sakuraba Ema',
   series: '魔法少女的魔女审判',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '樱花', cls: 'tag-pink' },
     { text: '怕生', cls: 'tag-cyan' },

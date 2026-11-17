@@ -63,7 +63,7 @@ export default {
     { icon: '👨‍👩‍👧', name: '父母', type: '家人', desc: '替她安排好一切的人，<span class="highlight">也是她出走的理由</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🎭',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

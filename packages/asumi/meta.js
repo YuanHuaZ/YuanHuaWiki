@@ -11,6 +11,7 @@ export default {
   nameSub: 'Nishiki Asumi',
   series: '常轨脱离',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: 'VTuber', cls: 'tag-pink' },
     { text: '学妹', cls: 'tag-cyan' },

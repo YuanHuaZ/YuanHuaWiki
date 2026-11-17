@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'anju',
   name: '隐杏珠',
   nameSub: 'Nabari Anju',
   series: 'Limelight Lemonade Jam',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '吉他手', cls: 'tag-purple' },
     { text: '地雷系', cls: 'tag-pink' },

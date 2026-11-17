@@ -62,7 +62,7 @@ export default {
     { icon: '🐰', name: '希雅', type: '同伴', desc: '同为始的队伍成员，<span class="highlight-pink">日常斗嘴的伙伴</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🌙',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

@@ -6,7 +6,7 @@ import meta from '../meta.js'
 
 export default {
   ...meta,
-  nameJp: '明月栞娜',
+  nameJp: '明月栞那',
   title: '百年死神',
   info: [
     { icon: '🎤', label: '声优', value: '麻仓亚恋', iconClass: 'purple' },
@@ -49,7 +49,7 @@ export default {
         '她煮的咖啡备受好评，做的蛋包饭被评价为「温柔的味道」。<span class="highlight-pink">最终她要面对的是：死神能不能留在人间</span>。'
       ],
       quote: '尼嘻嘻～',
-      quoteAuthor: '—— 明月栞娜'
+      quoteAuthor: '—— 明月栞那'
     }
   ],
   abilities: [
@@ -63,7 +63,7 @@ export default {
     { icon: '👭', name: '咖啡馆众人', type: '同伴', desc: '四季夏目、墨染希等店员，<span class="highlight">她重建的「家」</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '☕',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

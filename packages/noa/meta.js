@@ -11,6 +11,7 @@ export default {
   nameSub: 'Shirayuki Noa',
   series: '天使嚣嚣',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '天使', cls: 'tag-cyan' },
     { text: '吃货', cls: 'tag-amber' },

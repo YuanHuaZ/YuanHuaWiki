@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'yue',
   name: '月',
   nameSub: 'Yue',
   series: '平凡职业造就世界最强',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '吸血鬼', cls: 'tag-red' },
     { text: '忠诚', cls: 'tag-pink' },

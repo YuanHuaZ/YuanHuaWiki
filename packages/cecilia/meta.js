@@ -11,6 +11,7 @@ export default {
   nameSub: 'Cecilia',
   series: '白圣女与黑牧师',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '圣女', cls: 'tag-green' },
     { text: '天然呆', cls: 'tag-pink' },

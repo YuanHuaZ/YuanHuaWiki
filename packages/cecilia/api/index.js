@@ -63,7 +63,7 @@ export default {
     { icon: '👭', name: '海泽丽塔', type: '朋友', desc: '占卜师口中「新的邂逅」。两人一见如故，成了<span class="highlight">能一起说悄悄话的朋友</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🕊️',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

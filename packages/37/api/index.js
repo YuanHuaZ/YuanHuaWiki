@@ -62,7 +62,7 @@ export default {
     { icon: '🌊', name: '阿派朗岛', type: '故乡', desc: '她的来处，<span class="highlight-pink">也是她不断回望的地方</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🧊',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

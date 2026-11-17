@@ -63,7 +63,7 @@ export default {
     { icon: '🌙', name: '岛越月望', type: '同学 / 队友', desc: '同校的大小姐，<span class="highlight">让她既亲近又紧张</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🎸',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

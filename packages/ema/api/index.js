@@ -62,7 +62,7 @@ export default {
     { icon: '🕯️', name: '月代雪', type: '好友', desc: '被她「视而不见」的那个人，<span class="highlight-pink">她原罪的源头</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🌸',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

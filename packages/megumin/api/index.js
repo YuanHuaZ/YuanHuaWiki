@@ -63,7 +63,7 @@ export default {
     { icon: '🛡️', name: '达克妮斯', type: '队友', desc: '十字骑士，<span class="highlight">队伍里唯一靠谱的成年人</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '💥',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

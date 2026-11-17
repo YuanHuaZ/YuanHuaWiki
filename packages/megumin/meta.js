@@ -11,6 +11,7 @@ export default {
   nameSub: 'Megumin',
   series: '为美好的世界献上祝福！',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '爆裂魔法', cls: 'tag-red' },
     { text: '中二', cls: 'tag-purple' },

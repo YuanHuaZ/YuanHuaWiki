@@ -63,7 +63,7 @@ export default {
     { icon: '👵', name: '安娜·莱缇库鲁', type: '外婆', desc: '传奇的吸血鬼猎人，<span class="highlight">她血脉与宿命的起点</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🔫',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

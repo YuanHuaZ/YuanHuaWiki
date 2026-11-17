@@ -11,6 +11,7 @@ export default {
   nameSub: 'Toxico Dannar',
   series: '不道德公会',
   image,
+  cardSize: 'cover',
   tags: [
     { text: '黑魔法师', cls: 'tag-purple' },
     { text: '无表情', cls: 'tag-dark' },

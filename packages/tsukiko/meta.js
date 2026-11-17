@@ -11,6 +11,7 @@ export default {
   nameSub: 'Tsutsukakushi Tsukiko',
   series: '变态王子与不笑猫',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '无表情', cls: 'tag-purple' },
     { text: '毒舌', cls: 'tag-red' },

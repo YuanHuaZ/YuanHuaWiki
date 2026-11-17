@@ -11,6 +11,7 @@ export default {
   nameSub: 'Amane Riri',
   series: '愚蠢天使与恶魔共舞',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '天使', cls: 'tag-cyan' },
     { text: '腹黑', cls: 'tag-purple' },

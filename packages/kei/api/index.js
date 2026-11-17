@@ -63,7 +63,7 @@ export default {
     { icon: '👭', name: '松下千秋 / 森宁宁', type: '朋友', desc: '女生集团里的同伴，<span class="highlight">日常行动基本绑在一起</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '💄',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

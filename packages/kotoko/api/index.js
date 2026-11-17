@@ -63,7 +63,7 @@ export default {
     { icon: '👻', name: '妖怪们', type: '臣下 / 家人', desc: '把她当成智慧之神，<span class="highlight">也是她真正的靠山</span>。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🎩',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

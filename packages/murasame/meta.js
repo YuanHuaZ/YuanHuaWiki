@@ -11,6 +11,7 @@ export default {
   nameSub: 'Murasame',
   series: '千恋万花',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '神刀', cls: 'tag-purple' },
     { text: '傲娇', cls: 'tag-red' },

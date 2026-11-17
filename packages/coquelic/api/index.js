@@ -62,7 +62,7 @@ export default {
     { icon: '🕵️', name: '局长', type: '收容者', desc: '她口中的「小花朵」之一，<span class="highlight-pink">却是唯一敢和她平视的人</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '🌺',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

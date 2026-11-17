@@ -63,7 +63,7 @@ export default {
     { icon: '🧹', name: '常陆茉子', type: '同伴', desc: '照顾她生活的人，<span class="highlight">像姐姐一样</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🗡️',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

@@ -62,7 +62,7 @@ export default {
     { icon: '👭', name: '一花 / 二乃 / 三玖 / 四叶', type: '姐妹', desc: '五胞胎，<span class="highlight-pink">同脸不同性格</span>，吵吵闹闹但彼此支撑。', cls: 'rel-family' }
   ],
   placeholderEmoji: '🍖',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

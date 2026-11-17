@@ -62,7 +62,7 @@ export default {
     { icon: '🕵️', name: '雾切响子', type: '对手', desc: '同为冷静型，<span class="highlight-pink">互相试探的两个人</span>。', cls: 'rel-other' }
   ],
   placeholderEmoji: '🎲',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

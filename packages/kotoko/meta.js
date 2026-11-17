@@ -11,6 +11,7 @@ export default {
   nameSub: 'Iwanaga Kotoko',
   series: '虚构推理',
   image,
+  cardSize: '145% auto',
   tags: [
     { text: '侦探', cls: 'tag-purple' },
     { text: '妖怪', cls: 'tag-dark' },

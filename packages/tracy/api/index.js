@@ -6,7 +6,7 @@ import meta from '../meta.js'
 
 export default {
   ...meta,
-  nameJp: '特雷西',
+  nameJp: '特蕾西',
   title: '机械师',
   info: [
     { icon: '🏷️', label: '职业', value: '机械师', iconClass: 'purple' },
@@ -21,7 +21,7 @@ export default {
       key: 'personality', label: '性格特点', icon: '💭',
       tags: ['🔧 机械痴', '🙈 内向', '🫂 依赖傀儡', '💪 不认输'],
       content: [
-        '特雷西不太会和人打交道，<span class="highlight">她更擅长和齿轮说话</span>。机器不会骗人，坏了就修，很简单。',
+        '特蕾西不太会和人打交道，<span class="highlight">她更擅长和齿轮说话</span>。机器不会骗人，坏了就修，很简单。',
         '她的傀儡是她最好的伙伴——也是她<span class="highlight-pink">把「不敢说的话」寄托出去的地方</span>。'
       ]
     },
@@ -49,7 +49,7 @@ export default {
         '她不适合正面交锋，所以每一步都要算。<span class="highlight-pink">和她修钟表的方式一样，一格一格地算</span>。'
       ],
       quote: '能动就行，剩下的我来修。',
-      quoteAuthor: '—— 特雷西'
+      quoteAuthor: '—— 特蕾西'
     }
   ],
   abilities: [
@@ -62,7 +62,7 @@ export default {
     { icon: '🎭', name: '其他求生者', type: '同伴', desc: '她不擅长交流，<span class="highlight-pink">却总把最难的活接过来</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '⚙️',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

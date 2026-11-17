@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'coquelic',
   name: '可可莉克',
   nameSub: 'Coquelic',
   series: '无期迷途',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '业师', cls: 'tag-red' },
     { text: '红花', cls: 'tag-pink' },

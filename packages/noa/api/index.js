@@ -63,7 +63,7 @@ export default {
     { icon: '🌟', name: '星河辉耶', type: '战友', desc: '同为守护者，<span class="highlight">并肩作战的伙伴</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '😇',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'tracy',
-  name: '特雷西',
+  name: '特蕾西',
   nameSub: 'Tracy Reznik',
   series: '第五人格',
-  image: null,
+  image,
+  cardSize: '145% auto',
   tags: [
     { text: '机械师', cls: 'tag-blue' },
     { text: '傀儡', cls: 'tag-amber' },

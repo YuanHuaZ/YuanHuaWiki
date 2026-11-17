@@ -63,7 +63,7 @@ export default {
     { icon: '🐰', name: '小豆梓', type: '朋友 / 情敌', desc: '同为不笑猫的「受害者」，也是<span class="highlight">能说上话的朋友</span>。', cls: 'rel-friend' }
   ],
   placeholderEmoji: '🐱',
-  avatarSize: 'cover',
+  avatarSize: '145% auto',
   avatarBg: null,
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },

@@ -3,12 +3,15 @@
  * 改这里即可同时影响卡片与详情页，无需再去 src/api/character.js 同步
  */
 
+import image from './images/1.jpg'
+
 export default {
   id: 'dusk',
   name: '夕',
   nameSub: 'Dusk',
   series: '明日方舟',
-  image: null,
+  image,
+  cardSize: 'cover',
   tags: [
     { text: '画家', cls: 'tag-purple' },
     { text: '墨', cls: 'tag-dark' },
