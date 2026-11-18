@@ -15,6 +15,7 @@
       </div>
       <span class="card-series-badge">{{ character.seriesShort || character.series }}</span>
       <span class="card-index">{{ String(index + 1).padStart(2, '0') }}</span>
+      <span v-if="character.hasReview" class="card-review-seal" title="含站长评价">评</span>
     </div>
     <div class="card-body">
       <h3 class="card-name">{{ character.name }}</h3>
@@ -169,6 +170,23 @@ export default {
   color: rgba(245, 242, 234, 0.72);
   letter-spacing: 0.06em; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
+
+/* 站长评价印章 */
+.card-review-seal {
+  position: absolute; left: 12px; bottom: 12px; z-index: 3;
+  width: 21px; height: 21px;
+  display: flex; align-items: center; justify-content: center;
+  font: 600 11px/1 var(--serif, Georgia, serif);
+  letter-spacing: 0;
+  color: #ecd49a;
+  background: rgba(18, 26, 32, 0.52);
+  border: 1px solid rgba(201, 168, 106, 0.82);
+  border-radius: 1px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(18, 26, 32, 0.22);
+  transition: opacity 0.3s ease, transform 0.3s var(--ease, cubic-bezier(0.33,1,0.68,1));
+}
+.character-card:hover .card-review-seal { opacity: 0; transform: translateY(4px); }
 
 /* 文字区 */
 .card-body {

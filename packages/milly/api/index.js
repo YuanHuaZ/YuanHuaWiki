@@ -48,7 +48,7 @@ export default {
         '她靠让人快乐活着，<span class="highlight">也靠让人过度快乐而杀人</span>。',
         '被收容后她依旧想给人「最好的相遇」。<span class="highlight-pink">她只是想要有人愿意听她说话</span>。'
       ],
-      quote: '能不能说说，你会爱什么样的人？',
+      quote: '你让我知道原来爱不是永远的甜蜜，不会永远心有灵犀，我们的爱人不一定真的强大完美，也许不那么懂彼此，也许终有一天会走散在人群。',
       quoteAuthor: '—— 蜜莉'
     }
   ],

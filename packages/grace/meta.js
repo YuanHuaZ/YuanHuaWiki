@@ -12,6 +12,7 @@ export default {
   series: '鸣潮',
   image,
   cardSize: '145% auto',
+  hasReview: true,
   tags: [
     { text: '衍射', cls: 'tag-amber' },
     { text: '佩枪', cls: 'tag-cyan' },

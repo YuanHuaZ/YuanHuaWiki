@@ -48,7 +48,7 @@ export default {
         '在反复摧残、同期被试者几乎全死的情况下，她靠意志挺了下来，<span class="highlight">觉醒「自愈再生」</span>。',
         '被 MBCC 收容后她始终拒绝配合调查。<span class="highlight-pink">她不是不信任，是从来没被善待过</span>。'
       ],
-      quote: '我？装可爱？谁说的？！人家难道不可爱吗？',
+      quote: '就算我再弱......也有不想失去的东西......',
       quoteAuthor: '—— 海拉'
     }
   ],

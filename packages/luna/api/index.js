@@ -48,7 +48,7 @@ export default {
         '这套装甲代表的不只是战斗力，还有<span class="highlight">她必须独自背下的那部分黑暗</span>。',
         '她依然会为学园里的人挡在前面，只是方式变得更安静、更冷。<span class="highlight-pink">夜里她一个人站在月下的样子，比战斗更让人记得</span>。'
       ],
-      quote: '在月光下，慢慢陪我聊聊吧。',
+      quote: '以红月为誓，此生永不分离。',
       quoteAuthor: '—— 月下'
     }
   ],

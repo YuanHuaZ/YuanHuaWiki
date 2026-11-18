@@ -19,6 +19,7 @@ export default {
   image,
   cardBg: '#fff',
   cardSize: '150% 150%',
+  hasReview: true,
   tags: [
     { text: '湮灭', cls: 'tag-red' },
     { text: '音感仪', cls: 'tag-purple' },

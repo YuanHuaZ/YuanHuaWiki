@@ -48,7 +48,7 @@ export default {
         '在 Queenland 的剧场里，她会为观众唱那首《Star Dream Gazer》——<span class="highlight">全游戏最不合画风的歌</span>。',
         '契约满级后她主动提出约会，玩遍整座游乐园，最后把戒指交给格林。<span class="highlight-pink">戒指能听懂「亲爱的小姑娘」的语言</span>，也是她留下的最后线索。'
       ],
-      quote: '也许你就是我的王子殿下？为了普利凯特而来？呀啊——♡',
+      quote: '所以，请迈开脚步，跑起来吧，不要停下，也不要回头。',
       quoteAuthor: '—— 普利凯特'
     }
   ],

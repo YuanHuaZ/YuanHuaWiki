@@ -176,8 +176,14 @@ const characters = [
   graceMeta
 ].map(meta => ({ ...meta, hasDetail: hasCharacterData(meta.id) }))
 
+// 有站长评价的角色排在最前面，其余保持原顺序（suki.xlsx 角色页签顺序）
+const sortedCharacters = [
+  ...characters.filter(character => character.hasReview),
+  ...characters.filter(character => !character.hasReview)
+]
+
 export function getCharacterList() {
-  return characters
+  return sortedCharacters
 }
 
 /** 加载某个角色的完整详情数据；不存在或失败时返回 null */

@@ -19,6 +19,7 @@ export default {
   image,
   cardBg: '#fff',
   cardSize: '140% auto',
+  hasReview: true,
   tags: [
     { text: '温柔', cls: 'tag-green' },
     { text: '贝斯手', cls: 'tag-cyan' },

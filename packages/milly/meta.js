@@ -12,6 +12,7 @@ export default {
   series: '无期迷途',
   image,
   cardSize: '145% auto',
+  hasReview: true,
   tags: [
     { text: '舞者', cls: 'tag-pink' },
     { text: '极乐蜜语', cls: 'tag-purple' },

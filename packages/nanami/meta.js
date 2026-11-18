@@ -17,6 +17,7 @@ export default {
   nameSub: 'Nanami Chiaki',
   series: '超级弹丸论破2',
   image,
+  hasReview: true,
   tags: [
     { text: '天然呆', cls: 'tag-purple' },
     { text: '温柔', cls: 'tag-pink' },

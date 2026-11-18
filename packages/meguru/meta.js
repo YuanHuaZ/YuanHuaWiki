@@ -18,6 +18,7 @@ export default {
   series: '魔女的夜宴',
   image,
   cardBg: '#fff',
+  hasReview: true,
   tags: [
     { text: 'Ciallo～', cls: 'tag-orange' },
     { text: '游戏宅', cls: 'tag-purple' },

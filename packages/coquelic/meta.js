@@ -12,6 +12,7 @@ export default {
   series: '无期迷途',
   image,
   cardSize: '145% auto',
+  hasReview: true,
   tags: [
     { text: '业师', cls: 'tag-red' },
     { text: '红花', cls: 'tag-pink' },

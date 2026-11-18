@@ -48,7 +48,7 @@ export default {
         '她因为憧憬主角在舞台上发光的样子，加入了「柠檬水工厂」，<span class="highlight">成了主音吉他手</span>。',
         '加入乐队后成绩暴跌、被老师约谈。意识到自己喜欢上主角之后，她在内耗中反复挣扎，最后<span class="highlight-pink">不小心把心意说漏了嘴，当场哭出来</span>。'
       ],
-      quote: '我、我才没有在等你呢！',
+      quote: '我这个人，就算是为了自己，不被逼到绝境也无法行动。',
       quoteAuthor: '—— 隐杏珠'
     }
   ],
