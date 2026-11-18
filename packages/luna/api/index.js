@@ -3,6 +3,30 @@
  */
 
 import meta from '../meta.js'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.png'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import img9 from '../images/9.jpg'
+import img10 from '../images/10.jpg'
+import img11 from '../images/11.jpg'
+import img12 from '../images/12.jpg'
+import img13 from '../images/13.jpg'
+import img14 from '../images/14.jpg'
+import img15 from '../images/15.jpg'
+import img16 from '../images/16.jpg'
+import img17 from '../images/17.jpg'
+import img18 from '../images/18.jpg'
+import img19 from '../images/19.jpg'
+import img20 from '../images/20.jpg'
+import img21 from '../images/21.jpg'
+import img22 from '../images/22.jpg'
+import img23 from '../images/23.jpg'
+import img24 from '../images/24.jpg'
 
 export default {
   ...meta,
@@ -123,7 +147,30 @@ export default {
     ]
   },
   gallery: [
-      { isImage: true, bg: meta.image, badge: '立绘', overlay: '月下 · 官方立绘' }
+      { isImage: true, bg: img1, badge: '立绘', overlay: '月下 · 官方立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '月下 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '月下 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '月下 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '月下 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '月下 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '月下 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '月下 · 美图 07' },
+      { isImage: true, bg: img9, badge: '美图', overlay: '月下 · 美图 08' },
+      { isImage: true, bg: img10, badge: '美图', overlay: '月下 · 美图 09' },
+      { isImage: true, bg: img11, badge: '美图', overlay: '月下 · 美图 10' },
+      { isImage: true, bg: img12, badge: '美图', overlay: '月下 · 美图 11' },
+      { isImage: true, bg: img13, badge: '美图', overlay: '月下 · 美图 12' },
+      { isImage: true, bg: img14, badge: '美图', overlay: '月下 · 美图 13' },
+      { isImage: true, bg: img15, badge: '美图', overlay: '月下 · 美图 14' },
+      { isImage: true, bg: img16, badge: '美图', overlay: '月下 · 美图 15' },
+      { isImage: true, bg: img17, badge: '美图', overlay: '月下 · 美图 16' },
+      { isImage: true, bg: img18, badge: '美图', overlay: '月下 · 美图 17' },
+      { isImage: true, bg: img19, badge: '美图', overlay: '月下 · 美图 18' },
+      { isImage: true, bg: img20, badge: '美图', overlay: '月下 · 美图 19' },
+      { isImage: true, bg: img21, badge: '美图', overlay: '月下 · 美图 20' },
+      { isImage: true, bg: img22, badge: '美图', overlay: '月下 · 美图 21' },
+      { isImage: true, bg: img23, badge: '美图', overlay: '月下 · 美图 22' },
+      { isImage: true, bg: img24, badge: '美图', overlay: '月下 · 美图 23' }
   ],
   videos: []
 }

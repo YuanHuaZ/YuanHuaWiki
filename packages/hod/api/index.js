@@ -3,6 +3,10 @@
  */
 
 import meta from '../meta.js'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
 
 export default {
   ...meta,
@@ -123,7 +127,10 @@ export default {
     ]
   },
   gallery: [
-      { isImage: true, bg: meta.image, badge: '立绘', overlay: 'Hod · 官方立绘' }
+      { isImage: true, bg: img1, badge: '立绘', overlay: 'Hod · 官方立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: 'Hod · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: 'Hod · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: 'Hod · 美图 03' }
   ],
   videos: []
 }

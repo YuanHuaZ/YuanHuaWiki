@@ -3,6 +3,14 @@
  */
 
 import meta from '../meta.js'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
 
 export default {
   ...meta,
@@ -124,7 +132,14 @@ export default {
     ]
   },
   gallery: [
-      { isImage: true, bg: meta.image, badge: '立绘', overlay: '布良梓 · 官方立绘' }
+      { isImage: true, bg: img1, badge: '立绘', overlay: '布良梓 · 官方立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '布良梓 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '布良梓 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '布良梓 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '布良梓 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '布良梓 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '布良梓 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '布良梓 · 美图 07' }
   ],
   videos: []
 }

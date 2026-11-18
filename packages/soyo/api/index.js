@@ -7,6 +7,17 @@
 
 import meta from '../meta.js'
 import soyoImg from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import img9 from '../images/9.jpg'
+import img10 from '../images/10.jpg'
+import img11 from '../images/11.jpg'
+import img12 from '../images/12.jpg'
 import animeCover from '../images/a.jpg'
 import gameCover from '../images/b.jpg'
 import sp1 from '../images/sp1.jpg'
@@ -179,15 +190,19 @@ export default {
     ],
   },
   gallery: [
-      { isImage: true, bg: soyoImg, badge: '立绘', overlay: '長崎素世 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎵', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎶', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎼', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎹', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎻', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🎤', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #2d2518, #1a1510)', icon: '🥁', label: '美图 · 待补充', badge: '美图', overlay: '長崎素世 · 美图 07' }
-    ],
+      { isImage: true, bg: soyoImg, badge: '立绘', overlay: '長崎素世 · 官方立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '長崎素世 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '長崎素世 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '長崎素世 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '長崎素世 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '長崎素世 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '長崎素世 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '長崎素世 · 美图 07' },
+      { isImage: true, bg: img9, badge: '美图', overlay: '長崎素世 · 美图 08' },
+      { isImage: true, bg: img10, badge: '美图', overlay: '長崎素世 · 美图 09' },
+      { isImage: true, bg: img11, badge: '美图', overlay: '長崎素世 · 美图 10' },
+      { isImage: true, bg: img12, badge: '美图', overlay: '長崎素世 · 美图 11' }
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1GK421v7zv/', title: '【填词/MyGO】素颜', desc: '長崎素世 填词' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1odwVefE8U/', title: '【MyGO/素世】坏心思的神明，给我带来了禮物。', desc: '長崎素世 MAD' },

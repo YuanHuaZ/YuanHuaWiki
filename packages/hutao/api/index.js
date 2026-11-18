@@ -154,7 +154,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '胡桃 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '胡桃 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '胡桃 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '胡桃 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '胡桃 · 美图 03' },
@@ -162,7 +162,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '胡桃 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '胡桃 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '胡桃 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1Dp4y1H7RE/', title: '胡桃单曲《嗷》', desc: '胡桃 原创单曲' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1o3411g7BP/', title: '【原神夏日放映节】动画短片—「燃火之蝶」', desc: '胡桃 动画短片' },

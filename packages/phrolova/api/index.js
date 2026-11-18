@@ -182,7 +182,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '弗洛洛 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '弗洛洛 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '弗洛洛 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '弗洛洛 · 美图 03' },
@@ -198,7 +198,7 @@ export default {
       { isImage: true, bg: img14, badge: '美图', overlay: '弗洛洛 · 美图 13' },
       { isImage: true, bg: img15, badge: '美图', overlay: '弗洛洛 · 美图 14' },
       { isImage: true, bg: img16, badge: '美图', overlay: '弗洛洛 · 美图 15' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1pB87zLEPU', title: '原来乐曲完成的那一天，我的知音来赴约了……【弗洛洛盘点——不乐得】', desc: '弗洛洛 剧情解析' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1DWtEzoELQ', title: '【鸣潮小剧场】Wonderful U', desc: '弗洛洛 手书' },

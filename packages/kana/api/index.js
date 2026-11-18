@@ -155,7 +155,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '有马加奈 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '有马加奈 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '有马加奈 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '有马加奈 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '有马加奈 · 美图 03' },
@@ -163,7 +163,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '有马加奈 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '有马加奈 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '有马加奈 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1fs4y1z74E', title: '【中日歌词/', desc: '有马加奈 角色歌' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1QE2xYUEi3', title: '【4K60帧/', desc: 'B小町 MV' },

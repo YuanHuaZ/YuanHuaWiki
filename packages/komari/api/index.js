@@ -156,7 +156,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '小鞠知花 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '小鞠知花 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '小鞠知花 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '小鞠知花 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '小鞠知花 · 美图 03' },
@@ -164,7 +164,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '小鞠知花 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '小鞠知花 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '小鞠知花 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1yVHwetE9r', title: '【剧情向MAD】明明是主演，却演着配角戏…（败犬女主/', desc: '小鞠知花 剧情向MAD' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV14qx8enEfx', title: '【温水×小鞠】陪伴你、一直到这故事说完。（剧情向MAD/', desc: '温水×小鞠 剧情向MAD' },

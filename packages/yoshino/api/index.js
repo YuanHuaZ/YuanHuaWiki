@@ -186,15 +186,8 @@ export default {
     ],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '四糸乃 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 01', badge: '美图', overlay: '四糸乃 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 02', badge: '美图', overlay: '四糸乃 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 03', badge: '美图', overlay: '四糸乃 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 04', badge: '美图', overlay: '四糸乃 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 05', badge: '美图', overlay: '四糸乃 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 06', badge: '美图', overlay: '四糸乃 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #1e3a5f, #0f1b2d)', icon: '🖼️', label: '美图 07', badge: '美图', overlay: '四糸乃 · 美图 07' }
-    ],
+      { isImage: true, bg: img1, badge: '立绘', overlay: '四糸乃 · 官方角色立绘' }
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1gb411g73U/', title: '【约会大作战】四糸乃的60个超卡哇伊瞬间，awsl！', desc: '四糸乃 剪辑' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV18x41167TY/', title: '【约会大作战】四糸乃角色歌', desc: '四糸乃 角色歌' },

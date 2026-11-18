@@ -154,7 +154,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '友利奈绪 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '友利奈绪 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '友利奈绪 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '友利奈绪 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '友利奈绪 · 美图 03' },
@@ -162,7 +162,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '友利奈绪 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '友利奈绪 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '友利奈绪 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1TR4y1j7zB/', title: '【𝟖𝐊】Charlotte NCOP 全站最高画质 夏洛特OP无字幕 Bravely You', desc: '夏洛特OP无字幕' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1Tu411Q74X/', title: '【𝟖𝐊𝟔𝟎𝐅𝐏𝐒】"我是你的恋人" Charlotte NCED03 全站最高画质 夏洛特第13话ED无字幕 君の文字', desc: '夏洛特第13话ED无字幕' },

@@ -182,7 +182,7 @@ export default {
     ],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '七海千秋 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '七海千秋 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '七海千秋 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '七海千秋 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '七海千秋 · 美图 03' },
@@ -190,7 +190,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '七海千秋 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '七海千秋 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '七海千秋 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1yt4y1s7yN', title: 'ヒステリックナイトガール【弹丸论破2】手书【live2d动画】', desc: '七海千秋 手书' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1Br4y1Z7ge', title: '⚠️OTOMEROID/', desc: '七海千秋 手书' },

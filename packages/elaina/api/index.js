@@ -154,7 +154,7 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: img1, badge: '立绘', overlay: '伊蕾娜 · 官方角色立绘' },
+      { isImage: true, bg: img1, badge: '立绘', overlay: '伊蕾娜 · 官方立绘' },
       { isImage: true, bg: img2, badge: '美图', overlay: '伊蕾娜 · 美图 01' },
       { isImage: true, bg: img3, badge: '美图', overlay: '伊蕾娜 · 美图 02' },
       { isImage: true, bg: img4, badge: '美图', overlay: '伊蕾娜 · 美图 03' },
@@ -162,7 +162,7 @@ export default {
       { isImage: true, bg: img6, badge: '美图', overlay: '伊蕾娜 · 美图 05' },
       { isImage: true, bg: img7, badge: '美图', overlay: '伊蕾娜 · 美图 06' },
       { isImage: true, bg: img8, badge: '美图', overlay: '伊蕾娜 · 美图 07' }
-    ],
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1o14y1B7jy', title: '【伊蕾娜の小曲/', desc: '伊蕾娜 可爱向剪辑' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1m54y1z79W', title: '♣𝘾𝙖𝙪𝙨𝙚 𝙄\'𝙢 𝙣𝙤𝙩 𝙟𝙪𝙨𝙩 𝙖 𝙥𝙧𝙚𝙩𝙩𝙮 𝙜𝙞𝙧𝙡♣', desc: '伊蕾娜 颜值向剪辑' },

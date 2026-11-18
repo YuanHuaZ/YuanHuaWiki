@@ -7,6 +7,17 @@
 
 import meta from '../meta.js'
 import sagiriImg from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/7.jpg'
+import img8 from '../images/8.jpg'
+import img9 from '../images/9.jpg'
+import img10 from '../images/10.jpg'
+import img11 from '../images/11.jpg'
+import img12 from '../images/12.jpg'
 import animeCover from '../images/a.jpg'
 import sp1 from '../images/sp1.jpg'
 import sp2 from '../images/sp2.jpg'
@@ -145,15 +156,19 @@ export default {
     game: [],
   },
   gallery: [
-      { isImage: true, bg: sagiriImg, badge: '立绘', overlay: '和泉纱雾 · 官方角色立绘' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 01' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 02' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 03' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 04' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 05' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🎨', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 06' },
-      { isImage: false, bg: 'linear-gradient(135deg, #27272a, #18181b)', icon: '🖌️', label: '美图 · 待补充', badge: '美图', overlay: '和泉纱雾 · 美图 07' }
-    ],
+      { isImage: true, bg: sagiriImg, badge: '立绘', overlay: '和泉纱雾 · 官方立绘' },
+      { isImage: true, bg: img2, badge: '美图', overlay: '和泉纱雾 · 美图 01' },
+      { isImage: true, bg: img3, badge: '美图', overlay: '和泉纱雾 · 美图 02' },
+      { isImage: true, bg: img4, badge: '美图', overlay: '和泉纱雾 · 美图 03' },
+      { isImage: true, bg: img5, badge: '美图', overlay: '和泉纱雾 · 美图 04' },
+      { isImage: true, bg: img6, badge: '美图', overlay: '和泉纱雾 · 美图 05' },
+      { isImage: true, bg: img7, badge: '美图', overlay: '和泉纱雾 · 美图 06' },
+      { isImage: true, bg: img8, badge: '美图', overlay: '和泉纱雾 · 美图 07' },
+      { isImage: true, bg: img9, badge: '美图', overlay: '和泉纱雾 · 美图 08' },
+      { isImage: true, bg: img10, badge: '美图', overlay: '和泉纱雾 · 美图 09' },
+      { isImage: true, bg: img11, badge: '美图', overlay: '和泉纱雾 · 美图 10' },
+      { isImage: true, bg: img12, badge: '美图', overlay: '和泉纱雾 · 美图 11' }
+  ],
   videos: [
       { cover: sp1, url: 'https://www.bilibili.com/video/BV1zT4y177Am/', title: '【AMV】ヒトリゴト/自言自语 -OP（完整版）《埃罗芒阿老师》（中/日文字幕）', desc: '和泉纱雾 AMV' },
       { cover: sp2, url: 'https://www.bilibili.com/video/BV1M7411a7Hp/', title: '再 来 亿 遍', desc: '和泉纱雾 剪辑' },
