@@ -88,12 +88,13 @@ export default {
   placeholderEmoji: '🦇',
   avatarSize: 'cover',
   avatarBg: null,
+  review: '或许再回看发现她的剧情确实平平淡淡，但是在那时还没有这么多优质二游剧情的时候还是给了我许多震撼，算是二游剧情的白月光吧，也是那之后我玩游戏才会更多的把剧情放在第一位，没有好剧情的游戏就留不下我。月下不想伤害舰长选择消失在时间的尽头，而舰长跨越无数个世界救，即使十年百年千万年，万年后，她还在等，而他终于找到了她。',
   mainTabs: [
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'game', icon: '🎮', label: '相关游戏' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
-      { key: 'videos', icon: '🎬', label: '相关视频' },
-      { key: 'abilities', icon: '⭐', label: '能力关系' }
+      { key: 'abilities', icon: '⭐', label: '能力关系' },
+      { key: 'review', icon: '💬', label: '评价' }
   ],
   theme: {
     "heroBg": "linear-gradient(135deg, #0a0a14 0%, #2b080b 25%, #3d0b10 50%, #4a0d13 75%, #0a0a14 100%)",

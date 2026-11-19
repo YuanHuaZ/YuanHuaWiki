@@ -78,7 +78,6 @@ export default {
       { key: 'profile', icon: '📋', label: '角色资料' },
       { key: 'anime', icon: '📺', label: '相关番剧' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
-      { key: 'videos', icon: '🎬', label: '相关视频' },
       { key: 'abilities', icon: '⭐', label: '能力关系' }
   ],
   theme: {

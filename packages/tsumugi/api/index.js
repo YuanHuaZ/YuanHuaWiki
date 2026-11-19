@@ -90,7 +90,6 @@ export default {
       { key: 'anime', icon: '📺', label: '相关番剧' },
       { key: 'game', icon: '🎮', label: '相关游戏' },
       { key: 'gallery', icon: '🖼️', label: '图片画廊' },
-      { key: 'videos', icon: '🎬', label: '相关视频' },
       { key: 'abilities', icon: '⭐', label: '能力关系' },
       { key: 'review', icon: '💬', label: '评价' }
   ],
